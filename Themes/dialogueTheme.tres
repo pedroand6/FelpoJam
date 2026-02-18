@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://bx5uaiy3dc1m4"]
+
+[ext_resource type="FontFile" uid="uid://rikct6wrplh4" path="res://Fonts/C&C Red Alert [INET].ttf" id="1_b4dew"]
+
+[resource]
+default_font = ExtResource("1_b4dew")

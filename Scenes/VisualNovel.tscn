@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://d1fypi2e6ygwo"]
+
+[ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_ptmd0"]
+[ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="2_23cdr"]
+[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="3_lfvaj"]
+
+[node name="Node2D" type="Node2D" unique_id=1817360411]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1228109743]
+follow_viewport_enabled = true
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=809186504]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TopArea" type="Control" parent="CanvasLayer" unique_id=150439335]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 452.0
+grow_horizontal = 2
+
+[node name="Scene" type="TextureRect" parent="CanvasLayer/TopArea" unique_id=2041798609]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 978.0
+offset_bottom = 452.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_ptmd0")
+
+[node name="BottomArea" type="Control" parent="CanvasLayer" unique_id=106212255]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -179.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Name" type="RichTextLabel" parent="CanvasLayer/BottomArea" unique_id=1901655247]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 3.0
+offset_right = 340.0
+offset_bottom = 37.0
+theme = ExtResource("2_23cdr")
+text = "SABUGO"
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/BottomArea" unique_id=563849924]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 52.0
+offset_right = 978.0
+offset_bottom = 166.0
+theme = ExtResource("3_lfvaj")
+text = "Diálogo..."
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BottomArea" unique_id=1677549077]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 302.0
+offset_bottom = 128.0
+scale = Vector2(0.3019644, 0.3019644)
+texture = ExtResource("1_ptmd0")
