@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="FelpoJam"
+run/main_scene="uid://dyt3wt54f7m46"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

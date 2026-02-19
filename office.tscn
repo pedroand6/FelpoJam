@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://dyt3wt54f7m46"]
+
+[ext_resource type="PackedScene" uid="uid://cpqndp5ocixpo" path="res://tabuleiro.tscn" id="1_ei2s5"]
+[ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_g3mwp"]
+[ext_resource type="Script" uid="uid://dmav4udowvahd" path="res://main_camera.gd" id="3_u8nhc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ei2s5"]
+size = Vector3(1, 0.05, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u8nhc"]
+size = Vector3(0.1, 1, 0.1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u8nhc"]
+viewport_path = NodePath("Mesa/IngameView")
+
+[sub_resource type="BoxMesh" id="BoxMesh_43ocd"]
+size = Vector3(5, 5, 1)
+
+[node name="Office" type="Node3D" unique_id=1865749570]
+
+[node name="Mesa" type="Node3D" parent="." unique_id=1016380885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5296012)
+
+[node name="Topo" type="MeshInstance3D" parent="Mesa" unique_id=510141589]
+mesh = SubResource("BoxMesh_ei2s5")
+
+[node name="Perna00" type="MeshInstance3D" parent="Mesa" unique_id=660615103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42467093, -0.5119897, -0.4185058)
+mesh = SubResource("BoxMesh_u8nhc")
+
+[node name="Perna01" type="MeshInstance3D" parent="Mesa" unique_id=574945441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.441684, -0.5119897, -0.44267476)
+mesh = SubResource("BoxMesh_u8nhc")
+
+[node name="Perna02" type="MeshInstance3D" parent="Mesa" unique_id=366332283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45036542, -0.5119897, 0.42759347)
+mesh = SubResource("BoxMesh_u8nhc")
+
+[node name="Perna03" type="MeshInstance3D" parent="Mesa" unique_id=817258820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45256925, -0.5119897, 0.4425326)
+mesh = SubResource("BoxMesh_u8nhc")
+
+[node name="IngameView" type="SubViewport" parent="Mesa" unique_id=1148934911]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(500, 500)
+
+[node name="Tabuleiro" parent="Mesa/IngameView" unique_id=17408780 instance=ExtResource("1_ei2s5")]
+
+[node name="TampoMesa" type="Sprite3D" parent="Mesa" unique_id=700926172]
+transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 0.025702119, 0)
+texture = SubResource("ViewportTexture_u8nhc")
+
+[node name="Inimigo" type="Sprite3D" parent="." unique_id=1282001370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61948466, -1.4116288)
+texture = ExtResource("1_g3mwp")
+
+[node name="Ambiente" type="Node3D" parent="." unique_id=100801981]
+
+[node name="Paredes" type="Node3D" parent="Ambiente" unique_id=2111038880]
+
+[node name="Parede00" type="MeshInstance3D" parent="Ambiente/Paredes" unique_id=779144341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3129319, -2.2779884)
+mesh = SubResource("BoxMesh_43ocd")
+
+[node name="Parede01" type="MeshInstance3D" parent="Ambiente/Paredes" unique_id=830477202]
+transform = Transform3D(-0.0046600373, 0, 0.99998915, 0, 1, 0, -0.99998915, 0, -0.0046600373, -2.9304771, 0.3129319, 0.68677664)
+mesh = SubResource("BoxMesh_43ocd")
+
+[node name="Parede02" type="MeshInstance3D" parent="Ambiente/Paredes" unique_id=922901081]
+transform = Transform3D(0.019337, 0, -0.999813, 0, 1, 0, 0.999813, 0, 0.019337, 2.8430746, 0.3129319, 0.68588233)
+mesh = SubResource("BoxMesh_43ocd")
+
+[node name="Parede03" type="MeshInstance3D" parent="Ambiente/Paredes" unique_id=1828679105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3129319, 3.7093444)
+mesh = SubResource("BoxMesh_43ocd")
+
+[node name="TetoChao" type="Node3D" parent="Ambiente" unique_id=682891261]
+
+[node name="Teto" type="MeshInstance3D" parent="Ambiente/TetoChao" unique_id=2029944222]
+transform = Transform3D(1, 0, 0, 0, -0.04140485, 0.99914247, 0, -0.99914247, -0.04140485, 0, -1.3192865, 0.7911272)
+mesh = SubResource("BoxMesh_43ocd")
+
+[node name="Teto2" type="MeshInstance3D" parent="Ambiente/TetoChao" unique_id=48053852]
+transform = Transform3D(1, 0, 0, 0, -0.04140485, 0.99914247, 0, -0.99914247, -0.04140485, 0, 3.1602278, 0.7911272)
+mesh = SubResource("BoxMesh_43ocd")
+
+[node name="Lampada" type="SpotLight3D" parent="Ambiente" unique_id=1214570084]
+transform = Transform3D(1, 0, 0, 0, -0.18084528, 0.98351157, 0, -0.98351157, -0.18084528, 0, 2.2790935, 0.21861929)
+
+[node name="LuzAmbiente" type="OmniLight3D" parent="Ambiente" unique_id=1707618856]
+light_energy = 0.367
+omni_range = 8.572
+omni_attenuation = 1.926
+
+[node name="Head" type="Node3D" parent="." unique_id=12343468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.5)
+
+[node name="MainCamera" type="Camera3D" parent="Head" unique_id=1015711678]
+script = ExtResource("3_u8nhc")
