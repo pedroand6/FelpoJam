@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dyt3wt54f7m46"]
 
-[ext_resource type="PackedScene" uid="uid://cpqndp5ocixpo" path="res://tabuleiro.tscn" id="1_ei2s5"]
-[ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_g3mwp"]
-[ext_resource type="Script" uid="uid://dmav4udowvahd" path="res://main_camera.gd" id="3_u8nhc"]
+[ext_resource type="PackedScene" uid="uid://cpqndp5ocixpo" path="res://Scenes/tabuleiro.tscn" id="1_vggx3"]
+[ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="2_cumm5"]
+[ext_resource type="Script" uid="uid://dmav4udowvahd" path="res://Scripts/main_camera.gd" id="3_2jlrf"]
+[ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/hand.gd" id="4_2jlrf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ei2s5"]
 size = Vector3(1, 0.05, 1)
@@ -45,7 +46,7 @@ disable_3d = true
 transparent_bg = true
 size = Vector2i(500, 500)
 
-[node name="Tabuleiro" parent="Mesa/IngameView" unique_id=17408780 instance=ExtResource("1_ei2s5")]
+[node name="Tabuleiro" parent="Mesa/IngameView" unique_id=17408780 instance=ExtResource("1_vggx3")]
 
 [node name="TampoMesa" type="Sprite3D" parent="Mesa" unique_id=700926172]
 transform = Transform3D(0.2, 0, 0, 0, -8.742278e-09, 0.2, 0, -0.2, -8.742278e-09, 0, 0.025702119, 0)
@@ -53,7 +54,7 @@ texture = SubResource("ViewportTexture_u8nhc")
 
 [node name="Inimigo" type="Sprite3D" parent="." unique_id=1282001370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61948466, -1.4116288)
-texture = ExtResource("1_g3mwp")
+texture = ExtResource("2_cumm5")
 
 [node name="Ambiente" type="Node3D" parent="." unique_id=100801981]
 
@@ -97,4 +98,7 @@ omni_attenuation = 1.926
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.5)
 
 [node name="MainCamera" type="Camera3D" parent="Head" unique_id=1015711678]
-script = ExtResource("3_u8nhc")
+script = ExtResource("3_2jlrf")
+
+[node name="Hand" type="Node3D" parent="Head/MainCamera" unique_id=1172325499]
+script = ExtResource("4_2jlrf")
