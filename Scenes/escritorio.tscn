@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cpqndp5ocixpo" path="res://Scenes/tabuleiro.tscn" id="1_vggx3"]
 [ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="2_cumm5"]
-[ext_resource type="Script" uid="uid://dmav4udowvahd" path="res://Scripts/main_camera.gd" id="3_2jlrf"]
-[ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/hand.gd" id="4_2jlrf"]
+[ext_resource type="Script" uid="uid://dmav4udowvahd" path="res://Scripts/camera_principal.gd" id="3_2jlrf"]
+[ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="4_2jlrf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ei2s5"]
 size = Vector3(1, 0.05, 1)
@@ -17,7 +17,7 @@ viewport_path = NodePath("Mesa/IngameView")
 [sub_resource type="BoxMesh" id="BoxMesh_43ocd"]
 size = Vector3(5, 5, 1)
 
-[node name="Office" type="Node3D" unique_id=1865749570]
+[node name="Escritorio" type="Node3D" unique_id=1865749570]
 
 [node name="Mesa" type="Node3D" parent="." unique_id=1016380885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5296012)
@@ -94,11 +94,22 @@ light_energy = 0.367
 omni_range = 8.572
 omni_attenuation = 1.926
 
-[node name="Head" type="Node3D" parent="." unique_id=12343468]
+[node name="Cabeca" type="Node3D" parent="." unique_id=12343468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.5)
 
-[node name="MainCamera" type="Camera3D" parent="Head" unique_id=1015711678]
+[node name="CameraPrincipal" type="Camera3D" parent="Cabeca" unique_id=1015711678]
 script = ExtResource("3_2jlrf")
 
-[node name="Hand" type="Node3D" parent="Head/MainCamera" unique_id=1172325499]
+[node name="Mao" type="Node3D" parent="Cabeca/CameraPrincipal" unique_id=1172325499]
 script = ExtResource("4_2jlrf")
+
+[node name="CamPoints" type="Node" parent="." unique_id=204157862]
+
+[node name="PointBoard" type="Node3D" parent="CamPoints" unique_id=2118259285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.265739, 0.8054231)
+
+[node name="PointSides" type="Node3D" parent="CamPoints" unique_id=863522567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
+
+[node name="PointDefault" type="Node3D" parent="CamPoints" unique_id=1730909821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 1.5)
