@@ -1,0 +1,32 @@
+{
+	"Cena1": [
+		[
+			{
+				"icon": "aBravo",
+				"nome": "drPenis",
+				"texto": "babuncion voltou a terra e agora esta muito bravo",
+				"duracao": 2
+			},
+			{
+				"icon": "aTriste",
+				"nome": "drPenis",
+				"texto": "desculpa",
+				"duracao": 2
+			}
+		],
+		[
+			{
+				"icon": "aBravo",
+				"nome": "drPenis",
+				"texto": "babuncion voltou a terra e agora esta muito bravo",
+				"duracao": 2
+			},
+			{
+				"icon": "aBravo",
+				"nome": "drPenis",
+				"texto": "babuncion voltou a terra e agora esta muito bravo",
+				"duracao": 2
+			}
+		]
+	]
+}

@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cbeg7kv1qoe6x"]
 
-[ext_resource type="FontFile" uid="uid://rikct6wrplh4" path="res://Fonts/C&C Red Alert [INET].ttf" id="1_ktktq"]
+[ext_resource type="FontFile" uid="uid://cabqydep0tvgq" path="res://Fonts/PixelPleasing.ttf" id="1_ktktq"]
 
 [resource]
 default_font = ExtResource("1_ktktq")
-RichTextLabel/font_sizes/normal_font_size = 20
+default_font_size = 24
