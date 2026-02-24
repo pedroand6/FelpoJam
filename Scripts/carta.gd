@@ -45,15 +45,17 @@ const INFO_TIMER: bool = 1.0
 var info_timer: float = 1.0
 var chosen: bool = false
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on:
+			if chosen:
+				chosen = false
+				luz_escolha.hide()
+			else:
+				chosen = true
+				luz_escolha.show()
+
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("selecionar") and mouse_on:
-		if chosen: 
-			chosen = false
-			luz_escolha.hide()
-		else:
-			chosen = true
-			luz_escolha.show()
-	
 	if mouse_on:
 		info_timer -= delta
 	if info_timer <= 0:
