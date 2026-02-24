@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://d1fypi2e6ygwo"]
+
+[ext_resource type="Script" uid="uid://bpd65hulmcgor" path="res://Scripts/visual_novel.gd" id="1_23cdr"]
+[ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_ptmd0"]
+[ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="2_23cdr"]
+[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="3_lfvaj"]
+[ext_resource type="Script" uid="uid://hvci6lhwlr4q" path="res://Scripts/dialogue_box.gd" id="4_lfvaj"]
+[ext_resource type="Texture2D" uid="uid://cec7ta85itm5o" path="res://Sprites/UI/continueBtn.png" id="6_afsgk"]
+[ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="6_gsx18"]
+[ext_resource type="Texture2D" uid="uid://c2v3k0p2lgatq" path="res://Sprites/UI/gearIcon.png" id="7_vcchw"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_w4fai"]
+script = ExtResource("6_gsx18")
+metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
+
+[node name="Visual Novel" type="Node2D" unique_id=1817360411]
+script = ExtResource("1_23cdr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1228109743]
+follow_viewport_enabled = true
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=809186504]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TopArea" type="Control" parent="CanvasLayer" unique_id=150439335]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 452.0
+grow_horizontal = 2
+
+[node name="Scene" type="TextureRect" parent="CanvasLayer/TopArea" unique_id=2041798609]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 30.0
+offset_right = 915.55554
+offset_bottom = 410.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_lfvaj")
+texture = ExtResource("1_ptmd0")
+stretch_mode = 4
+
+[node name="BottomArea" type="Control" parent="CanvasLayer" unique_id=106212255]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -179.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_lfvaj")
+
+[node name="Name" type="RichTextLabel" parent="CanvasLayer/BottomArea" unique_id=1901655247]
+texture_filter = 1
+layout_mode = 0
+offset_left = 360.0
+offset_top = -20.0
+offset_right = 704.0
+offset_bottom = -3.0
+theme = ExtResource("2_23cdr")
+text = "Nome"
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="DialogueBox" type="RichTextLabel" parent="CanvasLayer/BottomArea" unique_id=563849924]
+texture_filter = 1
+layout_mode = 0
+offset_left = 360.0
+offset_top = 8.0
+offset_right = 916.0
+offset_bottom = 78.0
+theme = ExtResource("3_lfvaj")
+bbcode_enabled = true
+text = "Diálogo..."
+custom_effects = [SubResource("RichTextEffect_w4fai")]
+
+[node name="ContinueBtn" type="TextureRect" parent="CanvasLayer/BottomArea" unique_id=1454276205]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 916.0
+offset_top = 78.00002
+offset_right = 968.9863
+offset_bottom = 130.98636
+scale = Vector2(0.3019644, 0.3019644)
+texture = ExtResource("6_afsgk")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/BottomArea" unique_id=1677549077]
+texture_filter = 1
+layout_mode = 0
+offset_left = 233.0
+offset_top = -34.0
+offset_right = 603.90466
+offset_bottom = 336.90466
+scale = Vector2(0.3019644, 0.3019644)
+texture = ExtResource("1_ptmd0")
+
+[node name="DialogueBtn" type="Button" parent="CanvasLayer/BottomArea" unique_id=1670132534]
+layout_mode = 0
+offset_left = 345.0
+offset_top = -34.0
+offset_right = 951.0
+offset_bottom = 107.0
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/BottomArea" unique_id=1678751360]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=738053190]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -59.0
+offset_right = -20.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_vcchw")
+stretch_mode = 4
+
+[connection signal="button_down" from="CanvasLayer/BottomArea/DialogueBtn" to="." method="_on_dialogue_btn_button_down"]
