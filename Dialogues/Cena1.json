@@ -2,30 +2,26 @@
 	"Cena1": [
 		[
 			{
-				"icon": "aBravo",
-				"nome": "drPenis",
-				"texto": "babuncion voltou a terra e agora esta muito bravo",
-				"duracao": 2
+				"icone": "amedrontado",
+				"nome": "Lucas",
+				"texto": "babuncion voltou a terra e agora esta muito bravo"
 			},
 			{
-				"icon": "aTriste",
-				"nome": "drPenis",
-				"texto": "desculpa",
-				"duracao": 2
+				"icone": "indignado",
+				"nome": "Lucas",
+				"texto": "desculpa"
 			}
 		],
 		[
 			{
-				"icon": "aBravo",
-				"nome": "drPenis",
-				"texto": "babuncion voltou a terra e agora esta muito bravo",
-				"duracao": 2
+				"icone": "sorrindo",
+				"nome": "Lucas",
+				"texto": "Estou muito feliz"
 			},
 			{
-				"icon": "aBravo",
-				"nome": "drPenis",
-				"texto": "babuncion voltou a terra e agora esta muito bravo",
-				"duracao": 2
+				"icone": "serio",
+				"nome": "Lucas",
+				"texto": "Nao."
 			}
 		]
 	]

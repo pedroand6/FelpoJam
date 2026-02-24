@@ -1,0 +1,35 @@
+extends Control
+
+@onready var dialogoObj = $DialogueBox
+@onready var nomeObj = $Name
+@onready var iconObj = $Icon
+@onready var continueBtn = $ContinueBtn
+
+var textoAnimando = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func mostra_texto(dialogoInfo: Dictionary) -> void:
+	dialogoObj.text = "[jump_effect]" + dialogoInfo["texto"]
+	iconObj.texture = load("res://Sprites/Icons/%s/%s-retrato-%s.png" % [dialogoInfo["nome"], \
+		 dialogoInfo["nome"].to_lower(), dialogoInfo["icone"]])
+	nomeObj.text = dialogoInfo["nome"]
+	anima_texto()
+
+func anima_texto():
+	textoAnimando = true
+	dialogoObj.visible_characters = 0
+	while dialogoObj.visible_ratio < 1.0:
+		dialogoObj.visible_characters += 1
+		await wait(0.025)
+	textoAnimando = false
+	continueBtn.visible = true
+
+func wait(duration):  
+	await get_tree().create_timer(duration, false, false).timeout
