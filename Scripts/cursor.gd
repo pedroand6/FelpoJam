@@ -16,7 +16,6 @@ var last_picked_collider: CollisionObject3D = null
 var joystick: bool = false
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_viewport().size_changed.connect(_viewport_update_size)
 	_viewport_update_size()
 	cursor.position = get_viewport().get_mouse_position()
@@ -30,20 +29,29 @@ func _viewport_update_size() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadMotion:
+		alterna_mouse_fake(true)
 		movement = Vector2(Input.get_joy_axis(0, JOY_AXIS_LEFT_X), Input.get_joy_axis(0, JOY_AXIS_LEFT_Y))
 		if movement.length() < zona_morta:
 			movement = Vector2.ZERO
+			joystick = false
 		else:
 			joystick = true
 			_cursor_move_inject()
-	if event is InputEventMouseMotion:
-		movement = event.relative
-		if movement.length() < zona_morta:
-			movement = Vector2.ZERO
+	elif not joystick and event is InputEventMouseMotion:
+		alterna_mouse_fake(false)
+		
 	if event is InputEventJoypadButton:
+		alterna_mouse_fake(true)
 		if event.button_index == JOY_BUTTON_A:
 			_cursor_click_inject(event.pressed)
-			joystick = true
+		
+func alterna_mouse_fake(mostra : bool):
+	if mostra:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		cursor.show()
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		cursor.hide()
 
 func _process(delta: float) -> void:
 	if movement != Vector2.ZERO:
