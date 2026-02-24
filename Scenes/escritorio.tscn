@@ -3,9 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_3j7i0"]
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
+[ext_resource type="Texture2D" uid="uid://coudofjsuxdvd" path="res://Assets/cursor.png" id="4_ronj5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
-size = Vector3(1, 3, 1)
+size = Vector3(1.3, 3, 1.3)
 
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
 
@@ -14,6 +15,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6255174)
 texture = ExtResource("1_3j7i0")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=222983965]
+transform = Transform3D(1, 0, 0, 0, 0.90266794, 0.43033782, 0, -0.43033782, 0.90266794, 0, 0.2422911, -0.39339817)
 
 [node name="3DUI" type="Node3D" parent="Camera3D" unique_id=1464908080]
 
@@ -27,5 +29,10 @@ mesh = SubResource("BoxMesh_xx3jy")
 [node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
 transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.929937, 0, 0, 0)
 
-[node name="Cursor" type="Node3D" parent="." unique_id=1422900068]
+[node name="Node" type="Node" parent="." unique_id=1916013957]
 script = ExtResource("1_6vsh8")
+
+[node name="Cursor" type="TextureRect" parent="Node" unique_id=17904996]
+offset_right = 14.0
+offset_bottom = 17.94873
+texture = ExtResource("4_ronj5")

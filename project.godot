@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Gerenciador="*uid://5ym4v7qdd4an"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 selecionar={
@@ -58,5 +64,6 @@ controle_cima={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
