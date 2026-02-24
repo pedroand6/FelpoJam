@@ -13,10 +13,12 @@ const ESCOLHAS: int = 4 #cartas por descarte
 const CARTA_POS_BASE: Vector3 = Vector3(0, -0.122, -0.2)
 const VELOCIDADE_MOVIMENTO: float = 0.01
 
+#const CAMINHO_IMG_FI_DONO: String = "res://Assets/coringa.png"
+
 const ESPACAMENTO: float = 0.025
 
 var tamanho_mao: int = 0
-var cartas_mao: Array[Node]
+var cartas_mao: Array[Node3D]
 
 @onready var node_carta = preload("res://Scenes/carta.tscn")
 
@@ -31,9 +33,13 @@ func compra_uma():
 	var carta_topo: Carta = Gerenciador.pilha_carta.pop_back()
 	
 	var instance = node_carta.instantiate()
-	instance.Cargo = carta_topo.Cargo
-	instance.Area = carta_topo.Area
-	instance.Coringa = carta_topo.Coringa
+	instance.cargo = carta_topo.cargo
+	instance.area = carta_topo.area
+	instance.coringa = carta_topo.coringa
+	#if not instance.coringa: #and not util
+	#	instance.imagem = "res://Assets/" + str(instance.area) + "_" + str(instance.cargo) + ".png"
+	#if instance.coringa:
+	#	instance.imagem.texture = load(CAMINHO_IMG_FI_DONO)
 	instance.position = CARTA_POS_BASE
 	
 	for carta in cartas_mao:

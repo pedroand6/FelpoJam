@@ -33,6 +33,39 @@ enum Cargos {
 #	"CEO" : 0,
 #}
 
-var Area: Areas
-var Cargo: Cargos
-var Coringa: bool
+var area: Areas
+var cargo: Cargos
+var coringa: bool
+
+@onready var luz_contorno: MeshInstance3D = $'LuzContorno'
+@onready var luz_escolha: MeshInstance3D = $'LuzContornoEscolha'
+@onready var imagem: Sprite3D = $'Imagem'
+var mouse_on: bool = false
+const INFO_TIMER: bool = 1.0
+var info_timer: float = 1.0
+var chosen: bool = false
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("selecionar") and mouse_on:
+		if chosen: 
+			chosen = false
+			luz_escolha.hide()
+		else:
+			chosen = true
+			luz_escolha.show()
+	
+	if mouse_on:
+		info_timer -= delta
+	if info_timer <= 0:
+		pass
+	else:
+		pass
+
+func _on_area_3d_mouse_entered() -> void:
+	luz_contorno.show()
+	mouse_on = true
+
+func _on_area_3d_mouse_exited() -> void:
+	luz_contorno.hide()
+	mouse_on = false
+	info_timer = INFO_TIMER
