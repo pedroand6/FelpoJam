@@ -7,7 +7,7 @@ extends Node2D
 
 var cenasPath : String = "res://Dialogues/%s/" % [nomeCena]
 @onready var cenaObj = $CanvasLayer/TopArea/Scene
-@onready var cenasImg = le_cenas(cenasPath)
+@onready var cenasImg = le_arquivos(cenasPath)
 
 var dialogoAtual = 0
 var cenaAtual = 0
@@ -21,8 +21,8 @@ func le_json(fileName: String):
 	var json_object = JSON.new()
 	var _parse_err = json_object.parse(file.get_as_text())
 	return json_object.get_data()
-
-func le_cenas(path):
+	
+func le_arquivos(path):
 	var files = []
 	var dir = DirAccess.open(path)
 	var returnedFiles = dir.get_files()
@@ -36,6 +36,9 @@ func passa_dialogo() -> void:
 	if caixaDialogo.textoAnimando:
 		caixaDialogo.dialogoObj.visible_ratio = 1.0
 		caixaDialogo.textoAnimando = false
+		
+		caixaDialogo.effect.stopEffect = true
+		
 		caixaDialogo.continueBtn.visible = true
 		return
 	

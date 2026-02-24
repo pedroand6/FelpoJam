@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxfvkt1htl0lh"
+path="res://.godot/imported/tecla longa 1 efeito 2.wav-57672d34107fd581e59b2ad897c38a06.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Writing/tecla longa 1 efeito 2.wav"
+dest_files=["res://.godot/imported/tecla longa 1 efeito 2.wav-57672d34107fd581e59b2ad897c38a06.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
