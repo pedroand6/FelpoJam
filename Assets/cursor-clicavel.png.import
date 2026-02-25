@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv1ad1m2rvolg"
-path="res://.godot/imported/cursor.png-27f7464f1b8c90c132cd8a8c8a18d03c.ctex"
+uid="uid://ccg0ur02narq8"
+path="res://.godot/imported/cursor-clicavel.png-97ad3aa853ad04d25dc6709d2db978ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/cursor.png"
-dest_files=["res://.godot/imported/cursor.png-27f7464f1b8c90c132cd8a8c8a18d03c.ctex"]
+source_file="res://Assets/cursor-clicavel.png"
+dest_files=["res://.godot/imported/cursor-clicavel.png-97ad3aa853ad04d25dc6709d2db978ad.ctex"]
 
 [params]
 
