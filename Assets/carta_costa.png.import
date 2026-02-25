@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbo8ur3147auj"
-path="res://.godot/imported/lucas-retrato-neutro.png-63ed8c2a4befaf2bf8d8871ee48f02a9.ctex"
+uid="uid://cxjdyte7ary7l"
+path="res://.godot/imported/carta_costa.png-2b93bb1cf3ddedd87688b7a0946d348c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Icons/Lucas/lucas-retrato-neutro.png"
-dest_files=["res://.godot/imported/lucas-retrato-neutro.png-63ed8c2a4befaf2bf8d8871ee48f02a9.ctex"]
+source_file="res://Assets/carta_costa.png"
+dest_files=["res://.godot/imported/carta_costa.png-2b93bb1cf3ddedd87688b7a0946d348c.ctex"]
 
 [params]
 

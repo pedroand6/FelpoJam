@@ -3,15 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_3j7i0"]
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
+[ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/gutenberg/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
+[ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
 [ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="7_vf6ur"]
 [ext_resource type="Texture2D" uid="uid://do1r3gmeufmvt" path="res://Sprites/UI/icone-info.png" id="8_sjs8i"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
 [ext_resource type="Texture2D" uid="uid://bqk1kjyeisknk" path="res://Sprites/UI/icone-contador-rodadas.png" id="8_vf6ur"]
 [ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="12_miicn"]
+[ext_resource type="Texture2D" uid="uid://duk1ai68vsaya" path="res://Sprites/UI/icone-fechar.png" id="14_xffac"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
 size = Vector3(1.3, 3, 1.3)
@@ -39,6 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.9299
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2016285213]
 follow_viewport_enabled = true
+script = ExtResource("3_aafqm")
 
 [node name="PlayerSide" type="Control" parent="UI" unique_id=1181563155]
 layout_mode = 3
@@ -100,17 +104,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -255.99998
-offset_top = -304.0
-offset_right = -2.2878265
-offset_bottom = 53.679688
+offset_left = -220.0
+offset_top = -263.0
+offset_right = -70.0
+offset_bottom = -63.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.75613844, 0.75613844)
 tooltip_text = "Baralho"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_81bno")
-texture_normal = ExtResource("1_3j7i0")
+texture_normal = ExtResource("7_bnfms")
 stretch_mode = 4
 
 [node name="DescarteBtn" type="TextureButton" parent="UI/PlayerSide" unique_id=46986098]
@@ -277,10 +280,362 @@ text = "01/10"
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Node" type="Node" parent="UI" unique_id=1916013957]
+[node name="Popup" type="Control" parent="UI" unique_id=368777482]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="UI/Popup" unique_id=1576613548]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Caixa" type="Control" parent="UI/Popup" unique_id=591100668]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -605.0
+offset_top = -458.0
+offset_right = 195.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.503217, 1.503217)
+
+[node name="Borda" type="ColorRect" parent="UI/Popup/Caixa" unique_id=649948419]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frente" type="ColorRect" parent="UI/Popup/Caixa" unique_id=1981366201]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -395.0
+offset_top = -295.0
+offset_right = 395.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Baralho" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=554494018]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -790.0
+offset_bottom = -590.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=1358203392]
+layout_mode = 0
+offset_left = 156.99998
+offset_top = 27.999998
+offset_right = 1385.0
+offset_bottom = 1452.0
+scale = Vector2(0.34658924, 0.34658924)
+theme_override_constants/separation = 60
+alignment = 2
+
+[node name="Funcionarios" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer" unique_id=1711860394]
+layout_mode = 2
+
+[node name="HBoxContainer0" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=2040050004]
+layout_mode = 2
+
+[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=491065692]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=339758102]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=620458829]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=974996377]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=1232858502]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=1021983821]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=1971877372]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=197292474]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1455496247]
+layout_mode = 2
+
+[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=843657740]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1333703310]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1024813034]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1252341742]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=484329224]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1154596671]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1545348347]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1962656062]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1993412575]
+layout_mode = 2
+
+[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=390447450]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=1562929097]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=1114170452]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=1103492329]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=839146898]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=1726337265]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=337211681]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=941470708]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1113590819]
+layout_mode = 2
+
+[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=1927283062]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=67106988]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=896064986]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=191757787]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=372146710]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=16974219]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=1481764495]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=1001643232]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="Util" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer" unique_id=20877939]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer0" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util" unique_id=1588495838]
+layout_mode = 2
+
+[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=375871867]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=747331696]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=1270568145]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=732025893]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=573507827]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=2009673074]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=1326339703]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util" unique_id=463950174]
+layout_mode = 2
+
+[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=907325249]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=951722060]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=287092125]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=252252079]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=1348646288]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=66130928]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=281849122]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="Coringas" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer" unique_id=1764036416]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Coringas" unique_id=2117540684]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Coringas" unique_id=2018602024]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="Config" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=1465907675]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Opts" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Config" unique_id=975983641]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Resumir" type="Button" parent="UI/Popup/Caixa/Frente/Config/Opts" unique_id=673934809]
+layout_mode = 2
+text = "Resumir"
+
+[node name="Configuracoes" type="Button" parent="UI/Popup/Caixa/Frente/Config/Opts" unique_id=2033550911]
+layout_mode = 2
+text = "Configuracoes"
+
+[node name="Sair" type="Button" parent="UI/Popup/Caixa/Frente/Config/Opts" unique_id=1365055680]
+layout_mode = 2
+text = "Sair"
+
+[node name="Fechar" type="TextureButton" parent="UI/Popup/Caixa/Frente" unique_id=576078387]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -69.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 69.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_xffac")
+
+[node name="Cursor" type="Node" parent="UI" unique_id=1916013957]
 script = ExtResource("1_6vsh8")
 
-[node name="Cursor" type="TextureRect" parent="UI/Node" unique_id=17904996]
+[node name="Cursor" type="TextureRect" parent="UI/Cursor" unique_id=17904996]
 offset_right = 14.0
 offset_bottom = 17.94873
 texture = ExtResource("12_miicn")
+
+[connection signal="button_down" from="UI/PlayerSide/Baralho" to="UI" method="_on_baralho_button_down"]
+[connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
+[connection signal="button_down" from="UI/Popup/Caixa/Frente/Config/Opts/Resumir" to="UI" method="_on_resumir_button_down"]
+[connection signal="button_down" from="UI/Popup/Caixa/Frente/Config/Opts/Configuracoes" to="UI" method="_on_configuracoes_button_down"]
+[connection signal="button_down" from="UI/Popup/Caixa/Frente/Config/Opts/Sair" to="UI" method="_on_sair_button_down"]
+[connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]
