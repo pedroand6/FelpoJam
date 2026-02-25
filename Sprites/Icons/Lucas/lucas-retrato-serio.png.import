@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgua3yk8p2s86"
-path="res://.godot/imported/lucas-retrato-serio.png-6ac0e28ad994265d05f21f6d7adb2dfb.ctex"
+uid="uid://blvehsjx3d04q"
+path="res://.godot/imported/lucas-retrato-serio.png-b5fcb5010441fa79e51aaf7196097fab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Icons/Lucas/lucas-retrato-serio.png"
-dest_files=["res://.godot/imported/lucas-retrato-serio.png-6ac0e28ad994265d05f21f6d7adb2dfb.ctex"]
+source_file="res://Sprites/Icons/lucas/lucas-retrato-serio.png"
+dest_files=["res://.godot/imported/lucas-retrato-serio.png-b5fcb5010441fa79e51aaf7196097fab.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

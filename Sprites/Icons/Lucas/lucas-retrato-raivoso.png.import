@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk6y2ooanm2vh"
-path="res://.godot/imported/lucas-retrato-raivoso.png-9e42997954c2d8888d2de075e55c86b1.ctex"
+uid="uid://m3w5b3vpbeuq"
+path="res://.godot/imported/lucas-retrato-raivoso.png-8dbe82372528a002d0e84e7546acbc52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Icons/Lucas/lucas-retrato-raivoso.png"
-dest_files=["res://.godot/imported/lucas-retrato-raivoso.png-9e42997954c2d8888d2de075e55c86b1.ctex"]
+source_file="res://Sprites/Icons/lucas/lucas-retrato-raivoso.png"
+dest_files=["res://.godot/imported/lucas-retrato-raivoso.png-8dbe82372528a002d0e84e7546acbc52.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

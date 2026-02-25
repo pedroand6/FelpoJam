@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2v3k0p2lgatq"
-path="res://.godot/imported/gearIcon.png-4628d45c3573f2b5589be6443c4445ac.ctex"
+uid="uid://c6s5tjqpbwha6"
+path="res://.godot/imported/kenji-retrato-fase02.png-9682a8505cbd4be03bcb5fbeaf376dc4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/gearIcon.png"
-dest_files=["res://.godot/imported/gearIcon.png-4628d45c3573f2b5589be6443c4445ac.ctex"]
+source_file="res://Sprites/Icons/kenji/kenji-retrato-fase02.png"
+dest_files=["res://.godot/imported/kenji-retrato-fase02.png-9682a8505cbd4be03bcb5fbeaf376dc4.ctex"]
 
 [params]
 

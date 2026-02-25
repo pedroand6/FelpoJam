@@ -3,7 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_3j7i0"]
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
-[ext_resource type="Texture2D" uid="uid://coudofjsuxdvd" path="res://Assets/cursor.png" id="4_ronj5"]
+[ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/gutenberg/gutenberg-retrato-neutro.png" id="5_2dyg3"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
+[ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
+[ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="7_vf6ur"]
+[ext_resource type="Texture2D" uid="uid://do1r3gmeufmvt" path="res://Sprites/UI/icone-info.png" id="8_sjs8i"]
+[ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
+[ext_resource type="Texture2D" uid="uid://bqk1kjyeisknk" path="res://Sprites/UI/icone-contador-rodadas.png" id="8_vf6ur"]
+[ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Sprites/UI/cursor.png" id="12_miicn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
 size = Vector3(1.3, 3, 1.3)
@@ -15,7 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6255174)
 texture = ExtResource("1_3j7i0")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=222983965]
-transform = Transform3D(1, 0, 0, 0, 0.90266794, 0.43033782, 0, -0.43033782, 0.90266794, 0, 0.2422911, -0.39339817)
+transform = Transform3D(1, 0, 0, 0, 0.85714036, 0.51508296, 0, -0.51508296, 0.85714036, 0, 0.6514241, -0.21619591)
 
 [node name="3DUI" type="Node3D" parent="Camera3D" unique_id=1464908080]
 
@@ -23,16 +31,256 @@ transform = Transform3D(1, 0, 0, 0, 0.90266794, 0.43033782, 0, -0.43033782, 0.90
 script = ExtResource("1_xx3jy")
 
 [node name="Predio" type="MeshInstance3D" parent="." unique_id=381437484]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8373826, -1.642656)
+transform = Transform3D(1.6209993, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8373826, -1.642656)
 mesh = SubResource("BoxMesh_xx3jy")
 
 [node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
 transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.929937, 0, 0, 0)
 
-[node name="Node" type="Node" parent="." unique_id=1916013957]
+[node name="UI" type="CanvasLayer" parent="." unique_id=2016285213]
+follow_viewport_enabled = true
+
+[node name="PlayerSide" type="Control" parent="UI" unique_id=1181563155]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="UI/PlayerSide" unique_id=809352841]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_top = 48.0
+offset_right = -64.0
+offset_bottom = 240.0
+grow_horizontal = 0
+texture = ExtResource("6_rs6w2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Dinheiro" type="RichTextLabel" parent="UI/PlayerSide" unique_id=22941054]
+layout_mode = 0
+offset_left = -255.99994
+offset_top = 268.0
+offset_right = -63.99994
+offset_bottom = 309.0
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 36
+text = "R$ 100"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Carimbo" type="TextureRect" parent="UI/PlayerSide" unique_id=1554476515]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -173.99997
+offset_right = -35.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.75613844, 0.75613844)
+texture = ExtResource("1_3j7i0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Baralho" type="TextureButton" parent="UI/PlayerSide" unique_id=2082999607]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -255.99998
+offset_top = -304.0
+offset_right = -2.2878265
+offset_bottom = 53.679688
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.75613844, 0.75613844)
+tooltip_text = "Baralho"
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_81bno")
+texture_normal = ExtResource("1_3j7i0")
+stretch_mode = 4
+
+[node name="DescarteBtn" type="TextureButton" parent="UI/PlayerSide" unique_id=46986098]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = 139.0
+offset_right = -87.0
+offset_bottom = 203.0
+grow_horizontal = 0
+grow_vertical = 2
+tooltip_text = "Descarte"
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_81bno")
+texture_normal = ExtResource("7_vf6ur")
+stretch_mode = 4
+
+[node name="Descartes" type="RichTextLabel" parent="UI/PlayerSide/DescarteBtn" unique_id=826404148]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -8.0
+offset_bottom = 64.0
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 48
+text = "04"
+vertical_alignment = 1
+
+[node name="EnemySide" type="Control" parent="UI" unique_id=467488028]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="UI/EnemySide" unique_id=231972831]
+layout_mode = 1
+offset_left = 64.0
+offset_top = 48.0
+offset_right = 256.0
+offset_bottom = 240.0
+texture = ExtResource("5_2dyg3")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Dinheiro" type="RichTextLabel" parent="UI/EnemySide" unique_id=1205006396]
+layout_mode = 1
+offset_left = 64.0
+offset_top = 268.0
+offset_right = 256.0
+offset_bottom = 309.0
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 36
+text = "R$ 100"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Carimbo" type="TextureRect" parent="UI/EnemySide" unique_id=1057585468]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 83.00001
+offset_top = -179.0
+offset_right = 275.0
+offset_bottom = 13.0
+grow_vertical = 2
+scale = Vector2(0.75613844, 0.75613844)
+texture = ExtResource("1_3j7i0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ConfigBtn" type="TextureButton" parent="UI/EnemySide" unique_id=1420037859]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 166.0
+offset_top = -112.0
+offset_right = 230.0
+offset_bottom = -48.0
+grow_vertical = 0
+tooltip_text = "Configurações"
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_81bno")
+texture_normal = ExtResource("8_t3l48")
+stretch_mode = 4
+
+[node name="InfoBtn" type="TextureButton" parent="UI/EnemySide" unique_id=1640615428]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 86.0
+offset_top = -112.0
+offset_right = 150.0
+offset_bottom = -48.0
+grow_vertical = 0
+tooltip_text = "Informações"
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_81bno")
+texture_normal = ExtResource("8_sjs8i")
+stretch_mode = 4
+
+[node name="Prancheta" type="TextureButton" parent="UI/EnemySide" unique_id=826628172]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 82.0
+offset_top = -376.0
+offset_right = 283.0214
+offset_bottom = -71.22064
+grow_vertical = 0
+scale = Vector2(0.75613844, 0.75613844)
+tooltip_text = "Combos e Cargos"
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_81bno")
+texture_normal = ExtResource("1_3j7i0")
+stretch_mode = 4
+
+[node name="RoundIcon" type="TextureRect" parent="UI" unique_id=1717510335]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 28.0
+offset_right = 24.0
+offset_bottom = 76.0
+grow_horizontal = 2
+texture = ExtResource("8_vf6ur")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="RodadaText" type="RichTextLabel" parent="UI" unique_id=1754639960]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.44678
+offset_top = 88.0
+offset_right = 76.997925
+offset_bottom = 112.296875
+grow_horizontal = 2
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 20
+text = "Rodadas"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="RodadaContador" type="RichTextLabel" parent="UI" unique_id=151543633]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_top = 118.0
+offset_right = 69.57764
+offset_bottom = 158.0
+grow_horizontal = 2
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 36
+text = "01/10"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Node" type="Node" parent="UI" unique_id=1916013957]
 script = ExtResource("1_6vsh8")
 
-[node name="Cursor" type="TextureRect" parent="Node" unique_id=17904996]
+[node name="Cursor" type="TextureRect" parent="UI/Node" unique_id=17904996]
 offset_right = 14.0
 offset_bottom = 17.94873
-texture = ExtResource("4_ronj5")
+texture = ExtResource("12_miicn")

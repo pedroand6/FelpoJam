@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t3jia8v0nw8y"
-path="res://.godot/imported/lucas-retrato-indignado.png-9ee322b693da78cda36059ccdbc521ee.ctex"
+uid="uid://c2sltdxgomcib"
+path="res://.godot/imported/lucas-retrato-indignado.png-396e200bbd3943a6edbf9ffc0626266b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Icons/Lucas/lucas-retrato-indignado.png"
-dest_files=["res://.godot/imported/lucas-retrato-indignado.png-9ee322b693da78cda36059ccdbc521ee.ctex"]
+source_file="res://Sprites/Icons/lucas/lucas-retrato-indignado.png"
+dest_files=["res://.godot/imported/lucas-retrato-indignado.png-396e200bbd3943a6edbf9ffc0626266b.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

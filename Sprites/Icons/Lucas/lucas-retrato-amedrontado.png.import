@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwwp3iycgsi4t"
-path="res://.godot/imported/lucas-retrato-amedrontado.png-ee1873c67bd691fef731b5902d893f4c.ctex"
+uid="uid://cq6244a8aiys1"
+path="res://.godot/imported/lucas-retrato-amedrontado.png-9565a1814f54643f908e739487548cf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Icons/Lucas/lucas-retrato-amedrontado.png"
-dest_files=["res://.godot/imported/lucas-retrato-amedrontado.png-ee1873c67bd691fef731b5902d893f4c.ctex"]
+source_file="res://Sprites/Icons/lucas/lucas-retrato-amedrontado.png"
+dest_files=["res://.godot/imported/lucas-retrato-amedrontado.png-9565a1814f54643f908e739487548cf2.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

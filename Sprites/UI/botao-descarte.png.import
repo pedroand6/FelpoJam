@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cec7ta85itm5o"
-path="res://.godot/imported/continueBtn.png-5fbcfe1fcf095c9c370a979f6642c847.ctex"
+uid="uid://dpcjcclbydoro"
+path="res://.godot/imported/botao-descarte.png-d7fe5c2afd272093b5f9ff93c378aa76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/continueBtn.png"
-dest_files=["res://.godot/imported/continueBtn.png-5fbcfe1fcf095c9c370a979f6642c847.ctex"]
+source_file="res://Sprites/UI/botao-descarte.png"
+dest_files=["res://.godot/imported/botao-descarte.png-d7fe5c2afd272093b5f9ff93c378aa76.ctex"]
 
 [params]
 
