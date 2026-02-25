@@ -16,7 +16,7 @@ var controle: bool = false
 
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(load("res://Assets/cursor.png"))
-	Input.set_custom_mouse_cursor(load("res://Assets/cursor-clicavel.png"), 2)
+	Input.set_custom_mouse_cursor(load("res://Assets/cursor-clicavel.png"), Input.CURSOR_POINTING_HAND)
 	get_viewport().size_changed.connect(_viewport_update_size)
 	_viewport_update_size()
 	cursor.position = get_viewport().get_mouse_position()

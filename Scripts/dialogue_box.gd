@@ -16,10 +16,6 @@ var textoAnimando = false
 func _ready() -> void:
 	dialogueBtn.grab_focus()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func mostra_texto(dialogoInfo: Dictionary) -> void:
 	dialogoObj.text = "[jump_effect]" + dialogoInfo["texto"]
 	iconObj.texture = load("res://Sprites/Icons/%s/%s-retrato-%s.png" % [dialogoInfo["nome"], \

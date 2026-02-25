@@ -45,6 +45,13 @@ func passa_dialogo() -> void:
 	dialogoAtual += 1
 	if dialogoAtual >= len(dialogos[nomeCena][cenaAtual]):
 		if cenaAtual + 1 >= len(dialogos[nomeCena]):
+			var root = get_tree().get_root()
+			var novel = root.get_node("Visual Novel")
+			root.remove_child(novel)
+			novel.call_deferred("free")
+			var escritorio_res = load("res://Scenes/escritorio.tscn")
+			var escritorio = escritorio_res.instantiate()
+			root.add_child(escritorio)
 			return
 		
 		dialogoAtual = 0
@@ -60,3 +67,19 @@ func atualiza_cena():
 
 func _on_dialogue_btn_button_down() -> void:
 	passa_dialogo()
+
+
+
+#Settings code
+
+func _on_config_btn_button_down() -> void:
+	%Popup.show()
+
+func _on_resumir_button_down() -> void:
+	_on_fechar_button_down()
+
+func _on_fechar_button_down() -> void:
+	%Popup.hide()
+
+func _on_sair_button_down() -> void:
+	get_tree().quit()
