@@ -174,7 +174,7 @@ func _input(event: InputEvent) -> void:
 			mover_atacar()
 		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and not bloqueada_player:
 			insert_cartas_player()
-		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and mouse_on and not bloqueada_player and Gerenciador.movimentos_restantes > 0:
+		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and mouse_on and not bloqueada_player and Gerenciador.movimentos_restantes > 0 and dono == Players.JOGADOR:
 			if Gerenciador.sala_selecionada == self:
 				deselecionar()
 				return
@@ -191,9 +191,9 @@ func mover_atacar():
 		if pontuacao < selecionada.pontuacao: #perdeu
 			match selecionada.dono:
 				Players.JOGADOR:
-					bloqueada_player = true
-				Players.IA:
 					bloqueada_ia = true
+				Players.IA:
+					bloqueada_player = true
 					
 			demissao_geral()
 		Gerenciador.movimentos_restantes = 0
@@ -247,8 +247,6 @@ func open_room():
 
 func insert_cartas_player():
 	if dono == Players.IA: return #avisar jogador
-	if len(Gerenciador.salas_jogadas) >= 2 and id not in Gerenciador.salas_jogadas.keys():
-		return #avisar jogador
 		
 	var quantFunc = 0
 	var quantDemanda = 0
@@ -261,13 +259,19 @@ func insert_cartas_player():
 			quantFunc += 1
 		else:
 			quantDemanda += 1
+			
+	if len(Gerenciador.salas_jogadas) >= 2 and id not in Gerenciador.salas_jogadas.keys() \
+		and quantFunc > 0:
+		return #avisar jogador
 	
 	if quantFunc + len(funcionarios) > 4: return #avisar jogador
 	if quantDemanda + len(demandas) > 3: return #avisar jogador
 	if quantDemanda > 0 and len(funcionarios) <= 0: return #avisar jogador
 	if custo > Gerenciador.jogador_dinheiro: return #avisar jogador
 	
-	Gerenciador.salas_jogadas[id] = self
+	if quantFunc > 0:
+		Gerenciador.salas_jogadas[id] = self
+		
 	Gerenciador.jogador_dinheiro -= custo
 	
 	for carta in Gerenciador.cartas_selecionadas:

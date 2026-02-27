@@ -49,7 +49,7 @@ func avalia_estado(salas_atuais: Array[Sala], dinheiro: int, mao: Array[Contrato
 			if contrato.cargo == 0 or contrato.cargo == 9:
 				pot_mao += 20 # aqui aumenta bastante pra coringas
 			elif contrato.tipo == Contrato.Tipos.DEMANDA:
-				pot_mao += 5
+				pot_mao += 10
 			   
 	return float(dinheiro) + lucro_projetado + valor_presente + pot_salas + pot_mao
 
@@ -143,8 +143,8 @@ func avalia_descartes(descartes_feitos):
 		if Gerenciador.IA_dinheiro < carta.custo:
 			sinergia -= 20
 			
-		if num_demandas > 2 or Gerenciador.IA_dinheiro < 30 and carta.tipo == Contrato.Tipos.DEMANDA:
-			sinergia -= 5
+		if num_demandas > 3 or Gerenciador.IA_dinheiro < 30 and carta.tipo == Contrato.Tipos.DEMANDA:
+			sinergia -= 3
 		
 		for sala in salas_ia:
 			for fun in sala.funcionarios:
@@ -209,10 +209,7 @@ func joga_cartas(salas_jogadas):
 								best_q = q
 								best_action = {"carta": carta, "sala": sala}
 								
-						elif carta.tipo == Contrato.Tipos.DEMANDA and len(sala.demandas) < 3:
-							if len(salas_jogadas) >= 2 and not sala.id in salas_jogadas:
-								continue
-							
+						elif carta.tipo == Contrato.Tipos.DEMANDA and len(sala.demandas) < 3:							
 							sala.demandas.append(carta)
 							
 							var mao_sim = ia_mao.duplicate()
@@ -224,7 +221,7 @@ func joga_cartas(salas_jogadas):
 							if q > best_q + 0.1:
 								best_q = q
 								best_action = {"carta": carta, "sala": sala}
-		if best_action != null:
+		if best_action != null and not best_action.sala.bloqueada_ia:
 			var carta = best_action.carta
 			var sala = best_action.sala
 			
@@ -235,6 +232,7 @@ func joga_cartas(salas_jogadas):
 				ia_mao.erase(carta)
 				Gerenciador.ia_baralho.erase(carta)
 				Gerenciador.ia_baralho_pego.append(carta)
+				salas_jogadas[sala.id] = true
 			else:
 				sala.demandas.append(carta)
 				Gerenciador.IA_dinheiro -= carta.custo
@@ -242,7 +240,6 @@ func joga_cartas(salas_jogadas):
 				Gerenciador.ia_baralho.erase(carta)
 				Gerenciador.ia_baralho_pego.append(carta)
 				
-			salas_jogadas[sala.id] = true
 			print("IA jogou ", carta.nome, " na sala ", sala.id)
 			emit_signal("acao_concluida")
 			

@@ -9,7 +9,8 @@
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://c552o6y1fotlg" path="res://Sprites/salaslayout.png" id="5_cuipy"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
@@ -24,12 +25,12 @@
 [ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="13_aafqm"]
 [ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="17_aa28w"]
 [ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="19_nt0tj"]
-[ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="19_v1qyb"]
+[ext_resource type="Script" path="res://Scripts/baralho.gd" id="19_v1qyb"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
-[ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="26_v1qyb"]
+[ext_resource type="Script" path="res://Scripts/dialog.gd" id="28_v1qyb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
 size = Vector3(1.3, 3, 1.3)
@@ -37,6 +38,7 @@ size = Vector3(1.3, 3, 1.3)
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
 script = ExtResource("9_7sov5")
 metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67vox"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -64,48 +66,53 @@ transform = Transform3D(1, 0, 0, 0, 0.85714036, 0.51508296, 0, -0.51508296, 0.85
 script = ExtResource("1_xx3jy")
 
 [node name="Predio" type="MeshInstance3D" parent="." unique_id=381437484]
-transform = Transform3D(1.6209993, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8373826, -1.642656)
+transform = Transform3D(1.7907125, 0, 0, 0, 1, 0, 0, 0, 0.83196807, 0.016177356, -1.8373826, -1.64209)
 mesh = SubResource("BoxMesh_xx3jy")
 
 [node name="Salas" type="Node3D" parent="." unique_id=1069345903]
 
+[node name="Sprite3D" type="Sprite3D" parent="Salas" unique_id=400078780]
+transform = Transform3D(0.17785315, 0, 0, 0, 1, 0, 0, 0, 0.17785315, 0.014788084, -0.33468747, -1.6524308)
+axis = 1
+texture = ExtResource("5_cuipy")
+
 [node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.2828626, 0, 0, 0, 1, 0, 0, 0, 0.2828626, -0.7374354, -0.32901675, -1.9394796)
+transform = Transform3D(0.2828626, 0, 0, 0, 1, 0, 0, 0, 0.2828626, -0.91193396, -0.32901675, -1.897177)
 id = 1
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala5")]
 
 [node name="Sala2" parent="Salas" unique_id=184202739 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.37481305, 0, 0, 0, 1, 0, 0, 0, 0.37481305, -0.23570052, -0.32901675, -1.8830372)
+transform = Transform3D(0.37481305, 0, 0, 0, 1, 0, 0, 0, 0.27199626, -0.48422876, -0.32901675, -1.9041888)
 id = 2
 vizinhos = [NodePath("../Sala1"), NodePath("../Sala6"), NodePath("../Sala3")]
 
 [node name="Sala3" parent="Salas" unique_id=813707592 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.2960657, 0, 0, 0, 1, 0, 0, 0, 0.4564792, 0.2456457, -0.32901675, -1.8234073)
+transform = Transform3D(0.37687138, 0, 0, 0, 1, 0, 0, 0, 0.29664645, 0.018268526, -0.32901675, -1.8974369)
 id = 3
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala7"), NodePath("../Sala4")]
 
 [node name="Sala4" parent="Salas" unique_id=1730815094 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.24549578, 0.69948107, -0.32901675, -1.9581622)
+transform = Transform3D(0.42120755, 0, 0, 0, 1, 0, 0, 0, 0.27816495, 0.55670935, -0.32901675, -1.8999962)
 id = 4
 vizinhos = [NodePath("../Sala3"), NodePath("../Sala8")]
 
 [node name="Sala5" parent="Salas" unique_id=2107717327 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.41790602, -0.70542467, -0.32901675, -1.4460622)
+transform = Transform3D(0.28980595, 0, 0, 0, 1, 0, 0, 0, 0.3743199, -0.91165006, -0.32901675, -1.483077)
 id = 5
 vizinhos = [NodePath("../Sala1"), NodePath("../Sala6")]
 
 [node name="Sala6" parent="Salas" unique_id=231385432 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.34505248, -0.23375368, -0.32901675, -1.4022642)
+transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.34505248, -0.4822818, -0.32901675, -1.476294)
 id = 6
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala5"), NodePath("../Sala7")]
 
 [node name="Sala7" parent="Salas" unique_id=993016474 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.39828414, 0, 0, 0, 1, 0, 0, 0, 0.24601866, 0.28171527, -0.32901675, -1.3348826)
+transform = Transform3D(0.39042538, 0, 0, 0, 1, 0, 0, 0, 0.34310853, 0.04905069, -0.32901675, -1.4776541)
 id = 7
 vizinhos = [NodePath("../Sala3"), NodePath("../Sala8"), NodePath("../Sala6")]
 
 [node name="Sala8" parent="Salas" unique_id=2111903035 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.278125, 0, 0, 0, 1, 0, 0, 0, 0.43803912, 0.7432791, -0.32901675, -1.4595386)
+transform = Transform3D(0.380163, 0, 0, 0, 1, 0, 0, 0, 0.3567086, 0.53705376, -0.32901675, -1.4754021)
 id = 8
 vizinhos = [NodePath("../Sala4"), NodePath("../Sala7")]
 
