@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfsx7tpk6r2nt"
-path="res://.godot/imported/1.jpg-b4e4835e21c420f8d7150892b0792ec7.ctex"
+uid="uid://cupr2252ugaq8"
+path="res://.godot/imported/carta6.png-2e03746dd53ab73961982cf6dc09255a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogues/Cena1/1.jpg"
-dest_files=["res://.godot/imported/1.jpg-b4e4835e21c420f8d7150892b0792ec7.ctex"]
+source_file="res://Sprites/Cartas/RH/carta6.png"
+dest_files=["res://.godot/imported/carta6.png-2e03746dd53ab73961982cf6dc09255a.ctex"]
 
 [params]
 

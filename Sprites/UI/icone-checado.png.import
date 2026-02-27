@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cpixctjxb0aug"
+=======
+uid="uid://b03itqn2w0jck"
+>>>>>>> 377923963eafe3cdf3db14b99b4459c9a8bcb95b
 path="res://.godot/imported/icone-checado.png-f791acd87f8594dca51b0ff7498e2159.ctex"
 metadata={
 "vram_texture": false
