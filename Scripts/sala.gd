@@ -1,4 +1,5 @@
 extends Node3D
+class_name Sala
 
 enum Players {
 	JOGADOR = 0,
@@ -6,11 +7,14 @@ enum Players {
 	NENHUM = 2
 }
 
+@export var vizinhos : Array[Sala]
 @onready var borda = $Borda
+@onready var borda2 = $Borda2
 var mouse_on := false
 
 var dono : Players = Players.NENHUM
-var bloqueada : bool = false
+var bloqueada_ia : bool = false
+var bloqueada_player : bool = false
 
 var funcionarios : Array[Contrato]
 var demandas : Array[Contrato]
@@ -147,21 +151,73 @@ var multiplicador := 1
 var incrementador := 0
 var pontuacao := 0
 
+@onready var root = $"../.."
 @onready var mao = $"../../Camera3D/3DUI/Mao"
 @onready var escritorio = $"../.."
 @onready var ui = $"../../UI"
 @onready var dinheiro: PackedScene = load("res://Scenes/dinheiro.tscn")
 
+var selecionada : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Gerenciador.comeca_turno.connect(implementa_pontos)
+	root.passou_turno.connect(turno_ia)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and Gerenciador.sala_selecionada == null:
 			open_room()
-		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and not bloqueada:
+		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and Gerenciador.sala_selecionada in vizinhos:
+			mover_atacar()
+		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and not bloqueada_player:
 			insert_cartas_player()
+		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and mouse_on and not bloqueada_player and Gerenciador.movimentos_restantes > 0:
+			if Gerenciador.sala_selecionada == self:
+				deselecionar()
+				return
+			elif Gerenciador.sala_selecionada != null:
+				Gerenciador.sala_selecionada.deselecionar()
+				
+			Gerenciador.sala_selecionada = self
+			selecionada = true
+			borda2.show()
+			
+func mover_atacar():
+	var selecionada = Gerenciador.sala_selecionada
+	if len(funcionarios) > 0 and selecionada.dono != dono: #ataque
+		if pontuacao < selecionada.pontuacao: #perdeu
+			match selecionada.dono:
+				Players.JOGADOR:
+					bloqueada_player = true
+				Players.IA:
+					bloqueada_ia = true
+					
+			demissao_geral()
+		Gerenciador.movimentos_restantes = 0
+	elif len(funcionarios) == 0 and len(selecionada.funcionarios) > 0: #movimento
+		funcionarios = Gerenciador.sala_selecionada.funcionarios.duplicate(true)
+		Gerenciador.sala_selecionada.demissao_geral()
+		Gerenciador.movimentos_restantes = 0
+		Gerenciador.sala_selecionada.calcula_pontos()
+		calcula_pontos()
+		
+	Gerenciador.sala_selecionada.deselecionar()
+	
+func deselecionar():
+	Gerenciador.sala_selecionada = null
+	selecionada = false
+	borda2.hide()
+	
+func turno_ia():
+	bloqueada_player = false
+	
+func demissao_geral():
+	funcionarios.clear()
+	dono = Players.NENHUM
+	
+	if ui.sala_menu.visible:
+		open_room()
 
 func open_room():
 	var func_imagens = []
@@ -185,7 +241,7 @@ func open_room():
 		Players.NENHUM:
 			donoSala = "Sala sem dono"
 	
-	ui.show_sala(donoSala, pontuacao)
+	ui.show_sala(donoSala, pontuacao, self)
 
 func insert_cartas_player():
 	if dono == Players.IA: return #avisar jogador
@@ -237,6 +293,8 @@ func calcula_pontos():
 	pontuacao = multiplicador * incrementador
 
 func implementa_pontos():
+	Gerenciador.movimentos_restantes = 1
+	bloqueada_ia = false
 	match dono:
 		Players.JOGADOR:
 			Gerenciador.jogador_dinheiro += int(pontuacao / 2)

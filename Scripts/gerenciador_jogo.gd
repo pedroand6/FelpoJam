@@ -66,6 +66,8 @@ var jogador_carimbo : Carimbos
 var round : int = 1
 var turno : int = JOGADOR
 var descartes_restantes : int = 4
+var movimentos_restantes : int = 1
+var sala_selecionada : Sala = null
 
 var cena: int = 1 #quando acaba uma cena, atualiza ++
 

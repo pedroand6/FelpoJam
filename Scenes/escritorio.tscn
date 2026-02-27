@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b2783c0txy7nn" path="res://Sprites/Cartas/Financeiro/1-fin-estagiario.png" id="19_qqx3n"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
+[ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
 size = Vector3(1.3, 3, 1.3)
@@ -52,29 +53,37 @@ mesh = SubResource("BoxMesh_xx3jy")
 
 [node name="Salas" type="Node3D" parent="." unique_id=1069345903]
 
-[node name="Sala1" parent="Salas" unique_id=6546393 instance=ExtResource("3_bnfms")]
+[node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.2828626, 0, 0, 0, 1, 0, 0, 0, 0.2828626, -0.7374354, -0.32901675, -1.9394796)
+vizinhos = [NodePath("../Sala2"), NodePath("../Sala5")]
 
-[node name="Sala2" parent="Salas" unique_id=184202739 instance=ExtResource("3_bnfms")]
+[node name="Sala2" parent="Salas" unique_id=184202739 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.37481305, 0, 0, 0, 1, 0, 0, 0, 0.37481305, -0.23570052, -0.32901675, -1.8830372)
+vizinhos = [NodePath("../Sala1"), NodePath("../Sala6"), NodePath("../Sala3")]
 
-[node name="Sala3" parent="Salas" unique_id=813707592 instance=ExtResource("3_bnfms")]
+[node name="Sala3" parent="Salas" unique_id=813707592 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.2960657, 0, 0, 0, 1, 0, 0, 0, 0.4564792, 0.2456457, -0.32901675, -1.8234073)
+vizinhos = [NodePath("../Sala2"), NodePath("../Sala7"), NodePath("../Sala4")]
 
-[node name="Sala4" parent="Salas" unique_id=1730815094 instance=ExtResource("3_bnfms")]
+[node name="Sala4" parent="Salas" unique_id=1730815094 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.24549578, 0.69948107, -0.32901675, -1.9581622)
+vizinhos = [NodePath("../Sala3"), NodePath("../Sala8")]
 
-[node name="Sala5" parent="Salas" unique_id=2107717327 instance=ExtResource("3_bnfms")]
+[node name="Sala5" parent="Salas" unique_id=2107717327 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.41790602, -0.70542467, -0.32901675, -1.4460622)
+vizinhos = [NodePath("../Sala1"), NodePath("../Sala6")]
 
-[node name="Sala6" parent="Salas" unique_id=231385432 instance=ExtResource("3_bnfms")]
+[node name="Sala6" parent="Salas" unique_id=231385432 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.34505248, -0.23375368, -0.32901675, -1.4022642)
+vizinhos = [NodePath("../Sala2"), NodePath("../Sala5"), NodePath("../Sala7")]
 
-[node name="Sala7" parent="Salas" unique_id=993016474 instance=ExtResource("3_bnfms")]
+[node name="Sala7" parent="Salas" unique_id=993016474 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.39828414, 0, 0, 0, 1, 0, 0, 0, 0.24601866, 0.28171527, -0.32901675, -1.3348826)
+vizinhos = [NodePath("../Sala3"), NodePath("../Sala8"), NodePath("../Sala6")]
 
-[node name="Sala8" parent="Salas" unique_id=2111903035 instance=ExtResource("3_bnfms")]
+[node name="Sala8" parent="Salas" unique_id=2111903035 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.278125, 0, 0, 0, 1, 0, 0, 0, 0.43803912, 0.7432791, -0.32901675, -1.4595386)
+vizinhos = [NodePath("../Sala4"), NodePath("../Sala7")]
 
 [node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
 transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.929937, 0, 0, 0)
@@ -847,21 +856,36 @@ fit_content = true
 
 [node name="Produtividade" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala" unique_id=392307862]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -275.07675
-offset_top = 224.16629
-offset_right = 275.07675
-offset_bottom = 264.1663
-grow_horizontal = 2
+offset_left = -355.3861
+offset_top = 225.49677
+offset_right = 95.64664
+offset_bottom = 265.49677
 grow_vertical = 0
 theme = ExtResource("7_81bno")
 theme_override_font_sizes/normal_font_size = 30
 text = "Produtividade"
-horizontal_alignment = 1
+
+[node name="Demissao" type="Button" parent="UI/Popup/Caixa/Frente/Sala" unique_id=1141098046]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.59097
+offset_top = 225.4968
+offset_right = 321.59457
+offset_bottom = 266.14246
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/font_size = 20
+text = "Demissão Geral"
+icon = ExtResource("24_ac8jf")
 
 [node name="Fechar" type="TextureButton" parent="UI/Popup/Caixa/Frente" unique_id=576078387]
 layout_mode = 1
@@ -890,4 +914,5 @@ texture = ExtResource("12_miicn")
 [connection signal="button_down" from="UI/PlayerSide/PularBtn" to="." method="_on_pular_btn_button_down"]
 [connection signal="button_down" from="UI/PlayerSide/DescarteBtn" to="Camera3D/3DUI/Mao" method="_on_descarte_btn_button_down"]
 [connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
+[connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="UI" method="_on_demissao_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]

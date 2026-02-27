@@ -16,6 +16,13 @@ visible = false
 axis = 1
 texture = ExtResource("2_uhgjh")
 
+[node name="Borda2" type="Sprite3D" parent="." unique_id=584597167]
+transform = Transform3D(0.8823402, 0, 0, 0, 1, 0, 0, 0, 0.6582373, 0, 0, 0)
+visible = false
+modulate = Color(0.7753817, 0.009869451, 0.13708174, 1)
+axis = 1
+texture = ExtResource("2_uhgjh")
+
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=224202844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1920929e-07, 0)
 axis = 1

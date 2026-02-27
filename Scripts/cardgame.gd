@@ -10,6 +10,7 @@ const IA = 1
 @onready var ia = $Inimigo
 
 signal cartas_prontas
+signal passou_turno
 
 func _ready() -> void:
 	Gerenciador.ia_carimbo = ia_carimbo
@@ -22,6 +23,7 @@ func passa_round():
 	
 func passa_turno(player : int):
 	if player == JOGADOR:
+		passou_turno.emit()
 		Gerenciador.turno = IA
 		ia.jogada()
 	else: 

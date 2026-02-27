@@ -77,10 +77,13 @@ func _on_area_3d_mouse_entered() -> void:
 		set_positions()
 		canAnimate = true
 		
-	destination = originalPos + transform.basis.y.normalized() * 0.015 + transform.basis.z.normalized() * 0.01
+	destination = originalPos + transform.basis.y.normalized() * 0.015
+	imagem_func.render_priority = 1
+	imagem_util.render_priority = 1
 
 func _on_area_3d_mouse_exited() -> void:
 	mouse_on = false
 	scale /= 1.25
 	if chosen == false: destination = originalPos
-	
+	imagem_func.render_priority = 0
+	imagem_util.render_priority = 0

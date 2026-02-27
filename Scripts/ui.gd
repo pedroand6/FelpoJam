@@ -13,6 +13,7 @@ const TRUTH: bool = true
 @export var sala_cartas : Array[TextureRect]
 @export var sala_util : Array[RichTextLabel]
 @export var sala_combo : Array[RichTextLabel]
+var sala : Sala
 
 @onready var round_counter := $RodadaContador
 @onready var descarte_counter := $PlayerSide/DescarteBtn/Descartes
@@ -39,14 +40,20 @@ func _on_config_btn_button_down() -> void:
 	config_menu.show()
 	config_show = true
 	
-func show_sala(dono, prod) -> void:
+func show_sala(dono, prod, thisSala) -> void:
+	sala = thisSala
 	popup_bg.show()
 	sala_menu.show()
 	donoTxt.text = dono
-	produtividadeTxt.text = "Produtividade: " + str(prod)
+	if dono == "Sala inimiga":
+		produtividadeTxt.text = "Produtividade: ???"
+	else:
+		produtividadeTxt.text = "Produtividade: " + str(prod)
 	sala_show = true
 	
 func set_cartas(imagens):
+	if len(imagens) <= 0: hide_cartas()
+	
 	for i in range(0, len(imagens)):
 		sala_cartas[i].texture = imagens[i]
 		sala_cartas[i].show()
@@ -92,3 +99,9 @@ func _on_fechar_button_down() -> void:
 			hide_util()
 		_:
 			pass
+
+
+func _on_demissao_button_down() -> void:
+	sala.demissao_geral()
+	sala.calcula_pontos()
+	sala.open_room()
