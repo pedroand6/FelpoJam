@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dio6ew8sdrk8k" path="res://Audio/SFX/Writing/tecla longa 2 efeito.wav" id="11_elxfw"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="12_23fmf"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="13_23fmf"]
-[ext_resource type="Texture2D" uid="uid://duk1ai68vsaya" path="res://Sprites/UI/icone-fechar.png" id="14_72pgp"]
+[ext_resource type="Texture2D" uid="uid://bh041yn0op4xd" path="res://Sprites/UI/icone-fechar.png" id="14_72pgp"]
 [ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="14_elxfw"]
 [ext_resource type="AudioStream" uid="uid://dwbpvxesxhcen" path="res://Audio/Msc/journey nada safe.mp3" id="16_16mgg"]
 

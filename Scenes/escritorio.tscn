@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="13_aafqm"]
 [ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="17_aa28w"]
 [ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="19_nt0tj"]
+[ext_resource type="Texture2D" uid="uid://cm3cps7c1qnwt" path="res://Sprites/Cartas/Financeiro/1-fin-estagiario.png" id="19_qqx3n"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://fqahw1kjeohb" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 
@@ -423,7 +424,7 @@ layout_mode = 2
 
 [node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=491065692]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
+texture = ExtResource("19_qqx3n")
 
 [node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=339758102]
 layout_mode = 2

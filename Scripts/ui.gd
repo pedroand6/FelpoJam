@@ -3,7 +3,6 @@ extends CanvasLayer
 const TRUTH: bool = true
 
 @onready var popup_bg := %Popup
-@onready var popup_box := $Popup/Caixa
 @onready var baralho_list := $Popup/Caixa/Frente/Baralho
 @onready var config_menu := $Popup/Caixa/Frente/Config
 @onready var sala_menu := $Popup/Caixa/Frente/Sala
@@ -32,19 +31,16 @@ func _process(delta: float) -> void:
 
 func _on_baralho_button_down() -> void:
 	popup_bg.show()
-	popup_box.show()
 	baralho_list.show()
 	baralho_show = true
 
 func _on_config_btn_button_down() -> void:
 	popup_bg.show()
-	popup_box.show()
 	config_menu.show()
 	config_show = true
 	
 func show_sala(dono, prod) -> void:
 	popup_bg.show()
-	popup_box.show()
 	sala_menu.show()
 	donoTxt.text = dono
 	produtividadeTxt.text = "Produtividade: " + str(prod)
@@ -58,9 +54,9 @@ func set_cartas(imagens):
 func set_utilitarios(utils):
 	for i in range(0, len(utils)):
 		sala_util[i].text = utils[i]
-		
-func set_combo(name, desc):
-	sala_combo[0].text = name
+
+func set_combo(nome, desc):
+	sala_combo[0].text = nome
 	sala_combo[1].text = desc
 
 func _on_resumir_button_down() -> void:
@@ -74,7 +70,6 @@ func _on_sair_button_down() -> void:
 
 func _on_fechar_button_down() -> void:
 	popup_bg.hide()
-	popup_box.hide()
 	match TRUTH:
 		baralho_show:
 			baralho_show = false

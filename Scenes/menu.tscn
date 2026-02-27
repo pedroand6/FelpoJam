@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dw5ip70y6s6l5" path="res://Audio/SFX/DIMINUIR VOLUME MENU.wav" id="3_158mb"]
 [ext_resource type="AudioStream" uid="uid://bkb5eqblh0efm" path="res://Audio/SFX/AUMENTAR VOLUME MENU.wav" id="4_wwsa2"]
 [ext_resource type="AudioStream" uid="uid://c1oiskd0i3wam" path="res://Audio/SFX/BOTÃO DE PLAY.wav" id="5_wwsa2"]
-[ext_resource type="Script" uid="uid://bvrlifwywa4j" path="res://Scenes/fade_out.gd" id="6_jsrd8"]
+[ext_resource type="Script" uid="uid://bvrlifwywa4j" path="res://Scripts/fade_out.gd" id="6_jsrd8"]
 [ext_resource type="AudioStream" uid="uid://c4sx6oadwm40a" path="res://Audio/Msc/soletrando cartas.mp3" id="7_wbdvm"]
 
 [node name="Menu" type="Control" unique_id=1527680893]
@@ -31,8 +31,8 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 47.0
 offset_top = -72.0
-offset_right = 232.0
-offset_bottom = 72.0
+offset_right = 408.00696
+offset_bottom = 209.0
 grow_vertical = 2
 theme_override_constants/separation = 24
 
@@ -41,6 +41,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 32
 text = "Jogar"
 flat = true
 alignment = 0
@@ -50,6 +51,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 32
 text = "Configurações"
 flat = true
 alignment = 0
@@ -59,6 +61,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 32
 text = "Sair"
 flat = true
 alignment = 0
@@ -70,9 +73,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 39.0
-offset_top = -119.0
-offset_right = 180.0
-offset_bottom = 119.0
+offset_top = -150.0
+offset_right = 223.0
+offset_bottom = 150.0
 grow_vertical = 2
 theme_override_constants/separation = 32
 
@@ -85,6 +88,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Opts/Volume/VBoxContainer" unique_id=916694111]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Volume"
 
 [node name="HSlider" type="HSlider" parent="Opts/Volume/VBoxContainer" unique_id=1724668216]
@@ -102,6 +106,7 @@ theme = ExtResource("1_1rerr")
 
 [node name="Label" type="Label" parent="Opts/VBoxContainer0" unique_id=596721990]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "Tela Cheia "
 
 [node name="CheckCheia" type="CheckBox" parent="Opts/VBoxContainer0" unique_id=393115234]
@@ -114,6 +119,7 @@ theme = ExtResource("1_1rerr")
 
 [node name="Label" type="Label" parent="Opts/VBoxContainer1" unique_id=1207714846]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "V-Sync"
 
 [node name="CheckSync" type="CheckBox" parent="Opts/VBoxContainer1" unique_id=474112522]
@@ -131,6 +137,7 @@ theme_override_constants/separation = 24
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 32
 text = "Voltar"
 flat = true
 alignment = 0

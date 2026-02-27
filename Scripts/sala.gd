@@ -23,15 +23,12 @@ var pontuacao := 0
 @onready var mao = $"../../Camera3D/3DUI/Mao"
 @onready var escritorio = $"../.."
 @onready var ui = $"../../UI"
+@onready var dinheiro: PackedScene = load("res://Scenes/dinheiro.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Gerenciador.comeca_turno.connect(implementa_pontos)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0:
@@ -101,11 +98,16 @@ func calcula_pontos():
 		
 	multiplicador = Gerenciador.calcula_combo(funcionarios)
 	pontuacao = multiplicador * incrementador
-	
+
 func implementa_pontos():
 	match dono:
 		Players.JOGADOR:
 			Gerenciador.jogador_dinheiro += int(pontuacao / 2)
+			var din = dinheiro.instantiate()
+			add_child(din)
+			din.label.text = "R$"+str(int(pontuacao/2))
+			din.position = Vector3.ZERO
+			din.sumir()
 		Players.IA:
 			Gerenciador.IA_dinheiro += int(pontuacao / 2)
 

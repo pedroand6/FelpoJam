@@ -1,19 +1,24 @@
 extends Node2D
 
-@export var nomeCena : String = "Cena01"
 
-@onready var dialogos = le_json("res://Dialogues/%s.json" % [nomeCena])
 @onready var caixaDialogo = $CanvasLayer/BottomArea
-
-var cenasPath : String = "res://Dialogues/%s/" % [nomeCena]
 @onready var cenaObj = $CanvasLayer/TopArea/Scene
-@onready var cenasImg = le_arquivos(cenasPath)
+
+var nomeCena : String
+
+var dialogos
+var cenasPath : String
+var cenasImg
 
 var dialogoAtual = 0
 var cenaAtual = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	nomeCena = "Cena0" + str(Gerenciador.cena)
+	dialogos = le_json("res://Dialogues/%s.json" % [nomeCena])
+	cenasPath = "res://Dialogues/" + nomeCena + "/"
+	cenasImg = le_arquivos(cenasPath)
 	atualiza_cena()
 
 func le_json(fileName: String):
@@ -29,6 +34,7 @@ func le_arquivos(path):
 	for file in returnedFiles:
 		if not file.ends_with(".import"):
 			files.append(file)
+	print(files)
 	return files
 
 func passa_dialogo() -> void:
@@ -44,7 +50,13 @@ func passa_dialogo() -> void:
 	dialogoAtual += 1
 	if dialogoAtual >= len(dialogos[nomeCena][cenaAtual]):
 		if cenaAtual + 1 >= len(dialogos[nomeCena]):
-			Gerenciador.muda_cena("Visual Novel", "res://Scenes/escritorio.tscn")
+			Gerenciador.cena += 1
+			if Gerenciador.cena == 2:
+				Gerenciador.muda_cena("Visual Novel", "res://Scenes/escritorio.tscn") #FIXME: mudar para tutorial quando tiver
+			elif Gerenciador.cena == 4:
+				Gerenciador.muda_cena("Visual Novel", "res://Scenes/creditos.tscn")
+			else:
+				Gerenciador.muda_cena("Visual Novel", "res://Scenes/escritorio.tscn")
 			return
 		
 		dialogoAtual = 0
@@ -57,11 +69,8 @@ func atualiza_cena():
 	caixaDialogo.mostra_texto(dialogos[nomeCena][cenaAtual][dialogoAtual])
 	caixaDialogo.continueBtn.visible = false
 
-
 func _on_dialogue_btn_button_down() -> void:
 	passa_dialogo()
-
-
 
 #Settings code
 

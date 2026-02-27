@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://cnfob37dcbybr"]
+
+[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="1_eml6v"]
+[ext_resource type="Script" uid="uid://csi461hqxnnsj" path="res://Scripts/creditos.gd" id="1_ompal"]
+[ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="2_ykkye"]
+
+[node name="Creditos" type="Control" unique_id=1212871611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ompal")
+
+[node name="Label" type="Label" parent="." unique_id=29822310]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.5
+offset_top = 53.0
+offset_right = 52.5
+offset_bottom = 77.0
+grow_horizontal = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Créditos"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1216827816]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -206.0
+offset_right = 180.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="VBoxContainer" unique_id=1154924302]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer1" unique_id=373613626]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Caio Pulu"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer1" unique_id=1945768382]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Músicas e Efeitos Sonoros"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=2138305456]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=1591653342]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Erik Dias"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=277005876]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Arte"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" unique_id=1596879196]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer3" unique_id=1790838664]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Leonel Morgado"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer3" unique_id=1656198101]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Programação"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer" unique_id=499841869]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer4" unique_id=1629137099]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Luiz Gandra"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer4" unique_id=801231406]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Game Design, Roteiro e Arte"
+horizontal_alignment = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer" unique_id=980649004]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer5" unique_id=570193203]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Pedro Andrade"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer5" unique_id=1901222474]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 32
+text = "Game Design e Programação"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1267694875]
+layout_mode = 2
+theme = ExtResource("1_eml6v")
+theme_override_font_sizes/font_size = 46
+text = "Obrigado por jogar!"
+horizontal_alignment = 1
+
+[node name="Fechar" type="TextureButton" parent="." unique_id=1618818746]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -89.0
+offset_top = 24.0
+offset_right = -25.0
+offset_bottom = 88.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_ykkye")
+
+[connection signal="button_down" from="Fechar" to="." method="_on_fechar_button_down"]

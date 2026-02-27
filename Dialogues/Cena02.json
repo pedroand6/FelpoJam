@@ -1,67 +1,68 @@
-"Cena02": [
-    [
-      {
-        "icone": "sombrio",
-        "nome": "Silvio, O Presidente",
-        "texto": "MARCOS GUTENBERG! Você está..."
-      },
-      {
-        "icone": "indignado",
-        "nome": "Lucas",
-        "texto": "Peraí, o nome dele é Marcos?"
-      },
-      {
-        "icone": "sombrio",
-        "nome": "Silvio, O Presidente",
-        "texto": "ELIMINADO!"
-      },
-      {
-        "icone": "serio",
-        "nome": "Lucas",
-        "texto": "Foi nesse momento em que eu percebi que eu tinha potencial pra coisa..."
-      },
-      {
-        "icone": "serio",
-        "nome": "Lucas",
-        "texto": "e que talvez a faculdade de Administração não tivesse sido uma perda de tempo, afinal de contas."
-      },
-      {
-        "icone": "amedrontado",
-        "nome": "Lucas",
-        "texto": "Ah, e sobre esse cara esquisito, o Marcos, hã..."
-      },
-      {
-        "icone": "amedrontado",
-        "nome": "Lucas",
-        "texto": "Uns caras com roupa amarela falaram que eram do Controle de Danos ou algo assim e levaram ele para uma sala e... eu não vi mais nada."
-      },
-      {
-        "icone": "amedrontado",
-        "nome": "Lucas",
-        "texto": "Ele não tinha mais energia para resistir."
-      },
-      {
-        "icone": "serio",
-        "nome": "Lucas",
-        "texto": "Ele tinha um carimbo rosa que acabou caindo e eu peguei para devolver, mas ele era tão legal que decidi usá-lo enquanto eu não via esse cara de novo."
-      },
-      {
-        "icone": "serio",
-        "nome": "Lucas",
-        "texto": "E essa era minha última preocupação no momento..."
-      },
-      {
-        "icone": "serio",
-        "nome": "Lucas",
-        "texto": "Naquela hora, só restava eu e aquele senhor de chapéu."
-      }
-    ],
-    [
-      {
-        "icone": "dormindo",
-        "nome": "Kenji, O Militar",
-        "texto": "Ronc..."
-      }
-    ]
+{
+	"Cena02": [
+	[
+	  {
+		"icone": "sombrio",
+		"nome": "Silvio, O Presidente",
+		"texto": "MARCOS GUTENBERG! Você está..."
+	  },
+	  {
+		"icone": "indignado",
+		"nome": "Lucas",
+		"texto": "Peraí, o nome dele é Marcos?"
+	  },
+	  {
+		"icone": "sombrio",
+		"nome": "Silvio, O Presidente",
+		"texto": "ELIMINADO!"
+	  },
+	  {
+		"icone": "serio",
+		"nome": "Lucas",
+		"texto": "Foi nesse momento em que eu percebi que eu tinha potencial pra coisa..."
+	  },
+	  {
+		"icone": "serio",
+		"nome": "Lucas",
+		"texto": "e que talvez a faculdade de Administração não tivesse sido uma perda de tempo, afinal de contas."
+	  },
+	  {
+		"icone": "amedrontado",
+		"nome": "Lucas",
+		"texto": "Ah, e sobre esse cara esquisito, o Marcos, hã..."
+	  },
+	  {
+		"icone": "amedrontado",
+		"nome": "Lucas",
+		"texto": "Uns caras com roupa amarela falaram que eram do Controle de Danos ou algo assim e levaram ele para uma sala e... eu não vi mais nada."
+	  },
+	  {
+		"icone": "amedrontado",
+		"nome": "Lucas",
+		"texto": "Ele não tinha mais energia para resistir."
+	  },
+	  {
+		"icone": "serio",
+		"nome": "Lucas",
+		"texto": "Ele tinha um carimbo rosa que acabou caindo e eu peguei para devolver, mas ele era tão legal que decidi usá-lo enquanto eu não via esse cara de novo."
+	  },
+	  {
+		"icone": "serio",
+		"nome": "Lucas",
+		"texto": "E essa era minha última preocupação no momento..."
+	  },
+	  {
+		"icone": "serio",
+		"nome": "Lucas",
+		"texto": "Naquela hora, só restava eu e aquele senhor de chapéu."
+	  }
+	],
+	[
+	  {
+		"icone": "dormindo",
+		"nome": "Kenji, O Militar",
+		"texto": "Ronc..."
+	  }
+	]
   ]
 }

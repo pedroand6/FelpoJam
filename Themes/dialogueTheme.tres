@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="4_pjhon"]
 [ext_resource type="Texture2D" uid="uid://dgdgngm3t4dqv" path="res://Sprites/UI/icone-cheio.png" id="6_nf17u"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua0ma"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_toymv"]
 texture = ExtResource("6_nf17u")
 texture_margin_left = 4.0
@@ -33,6 +35,7 @@ texture_margin_bottom = 4.0
 [resource]
 default_font = ExtResource("1_b4dew")
 default_font_size = 24
+Button/styles/hover = SubResource("StyleBoxEmpty_ua0ma")
 CheckBox/icons/checked = ExtResource("1_o5ma7")
 CheckBox/icons/unchecked = ExtResource("2_k2exv")
 HSlider/icons/grabber = ExtResource("3_k2exv")

@@ -18,6 +18,17 @@ const CARGOS = {
 	0: {"nome": "Filho do dono", "prod": 0, "custo": 60} 
 }
 
+var combos := {
+	1 : ["Sozinho no Setor", "Sem combinação, multiplicador igual a 1."],
+	2 : ["Parceria", "Dois funcionários do mesmo nível, multiplicador igual a 2."],
+	3 : ["Trio Parada Dura", "Três funcionários do mesmo nível, multiplicador igual a 3."],
+	4 : ["Complô", "Duas duplas de funcionários de mesmo nível, multiplicador igual a 4."],
+	6 : ["Reunião do Setor", "Quatro funcionários da mesma área, multiplicador igual a 6."],
+	8 : ["Juntos e Misturados", "Quatro funcionários de mesmo nível, multiplicador igual a 8."],
+	10 : ["Desigualdade Salarial", "Quatro funcionários em sequência da mesma área, multiplicador igual a 10."],
+	12 : ["Happy Hour", "Os quatro funcionários da mesma área de maior nível em sequência, multiplicador igual a 12."]
+}
+
 enum Carimbos {
 	BASICO,
 	BRINQUEDO,
@@ -56,23 +67,27 @@ var round : int = 1
 var turno : int = JOGADOR
 var descartes_restantes : int = 4
 
+var cena: int = 1 #quando acaba uma cena, atualiza ++
+
+signal comeca_turno
+
 func _ready():
 	carrega_demandas(demandasPath, demandas_gerais)
 	carrega_demandas(demandasBasPath, demandas_basico)
 	carrega_demandas(demandasBrinqPath, demandas_brinquedo)
 	carrega_demandas(demandasTradPath, demandas_tradicional)
-	
+
 func set_carimbos():
 	ia_baralho = gera_baralho(ia_carimbo)
 	jogador_baralho = gera_baralho(jogador_carimbo)
-	
+
 func carrega_demandas(path, demandas : Array[Demanda]):
 	var dir = DirAccess.open(path)
 	var returnedFiles = dir.get_files()
 	for file in returnedFiles:
 		if not file.ends_with(".import"):
 			demandas.append(load(path + file))
-			
+
 func carrega_contratos(path) -> Array[Texture2D]:
 	var contratos : Array[Texture2D]
 	var dir = DirAccess.open(path)
@@ -82,13 +97,13 @@ func carrega_contratos(path) -> Array[Texture2D]:
 			contratos.append(load(path + file))
 			
 	return contratos
-			
+
 func gera_demandas(demandas, contratos):
 	for demanda in demandas:
 		for i in range(0, demanda.quantidade):
 			var temp_demanda = Contrato.new(Contrato.Tipos.DEMANDA, demanda.nome, demanda.custo, demanda.sprite, demanda.desc)
 			contratos.append(temp_demanda)
-	
+
 func gera_baralho(carimbo : Carimbos) -> Array[Contrato]:
 	var pilha_carta: Array[Contrato]
 	for area in AREAS:
@@ -115,25 +130,14 @@ func gera_baralho(carimbo : Carimbos) -> Array[Contrato]:
 			gera_demandas(demandas_brinquedo, pilha_carta)
 		Carimbos.TRADICIONAL:
 			gera_demandas(demandas_tradicional, pilha_carta)
-
+	
 	pilha_carta.shuffle()
 	return pilha_carta
-	
+
 func descarte(carta : Carta, pilha_carta : Array[Contrato]):
 	pilha_carta.erase(carta.contrato)
 	carta.queue_free()
-	
-var combos := {
-	1 : ["Sozinho no Setor", "Sem combinação, multiplicador igual a 1."],
-	2 : ["Parceria", "Dois funcionários do mesmo nível, multiplicador igual a 2."],
-	3 : ["Trio Parada Dura", "Três funcionários do mesmo nível, multiplicador igual a 3."],
-	4 : ["Complô", "Duas duplas de funcionários de mesmo nível, multiplicador igual a 4."],
-	6 : ["Reunião do Setor", "Quatro funcionários da mesma área, multiplicador igual a 6."],
-	8 : ["Juntos e Misturados", "Quatro funcionários de mesmo nível, multiplicador igual a 8."],
-	10 : ["Desigualdade Salarial", "Quatro funcionários em sequência da mesma área, multiplicador igual a 10."],
-	12 : ["Happy Hour", "Os quatro funcionários da mesma área de maior nível em sequência, multiplicador igual a 12."]
-}
-	
+
 func calcula_combo(funcionarios : Array[Contrato]):
 	if len(funcionarios) == 0: return 1
 	
@@ -192,8 +196,6 @@ func calcula_combo(funcionarios : Array[Contrato]):
 	#print(combinacoes)
 	#print(niveisIguais)
 	return combinacoes.max()
-
-signal comeca_turno
 
 func desbloqueia_jogar():
 	comeca_turno.emit()
