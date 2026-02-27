@@ -28,6 +28,9 @@ func _on_opt_button_down() -> void:
 	opts.show()
 	menu.hide()
 
+func _on_cred_button_down() -> void:
+	Gerenciador.muda_cena("Menu", "res://Scenes/creditos.tscn")
+
 func _on_sair_button_down() -> void:
 	get_tree().quit()
 

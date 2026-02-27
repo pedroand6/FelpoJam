@@ -56,6 +56,16 @@ text = "Configurações"
 flat = true
 alignment = 0
 
+[node name="Cred" type="Button" parent="Menu" unique_id=1798616480]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 32
+text = "Créditos"
+flat = true
+alignment = 0
+
 [node name="Sair" type="Button" parent="Menu" unique_id=2011664039]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -169,6 +179,7 @@ autoplay = true
 
 [connection signal="button_down" from="Menu/Iniciar" to="." method="_on_iniciar_button_down"]
 [connection signal="button_down" from="Menu/Opt" to="." method="_on_opt_button_down"]
+[connection signal="button_down" from="Menu/Cred" to="." method="_on_cred_button_down"]
 [connection signal="button_down" from="Menu/Sair" to="." method="_on_sair_button_down"]
 [connection signal="value_changed" from="Opts/Volume/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="Opts/VBoxContainer0/CheckCheia" to="." method="_on_check_cheia_toggled"]
