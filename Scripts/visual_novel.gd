@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var nomeCena : String = "Cena1"
+@export var nomeCena : String = "Cutscene1"
 
 @onready var dialogos = le_json("res://Dialogues/%s.json" % [nomeCena])
 @onready var caixaDialogo = $CanvasLayer/BottomArea

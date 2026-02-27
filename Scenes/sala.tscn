@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b4ixk62rythl1"]
+
+[ext_resource type="Script" uid="uid://db6tm7r1dqcgv" path="res://Scripts/sala.gd" id="1_2x4t4"]
+[ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="2_uhgjh"]
+[ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="2_vbwy0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhgjh"]
+size = Vector3(1.2689819, 0.04156494, 1.2514648)
+
+[node name="Sala" type="Node3D" unique_id=6546393]
+script = ExtResource("1_2x4t4")
+
+[node name="Borda" type="Sprite3D" parent="." unique_id=319494079]
+transform = Transform3D(0.8823402, 0, 0, 0, 1, 0, 0, 0, 0.6582373, 0, 0, 0)
+visible = false
+axis = 1
+texture = ExtResource("2_uhgjh")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=224202844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1920929e-07, 0)
+axis = 1
+texture = ExtResource("2_vbwy0")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=147939081]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=38862451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015258789, 0.003753662, -0.0017089844)
+shape = SubResource("BoxShape3D_uhgjh")
+
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

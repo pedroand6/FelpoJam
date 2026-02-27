@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://cujhrrxbgh6h1"]
+
+[ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_nfcwg"]
+[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="2_2vefn"]
+
+[resource]
+script = ExtResource("1_nfcwg")
+nome = "Bombom da Meta"
+desc = "+10pts de prod. por cada funcionário de marketing ou RH."
+custo = 30
+quantidade = 2
+sprite = ExtResource("2_2vefn")
+metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

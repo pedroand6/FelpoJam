@@ -2,10 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_3j7i0"]
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
+[ext_resource type="Script" uid="uid://ctkl77vex17yi" path="res://Scripts/cardgame.gd" id="1_xl6bb"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
+[ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="3_bnfms"]
+[ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
+[ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/gutenberg/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
@@ -13,17 +17,24 @@
 [ext_resource type="Texture2D" uid="uid://do1r3gmeufmvt" path="res://Sprites/UI/icone-info.png" id="8_sjs8i"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
 [ext_resource type="Texture2D" uid="uid://bqk1kjyeisknk" path="res://Sprites/UI/icone-contador-rodadas.png" id="8_vf6ur"]
+[ext_resource type="Texture2D" uid="uid://bqby8vneh563x" path="res://Sprites/UI/botao-pular-turno.png" id="11_q5mst"]
 [ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="12_miicn"]
-[ext_resource type="Texture2D" uid="uid://duk1ai68vsaya" path="res://Sprites/UI/icone-fechar.png" id="14_xffac"]
+[ext_resource type="Texture2D" uid="uid://8rcie53r4xkf" path="res://Sprites/UI/carimbo-brinquedo.png" id="13_aa28w"]
+[ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="17_aa28w"]
+[ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="19_nt0tj"]
+[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
+[ext_resource type="Texture2D" uid="uid://fqahw1kjeohb" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
 size = Vector3(1.3, 3, 1.3)
 
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
+script = ExtResource("1_xl6bb")
 
 [node name="Inimigo" type="Sprite3D" parent="." unique_id=1659779327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6255174)
 texture = ExtResource("1_3j7i0")
+script = ExtResource("3_rwmm0")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=222983965]
 transform = Transform3D(1, 0, 0, 0, 0.85714036, 0.51508296, 0, -0.51508296, 0.85714036, 0, 0.6514241, -0.21619591)
@@ -37,12 +48,41 @@ script = ExtResource("1_xx3jy")
 transform = Transform3D(1.6209993, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8373826, -1.642656)
 mesh = SubResource("BoxMesh_xx3jy")
 
+[node name="Salas" type="Node3D" parent="." unique_id=1069345903]
+
+[node name="Sala1" parent="Salas" unique_id=6546393 instance=ExtResource("3_bnfms")]
+transform = Transform3D(0.2828626, 0, 0, 0, 1, 0, 0, 0, 0.2828626, -0.7374354, -0.32901675, -1.9394796)
+
+[node name="Sala2" parent="Salas" unique_id=184202739 instance=ExtResource("3_bnfms")]
+transform = Transform3D(0.37481305, 0, 0, 0, 1, 0, 0, 0, 0.37481305, -0.23570052, -0.32901675, -1.8830372)
+
+[node name="Sala3" parent="Salas" unique_id=813707592 instance=ExtResource("3_bnfms")]
+transform = Transform3D(0.2960657, 0, 0, 0, 1, 0, 0, 0, 0.4564792, 0.2456457, -0.32901675, -1.8234073)
+
+[node name="Sala4" parent="Salas" unique_id=1730815094 instance=ExtResource("3_bnfms")]
+transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.24549578, 0.69948107, -0.32901675, -1.9581622)
+
+[node name="Sala5" parent="Salas" unique_id=2107717327 instance=ExtResource("3_bnfms")]
+transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.41790602, -0.70542467, -0.32901675, -1.4460622)
+
+[node name="Sala6" parent="Salas" unique_id=231385432 instance=ExtResource("3_bnfms")]
+transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.34505248, -0.23375368, -0.32901675, -1.4022642)
+
+[node name="Sala7" parent="Salas" unique_id=993016474 instance=ExtResource("3_bnfms")]
+transform = Transform3D(0.39828414, 0, 0, 0, 1, 0, 0, 0, 0.24601866, 0.28171527, -0.32901675, -1.3348826)
+
+[node name="Sala8" parent="Salas" unique_id=2111903035 instance=ExtResource("3_bnfms")]
+transform = Transform3D(0.278125, 0, 0, 0, 1, 0, 0, 0, 0.43803912, 0.7432791, -0.32901675, -1.4595386)
+
 [node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
 transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.929937, 0, 0, 0)
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=2016285213]
+[node name="UI" type="CanvasLayer" parent="." unique_id=2016285213 node_paths=PackedStringArray("sala_cartas", "sala_util", "sala_combo")]
 follow_viewport_enabled = true
 script = ExtResource("3_aafqm")
+sala_cartas = [NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect/TextureRect"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect2/TextureRect"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect3/TextureRect"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect4/TextureRect")]
+sala_util = [NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades/item1"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades/item2"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades/item3")]
+sala_combo = [NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes/Nome"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes/Desc")]
 
 [node name="PlayerSide" type="Control" parent="UI" unique_id=1181563155]
 layout_mode = 3
@@ -93,7 +133,7 @@ offset_bottom = 18.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.75613844, 0.75613844)
-texture = ExtResource("1_3j7i0")
+texture = ExtResource("5_0vwt7")
 expand_mode = 1
 stretch_mode = 4
 
@@ -104,16 +144,32 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -220.0
-offset_top = -263.0
-offset_right = -70.0
-offset_bottom = -63.0
+offset_left = -227.0
+offset_top = -357.0
+offset_right = -77.0
+offset_bottom = -157.0
 grow_horizontal = 0
 grow_vertical = 0
 tooltip_text = "Baralho"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_81bno")
 texture_normal = ExtResource("7_bnfms")
+stretch_mode = 4
+
+[node name="PularBtn" type="TextureButton" parent="UI/PlayerSide" unique_id=1768639942]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -362.0
+offset_top = 118.0
+offset_right = -298.0
+offset_bottom = 182.0
+grow_horizontal = 0
+tooltip_text = "Descarte"
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_81bno")
+texture_normal = ExtResource("11_q5mst")
 stretch_mode = 4
 
 [node name="DescarteBtn" type="TextureButton" parent="UI/PlayerSide" unique_id=46986098]
@@ -124,9 +180,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -151.0
-offset_top = 139.0
+offset_top = 428.0
 offset_right = -87.0
-offset_bottom = 203.0
+offset_bottom = 492.0
 grow_horizontal = 0
 grow_vertical = 2
 tooltip_text = "Descarte"
@@ -184,7 +240,7 @@ offset_right = 275.0
 offset_bottom = 13.0
 grow_vertical = 2
 scale = Vector2(0.75613844, 0.75613844)
-texture = ExtResource("1_3j7i0")
+texture = ExtResource("13_aa28w")
 expand_mode = 1
 stretch_mode = 4
 
@@ -226,15 +282,15 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 82.0
-offset_top = -376.0
+offset_top = -357.0
 offset_right = 283.0214
-offset_bottom = -71.22064
+offset_bottom = -80.59564
 grow_vertical = 0
 scale = Vector2(0.75613844, 0.75613844)
 tooltip_text = "Combos e Cargos"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_81bno")
-texture_normal = ExtResource("1_3j7i0")
+texture_normal = ExtResource("7_bnfms")
 stretch_mode = 4
 
 [node name="RoundIcon" type="TextureRect" parent="UI" unique_id=1717510335]
@@ -276,7 +332,7 @@ offset_bottom = 158.0
 grow_horizontal = 2
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 36
-text = "01/10"
+text = "01/08"
 autowrap_mode = 0
 horizontal_alignment = 1
 
@@ -300,7 +356,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
 
 [node name="Caixa" type="Control" parent="UI/Popup" unique_id=591100668]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -612,6 +667,227 @@ text = "Configuracoes"
 layout_mode = 2
 text = "Sair"
 
+[node name="Sala" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=676530466]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dono" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala" unique_id=10673492]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.07675
+offset_top = -246.73802
+offset_right = 275.07675
+offset_bottom = -206.73802
+grow_horizontal = 2
+theme = ExtResource("7_81bno")
+theme_override_font_sizes/normal_font_size = 30
+text = "Sala sem dono"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Sala" unique_id=1347890739]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.4931
+offset_top = -197.55305
+offset_right = 325.7768
+offset_bottom = 228.71233
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 46
+
+[node name="GridContainer" type="GridContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=1772732991]
+custom_minimum_size = Vector2(276.763, 362.82)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=815889038]
+layout_mode = 2
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect" unique_id=1826358764]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 133.048
+offset_bottom = 206.88963
+texture = ExtResource("20_uithd")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=983200569]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect2" unique_id=473440900]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 133.048
+offset_bottom = 206.88963
+texture = ExtResource("20_hl26x")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=2028037887]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect3" unique_id=1675709359]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 133.048
+offset_bottom = 206.88963
+texture = ExtResource("20_hl26x")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=2127293063]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect4" unique_id=307357256]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 133.048
+offset_bottom = 206.88963
+texture = ExtResource("20_hl26x")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="VSeparator" type="VSeparator" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=1708048065]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=294079397]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Utilidades" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=954133681]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=765868843]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 24
+text = "Utilidades"
+
+[node name="item1" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=1612120615]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 16
+text = "-"
+fit_content = true
+
+[node name="item2" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=1232568889]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 16
+text = "-"
+
+[node name="item3" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=975917289]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 16
+text = "-"
+
+[node name="HSeparator" type="HSeparator" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=253013934]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Combinacoes" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=1821796344]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.45
+
+[node name="Title" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=517051505]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 24
+text = "Combinação"
+
+[node name="Nome" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=1314697858]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 18
+text = "Sozinho no Setor"
+fit_content = true
+
+[node name="Desc" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=1609556202]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/normal_font_size = 16
+text = "Descrição: Sem combinação"
+fit_content = true
+
+[node name="Produtividade" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala" unique_id=392307862]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -275.07675
+offset_top = 224.16629
+offset_right = 275.07675
+offset_bottom = 264.1663
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("7_81bno")
+theme_override_font_sizes/normal_font_size = 30
+text = "Produtividade"
+horizontal_alignment = 1
+
 [node name="Fechar" type="TextureButton" parent="UI/Popup/Caixa/Frente" unique_id=576078387]
 layout_mode = 1
 anchors_preset = 1
@@ -623,7 +899,7 @@ offset_right = -5.0
 offset_bottom = 69.0
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("14_xffac")
+texture_normal = ExtResource("17_aa28w")
 
 [node name="Cursor" type="Node" parent="UI" unique_id=1916013957]
 script = ExtResource("1_6vsh8")
@@ -633,7 +909,11 @@ offset_right = 14.0
 offset_bottom = 17.94873
 texture = ExtResource("12_miicn")
 
+[connection signal="cartas_prontas" from="." to="Camera3D/3DUI/Mao" method="_on_escritorio_cartas_prontas"]
+[connection signal="passa_turno" from="Inimigo" to="." method="_on_inimigo_passa_turno"]
 [connection signal="button_down" from="UI/PlayerSide/Baralho" to="UI" method="_on_baralho_button_down"]
+[connection signal="button_down" from="UI/PlayerSide/PularBtn" to="." method="_on_pular_btn_button_down"]
+[connection signal="button_down" from="UI/PlayerSide/DescarteBtn" to="Camera3D/3DUI/Mao" method="_on_descarte_btn_button_down"]
 [connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Config/Opts/Resumir" to="UI" method="_on_resumir_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Config/Opts/Configuracoes" to="UI" method="_on_configuracoes_button_down"]

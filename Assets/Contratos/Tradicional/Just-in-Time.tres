@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://csnu6y1xyj3cq"]
+
+[ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_ibplk"]
+[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="2_llpjy"]
+
+[resource]
+script = ExtResource("1_ibplk")
+nome = "Just-in-Time"
+desc = "+1pt de multiplicador de prod. por funcionário caso a sala esteja lotada."
+custo = 30
+sprite = ExtResource("2_llpjy")
+metadata/_custom_type_script = "uid://cw1wtjsb43tfq"
