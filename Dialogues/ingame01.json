@@ -9,7 +9,12 @@
 			{
 				"icone": "neutro",
 				"nome": "Gutenberg, O Empreendedor",
-				"texto": "Você provavelmente tem o QI bem acima da média, já que conseguiu chegar até aqui, e além disso eu posso te indicar em algumas empresas que já trabalhei e..."
+				"texto": "Você provavelmente tem o QI bem acima da média, já que conseguiu chegar até aqui,"
+			},
+			{
+				"icone": "neutro",
+				"nome": "Gutenberg, O Empreendedor",
+				"texto": "e além disso eu posso te indicar em algumas empresas que já trabalhei e..."
 			},
 			{
 				"icone": "neutro",
@@ -30,14 +35,14 @@
 				"icone": "sorrindo",
 				"nome": "Gutenberg, O Empreendedor",
 				"texto": "Os recrutadores amam resiliência, você com certeza vai se dar bem em outras entrevistas e também..."
-			}
-		],
-		[
+			},
 			{
 				"icone": "intrigado",
 				"nome": "Lucas",
 				"texto": "Ok, ótimo."
-			},
+			}
+		],
+		[
 			{
 				"icone": "intrigado",
 				"nome": "Lucas",

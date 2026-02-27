@@ -72,6 +72,8 @@ var sala_selecionada : Sala = null
 var cena: int = 1 #quando acaba uma cena, atualiza ++
 
 signal comeca_turno
+signal descartada
+signal round_muda
 
 func _ready():
 	carrega_demandas(demandasPath, demandas_gerais)
@@ -119,12 +121,12 @@ func gera_baralho(carimbo : Carimbos) -> Array[Contrato]:
 		load("res://Sprites/Cartas/9-presidente.png"), "", "Coringa", 9, CARGOS[9]["prod"])
 	var filho_dono = Contrato.new(Contrato.Tipos.FUNCIONARIO, CARGOS[0]["nome"], CARGOS[0]["custo"],
 	 	load("res://Sprites/Cartas/0-filhododono.png"), "", "Coringa", 0, CARGOS[0]["prod"])
-		
+	
 	pilha_carta.append(presidente)
 	pilha_carta.append(filho_dono)
-		
+	
 	gera_demandas(demandas_gerais, pilha_carta)
-			
+	
 	match carimbo:
 		Carimbos.BASICO:
 			gera_demandas(demandas_basico, pilha_carta)
@@ -139,6 +141,7 @@ func gera_baralho(carimbo : Carimbos) -> Array[Contrato]:
 func descarte(carta : Carta, pilha_carta : Array[Contrato]):
 	pilha_carta.erase(carta.contrato)
 	carta.queue_free()
+	emit_signal("descartada")
 
 func calcula_combo(funcionarios : Array[Contrato]):
 	if len(funcionarios) == 0: return 1

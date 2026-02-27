@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1no7hxwclhet"
-path="res://.godot/imported/kenji-retrato-fase03.png-a7738b9874b43d479c9500f2694b6069.ctex"
+path="res://.godot/imported/kenji-retrato-fase-03.png-3bc5d75852295f13dbcbdd0c73b949fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Icons/Kenji, O Militar/kenji-retrato-fase03.png"
-dest_files=["res://.godot/imported/kenji-retrato-fase03.png-a7738b9874b43d479c9500f2694b6069.ctex"]
+source_file="res://Sprites/Icons/Kenji, O Militar/kenji-retrato-fase-03.png"
+dest_files=["res://.godot/imported/kenji-retrato-fase-03.png-3bc5d75852295f13dbcbdd0c73b949fd.ctex"]
 
 [params]
 

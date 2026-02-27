@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func passa_round():
 	Gerenciador.round += 1
+	Gerenciador.round_muda.emit()
 	
 func passa_turno(player : int):
 	if player == JOGADOR:

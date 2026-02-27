@@ -41,19 +41,18 @@ func _input(event: InputEvent) -> void:
 			controle = false
 		else:
 			controle = true
-			#_muda_cursor_virtual(true)
+			if OS.get_name() == "Linux": _muda_cursor_virtual(true)
 			_cursor_move_inject()
-	#elif not controle and event is InputEventMouseMotion:
-		#_muda_cursor_virtual(false)
-		
-	if event is InputEventJoypadButton:
-		#_muda_cursor_virtual(true)
-		if event.button_index == JOY_BUTTON_A:
-			_cursor_click_inject(event.pressed)
+	elif not controle and event is InputEventMouseMotion:
+		if OS.get_name() == "Linux" and event.relative.length() > zona_morta: _muda_cursor_virtual(false)
+#	if event is InputEventJoypadButton:
+#		if OS.get_name() == "Linux": _muda_cursor_virtual(true)
+#		if event.button_index == JOY_BUTTON_A:
+#		_cursor_click_inject(event.pressed)
 
 func _muda_cursor_virtual(mostra : bool):
 	if mostra:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 		cursor.show()
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -99,8 +98,7 @@ func _cursor_move(delta: float) -> void:
 	raio.target_position = direction * dist
 	get_viewport().warp_mouse(cursor.position)
 
-func _cursor_click_inject(press: bool) -> void:
-	pass
+#func _cursor_click_inject(press: bool) -> void:
 	#var event: InputEventMouseButton = InputEventMouseButton.new()
 	#event.button_mask |= MOUSE_BUTTON_MASK_LEFT
 	#event.button_index = MOUSE_BUTTON_LEFT

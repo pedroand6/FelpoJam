@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cyfspsmfotqrr"]
+
+[ext_resource type="Script" uid="uid://cc1gob0mts1cj" path="res://Scripts/funcionario_popup.gd" id="1_3o1q4"]
+
+[node name="FuncionarioPopup" type="Node3D" unique_id=976814027]
+script = ExtResource("1_3o1q4")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=309148208]

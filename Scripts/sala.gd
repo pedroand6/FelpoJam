@@ -156,6 +156,7 @@ var pontuacao := 0
 @onready var escritorio = $"../.."
 @onready var ui = $"../../UI"
 @onready var dinheiro: PackedScene = load("res://Scenes/dinheiro.tscn")
+@onready var funcionario: PackedScene = load("res://Scenes/funcionario_popup.tscn")
 
 var selecionada : bool = false
 
@@ -244,7 +245,8 @@ func open_room():
 	ui.show_sala(donoSala, pontuacao, self)
 
 func insert_cartas_player():
-	if dono == Players.IA: return #avisar jogador
+	if dono == Players.IA:
+		return
 	
 	var quantFunc = 0
 	var quantDemanda = 0
@@ -305,6 +307,11 @@ func implementa_pontos():
 			din.sumir()
 		Players.IA:
 			Gerenciador.IA_dinheiro += int(pontuacao / 2)
+			var fn = funcionario.instantiate()
+			add_child(fn)
+			fn.label.text = "+" + "1" + " funcionario"
+			fn.position = Vector3.ZERO
+			fn.sumir()
 
 func _on_area_3d_mouse_entered() -> void:
 	borda.show()

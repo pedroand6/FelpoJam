@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d6wg6wqmexxh"
-path="res://.godot/imported/2-marketing-junior.png-a1cb501cff462157bcd2ff0efd48d91f.ctex"
+uid="uid://c6s5tjqpbwha6"
+path="res://.godot/imported/kenji-retrato-fase-02.png-c8f73856cfb5045c18da12ae9d4f7ebd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cartas/Marketing/2-marketing-junior.png"
-dest_files=["res://.godot/imported/2-marketing-junior.png-a1cb501cff462157bcd2ff0efd48d91f.ctex"]
+source_file="res://Sprites/Icons/Kenji, O Militar/kenji-retrato-fase-02.png"
+dest_files=["res://.godot/imported/kenji-retrato-fase-02.png-c8f73856cfb5045c18da12ae9d4f7ebd.ctex"]
 
 [params]
 

@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
@@ -17,19 +17,25 @@
 [ext_resource type="Texture2D" uid="uid://do1r3gmeufmvt" path="res://Sprites/UI/icone-info.png" id="8_sjs8i"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
 [ext_resource type="Texture2D" uid="uid://bqk1kjyeisknk" path="res://Sprites/UI/icone-contador-rodadas.png" id="8_vf6ur"]
+[ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="9_7sov5"]
 [ext_resource type="Texture2D" uid="uid://bqby8vneh563x" path="res://Sprites/UI/botao-pular-turno.png" id="11_q5mst"]
 [ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="12_miicn"]
 [ext_resource type="Texture2D" uid="uid://8rcie53r4xkf" path="res://Sprites/UI/carimbo-brinquedo.png" id="13_aa28w"]
 [ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="13_aafqm"]
 [ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="17_aa28w"]
 [ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="19_nt0tj"]
-[ext_resource type="Texture2D" uid="uid://b2783c0txy7nn" path="res://Sprites/Cartas/Financeiro/1-fin-estagiario.png" id="19_qqx3n"]
+[ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="19_v1qyb"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
+[ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
 size = Vector3(1.3, 3, 1.3)
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
+script = ExtResource("9_7sov5")
+metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
 
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_xl6bb")
@@ -85,9 +91,6 @@ vizinhos = [NodePath("../Sala3"), NodePath("../Sala8"), NodePath("../Sala6")]
 transform = Transform3D(0.278125, 0, 0, 0, 1, 0, 0, 0, 0.43803912, 0.7432791, -0.32901675, -1.4595386)
 vizinhos = [NodePath("../Sala4"), NodePath("../Sala7")]
 
-[node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
-transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.929937, 0, 0, 0)
-
 [node name="UI" type="CanvasLayer" parent="." unique_id=2016285213 node_paths=PackedStringArray("sala_cartas", "sala_util", "sala_combo")]
 follow_viewport_enabled = true
 script = ExtResource("3_aafqm")
@@ -117,6 +120,38 @@ grow_horizontal = 0
 texture = ExtResource("6_rs6w2")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="DialogBox" type="Control" parent="UI/PlayerSide/Portrait" unique_id=2101905698]
+visible = false
+anchors_preset = 0
+offset_left = -17.0
+offset_top = 39.0
+offset_right = 23.0
+offset_bottom = 79.0
+
+[node name="Nome" type="Label" parent="UI/PlayerSide/Portrait/DialogBox" unique_id=1002437659]
+layout_mode = 0
+offset_left = -124.0
+offset_top = -20.0
+offset_right = 5.0
+offset_bottom = 4.0
+theme = ExtResource("6_vf6ur")
+text = "Lucas"
+horizontal_alignment = 2
+
+[node name="Dialog" type="RichTextLabel" parent="UI/PlayerSide/Portrait/DialogBox" unique_id=742400386]
+layout_mode = 0
+offset_left = -576.0
+offset_top = 26.0
+offset_right = 5.0
+offset_bottom = 205.0
+theme = ExtResource("6_vf6ur")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+autowrap_mode = 2
+horizontal_alignment = 2
+custom_effects = [SubResource("RichTextEffect_67vox")]
+visible_characters_behavior = 1
 
 [node name="Dinheiro" type="RichTextLabel" parent="UI/PlayerSide" unique_id=22941054]
 layout_mode = 0
@@ -227,6 +262,34 @@ offset_bottom = 240.0
 texture = ExtResource("5_2dyg3")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="DialogBox" type="Control" parent="UI/EnemySide/Portrait" unique_id=2114933458]
+visible = false
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 39.0
+offset_right = 252.0
+offset_bottom = 79.0
+
+[node name="Nome" type="Label" parent="UI/EnemySide/Portrait/DialogBox" unique_id=7704031]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 129.0
+offset_bottom = 4.0
+theme = ExtResource("6_vf6ur")
+text = "Gutenberg"
+
+[node name="Dialog" type="RichTextLabel" parent="UI/EnemySide/Portrait/DialogBox" unique_id=1949537653]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 581.0
+offset_bottom = 205.0
+theme = ExtResource("6_vf6ur")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+autowrap_mode = 2
+custom_effects = [SubResource("RichTextEffect_67vox")]
+visible_characters_behavior = 1
 
 [node name="Dinheiro" type="RichTextLabel" parent="UI/EnemySide" unique_id=1205006396]
 layout_mode = 1
@@ -414,6 +477,7 @@ offset_right = -790.0
 offset_bottom = -590.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("19_v1qyb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=1358203392]
 layout_mode = 0
@@ -421,7 +485,7 @@ offset_left = 156.99998
 offset_top = 27.999998
 offset_right = 1385.0
 offset_bottom = 1452.0
-scale = Vector2(0.34658924, 0.34658924)
+scale = Vector2(0.26955998, 0.26955998)
 theme_override_constants/separation = 60
 alignment = 2
 
@@ -430,10 +494,11 @@ layout_mode = 2
 
 [node name="HBoxContainer0" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=2040050004]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=491065692]
 layout_mode = 2
-texture = ExtResource("19_qqx3n")
+texture = ExtResource("7_bnfms")
 
 [node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=339758102]
 layout_mode = 2
@@ -465,6 +530,7 @@ texture = ExtResource("7_bnfms")
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1455496247]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=843657740]
 layout_mode = 2
@@ -500,6 +566,7 @@ texture = ExtResource("7_bnfms")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1993412575]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=390447450]
 layout_mode = 2
@@ -535,6 +602,7 @@ texture = ExtResource("7_bnfms")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1113590819]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=1927283062]
 layout_mode = 2
@@ -599,7 +667,15 @@ texture = ExtResource("7_bnfms")
 layout_mode = 2
 texture = ExtResource("7_bnfms")
 
-[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=1326339703]
+[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=1396899454]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=292882020]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect8" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=1162775316]
 layout_mode = 2
 texture = ExtResource("7_bnfms")
 
@@ -630,7 +706,15 @@ texture = ExtResource("7_bnfms")
 layout_mode = 2
 texture = ExtResource("7_bnfms")
 
-[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=281849122]
+[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=1048029014]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=761482546]
+layout_mode = 2
+texture = ExtResource("7_bnfms")
+
+[node name="TextureRect8" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=2063251641]
 layout_mode = 2
 texture = ExtResource("7_bnfms")
 
@@ -904,9 +988,20 @@ texture_normal = ExtResource("17_aa28w")
 script = ExtResource("1_6vsh8")
 
 [node name="Cursor" type="TextureRect" parent="UI/Cursor" unique_id=17904996]
+visible = false
 offset_right = 14.0
 offset_bottom = 17.94873
 texture = ExtResource("12_miicn")
+
+[node name="Dialog" type="Node" parent="UI" unique_id=557987638]
+script = ExtResource("28_v1qyb")
+
+[node name="digitacao" type="AudioStreamPlayer" parent="UI/Dialog" unique_id=821881684]
+
+[node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
+transform = Transform3D(1, 0, 0, 0, 0.92993706, 0.36771885, 0, -0.36771885, 0.92993706, 0, 0, 0)
+
+[node name="musica" type="AudioStreamPlayer" parent="." unique_id=620380722]
 
 [connection signal="cartas_prontas" from="." to="Camera3D/3DUI/Mao" method="_on_escritorio_cartas_prontas"]
 [connection signal="passa_turno" from="Inimigo" to="." method="_on_inimigo_passa_turno"]

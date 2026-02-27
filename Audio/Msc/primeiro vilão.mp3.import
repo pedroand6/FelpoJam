@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bx62ocvs70juh"
+path="res://.godot/imported/primeiro vilão.mp3-6aa92bb800fcf303e5419ea2ed102ba5.mp3str"
+
+[deps]
+
+source_file="res://Audio/Msc/primeiro vilão.mp3"
+dest_files=["res://.godot/imported/primeiro vilão.mp3-6aa92bb800fcf303e5419ea2ed102ba5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

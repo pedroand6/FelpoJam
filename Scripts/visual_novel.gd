@@ -34,7 +34,6 @@ func le_arquivos(path):
 	for file in returnedFiles:
 		if not file.ends_with(".import"):
 			files.append(file)
-	print(files)
 	return files
 
 func passa_dialogo() -> void:
