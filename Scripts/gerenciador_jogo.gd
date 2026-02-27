@@ -221,4 +221,3 @@ func muda_cena(cena_sai: String, cena_entra: String) -> void:
 
 func muda_volume(volume: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(volume))
-

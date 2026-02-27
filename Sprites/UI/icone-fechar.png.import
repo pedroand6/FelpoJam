@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oesq11jrexw7"
-path="res://.godot/imported/icone-checado.png-f791acd87f8594dca51b0ff7498e2159.ctex"
+uid="uid://bh041yn0op4xd"
+path="res://.godot/imported/icone-fechar.png-d4a81294aa6927b4b4f0160e0957f2b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/icone-checado.png"
-dest_files=["res://.godot/imported/icone-checado.png-f791acd87f8594dca51b0ff7498e2159.ctex"]
+source_file="res://Sprites/UI/icone-fechar.png"
+dest_files=["res://.godot/imported/icone-fechar.png-d4a81294aa6927b4b4f0160e0957f2b2.ctex"]
 
 [params]
 
