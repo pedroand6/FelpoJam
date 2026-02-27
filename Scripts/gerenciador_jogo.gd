@@ -99,9 +99,9 @@ func gera_baralho(carimbo : Carimbos) -> Array[Contrato]:
 			pilha_carta.append(temp_contrato)
 			
 	var presidente = Contrato.new(Contrato.Tipos.FUNCIONARIO, CARGOS[9]["nome"], CARGOS[9]["custo"], 
-		load("res://Sprites/Cartas/carta9.png"), "", "Coringa", 9, CARGOS[9]["prod"])
+		load("res://Sprites/Cartas/9-presidente.png"), "", "Coringa", 9, CARGOS[9]["prod"])
 	var filho_dono = Contrato.new(Contrato.Tipos.FUNCIONARIO, CARGOS[0]["nome"], CARGOS[0]["custo"],
-	 	load("res://Sprites/Cartas/carta0.png"), "", "Coringa", 0, CARGOS[0]["prod"])
+	 	load("res://Sprites/Cartas/0-filhododono.png"), "", "Coringa", 0, CARGOS[0]["prod"])
 		
 	pilha_carta.append(presidente)
 	pilha_carta.append(filho_dono)

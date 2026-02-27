@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_0frma")
-nome = "Piscina de bolinhas"
+nome = "Piscina de Bolinhas"
 desc = "+1pt de multiplicador de prod. por funcionário caso a sala esteja lotada."
 custo = 30
 sprite = ExtResource("2_c5mwy")

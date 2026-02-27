@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_m5ljl")
 nome = "Redução de Prazos"
-desc = "+3pts de multiplicador se a Sala tiver a combinação Trio Parada Dura (inclui Juntos e Misturados)."
+desc = "+4pts de multiplicador se a Sala tiver a combinação Trio Parada Dura (inclui Juntos e Misturados)."
 custo = 45
 quantidade = 2
 sprite = ExtResource("2_g2qvb")

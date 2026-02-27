@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_wvg6x")
-nome = "Juramento à bandeira"
+nome = "Juramento à Bandeira"
 desc = "+2pts de multiplicador de prod. por cada funcionário de RH"
 custo = 40
 sprite = ExtResource("2_6bb17")

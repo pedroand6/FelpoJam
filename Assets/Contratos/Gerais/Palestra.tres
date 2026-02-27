@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_0rmw8")
-nome = "Palestra motivacional"
+nome = "Palestra Motivacional"
 desc = "+3pt de multiplicador de prod. por cada cargo igual ou abaixo de Sênior."
 custo = 30
 quantidade = 2
