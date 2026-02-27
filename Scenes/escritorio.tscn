@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="19_nt0tj"]
 [ext_resource type="Texture2D" uid="uid://cm3cps7c1qnwt" path="res://Sprites/Cartas/Financeiro/1-fin-estagiario.png" id="19_qqx3n"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
-[ext_resource type="Texture2D" uid="uid://fqahw1kjeohb" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
+[ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
 size = Vector3(1.3, 3, 1.3)

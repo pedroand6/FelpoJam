@@ -15,7 +15,134 @@ var bloqueada : bool = false
 var funcionarios : Array[Contrato]
 var demandas : Array[Contrato]
 
+var efeitosDemandas = {
+	"Cafézinho": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		for fun in funcs:
+			if fun.area == "TI" or fun.area == "Financeiro":
+				increm += 10
+		return [increm, prod]
+		,
+	"Bombom da Meta": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		for fun in funcs:
+			if fun.area == "RH" or fun.area == "Marketing":
+				increm += 10
+		return [increm, prod]
+		,
+	"Palestra Motivacional": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		for fun in funcs:
+			if fun.cargo <= 4:
+				prod += 3
+		return [increm, prod]
+		,
+	"Dinâmicas de Grupo": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		for fun in funcs:
+			if fun.cargo > 4:
+				prod += 2
+		return [increm, prod]
+		,
+	"Promoção por Mérito": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		var cargos = []
+		for fun in funcs:
+			cargos.append(fun.cargo)
+		if 0 in cargos and 9 in cargos:
+			prod *= 2
+		return [increm, prod]
+		,
+	"Novo Time": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		if combo in [2, 3, 4, 8]:
+			prod += 3
+		return [increm, prod]
+		,
+	"Redução de Prazos": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		if combo in [3, 4, 8]:
+			prod += 4
+		return [increm, prod]
+		,
+	"Política de Diversidade": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		if combo == 8:
+			prod += 6
+		return [increm, prod]
+		,
+	"Confraternização": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
+		if combo in [6, 10, 12]:
+			prod += 5
+		return [increm, prod]
+		,
+	"Ar-condicionado": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		if len(funcs) == 4:
+			for fun in funcs:
+				prod += 1
+		return [increm, prod]
+		,
+	"Impressora": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		for fun in funcs:
+			if fun.area == "RH":
+				prod += 2
+		return [increm, prod]
+		,
+	"Coffee Break": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		for fun in funcs:
+			if fun.cargo == 1:
+				increm += 20
+		return [increm, prod]
+		,
+	"Piscina de Bolinhas": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		if len(funcs) == 4:
+			for fun in funcs:
+				prod += 1
+		return [increm, prod]
+		,
+	"Trabalho Remoto": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		for fun in funcs:
+			if fun.area == "TI" or fun.area == "Marketing":
+				prod += 2
+		return [increm, prod]
+		,
+	"Chapéu de Hélice": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		for fun in funcs:
+			if fun.cargo == 1:
+				increm += 20
+		return [increm, prod]
+		,
+	"Just-in-Time": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		if len(funcs) == 4:
+			for fun in funcs:
+				prod += 1
+		return [increm, prod]
+		,
+	"Juramento à Bandeira": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		for fun in funcs:
+			if fun.area == "RH":
+				prod += 2
+		return [increm, prod]
+		,
+	"Soldado da Produtividade": 
+		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
+		for fun in funcs:
+			if fun.cargo == 1:
+				increm += 20
+		return [increm, prod]
+}
+
 #Pontuação
+var combo := 1
 var multiplicador := 1
 var incrementador := 0
 var pontuacao := 0
@@ -43,11 +170,11 @@ func open_room():
 		func_imagens.append(fun.sprite)
 	
 	for util in demandas:
-		utils.append(util.nome + ": " + util.desc)
+		utils.append("- " + util.nome + ": " + util.desc)
 		
 	ui.set_cartas(func_imagens)
 	ui.set_utilitarios(utils)
-	ui.set_combo(Gerenciador.combos[multiplicador][0], Gerenciador.combos[multiplicador][1])
+	ui.set_combo(Gerenciador.combos[combo][0], Gerenciador.combos[combo][1])
 	
 	var donoSala
 	match dono:
@@ -93,10 +220,20 @@ func insert_cartas_player():
 	calcula_pontos()
 
 func calcula_pontos():
+	incrementador = 0
+	multiplicador = 1
+	
 	for funcionario in funcionarios:
 		incrementador += funcionario.produtividade
 		
-	multiplicador = Gerenciador.calcula_combo(funcionarios)
+	combo = Gerenciador.calcula_combo(funcionarios)
+	multiplicador = combo
+	
+	for util in demandas:
+		var result = efeitosDemandas[util.nome].call(funcionarios, incrementador, multiplicador, combo)
+		incrementador = result[0]
+		multiplicador = result[1]
+	
 	pontuacao = multiplicador * incrementador
 
 func implementa_pontos():

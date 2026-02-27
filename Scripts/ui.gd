@@ -58,7 +58,15 @@ func set_utilitarios(utils):
 func set_combo(nome, desc):
 	sala_combo[0].text = nome
 	sala_combo[1].text = desc
-
+	
+func hide_cartas():
+	for i in range(0, 4):
+		sala_cartas[i].hide()
+		
+func hide_util():
+	for i in range(0, 3):
+		sala_util[i].text = "-"
+	
 func _on_resumir_button_down() -> void:
 	_on_fechar_button_down()
 
@@ -80,5 +88,7 @@ func _on_fechar_button_down() -> void:
 		sala_show:
 			sala_show = false
 			sala_menu.hide()
+			hide_cartas()
+			hide_util()
 		_:
 			pass

@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_vuk5v")
-nome = "Promoção por mérito"
-desc = "Duplica os pontos do multiplicador caso o Filho do Dono esteja na sala."
+nome = "Promoção por Mérito"
+desc = "Duplica os pontos do multiplicador caso o Filho do Dono e o Presidente estejam na sala."
 custo = 75
 sprite = ExtResource("2_joovt")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

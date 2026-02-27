@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_8eulo")
 nome = "Confraternização"
-desc = "+4 pts de multiplicador se a Sala tiver a combinação Reunião do Setor (inclui Desigualdade Salarial e Happy Hour)."
+desc = "+5 pts de multiplicador se a Sala tiver a combinação Reunião do Setor (inclui Desigualdade Salarial e Happy Hour)."
 custo = 70
 sprite = ExtResource("2_isvpt")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

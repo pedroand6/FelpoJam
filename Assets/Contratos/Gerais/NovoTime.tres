@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_t6wme")
 nome = "Novo Time"
-desc = "+2pts de multiplicador se a Sala tiver a combinação Parceria (inclui  Trio Parada Dura, Complô e Juntos e Misturados)."
+desc = "+3pts de multiplicador se a Sala tiver a combinação Parceria (inclui  Trio Parada Dura, Complô e Juntos e Misturados)."
 custo = 30
 quantidade = 2
 sprite = ExtResource("2_2au2s")
