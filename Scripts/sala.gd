@@ -158,12 +158,13 @@ var pontuacao := 0
 @onready var ui = $"../../UI"
 @onready var dinheiro: PackedScene = load("res://Scenes/dinheiro.tscn")
 @onready var funcionario: PackedScene = load("res://Scenes/funcionario_popup.tscn")
-
+@onready var inimigo := $"../../Inimigo"
 var selecionada : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Gerenciador.comeca_turno.connect(implementa_pontos)
+	inimigo.jogou_carta.connect(popup_carta)
 	root.passou_turno.connect(turno_ia)
 
 func _input(event: InputEvent) -> void:
@@ -184,7 +185,7 @@ func _input(event: InputEvent) -> void:
 			Gerenciador.sala_selecionada = self
 			selecionada = true
 			borda2.show()
-			
+
 func mover_atacar():
 	var selecionada = Gerenciador.sala_selecionada
 	if len(funcionarios) > 0 and selecionada.dono != dono: #ataque
@@ -205,15 +206,15 @@ func mover_atacar():
 		pontuacao = calcula_pontos()
 		
 	Gerenciador.sala_selecionada.deselecionar()
-	
+
 func deselecionar():
 	Gerenciador.sala_selecionada = null
 	selecionada = false
 	borda2.hide()
-	
+
 func turno_ia():
 	bloqueada_player = false
-	
+
 func demissao_geral():
 	funcionarios.clear()
 	dono = Players.NENHUM
@@ -316,13 +317,22 @@ func implementa_pontos():
 			din.position = Vector3.ZERO
 			din.sumir()
 		Players.IA:
-			print("dinheiro")
 			Gerenciador.IA_dinheiro += int(pontuacao / 2)
-			var fn = funcionario.instantiate()
-			add_child(fn)
-			fn.label.text = "+" + "1" + " funcionario"
-			fn.position = Vector3.ZERO
-			fn.sumir()
+
+func popup_carta(tipo: Contrato.Tipos, sala_id: int) -> void:
+	if sala_id != id: return
+	if tipo == Contrato.Tipos.FUNCIONARIO:
+		var fn = funcionario.instantiate()
+		add_child(fn)
+		fn.label.text = "+1 funcionario"
+		fn.position = Vector3.ZERO
+		fn.sumir()
+		return
+	var fn = funcionario.instantiate()
+	add_child(fn)
+	fn.label.text = "+1 demanda"
+	fn.position = Vector3.ZERO
+	fn.sumir()
 
 func _on_area_3d_mouse_entered() -> void:
 	borda.show()

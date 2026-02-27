@@ -8,6 +8,9 @@ signal passa_turno
 var ia_mao : Array[Contrato] = []
 
 signal acao_concluida
+signal jogou_carta(tipo_carta: Contrato.Tipos, sala_destino: int)
+signal resposta_defesa_jogador(usou_carimbo: bool)
+signal iniciar_animacao_ataque(sala_origem: int, sala_destino: int)
 
 func _ready():
 	pass
@@ -81,9 +84,6 @@ func jogada():
 	
 	await get_tree().create_timer(0.5).timeout
 	passa_turno.emit()
-	
-signal resposta_defesa_jogador(usou_carimbo: bool)
-signal iniciar_animacao_ataque(sala_origem: int, sala_destino: int)
 
 func avalia_ataque() -> bool:
 	var atacou = false
@@ -233,13 +233,16 @@ func joga_cartas(salas_jogadas):
 				Gerenciador.ia_baralho.erase(carta)
 				Gerenciador.ia_baralho_pego.append(carta)
 				salas_jogadas[sala.id] = true
+				jogou_carta.emit(Contrato.Tipos.FUNCIONARIO, sala.id)
 			else:
 				sala.demandas.append(carta)
 				Gerenciador.IA_dinheiro -= carta.custo
 				ia_mao.erase(carta)
 				Gerenciador.ia_baralho.erase(carta)
 				Gerenciador.ia_baralho_pego.append(carta)
-				
+				jogou_carta.emit(Contrato.Tipos.DEMANDA, sala.id)
+			
+			salas_jogadas[sala.id] = true
 			print("IA jogou ", carta.nome, " na sala ", sala.id)
 			emit_signal("acao_concluida")
 			
