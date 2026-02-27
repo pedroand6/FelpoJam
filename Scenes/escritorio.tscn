@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
+[ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="26_v1qyb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
 size = Vector3(1.3, 3, 1.3)
@@ -36,14 +37,23 @@ size = Vector3(1.3, 3, 1.3)
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
 script = ExtResource("9_7sov5")
 metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67vox"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1qyb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sov5"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_xl6bb")
 
-[node name="Inimigo" type="Sprite3D" parent="." unique_id=1659779327]
+[node name="Inimigo" type="Sprite3D" parent="." unique_id=1659779327 node_paths=PackedStringArray("salas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6255174)
 texture = ExtResource("1_3j7i0")
 script = ExtResource("3_rwmm0")
+salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=222983965]
 transform = Transform3D(1, 0, 0, 0, 0.85714036, 0.51508296, 0, -0.51508296, 0.85714036, 0, 0.6514241, -0.21619591)
@@ -61,34 +71,42 @@ mesh = SubResource("BoxMesh_xx3jy")
 
 [node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.2828626, 0, 0, 0, 1, 0, 0, 0, 0.2828626, -0.7374354, -0.32901675, -1.9394796)
+id = 1
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala5")]
 
 [node name="Sala2" parent="Salas" unique_id=184202739 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.37481305, 0, 0, 0, 1, 0, 0, 0, 0.37481305, -0.23570052, -0.32901675, -1.8830372)
+id = 2
 vizinhos = [NodePath("../Sala1"), NodePath("../Sala6"), NodePath("../Sala3")]
 
 [node name="Sala3" parent="Salas" unique_id=813707592 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.2960657, 0, 0, 0, 1, 0, 0, 0, 0.4564792, 0.2456457, -0.32901675, -1.8234073)
+id = 3
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala7"), NodePath("../Sala4")]
 
 [node name="Sala4" parent="Salas" unique_id=1730815094 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.24549578, 0.69948107, -0.32901675, -1.9581622)
+id = 4
 vizinhos = [NodePath("../Sala3"), NodePath("../Sala8")]
 
 [node name="Sala5" parent="Salas" unique_id=2107717327 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.41790602, -0.70542467, -0.32901675, -1.4460622)
+id = 5
 vizinhos = [NodePath("../Sala1"), NodePath("../Sala6")]
 
 [node name="Sala6" parent="Salas" unique_id=231385432 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.34505248, -0.23375368, -0.32901675, -1.4022642)
+id = 6
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala5"), NodePath("../Sala7")]
 
 [node name="Sala7" parent="Salas" unique_id=993016474 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.39828414, 0, 0, 0, 1, 0, 0, 0, 0.24601866, 0.28171527, -0.32901675, -1.3348826)
+id = 7
 vizinhos = [NodePath("../Sala3"), NodePath("../Sala8"), NodePath("../Sala6")]
 
 [node name="Sala8" parent="Salas" unique_id=2111903035 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.278125, 0, 0, 0, 1, 0, 0, 0, 0.43803912, 0.7432791, -0.32901675, -1.4595386)
+id = 8
 vizinhos = [NodePath("../Sala4"), NodePath("../Sala7")]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2016285213 node_paths=PackedStringArray("sala_cartas", "sala_util", "sala_combo")]
@@ -220,17 +238,17 @@ stretch_mode = 4
 
 [node name="DescarteBtn" type="TextureButton" parent="UI/PlayerSide" unique_id=46986098]
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -151.0
-offset_top = 428.0
-offset_right = -87.0
-offset_bottom = 492.0
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -118.0
+offset_right = -80.0
+offset_bottom = -54.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 tooltip_text = "Descarte"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_81bno")
@@ -891,6 +909,7 @@ theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
 fit_content = true
+scroll_active = false
 
 [node name="item2" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=1232568889]
 layout_mode = 2
@@ -898,6 +917,8 @@ size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
+fit_content = true
+scroll_active = false
 
 [node name="item3" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=975917289]
 layout_mode = 2
@@ -905,6 +926,8 @@ size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
+fit_content = true
+scroll_active = false
 
 [node name="HSeparator" type="HSeparator" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=253013934]
 layout_mode = 2
@@ -968,21 +991,187 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_67vox")
 text = "Demissão Geral"
 icon = ExtResource("24_ac8jf")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/Demissao" unique_id=778980322]
+layout_mode = 0
+offset_left = -13.30481
+offset_top = -6.1035156e-05
+offset_right = 240.15161
+offset_bottom = 40.57959
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="Fechar" type="TextureButton" parent="UI/Popup/Caixa/Frente" unique_id=576078387]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -39.952637
-offset_top = 4.999996
-offset_right = -7.9526367
-offset_bottom = 36.999996
+offset_left = -40.61792
+offset_top = 6.309078
+offset_right = -8.61792
+offset_bottom = 38.30908
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("17_aa28w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Aviso" type="Control" parent="UI" unique_id=207554618]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.0
+offset_top = -300.0
+offset_right = 383.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9915092, 0.9915092)
+
+[node name="AvisoFundo" type="ColorRect" parent="UI/Aviso" unique_id=1692640405]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -547.64996
+offset_top = -242.05524
+offset_right = 588.792
+offset_bottom = 247.19342
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Borda" type="ColorRect" parent="UI/Aviso" unique_id=822741180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frente" type="ColorRect" parent="UI/Aviso" unique_id=310190326]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -395.0
+offset_top = -295.0
+offset_right = 395.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Fechar" type="TextureButton" parent="UI/Aviso/Frente" unique_id=1057905648]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.626465
+offset_top = 4.9785986
+offset_right = -4.626465
+offset_bottom = 36.9786
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_aa28w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Title" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=69342712]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -307.21213
+offset_top = 37.359665
+offset_right = 308.05432
+offset_bottom = 122.078995
+grow_horizontal = 2
+theme = ExtResource("26_v1qyb")
+theme_override_colors/default_color = Color(0.8695807, 0.00011221685, 0.04879783, 1)
+theme_override_font_sizes/normal_font_size = 48
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=1923252938]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -307.21213
+offset_top = 242.09805
+offset_right = 308.05432
+offset_bottom = 326.81738
+grow_horizontal = 2
+theme = ExtResource("26_v1qyb")
+theme_override_font_sizes/normal_font_size = 32
+text = "Lorem ipsum sus sas sos lieaorr sadks as,camcioha"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NaoBtn" type="Button" parent="UI/Aviso/Frente" unique_id=567082648]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -314.92374
+offset_top = -156.27487
+offset_right = -211.04156
+offset_bottom = -102.821014
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("26_v1qyb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v1qyb")
+text = "Não"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/NaoBtn" unique_id=20559893]
+layout_mode = 0
+offset_right = 103.88208
+offset_bottom = 53.453857
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="SimBtn" type="Button" parent="UI/Aviso/Frente" unique_id=1783213965]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 210.83263
+offset_top = -156.27487
+offset_right = 314.71472
+offset_bottom = -102.821014
+grow_vertical = 0
+theme = ExtResource("26_v1qyb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7sov5")
+text = "Sim"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/SimBtn" unique_id=1061971994]
+layout_mode = 0
+offset_right = 103.88208
+offset_bottom = 53.453857
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="Cursor" type="Node" parent="UI" unique_id=1916013957]
 script = ExtResource("1_6vsh8")

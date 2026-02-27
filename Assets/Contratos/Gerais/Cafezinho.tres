@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://dlvlgaa26nxqh"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_2mwx2"]
-[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="2_udg6k"]
+[ext_resource type="Texture2D" uid="uid://cb0mifrtlkpm2" path="res://Sprites/Cartas/Demandas/d-cafezinho.png" id="2_udg6k"]
 
 [resource]
 script = ExtResource("1_2mwx2")
 nome = "Cafézinho"
-desc = "+10pts de prod. por cada funcionário de TI ou financeiro."
+desc = "+5pts de prod. por cada funcionário de TI ou financeiro."
 custo = 30
 quantidade = 2
 sprite = ExtResource("2_udg6k")

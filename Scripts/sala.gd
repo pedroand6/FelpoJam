@@ -7,6 +7,7 @@ enum Players {
 	NENHUM = 2
 }
 
+@export var id : int = 0
 @export var vizinhos : Array[Sala]
 @onready var borda = $Borda
 @onready var borda2 = $Borda2
@@ -24,17 +25,17 @@ var efeitosDemandas = {
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
 		for fun in funcs:
 			if fun.area == "TI" or fun.area == "Financeiro":
-				increm += 10
+				increm += 5
 		return [increm, prod]
 		,
 	"Bombom da Meta": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
 		for fun in funcs:
 			if fun.area == "RH" or fun.area == "Marketing":
-				increm += 10
+				increm += 5
 		return [increm, prod]
 		,
-	"Palestra Motivacional": 
+	"Palestra Irada": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
 		for fun in funcs:
 			if fun.cargo <= 4:
@@ -57,91 +58,91 @@ var efeitosDemandas = {
 			prod *= 2
 		return [increm, prod]
 		,
-	"Novo Time": 
+	"Time Novo": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
 		if combo in [2, 3, 4, 8]:
-			prod += 3
+			prod += 2
 		return [increm, prod]
 		,
 	"Redução de Prazos": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
 		if combo in [3, 4, 8]:
-			prod += 4
+			prod += 3
 		return [increm, prod]
 		,
-	"Política de Diversidade": 
+	"Política Diversa": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
 		if combo == 8:
-			prod += 6
+			prod += 4
 		return [increm, prod]
 		,
 	"Confraternização": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int): 
 		if combo in [6, 10, 12]:
-			prod += 5
+			prod += 4
 		return [increm, prod]
 		,
 	"Ar-condicionado": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		if len(funcs) == 4:
 			for fun in funcs:
-				prod += 1
+				increm += 6
 		return [increm, prod]
 		,
 	"Impressora": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		for fun in funcs:
 			if fun.area == "RH":
-				prod += 2
+				prod += 1
 		return [increm, prod]
 		,
 	"Coffee Break": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		for fun in funcs:
 			if fun.cargo == 1:
-				increm += 20
+				increm += 10
 		return [increm, prod]
 		,
 	"Piscina de Bolinhas": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		if len(funcs) == 4:
 			for fun in funcs:
-				prod += 1
+				increm += 6
 		return [increm, prod]
 		,
 	"Trabalho Remoto": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		for fun in funcs:
 			if fun.area == "TI" or fun.area == "Marketing":
-				prod += 2
+				prod += 1
 		return [increm, prod]
 		,
 	"Chapéu de Hélice": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		for fun in funcs:
 			if fun.cargo == 1:
-				increm += 20
+				increm += 10
 		return [increm, prod]
 		,
 	"Just-in-Time": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		if len(funcs) == 4:
 			for fun in funcs:
-				prod += 1
+				increm += 6
 		return [increm, prod]
 		,
 	"Juramento à Bandeira": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		for fun in funcs:
 			if fun.area == "RH":
-				prod += 2
+				prod += 1
 		return [increm, prod]
 		,
 	"Soldado da Produtividade": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		for fun in funcs:
 			if fun.cargo == 1:
-				increm += 20
+				increm += 10
 		return [increm, prod]
 }
 
@@ -200,8 +201,8 @@ func mover_atacar():
 		funcionarios = Gerenciador.sala_selecionada.funcionarios.duplicate(true)
 		Gerenciador.sala_selecionada.demissao_geral()
 		Gerenciador.movimentos_restantes = 0
-		Gerenciador.sala_selecionada.calcula_pontos()
-		calcula_pontos()
+		Gerenciador.sala_selecionada.pontuacao = Gerenciador.sala_selecionada.calcula_pontos()
+		pontuacao = calcula_pontos()
 		
 	Gerenciador.sala_selecionada.deselecionar()
 	
@@ -245,9 +246,10 @@ func open_room():
 	ui.show_sala(donoSala, pontuacao, self)
 
 func insert_cartas_player():
-	if dono == Players.IA:
-		return
-	
+	if dono == Players.IA: return #avisar jogador
+	if len(Gerenciador.salas_jogadas) >= 2 and id not in Gerenciador.salas_jogadas.keys():
+		return #avisar jogador
+		
 	var quantFunc = 0
 	var quantDemanda = 0
 	var custo = 0
@@ -262,22 +264,24 @@ func insert_cartas_player():
 	
 	if quantFunc + len(funcionarios) > 4: return #avisar jogador
 	if quantDemanda + len(demandas) > 3: return #avisar jogador
+	if quantDemanda > 0 and len(funcionarios) <= 0: return #avisar jogador
 	if custo > Gerenciador.jogador_dinheiro: return #avisar jogador
 	
+	Gerenciador.salas_jogadas[id] = self
 	Gerenciador.jogador_dinheiro -= custo
 	
 	for carta in Gerenciador.cartas_selecionadas:
 		var contrato = carta.contrato
 		if contrato.tipo == Contrato.Tipos.FUNCIONARIO:
 			funcionarios.append(contrato)
+			dono = Players.JOGADOR
 		else:
 			demandas.append(contrato)
 	
-	dono = Players.JOGADOR
 	mao.descarta(false)
-	calcula_pontos()
+	pontuacao = calcula_pontos()
 
-func calcula_pontos():
+func calcula_pontos() -> int:
 	incrementador = 0
 	multiplicador = 1
 	
@@ -292,11 +296,13 @@ func calcula_pontos():
 		incrementador = result[0]
 		multiplicador = result[1]
 	
-	pontuacao = multiplicador * incrementador
+	return multiplicador * incrementador
 
 func implementa_pontos():
 	Gerenciador.movimentos_restantes = 1
+	Gerenciador.salas_jogadas.clear()
 	bloqueada_ia = false
+	pontuacao = calcula_pontos()
 	match dono:
 		Players.JOGADOR:
 			Gerenciador.jogador_dinheiro += int(pontuacao / 2)
@@ -306,6 +312,7 @@ func implementa_pontos():
 			din.position = Vector3.ZERO
 			din.sumir()
 		Players.IA:
+			print("dinheiro")
 			Gerenciador.IA_dinheiro += int(pontuacao / 2)
 			var fn = funcionario.instantiate()
 			add_child(fn)

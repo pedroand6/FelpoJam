@@ -51,6 +51,7 @@ var ia_baralho: Array[Contrato]
 var jogador_baralho: Array[Contrato]
 
 var cartas_selecionadas: Array[Carta]
+var salas_jogadas : Dictionary[int, Sala] = {}
 
 var ia_baralho_pego: Array[Contrato]
 var jogador_baralho_pego: Array[Contrato]
@@ -60,8 +61,8 @@ var jogador_carimbo : Carimbos
 
 @export var total_rounds = 8
 
-@export var jogador_dinheiro : int = 100
-@export var IA_dinheiro : int = 100
+@export var jogador_dinheiro : int = 150
+@export var IA_dinheiro : int = 150
 
 var round : int = 1
 var turno : int = JOGADOR
@@ -184,11 +185,12 @@ func calcula_combo(funcionarios : Array[Contrato]):
 	niveis.sort()
 	var primeiro = niveis.front()
 	
-	for i in range(len(niveis)):
-		if niveis[i] == 0 and i > 0:
-			niveis[i] = niveis[i-1] + 1
-		elif niveis[i] == 0:
-			niveis[i] = niveis[i+1] - 1
+	if len(niveis) > 1:
+		for i in range(len(niveis)):
+			if niveis[i] == 0 and i > 0:
+				niveis[i] = niveis[i-1] + 1
+			elif niveis[i] == 0:
+				niveis[i] = niveis[i+1] - 1
 	
 	if niveis == range(primeiro, primeiro + 3, 1):
 		desigualdade =  true

@@ -70,6 +70,15 @@ func _process(delta: float) -> void:
 		click.global_position = click.position
 		click.set_pressed(true)
 		Input.parse_input_event(click)
+		
+	if Input.is_action_just_pressed("clique_direito_emulado"):
+		var root : Window = get_tree().root;  
+		var click := InputEventMouseButton.new()
+		click.set_button_index(MOUSE_BUTTON_RIGHT)
+		click.position = root.get_viewport().get_screen_transform() * root.global_canvas_transform * cursor.position
+		click.global_position = click.position
+		click.set_pressed(true)
+		Input.parse_input_event(click)
 
 func _physics_process(_delta: float) -> void:
 	raio.force_raycast_update()

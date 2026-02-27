@@ -15,7 +15,7 @@ var id : int
 var desc : String
 var sprite : Texture2D
 
-func _init(thisTipo : Tipos, thisNome : String, thisCusto : int, thisSprite : Texture2D, thisDesc : String = "", thisArea : String = "", thisCargo : int = 0, 
+func _init(thisTipo : Tipos, thisNome : String, thisCusto : int, thisSprite : Texture2D, thisDesc : String = "", thisArea : String = "", thisCargo : int = -1, 
 			thisProdutividade : int = 0, thisId : int = 0) -> void:
 	tipo = thisTipo
 	nome = thisNome

@@ -100,8 +100,12 @@ func _on_fechar_button_down() -> void:
 		_:
 			pass
 
-
 func _on_demissao_button_down() -> void:
+	if sala.dono != Sala.Players.JOGADOR:
+		return
+		
+	#avisar jogador
+	
 	sala.demissao_geral()
-	sala.calcula_pontos()
+	sala.pontuacao = sala.calcula_pontos()
 	sala.open_room()
