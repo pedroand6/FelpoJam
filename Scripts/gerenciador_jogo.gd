@@ -181,11 +181,12 @@ func calcula_combo(funcionarios : Array[Contrato]):
 	niveis.sort()
 	var primeiro = niveis.front()
 	
-	for i in range(len(niveis)):
-		if niveis[i] == 0 and i > 0:
-			niveis[i] = niveis[i-1] + 1
-		elif niveis[i] == 0:
-			niveis[i] = niveis[i+1] - 1
+	if len(niveis) > 1:
+		for i in range(len(niveis)):
+			if niveis[i] == 0 and i > 0:
+				niveis[i] = niveis[i-1] + 1
+			elif niveis[i] == 0:
+				niveis[i] = niveis[i+1] - 1
 	
 	if niveis == range(primeiro, primeiro + 3, 1):
 		desigualdade =  true

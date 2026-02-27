@@ -7,6 +7,7 @@ enum Players {
 	NENHUM = 2
 }
 
+@export var id : int = 0
 @export var vizinhos : Array[Sala]
 @onready var borda = $Borda
 @onready var borda2 = $Borda2
@@ -199,8 +200,8 @@ func mover_atacar():
 		funcionarios = Gerenciador.sala_selecionada.funcionarios.duplicate(true)
 		Gerenciador.sala_selecionada.demissao_geral()
 		Gerenciador.movimentos_restantes = 0
-		Gerenciador.sala_selecionada.calcula_pontos()
-		calcula_pontos()
+		Gerenciador.sala_selecionada.pontuacao = Gerenciador.sala_selecionada.calcula_pontos()
+		pontuacao = calcula_pontos()
 		
 	Gerenciador.sala_selecionada.deselecionar()
 	
@@ -268,14 +269,14 @@ func insert_cartas_player():
 		var contrato = carta.contrato
 		if contrato.tipo == Contrato.Tipos.FUNCIONARIO:
 			funcionarios.append(contrato)
+			dono = Players.JOGADOR
 		else:
 			demandas.append(contrato)
 	
-	dono = Players.JOGADOR
 	mao.descarta(false)
-	calcula_pontos()
+	pontuacao = calcula_pontos()
 
-func calcula_pontos():
+func calcula_pontos() -> int:
 	incrementador = 0
 	multiplicador = 1
 	
@@ -290,11 +291,12 @@ func calcula_pontos():
 		incrementador = result[0]
 		multiplicador = result[1]
 	
-	pontuacao = multiplicador * incrementador
+	return multiplicador * incrementador
 
 func implementa_pontos():
 	Gerenciador.movimentos_restantes = 1
 	bloqueada_ia = false
+	pontuacao = calcula_pontos()
 	match dono:
 		Players.JOGADOR:
 			Gerenciador.jogador_dinheiro += int(pontuacao / 2)
@@ -304,6 +306,7 @@ func implementa_pontos():
 			din.position = Vector3.ZERO
 			din.sumir()
 		Players.IA:
+			print("dinheiro")
 			Gerenciador.IA_dinheiro += int(pontuacao / 2)
 
 func _on_area_3d_mouse_entered() -> void:

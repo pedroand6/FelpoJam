@@ -816,7 +816,6 @@ theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
 fit_content = true
-scroll_active = false
 
 [node name="item2" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=1232568889]
 layout_mode = 2
@@ -824,8 +823,6 @@ size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
-fit_content = true
-scroll_active = false
 
 [node name="item3" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=975917289]
 layout_mode = 2
@@ -833,8 +830,6 @@ size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
-fit_content = true
-scroll_active = false
 
 [node name="HSeparator" type="HSeparator" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=253013934]
 layout_mode = 2
