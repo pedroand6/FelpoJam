@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://df8ko7rbrv5ha"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_0rmw8"]
-[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="2_hk5jg"]
+[ext_resource type="Texture2D" uid="uid://crugv4674i861" path="res://Sprites/Cartas/Demandas/d-palestra-irada.png" id="2_hk5jg"]
 
 [resource]
 script = ExtResource("1_0rmw8")
-nome = "Palestra Motivacional"
-desc = "+3pt de multiplicador de prod. por cada cargo igual ou abaixo de Sênior."
+nome = "Palestra Irada"
+desc = "+2pt de multiplicador de prod. por cada cargo igual ou abaixo de Sênior."
 custo = 30
 quantidade = 2
 sprite = ExtResource("2_hk5jg")

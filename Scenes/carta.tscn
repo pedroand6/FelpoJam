@@ -73,6 +73,7 @@ texture = ExtResource("3_om27y")
 
 [node name="Nome" type="Label3D" parent="Utilitario" unique_id=1222836076]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18548802, 0.25077063, 0)
+visible = false
 sorting_offset = 1.0
 pixel_size = 0.0001
 double_sided = false
@@ -89,6 +90,7 @@ width = 4000.0
 
 [node name="Desc" type="Label3D" parent="Utilitario" unique_id=1283090878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.538, -0.18547429, 0.11817799, 0)
+visible = false
 sorting_offset = 1.0
 pixel_size = 0.0001
 double_sided = false
@@ -105,6 +107,7 @@ width = 4000.0
 
 [node name="Preco" type="Label3D" parent="Utilitario" unique_id=284903844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23919505, 0)
+visible = false
 sorting_offset = 1.0
 pixel_size = 0.0001
 double_sided = false
@@ -119,7 +122,6 @@ width = 4000.0
 
 [node name="Imagem" type="Sprite3D" parent="Utilitario" unique_id=1511632932]
 transform = Transform3D(0.2135376, 0, 0, 0, 0.21161602, 0, 0, 0, 1, 0, 0, 0)
-modulate = Color(0, 0, 0, 1)
 texture_filter = 4
 texture = ExtResource("4_om27y")
 

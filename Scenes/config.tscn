@@ -7,6 +7,14 @@
 [ext_resource type="AudioStream" uid="uid://dw5ip70y6s6l5" path="res://Audio/SFX/DIMINUIR VOLUME MENU.wav" id="8_bup8a"]
 [ext_resource type="AudioStream" uid="uid://bkb5eqblh0efm" path="res://Audio/SFX/AUMENTAR VOLUME MENU.wav" id="9_1jr8q"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4uu7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7ocr"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+
 [node name="Config" type="Control" unique_id=1785124144]
 layout_mode = 3
 anchors_preset = 8
@@ -109,6 +117,7 @@ theme_override_constants/separation = 24
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_kr0as")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p4uu7")
 text = "Voltar"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Configs/Btns/HBoxContainer/Voltar" unique_id=171907461]
@@ -128,6 +137,7 @@ patch_margin_bottom = 4
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_kr0as")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a7ocr")
 text = "Sair"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Configs/Btns/HBoxContainer/Sair" unique_id=712401046]

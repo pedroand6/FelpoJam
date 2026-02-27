@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://ck8r0q8iicn7o"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_8eulo"]
-[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="2_isvpt"]
+[ext_resource type="Texture2D" uid="uid://dxp5bysd6wd24" path="res://Sprites/Cartas/Demandas/d-confraternizacao.png" id="2_isvpt"]
 
 [resource]
 script = ExtResource("1_8eulo")
 nome = "Confraternização"
-desc = "+5 pts de multiplicador se a Sala tiver a combinação Reunião do Setor (inclui Desigualdade Salarial e Happy Hour)."
+desc = "+4pts de multiplicador se a Sala tiver a combinação Reunião do Setor (inclui Desigualdade Salarial e Happy Hour)."
 custo = 70
 sprite = ExtResource("2_isvpt")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

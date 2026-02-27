@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://dr8td00cwupub"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_0frma"]
-[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="2_c5mwy"]
+[ext_resource type="Texture2D" uid="uid://h33b3737rwdj" path="res://Sprites/Cartas/Demandas/d-piscina-de-bolinhas.png" id="2_c5mwy"]
 
 [resource]
 script = ExtResource("1_0frma")
 nome = "Piscina de Bolinhas"
-desc = "+1pt de multiplicador de prod. por funcionário caso a sala esteja lotada."
+desc = "+6pts de prod. por funcionário caso a sala esteja lotada."
 custo = 30
 sprite = ExtResource("2_c5mwy")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

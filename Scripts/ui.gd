@@ -100,7 +100,6 @@ func _on_fechar_button_down() -> void:
 		_:
 			pass
 
-
 func _on_demissao_button_down() -> void:
 	if sala.dono != Sala.Players.JOGADOR:
 		return

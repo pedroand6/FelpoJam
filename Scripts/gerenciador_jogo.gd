@@ -51,6 +51,7 @@ var ia_baralho: Array[Contrato]
 var jogador_baralho: Array[Contrato]
 
 var cartas_selecionadas: Array[Carta]
+var salas_jogadas : Dictionary[int, Sala] = {}
 
 var ia_baralho_pego: Array[Contrato]
 var jogador_baralho_pego: Array[Contrato]
@@ -60,8 +61,8 @@ var jogador_carimbo : Carimbos
 
 @export var total_rounds = 8
 
-@export var jogador_dinheiro : int = 100
-@export var IA_dinheiro : int = 100
+@export var jogador_dinheiro : int = 150
+@export var IA_dinheiro : int = 150
 
 var round : int = 1
 var turno : int = JOGADOR

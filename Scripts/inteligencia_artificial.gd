@@ -21,57 +21,47 @@ func avalia_estado(salas_atuais: Array[Sala], dinheiro: int, mao: Array[Contrato
 		if sala.dono == sala.Players.IA:
 			pontos_ia += sala.calcula_pontos()
 			
-			pot_salas += 50.0
-			pot_salas += len(sala.funcionarios) * 20.0
+			pot_salas += 15
+			pot_salas += len(sala.funcionarios) * 20
 			
 			var areas = {}
 			var cargos = {}
 			for fun in sala.funcionarios:
 				if fun.area != "":
 					areas[fun.area] = areas.get(fun.area, 0) + 1
-					cargos[fun.cargo] = cargos.get(fun.cargo, 0) + 1
+				
+				cargos[fun.cargo] = cargos.get(fun.cargo, 0) + 1
 				
 			if not areas.is_empty():
-				pot_salas += pow(tipo_mais_repetido(areas), 2) * 8.0
+				pot_salas += pow(tipo_mais_repetido(areas), 2) * 3
 			if not cargos.is_empty():
-				pot_salas += pow(tipo_mais_repetido(cargos), 2) * 8.0
+				pot_salas += pow(tipo_mais_repetido(cargos), 2) * 5
 			   
-			pot_salas += len(sala.demandas) * 15.0
+			pot_salas += len(sala.demandas) * 15
 			
-	var valor_presente = pontos_ia * 5.0 
-	var lucro_projetado = (pontos_ia / 2.0) * turnos_restantes
+	var valor_presente = pontos_ia * 3
+	var lucro_projetado = (pontos_ia / 2) * turnos_restantes
 	
 	var pot_mao = 0
 	for contrato in mao:
 		if contrato.tipo == Contrato.Tipos.FUNCIONARIO:
+			pot_mao += contrato.produtividade * 2
 			if contrato.cargo == 0 or contrato.cargo == 9:
-				pot_mao += 20.0 # aqui aumenta bastante pra coringas
-			else:
-				var max_combo = 0
-				for sala in salas_atuais: #tenta simular o ganho de lucro com combos nas salas em cartas na mao
-					if sala.dono == Sala.Players.IA and len(sala.funcionarios) < 4:
-						var mult = Gerenciador.calcula_combo(sala.funcionarios)
-						
-						sala.funcionarios.append(contrato)
-						var mult_simulado = Gerenciador.calcula_combo(sala.funcionarios)
-						sala.funcionarios.pop_back() #volta pra como tava
-						
-						var diff = mult_simulado - mult
-						if diff > max_combo:
-							max_combo = diff
-							
-					pot_mao += max_combo * 15
-		elif contrato.tipo == Contrato.Tipos.DEMANDA:
-			pot_mao += 2 * Gerenciador.round
+				pot_mao += 20 # aqui aumenta bastante pra coringas
+			elif contrato.tipo == Contrato.Tipos.DEMANDA:
+				pot_mao += 5
 			   
-	return float(dinheiro) + lucro_projetado + pot_salas + pot_mao
+	return float(dinheiro) + lucro_projetado + valor_presente + pot_salas + pot_mao
 
 
 func jogada():
 	#compra as cartas da mao
-	while len(ia_mao) < TAMANHO_MAO:
+	while len(ia_mao) < TAMANHO_MAO - 1:
 		if(len(Gerenciador.ia_baralho) <= 0): break
 		compra_carta()
+		
+	for card in ia_mao:
+		print(card.nome)
 	
 	#colocar as fotos alternando de mais escura pra mais clara pra mostrar o round
 	print("jogada da IA")
@@ -148,40 +138,32 @@ func avalia_descartes(descartes_feitos):
 		if descartes_feitos >= 4:
 			break
 			
-		var imune = true
-		# NOVO: Lógica avançada de "Perda de Imunidade". 
-		# Se a mão tiver mais de 2 demandas, atira fora para procurar funcionários.
-		if carta.tipo == Contrato.Tipos.DEMANDA:
-			if num_demandas > 2 or Gerenciador.IA_dinheiro < 20: imune = false
-		elif carta.cargo == 0 or carta.cargo == 9:
-			if Gerenciador.IA_dinheiro < carta.custo: imune = false
-		else:
-			imune = false # Cartas normais nunca são imunes
-			
-		if imune:
-			continue
-			
 		var sinergia = float(carta.produtividade * 2)
 		
 		if Gerenciador.IA_dinheiro < carta.custo:
-			sinergia -= 20.0 # Penaliza fortemente cartas que ela não pode pagar
+			sinergia -= 20
+			
+		if num_demandas > 2 or Gerenciador.IA_dinheiro < 30 and carta.tipo == Contrato.Tipos.DEMANDA:
+			sinergia -= 5
 		
 		for sala in salas_ia:
 			for fun in sala.funcionarios:
-				if carta.area != "" and carta.area == fun.area:
-					sinergia += 8
-				if carta.area != "" and carta.cargo == fun.cargo:
+				if carta.area != "" and carta.area == fun.area or carta.area == "Coringa":
+					sinergia += 3
+				if carta.cargo >= 0 and carta.cargo == fun.cargo:
 					sinergia += 8
 		
 		for outra_carta in ia_mao:
 			if outra_carta != carta and outra_carta.tipo == Contrato.Tipos.FUNCIONARIO:
-				if outra_carta.area == carta.area: sinergia += 5
-				if outra_carta.cargo == carta.cargo: sinergia += 5
+				if outra_carta.area == carta.area or outra_carta.area == "Coringa": sinergia += 2
+				if outra_carta.cargo == carta.cargo or outra_carta.cargo == 0: sinergia += 5
+				
+		sinergia -= carta.custo / 15 - Gerenciador.IA_dinheiro / 15
 				
 		if sinergia < 15:
 			cartas_para_remover.append(carta)
 			descartes_feitos += 1
-				
+			if carta.tipo == Contrato.Tipos.DEMANDA: num_demandas -= 1
 				
 	for carta in cartas_para_remover:
 		ia_mao.erase(carta)
@@ -226,6 +208,7 @@ func joga_cartas(salas_jogadas):
 							if q > best_q + 0.1:
 								best_q = q
 								best_action = {"carta": carta, "sala": sala}
+								
 						elif carta.tipo == Contrato.Tipos.DEMANDA and len(sala.demandas) < 3:
 							if len(salas_jogadas) >= 2 and not sala.id in salas_jogadas:
 								continue
