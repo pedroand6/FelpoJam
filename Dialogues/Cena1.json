@@ -1,28 +1,26 @@
 {
 	"Cena1": [
-		[
-			{
-				"icone": "amedrontado",
-				"nome": "Lucas",
-				"texto": "babuncion voltou a terra e agora esta muito bravo aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-			},
-			{
-				"icone": "indignado",
-				"nome": "Lucas",
-				"texto": "desculpa"
-			}
-		],
-		[
-			{
-				"icone": "sorrindo",
-				"nome": "Lucas",
-				"texto": "Estou muito feliz"
-			},
-			{
-				"icone": "serio",
-				"nome": "Lucas",
-				"texto": "Nao."
-			}
-		]
+    	[
+    		{
+    	  		"icone": "serio",
+    	  	  	"nome": "Lucas",
+    	  	  	"texto": "Olha, eu sei que parece maluquice, mas essa foi a minha última opção, tá legal?"
+    	  	},
+    	  	{
+    	  		"icone": "serio",
+    	  	  	"nome": "Lucas",
+    	  	  	"texto": "Se eu soubesse que as coisas acabariam assim, eu provavelmente teria tentado evitar."
+    	  	},
+    	  	{
+    	  		"icone": "sorrindo",
+    	  	  	"nome": "Lucas",
+    	  	  	"texto": "Tudo começou comigo tentando virar um gerente de escritório. Haha! Dá pra imaginar?"
+    	  	},
+    	  	{
+    	  		"icone": "sorrindo",
+    	  	  	"nome": "Lucas",
+    	  	  	"texto": "Quem nunca sonhou em carimbar papéis profissionalmente, né? Não deve ser tão ruim, afinal."
+    	  	}
+    	]
 	]
 }

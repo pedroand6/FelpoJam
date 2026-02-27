@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dr6r6kxjpn5tq"
+path="res://.godot/imported/MOVIMENTO CARIMBO.wav-cbcadaff54dd9e9afdf336731c1681ee.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/MOVIMENTO CARIMBO.wav"
+dest_files=["res://.godot/imported/MOVIMENTO CARIMBO.wav-cbcadaff54dd9e9afdf336731c1681ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

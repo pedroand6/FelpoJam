@@ -1,0 +1,782 @@
+{
+  "offscreen-int-sala-do-presidente-dia-c": [
+    [
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Olha, eu sei que parece maluquice, mas essa foi a minha última opção, tá legal?"
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Se eu soubesse que as coisas acabariam assim, eu provavelmente teria tentado evitar."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Tudo começou comigo tentando virar um gerente de escritório. Haha! Dá pra imaginar?"
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Quem nunca sonhou em carimbar papéis profissionalmente, né? Não deve ser tão ruim, afinal."
+      }
+    ]
+  ],
+  "int-sala-do-presidente-dia-c": [
+    [
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Vamos aos currículos."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Coronel, fuzileiro, paraquedista, marinheiro, engenheiro..."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Senhor Kenji, sua carreira no exército é admirável, não é?"
+      },
+      {
+        "icone": "dormindo",
+        "nome": "Kenji, O Militar",
+        "texto": "Ronc..."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Kenji, O Militar",
+        "texto": "Hã?"
+      },
+      {
+        "icone": "neutro",
+        "nome": "Kenji, O Militar",
+        "texto": "É, sim, senhor. Será ótimo contribuir com a minha experiência."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "E você, Guten... é, Guten..."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Gutenberg, senhor."
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas",
+        "texto": "Tipo o cara da prensa?"
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Não, não, é mais como o cara do..."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Gutenbird, você tem uma vasta experiência em startups de tecnologia, o que é ótimo."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Já você, Lucas..."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Sete."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hã?"
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Eu já fundei sete startups."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "É, eu sei, é difícil de lembrar... eu precisei parar pra contar e tal."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Lucas..."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "E... não, pode continuar."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Lucas... você tem 18 anos, português fluente e..."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "É..."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Bem, na verdade, eu tenho 21..."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "E me formei em Administração, também."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Ah, isso não está no seu currículo."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Hã..."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Eu devo ter esquecido de atualizar, mas é, eu me formei em Administração."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "21 anos. Isso é ótimo, é claro."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "É, e faculdade também."
+      },
+      {
+        "icone": "indignado",
+        "nome": "Lucas",
+        "texto": "De administração."
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Mas vamos falar de beneficios, afinal, quem não ama beneficios, não é mesmo?! Hahaha!"
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Não temos muitos beneficios por aqui, é verdade, mas temos o único que realmente importa."
+      },
+      {
+        "icone": "surpreso",
+        "nome": "Kenji, O Militar",
+        "texto": "Convênio médico?"
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas",
+        "texto": "Vale-transporte, talvez?"
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "É, ou então trabalho remoto..."
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hahaha! Não, não, nós até tentamos o vale-transporte, mas o RH disse que deixava os funcionários sedentários."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Nós temos algo melhor do que tudo isso. Nós temos o beneficio do trabalho duro!"
+      },
+      {
+        "icone": "chorando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Faça chuva ou faça sol, meus funcionários têm o beneficio de estarem aqui, e alguns até venderam suas casas!"
+      },
+      {
+        "icone": "chorando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Não é maravilhoso?"
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "E é claro, eles recebem salário."
+      },
+      {
+        "icone": "indignado",
+        "nome": "Lucas",
+        "texto": "Talvez ainda dê tempo de sair correndo..."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Certo, já podemos começar."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Nosso processo seletivo é bem simples e objetivo: vocês vão sair por aquela porta e, então..."
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "VÃO TRABALHAR!"
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Quem se sair melhor será o grande contratado! Hahaha!"
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas",
+        "texto": "Tipo... trabalhar de graça?"
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Não, é claro que não! Haha!"
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "É mais como \"provar o seu valor para o grande Silvio e conseguir o emprego dos sonhos!\", não é mesmo?!"
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hahaha!"
+      },
+      {
+        "icone": "indignado",
+        "nome": "Lucas",
+        "texto": "Ok, eu vou trabalhar... de graça."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "É, é ótimo..."
+      },
+      {
+        "icone": "surpreso",
+        "nome": "Kenji, O Militar",
+        "texto": "É... com certeza, senhor."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Agora saiam."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Mas antes, certifiquem-se de estarem sempre com seus carimbos. Tivemos uma otimização de lucros recentemente e o RH não pode mais fornecê-los para os funcionários, e muito menos para candidatos."
+      },
+      {
+        "icone": "chorando",
+        "nome": "Silvio, O Presidente",
+        "texto": "E um homem sem seu carimbo... ele... ele não é nada."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Será que ao invés de usarmos os carimbos, podemos digitalizar os documentos e..."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Nunca mais repita isso."
+      },
+      {
+        "icone": "chorando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Vão, saiam por essa porta e realizem o melhor trabalho de suas vidas! FAÇAM O VELHO SILVIO SE EMOCIONAR!"
+      }
+    ]
+  ],
+  "offscreen-inicio-da-partida-g-gutenberg": [
+    [
+      {
+        "icone": "sorrindo",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Vamos começar, garoto. Haha, hahaha!"
+      }
+    ]
+  ],
+  "inicio-da-partida-g-gutenberg": [
+    [
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Não se preocupe em perder a vaga, sério."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Você provavelmente tem o QI bem acima da média, já que conseguiu chegar até aqui, e além disso eu posso te indicar em algumas empresas que já trabalhei e..."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Quer dizer, que eu fundei, é claro."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Só tem um pequeno detalhe, eu meio que não pretendo desistir da vaga, então..."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Haha! Ótimo! Isso é ótimo."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Os recrutadores amam resiliência, você com certeza vai se dar bem em outras entrevistas e também..."
+      }
+    ]
+  ],
+  "metade-da-partida-g-gutenberg": [
+    [
+      {
+        "icone": "intrigado",
+        "nome": "Lucas",
+        "texto": "Ok, ótimo."
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas",
+        "texto": "Que cara esquisito..."
+      },
+      {
+        "icone": "insano",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Haha! Olha, garoto, você realmente pode achar outras coisas quando sair daqui."
+      },
+      {
+        "icone": "insano",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Eu já estive na sua idade e empreender é ótimo, tipo, toda essa coisa do Do It Yourself e tal..."
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas",
+        "texto": "Parece muito legal, então eu acho que eu vou deixar essa coisa toda pra você, cara."
+      }
+    ]
+  ],
+  "fim-da-partida-vitoria-g-gutenberg": [
+    [
+      {
+        "icone": "insano",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Haha! Eu avisei que não era uma boa ideia, eu avisei, ele avisou. Hahaha!"
+      },
+      {
+        "icone": "triste",
+        "nome": "Gutenberg, O Empreendedor",
+        "texto": "Eu não devia ter permitido o remoto, não, não, ele..."
+      }
+    ]
+  ],
+  "offscreen-fim-da-partida-vitoria-c-gutenberg": [
+    [
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "MARCOS GUTENBERG! Você está..."
+      },
+      {
+        "icone": "indignado",
+        "nome": "Lucas",
+        "texto": "Peraí, o nome dele é Marcos?"
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "ELIMINADO!"
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Foi nesse momento em que eu percebi que eu tinha potencial pra coisa..."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "e que talvez a faculdade de Administração não tivesse sido uma perda de tempo, afinal de contas."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Ah, e sobre esse cara esquisito, o Marcos, hã..."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Uns caras com roupa amarela falaram que eram do Controle de Danos ou algo assim e levaram ele para uma sala e... eu não vi mais nada."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Ele não tinha mais energia para resistir."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Ele tinha um carimbo rosa que acabou caindo e eu peguei para devolver, mas ele era tão legal que decidi usá-lo enquanto eu não via esse cara de novo."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "E essa era minha última preocupação no momento..."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Naquela hora, só restava eu e aquele senhor de chapéu."
+      }
+    ]
+  ],
+  "offscreen-inicio-da-partida-g-kenji": [
+    [
+      {
+        "icone": "dormindo",
+        "nome": "Kenji, O Militar",
+        "texto": "Ronc..."
+      }
+    ]
+  ],
+  "inicio-da-partida-g-kenji": [
+    [
+      {
+        "icone": "rabugento",
+        "nome": "Kenji, O Militar",
+        "texto": "Hã... você sabe o segredo de uma boa gestão, garoto?"
+      },
+      {
+        "icone": "neutro",
+        "nome": "Lucas",
+        "texto": "É claro que eu sei, eu me formei em administração."
+      },
+      {
+        "icone": "rabugento",
+        "nome": "Kenji, O Militar",
+        "texto": "Então talvez você entenda que a chave é fazer o que deve ser feito, mesmo que isso vá contra os seus princípios."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Isso me parece algo que alguém que sonega impostos diria, senhor. Você não sonega os seus impostos, né?"
+      }
+    ]
+  ],
+  "metade-da-partida-g-kenji": [
+    [
+      {
+        "icone": "rabugento",
+        "nome": "Kenji, O Militar",
+        "texto": "Humpf... isso já faz muito tempo."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Senhor, tá tudo bem?"
+      },
+      {
+        "icone": "fase-02",
+        "nome": "Kenji, O Militar",
+        "texto": "Humpf... não se preocupe comigo."
+      },
+      {
+        "icone": "fase-02",
+        "nome": "Kenji, O Militar",
+        "texto": "Suas ações são um desrespeito contra a conduta militar."
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas",
+        "texto": "Colocar caras armados rondando no escritório também faz parte da conduta militar, senhor?"
+      },
+      {
+        "icone": "fase-02",
+        "nome": "Kenji, O Militar",
+        "texto": "Eu só fiz o que tinha que ser feito."
+      },
+      {
+        "icone": "fase-02",
+        "nome": "Kenji, O Militar",
+        "texto": "Sua geração não consegue entender isso, eu... eu não entendo o porquê."
+      }
+    ]
+  ],
+  "fim-da-partida-vitoria-g-kenji": [
+    [
+      {
+        "icone": "fase-03",
+        "nome": "Kenji, O Militar",
+        "texto": "Ronc..."
+      },
+      {
+        "icone": "fase-03",
+        "nome": "Kenji, O Militar",
+        "texto": "Hã, filha... me desculpa."
+      }
+    ]
+  ],
+  "offscreen-fim-da-partida-vitoria-c-kenji": [
+    [
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "WILLIAM KENJI! Você está..."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "ELIMINADO!"
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Lucas, compareça imediatamente ao escritório do Silvio."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Mesmo depois de pegar o carimbo daquele senhor, o Kenji, a ficha ainda não havia caído."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Eu realmente havia conseguido um emprego?"
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Enquanto eu ia até a sala daquele maluco, a única coisa que passava pela minha cabeça era, hã... o fato de que eu teria que trabalhar."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Tipo, de verdade, com roupa social e tudo."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Talvez eu preferia estar como o velho, mas só... adormecido, sem a parte de ser levado pelos mesmos caras do Controle de Danos."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Eles pareciam... sinistros."
+      }
+    ]
+  ],
+  "int-sala-do-presidente-noite-c": [
+    [
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hahaha! Parabéns, garoto! Os seus resultados foram, sem dúvidas, os melhores que o Silvio viu esse mês."
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas, O Gerente",
+        "texto": "Esse mês?"
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hã?"
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Ah, HAHA! É claro, é claro, sabe, foi um processo seletivo longo e árduo, mas você é, com certeza, o mais qualificado."
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hahaha!"
+      },
+      {
+        "icone": "neutro",
+        "nome": "Lucas, O Gerente",
+        "texto": "É, é o que parece."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Bem, garoto, vamos formalizar as coisas..."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hã... você tem um carimbo, certo?"
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas, O Gerente",
+        "texto": "Claro, tente esses. Como você diz? Um homem sem seus carimbos..."
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Não é nada! Hahaha! Você aprende rápido, garoto."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Lucas..."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Os carimbos estão sem tinta."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas, O Gerente",
+        "texto": "Não, tenta de novo. Deve haver algum engano, eu usei eles sem problemas o dia todo."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Se não temos carimbos, não podemos oficializar o contrato."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas, O Gerente",
+        "texto": "Olha, senhor, eu posso te emprestar uma cane.."
+      },
+      {
+        "icone": "sombrio-raivoso",
+        "nome": "Silvio, O Presidente",
+        "texto": "NÃO!"
+      },
+      {
+        "icone": "sombrio-raivoso",
+        "nome": "Silvio, O Presidente",
+        "texto": "Um contrato de verdade deve ser selado por um carimbo digno."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Não há nada que possa ser feito."
+      },
+      {
+        "icone": "raivoso",
+        "nome": "Lucas",
+        "texto": "Senhor, eu venci o processo, eu aumentei os lucros da sua empresa e EU mereço a MINHA vaga!"
+      },
+      {
+        "icone": "raivoso",
+        "nome": "Lucas",
+        "texto": "Você não pode simplesmente se negar a me contratar por conta da droga de um CARIMBO!"
+      },
+      {
+        "icone": "sombrio-raivoso",
+        "nome": "Silvio, O Presidente",
+        "texto": "CHEGA!"
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Você não entende, garoto. O carimbo é a representação do selo de confiança dos homens. Sem carimbo, sem confiança e sem contrato!"
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Não, não..."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Tem que ter outro jeito, nós podemos..."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "SAIA."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Então é realmente isso? Você chama os candidatos aqui e os fazem trabalhar de graça pra você, não é?"
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "A vaga ainda está aberta. Aplique novamente e traga carimbos com tinta, dessa vez. Obrigado por participar."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Agora vá."
+      }
+    ]
+  ],
+  "offscreen-int-sala-do-presidente-noite-c": [
+    [
+      {
+        "icone": "neutro",
+        "nome": "Lucas",
+        "texto": "E foi por isso, então, que eu decidi enviar a droga do currículo pro Mercadão."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Lucas",
+        "texto": "Quer dizer, tecnicamente, a minha mãe me forçou a enviar, mas..."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Não deve ser tão ruim assim repor os produtos na prateleira de um mercado, né?"
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Tipo, acho que eu posso sobreviver com isso."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Se bem que eu pensava o mesmo sobre os carimbos e, sinceramente..."
+      },
+      {
+        "icone": "indignado",
+        "nome": "Lucas",
+        "texto": "Eu não quero ver esses caras por um bom tempo."
+      }
+    ]
+  ],
+  "int-sala-do-presidente-noite-c-final": [
+    [
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hihihi..."
+      },
+      {
+        "icone": "gargalhando-carimbado",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hihihi... Hahaha! HAHAHA!"
+      }
+    ]
+  ]
+}

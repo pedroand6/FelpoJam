@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xjuchkhox45b"
+path="res://.godot/imported/COMPRA CARTA.wav-3073e2f3457903d99232bc3eb47c3029.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/COMPRA CARTA.wav"
+dest_files=["res://.godot/imported/COMPRA CARTA.wav-3073e2f3457903d99232bc3eb47c3029.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

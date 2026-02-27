@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
-[ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/gutenberg/gutenberg-retrato-neutro.png" id="5_2dyg3"]
+[ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
 [ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
 [ext_resource type="Texture2D" uid="uid://bqk1kjyeisknk" path="res://Sprites/UI/icone-contador-rodadas.png" id="8_vf6ur"]
 [ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="12_miicn"]
+[ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="13_aafqm"]
 [ext_resource type="Texture2D" uid="uid://duk1ai68vsaya" path="res://Sprites/UI/icone-fechar.png" id="14_xffac"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
@@ -276,7 +277,7 @@ offset_bottom = 158.0
 grow_horizontal = 2
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 36
-text = "01/10"
+text = "01/08"
 autowrap_mode = 0
 horizontal_alignment = 1
 
@@ -580,47 +581,20 @@ texture = ExtResource("7_bnfms")
 layout_mode = 2
 texture = ExtResource("7_bnfms")
 
-[node name="Config" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=1465907675]
+[node name="Config" parent="UI/Popup/Caixa/Frente" unique_id=1785124144 instance=ExtResource("13_aafqm")]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Opts" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Config" unique_id=975983641]
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Resumir" type="Button" parent="UI/Popup/Caixa/Frente/Config/Opts" unique_id=673934809]
-layout_mode = 2
-text = "Resumir"
-
-[node name="Configuracoes" type="Button" parent="UI/Popup/Caixa/Frente/Config/Opts" unique_id=2033550911]
-layout_mode = 2
-text = "Configuracoes"
-
-[node name="Sair" type="Button" parent="UI/Popup/Caixa/Frente/Config/Opts" unique_id=1365055680]
-layout_mode = 2
-text = "Sair"
+cena_nome = "Escritorio"
 
 [node name="Fechar" type="TextureButton" parent="UI/Popup/Caixa/Frente" unique_id=576078387]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -69.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = 69.0
+offset_left = -39.952637
+offset_top = 4.999996
+offset_right = -7.9526367
+offset_bottom = 36.999996
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_xffac")
@@ -635,7 +609,4 @@ texture = ExtResource("12_miicn")
 
 [connection signal="button_down" from="UI/PlayerSide/Baralho" to="UI" method="_on_baralho_button_down"]
 [connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
-[connection signal="button_down" from="UI/Popup/Caixa/Frente/Config/Opts/Resumir" to="UI" method="_on_resumir_button_down"]
-[connection signal="button_down" from="UI/Popup/Caixa/Frente/Config/Opts/Configuracoes" to="UI" method="_on_configuracoes_button_down"]
-[connection signal="button_down" from="UI/Popup/Caixa/Frente/Config/Opts/Sair" to="UI" method="_on_sair_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]

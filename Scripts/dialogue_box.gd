@@ -19,7 +19,7 @@ func _ready() -> void:
 func mostra_texto(dialogoInfo: Dictionary) -> void:
 	dialogoObj.text = "[jump_effect]" + dialogoInfo["texto"]
 	iconObj.texture = load("res://Sprites/Icons/%s/%s-retrato-%s.png" % [dialogoInfo["nome"], \
-		 dialogoInfo["nome"].to_lower(), dialogoInfo["icone"]])
+		 dialogoInfo["nome"].to_lower().split(",", true, 2)[0], dialogoInfo["icone"]])
 	nomeObj.text = dialogoInfo["nome"]
 	anima_texto()
 

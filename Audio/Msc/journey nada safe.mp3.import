@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwbpvxesxhcen"
+path="res://.godot/imported/journey nada safe.mp3-4d58ede934be19c847582ff583dfcec0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Msc/journey nada safe.mp3"
+dest_files=["res://.godot/imported/journey nada safe.mp3-4d58ede934be19c847582ff583dfcec0.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=1.0
+bpm=0.0
+beat_count=0
+bar_beats=4

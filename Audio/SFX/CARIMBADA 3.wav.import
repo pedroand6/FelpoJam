@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbvqiv47sdekb"
+path="res://.godot/imported/CARIMBADA 3.wav-73a000a47ee9360f654ddd77e2fe7b90.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/CARIMBADA 3.wav"
+dest_files=["res://.godot/imported/CARIMBADA 3.wav-73a000a47ee9360f654ddd77e2fe7b90.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

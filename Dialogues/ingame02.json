@@ -1,0 +1,79 @@
+{
+	"inicio-da-partida-g-kenji": [
+    [
+      {
+        "icone": "rabugento",
+        "nome": "Kenji, O Militar",
+        "texto": "Hã... você sabe o segredo de uma boa gestão, garoto?"
+      },
+      {
+        "icone": "neutro",
+        "nome": "Lucas",
+        "texto": "É claro que eu sei, eu me formei em administração."
+      },
+      {
+        "icone": "rabugento",
+        "nome": "Kenji, O Militar",
+        "texto": "Então talvez você entenda que a chave é fazer o que deve ser feito, mesmo que isso vá contra os seus princípios."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Isso me parece algo que alguém que sonega impostos diria, senhor. Você não sonega os seus impostos, né?"
+      }
+    ]
+  ],
+  "metade-da-partida-g-kenji": [
+    [
+      {
+        "icone": "rabugento",
+        "nome": "Kenji, O Militar",
+        "texto": "Humpf... isso já faz muito tempo."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Senhor, tá tudo bem?"
+      },
+      {
+        "icone": "fase-02",
+        "nome": "Kenji, O Militar",
+        "texto": "Humpf... não se preocupe comigo."
+      },
+      {
+        "icone": "fase-02",
+        "nome": "Kenji, O Militar",
+        "texto": "Suas ações são um desrespeito contra a conduta militar."
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas",
+        "texto": "Colocar caras armados rondando no escritório também faz parte da conduta militar, senhor?"
+      },
+      {
+        "icone": "fase-02",
+        "nome": "Kenji, O Militar",
+        "texto": "Eu só fiz o que tinha que ser feito."
+      },
+      {
+        "icone": "fase-02",
+        "nome": "Kenji, O Militar",
+        "texto": "Sua geração não consegue entender isso, eu... eu não entendo o porquê."
+      }
+    ]
+  ],
+  "fim-da-partida-vitoria-g-kenji": [
+    [
+      {
+        "icone": "fase-03",
+        "nome": "Kenji, O Militar",
+        "texto": "Ronc..."
+      },
+      {
+        "icone": "fase-03",
+        "nome": "Kenji, O Militar",
+        "texto": "Hã, filha... me desculpa."
+      }
+    ]
+  ]
+}

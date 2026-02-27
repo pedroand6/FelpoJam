@@ -14,6 +14,8 @@
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="12_23fmf"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="13_23fmf"]
 [ext_resource type="Texture2D" uid="uid://duk1ai68vsaya" path="res://Sprites/UI/icone-fechar.png" id="14_72pgp"]
+[ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="14_elxfw"]
+[ext_resource type="AudioStream" uid="uid://dwbpvxesxhcen" path="res://Audio/Msc/journey nada safe.mp3" id="16_16mgg"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_w4fai"]
 script = ExtResource("6_gsx18")
@@ -229,52 +231,28 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Config" type="Control" parent="CanvasLayer/Popup/Caixa/Frente" unique_id=1891201137]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Opts" type="VBoxContainer" parent="CanvasLayer/Popup/Caixa/Frente/Config" unique_id=20282326]
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Resumir" type="Button" parent="CanvasLayer/Popup/Caixa/Frente/Config/Opts" unique_id=1533111178]
-layout_mode = 2
-text = "Resumir"
-
-[node name="Configuracoes" type="Button" parent="CanvasLayer/Popup/Caixa/Frente/Config/Opts" unique_id=33767595]
-layout_mode = 2
-text = "Configuracoes"
-
-[node name="Sair" type="Button" parent="CanvasLayer/Popup/Caixa/Frente/Config/Opts" unique_id=382340001]
-layout_mode = 2
-text = "Sair"
-
 [node name="Fechar" type="TextureButton" parent="CanvasLayer/Popup/Caixa/Frente" unique_id=879722913]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -69.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = 69.0
+offset_left = -37.291748
+offset_top = 4.999996
+offset_right = -5.291748
+offset_bottom = 36.999996
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_72pgp")
 
+[node name="Config" parent="CanvasLayer/Popup/Caixa/Frente" unique_id=1785124144 instance=ExtResource("14_elxfw")]
+visible = false
+layout_mode = 1
+cena_nome = "Visual Novel"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1096008729]
+stream = ExtResource("16_16mgg")
+autoplay = true
+
 [connection signal="button_down" from="CanvasLayer/BottomArea/DialogueBtn" to="." method="_on_dialogue_btn_button_down"]
 [connection signal="button_down" from="CanvasLayer/ConfigBtn" to="." method="_on_config_btn_button_down"]
-[connection signal="button_down" from="CanvasLayer/Popup/Caixa/Frente/Config/Opts/Resumir" to="." method="_on_resumir_button_down"]
-[connection signal="button_down" from="CanvasLayer/Popup/Caixa/Frente/Config/Opts/Sair" to="." method="_on_sair_button_down"]
 [connection signal="button_down" from="CanvasLayer/Popup/Caixa/Frente/Fechar" to="." method="_on_fechar_button_down"]

@@ -1,7 +1,45 @@
 [gd_resource type="Theme" format=3 uid="uid://bx5uaiy3dc1m4"]
 
 [ext_resource type="FontFile" uid="uid://ciifmwwrc18b6" path="res://Fonts/PixelPleasing.ttf" id="1_b4dew"]
+[ext_resource type="Texture2D" uid="uid://cpixctjxb0aug" path="res://Sprites/UI/icone-checado.png" id="1_o5ma7"]
+[ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="2_k2exv"]
+[ext_resource type="Texture2D" uid="uid://dnkfyb3g2pjek" path="res://Sprites/UI/icon_inv.png" id="3_k2exv"]
+[ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="4_pjhon"]
+[ext_resource type="Texture2D" uid="uid://dgdgngm3t4dqv" path="res://Sprites/UI/icone-cheio.png" id="6_nf17u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_toymv"]
+texture = ExtResource("6_nf17u")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ofatw"]
+texture = ExtResource("6_nf17u")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nl7wn"]
+texture = ExtResource("2_k2exv")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjhon"]
 
 [resource]
 default_font = ExtResource("1_b4dew")
 default_font_size = 24
+CheckBox/icons/checked = ExtResource("1_o5ma7")
+CheckBox/icons/unchecked = ExtResource("2_k2exv")
+HSlider/icons/grabber = ExtResource("3_k2exv")
+HSlider/icons/grabber_disabled = ExtResource("3_k2exv")
+HSlider/icons/grabber_highlight = ExtResource("3_k2exv")
+HSlider/icons/tick = ExtResource("4_pjhon")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_toymv")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_ofatw")
+HSlider/styles/slider = SubResource("StyleBoxTexture_nl7wn")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_pjhon")

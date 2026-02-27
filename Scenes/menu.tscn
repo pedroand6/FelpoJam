@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://dcjb6iuh210jd"]
+
+[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://81byiyqeil3k" path="res://Scripts/menu.gd" id="1_xhh6f"]
+[ext_resource type="AudioStream" uid="uid://dw5ip70y6s6l5" path="res://Audio/SFX/DIMINUIR VOLUME MENU.wav" id="3_158mb"]
+[ext_resource type="AudioStream" uid="uid://bkb5eqblh0efm" path="res://Audio/SFX/AUMENTAR VOLUME MENU.wav" id="4_wwsa2"]
+[ext_resource type="AudioStream" uid="uid://c1oiskd0i3wam" path="res://Audio/SFX/BOTÃO DE PLAY.wav" id="5_wwsa2"]
+[ext_resource type="Script" uid="uid://bvrlifwywa4j" path="res://Scenes/fade_out.gd" id="6_jsrd8"]
+[ext_resource type="AudioStream" uid="uid://c4sx6oadwm40a" path="res://Audio/Msc/soletrando cartas.mp3" id="7_wbdvm"]
+
+[node name="Menu" type="Control" unique_id=1527680893]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhh6f")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=811603615]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 109.0
+offset_right = 100.0
+offset_bottom = 149.0
+
+[node name="Menu" type="VBoxContainer" parent="." unique_id=2010430530]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 47.0
+offset_top = -72.0
+offset_right = 232.0
+offset_bottom = 72.0
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="Iniciar" type="Button" parent="Menu" unique_id=414354675]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_1rerr")
+text = "Jogar"
+flat = true
+alignment = 0
+
+[node name="Opt" type="Button" parent="Menu" unique_id=1311951680]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_1rerr")
+text = "Configurações"
+flat = true
+alignment = 0
+
+[node name="Sair" type="Button" parent="Menu" unique_id=2011664039]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_1rerr")
+text = "Sair"
+flat = true
+alignment = 0
+
+[node name="Opts" type="VBoxContainer" parent="." unique_id=1208256360]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = -119.0
+offset_right = 180.0
+offset_bottom = 119.0
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="Volume" type="PanelContainer" parent="Opts" unique_id=974949728]
+layout_mode = 2
+theme = ExtResource("1_1rerr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Opts/Volume" unique_id=880977931]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Opts/Volume/VBoxContainer" unique_id=916694111]
+layout_mode = 2
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="Opts/Volume/VBoxContainer" unique_id=1724668216]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("1_1rerr")
+max_value = 1.5
+step = 0.001
+
+[node name="VBoxContainer0" type="VBoxContainer" parent="Opts" unique_id=429942049]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_1rerr")
+
+[node name="Label" type="Label" parent="Opts/VBoxContainer0" unique_id=596721990]
+layout_mode = 2
+text = "Tela Cheia "
+
+[node name="CheckCheia" type="CheckBox" parent="Opts/VBoxContainer0" unique_id=393115234]
+layout_mode = 2
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="Opts" unique_id=590593608]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_1rerr")
+
+[node name="Label" type="Label" parent="Opts/VBoxContainer1" unique_id=1207714846]
+layout_mode = 2
+text = "V-Sync"
+
+[node name="CheckSync" type="CheckBox" parent="Opts/VBoxContainer1" unique_id=474112522]
+layout_mode = 2
+
+[node name="Btns" type="PanelContainer" parent="Opts" unique_id=1222708485]
+layout_mode = 2
+theme = ExtResource("1_1rerr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Opts/Btns" unique_id=873551564]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Voltar" type="Button" parent="Opts/Btns/HBoxContainer" unique_id=890072205]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_1rerr")
+text = "Voltar"
+flat = true
+alignment = 0
+
+[node name="VolSoundDown" type="AudioStreamPlayer" parent="." unique_id=1132055753]
+stream = ExtResource("3_158mb")
+
+[node name="VolSoundUp" type="AudioStreamPlayer" parent="." unique_id=1576878552]
+stream = ExtResource("4_wwsa2")
+
+[node name="IniciarSound" type="AudioStreamPlayer" parent="." unique_id=2034825430]
+stream = ExtResource("5_wwsa2")
+
+[node name="FadeOut" type="ColorRect" parent="." unique_id=1109390648]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("6_jsrd8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=719816536]
+stream = ExtResource("7_wbdvm")
+autoplay = true
+
+[connection signal="button_down" from="Menu/Iniciar" to="." method="_on_iniciar_button_down"]
+[connection signal="button_down" from="Menu/Opt" to="." method="_on_opt_button_down"]
+[connection signal="button_down" from="Menu/Sair" to="." method="_on_sair_button_down"]
+[connection signal="value_changed" from="Opts/Volume/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="Opts/VBoxContainer0/CheckCheia" to="." method="_on_check_cheia_toggled"]
+[connection signal="toggled" from="Opts/VBoxContainer1/CheckSync" to="." method="_on_check_sync_toggled"]
+[connection signal="button_down" from="Opts/Btns/HBoxContainer/Voltar" to="." method="_on_voltar_button_down"]

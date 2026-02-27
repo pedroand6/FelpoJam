@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dp4ayqa7hobo7"
+path="res://.godot/imported/CLIQUE BOTÕES 1.wav-07ceb6f43aa7a5e2b7559831e65ff189.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/CLIQUE BOTÕES 1.wav"
+dest_files=["res://.godot/imported/CLIQUE BOTÕES 1.wav-07ceb6f43aa7a5e2b7559831e65ff189.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

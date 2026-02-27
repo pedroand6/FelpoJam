@@ -1,0 +1,237 @@
+{
+	"Cena03": [
+    [
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "WILLIAM KENJI! Você está..."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "ELIMINADO!"
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Lucas, compareça imediatamente ao escritório do Silvio."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Mesmo depois de pegar o carimbo daquele senhor, o Kenji, a ficha ainda não havia caído."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Eu realmente havia conseguido um emprego?"
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Enquanto eu ia até a sala daquele maluco, a única coisa que passava pela minha cabeça era, hã... o fato de que eu teria que trabalhar."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Tipo, de verdade, com roupa social e tudo."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Talvez eu preferia estar como o velho, mas só... adormecido, sem a parte de ser levado pelos mesmos caras do Controle de Danos."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Eles pareciam... sinistros."
+      }
+    ],
+    [
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hahaha! Parabéns, garoto! Os seus resultados foram, sem dúvidas, os melhores que o Silvio viu esse mês."
+      },
+      {
+        "icone": "intrigado",
+        "nome": "Lucas, O Gerente",
+        "texto": "Esse mês?"
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hã?"
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Ah, HAHA! É claro, é claro, sabe, foi um processo seletivo longo e árduo, mas você é, com certeza, o mais qualificado."
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hahaha!"
+      },
+      {
+        "icone": "neutro",
+        "nome": "Lucas, O Gerente",
+        "texto": "É, é o que parece."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Bem, garoto, vamos formalizar as coisas..."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hã... você tem um carimbo, certo?"
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas, O Gerente",
+        "texto": "Claro, tente esses. Como você diz? Um homem sem seus carimbos..."
+      },
+      {
+        "icone": "gargalhando",
+        "nome": "Silvio, O Presidente",
+        "texto": "Não é nada! Hahaha! Você aprende rápido, garoto."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Lucas..."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Os carimbos estão sem tinta."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas, O Gerente",
+        "texto": "Não, tenta de novo. Deve haver algum engano, eu usei eles sem problemas o dia todo."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Se não temos carimbos, não podemos oficializar o contrato."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas, O Gerente",
+        "texto": "Olha, senhor, eu posso te emprestar uma cane.."
+      },
+      {
+        "icone": "sombrio-raivoso",
+        "nome": "Silvio, O Presidente",
+        "texto": "NÃO!"
+      },
+      {
+        "icone": "sombrio-raivoso",
+        "nome": "Silvio, O Presidente",
+        "texto": "Um contrato de verdade deve ser selado por um carimbo digno."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Não há nada que possa ser feito."
+      },
+      {
+        "icone": "raivoso",
+        "nome": "Lucas",
+        "texto": "Senhor, eu venci o processo, eu aumentei os lucros da sua empresa e EU mereço a MINHA vaga!"
+      },
+      {
+        "icone": "raivoso",
+        "nome": "Lucas",
+        "texto": "Você não pode simplesmente se negar a me contratar por conta da droga de um CARIMBO!"
+      },
+      {
+        "icone": "sombrio-raivoso",
+        "nome": "Silvio, O Presidente",
+        "texto": "CHEGA!"
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "Você não entende, garoto. O carimbo é a representação do selo de confiança dos homens. Sem carimbo, sem confiança e sem contrato!"
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Não, não..."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Tem que ter outro jeito, nós podemos..."
+      },
+      {
+        "icone": "sombrio",
+        "nome": "Silvio, O Presidente",
+        "texto": "SAIA."
+      },
+      {
+        "icone": "serio",
+        "nome": "Lucas",
+        "texto": "Então é realmente isso? Você chama os candidatos aqui e os fazem trabalhar de graça pra você, não é?"
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "A vaga ainda está aberta. Aplique novamente e traga carimbos com tinta, dessa vez. Obrigado por participar."
+      },
+      {
+        "icone": "franzido",
+        "nome": "Silvio, O Presidente",
+        "texto": "Agora vá."
+      }
+    ],
+    [
+      {
+        "icone": "neutro",
+        "nome": "Lucas",
+        "texto": "E foi por isso, então, que eu decidi enviar a droga do currículo pro Mercadão."
+      },
+      {
+        "icone": "neutro",
+        "nome": "Lucas",
+        "texto": "Quer dizer, tecnicamente, a minha mãe me forçou a enviar, mas..."
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Não deve ser tão ruim assim repor os produtos na prateleira de um mercado, né?"
+      },
+      {
+        "icone": "sorrindo",
+        "nome": "Lucas",
+        "texto": "Tipo, acho que eu posso sobreviver com isso."
+      },
+      {
+        "icone": "amedrontado",
+        "nome": "Lucas",
+        "texto": "Se bem que eu pensava o mesmo sobre os carimbos e, sinceramente..."
+      },
+      {
+        "icone": "indignado",
+        "nome": "Lucas",
+        "texto": "Eu não quero ver esses caras por um bom tempo."
+      }
+    ],
+    [
+      {
+        "icone": "sorrindo",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hihihi..."
+      },
+      {
+        "icone": "gargalhando-carimbado",
+        "nome": "Silvio, O Presidente",
+        "texto": "Hihihi... Hahaha! HAHAHA!"
+      }
+    ]
+  ]
+}

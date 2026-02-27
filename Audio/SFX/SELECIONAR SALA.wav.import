@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b0sc58qvxt2th"
+path="res://.godot/imported/SELECIONAR SALA.wav-9d965d2bff5f345885428a6959da2ce7.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/SELECIONAR SALA.wav"
+dest_files=["res://.godot/imported/SELECIONAR SALA.wav-9d965d2bff5f345885428a6959da2ce7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

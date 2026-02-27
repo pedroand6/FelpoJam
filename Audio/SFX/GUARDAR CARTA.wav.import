@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1o0dgogfcivd"
+path="res://.godot/imported/GUARDAR CARTA.wav-c2c254e9e300510db02d5b4b42597409.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/GUARDAR CARTA.wav"
+dest_files=["res://.godot/imported/GUARDAR CARTA.wav-c2c254e9e300510db02d5b4b42597409.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dw5ip70y6s6l5"
+path="res://.godot/imported/DIMINUIR VOLUME MENU.wav-6c262480bb2c5fafc16e4c0dc3a5dfba.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/DIMINUIR VOLUME MENU.wav"
+dest_files=["res://.godot/imported/DIMINUIR VOLUME MENU.wav-6c262480bb2c5fafc16e4c0dc3a5dfba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

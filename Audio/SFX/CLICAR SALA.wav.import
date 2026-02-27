@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dteljxhhjx1d1"
+path="res://.godot/imported/CLICAR SALA.wav-001c1a3ac2691e98c6f50ebb2b2013e6.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/CLICAR SALA.wav"
+dest_files=["res://.godot/imported/CLICAR SALA.wav-001c1a3ac2691e98c6f50ebb2b2013e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

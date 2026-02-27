@@ -14,3 +14,15 @@ func _ready():
 	pilha_carta.append(coringa)
 
 	pilha_carta.shuffle()
+
+func muda_cena(cena_sai: String, cena_entra: String) -> void:
+	var root = get_tree().get_root()
+	var cena_saindo = root.get_node(cena_sai)
+	root.remove_child(cena_saindo)
+	cena_saindo.call_deferred("free")
+	var cena_entrando = load(cena_entra)
+	var nova_cena = cena_entrando.instantiate()
+	root.add_child(nova_cena)
+
+func muda_volume(volume: float) -> void:
+	AudioServer.set_bus_volume_db(0, linear_to_db(volume))

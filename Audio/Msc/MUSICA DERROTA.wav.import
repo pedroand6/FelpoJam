@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxf470w0ey1ad"
+path="res://.godot/imported/MUSICA DERROTA.wav-a0d077be89788a92c3425fd745a81fe0.sample"
+
+[deps]
+
+source_file="res://Audio/Msc/MUSICA DERROTA.wav"
+dest_files=["res://.godot/imported/MUSICA DERROTA.wav-a0d077be89788a92c3425fd745a81fe0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

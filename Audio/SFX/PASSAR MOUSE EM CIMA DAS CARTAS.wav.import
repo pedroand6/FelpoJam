@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0e2lc11qtsx3"
+path="res://.godot/imported/PASSAR MOUSE EM CIMA DAS CARTAS.wav-d43a1eb958c657ef55f8cb28b74e158d.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/PASSAR MOUSE EM CIMA DAS CARTAS.wav"
+dest_files=["res://.godot/imported/PASSAR MOUSE EM CIMA DAS CARTAS.wav-d43a1eb958c657ef55f8cb28b74e158d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
