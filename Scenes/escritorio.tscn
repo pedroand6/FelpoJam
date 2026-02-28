@@ -9,11 +9,13 @@
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="5_cuipy"]
+[ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
+[ext_resource type="Texture2D" uid="uid://d2a88xn55b2vf" path="res://Sprites/2052b181-07c7-4f1a-a0a3-1bc532f16ab7.png" id="6_mei41"]
 [ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
+[ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="7_bo2yg"]
 [ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="7_vf6ur"]
 [ext_resource type="Texture2D" uid="uid://do1r3gmeufmvt" path="res://Sprites/UI/icone-info.png" id="8_sjs8i"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
@@ -32,8 +34,16 @@
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="26_v1qyb"]
 [ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="28_qs34s"]
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
+[ext_resource type="AudioStream" uid="uid://bx62ocvs70juh" path="res://Audio/Msc/primeiro vilão.mp3" id="33_e2ycn"]
+[ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="35_bo2yg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo2yg"]
+albedo_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+metallic_specular = 0.0
+roughness = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
+material = SubResource("StandardMaterial3D_bo2yg")
 size = Vector3(1.3, 3, 1.3)
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
@@ -102,6 +112,9 @@ transform = Transform3D(1, 0, 0, 0, 0.85714036, 0.51508296, 0, -0.51508296, 0.85
 [node name="Mao" type="Node3D" parent="Camera3D" unique_id=361756574]
 script = ExtResource("1_xx3jy")
 
+[node name="descarte" type="AudioStreamPlayer" parent="Camera3D/Mao" unique_id=995739807]
+stream = ExtResource("5_mei41")
+
 [node name="Predio" type="MeshInstance3D" parent="." unique_id=381437484]
 transform = Transform3D(1.7907125, 0, 0, 0, 1, 0, 0, 0, 0.83196807, 0.016177356, -1.8373826, -1.64209)
 mesh = SubResource("BoxMesh_xx3jy")
@@ -109,9 +122,10 @@ mesh = SubResource("BoxMesh_xx3jy")
 [node name="Salas" type="Node3D" parent="." unique_id=1069345903]
 
 [node name="Sprite3D" type="Sprite3D" parent="Salas" unique_id=400078780]
-transform = Transform3D(0.15275612, 0, 0, 0, 1, 0, 0, 0, 0.15275612, 0.014788084, -0.33468747, -1.6524308)
+transform = Transform3D(0.10145891, 0, 0, 0, 1, 0, 0, 0, 0.10145891, 0.014788084, -0.33468747, -1.6524308)
 axis = 1
-texture = ExtResource("5_cuipy")
+texture_filter = 2
+texture = ExtResource("6_mei41")
 
 [node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.2828626, 0, 0, 0, 1, 0, 0, 0, 0.2828626, -0.91193396, -0.32901675, -1.897177)
@@ -152,6 +166,9 @@ vizinhos = [NodePath("../Sala3"), NodePath("../Sala8"), NodePath("../Sala6")]
 transform = Transform3D(0.380163, 0, 0, 0, 1, 0, 0, 0, 0.3567086, 0.53705376, -0.32901675, -1.4754021)
 id = 8
 vizinhos = [NodePath("../Sala4"), NodePath("../Sala7")]
+
+[node name="money" type="AudioStreamPlayer" parent="Salas" unique_id=401275477]
+stream = ExtResource("7_bo2yg")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2016285213 node_paths=PackedStringArray("sala_cartas", "sala_util", "sala_combo")]
 follow_viewport_enabled = true
@@ -1249,14 +1266,29 @@ libraries/ = SubResource("AnimationLibrary_8ekh4")
 transform = Transform3D(1, 0, 0, 0, 0.92993706, 0.36771885, 0, -0.36771885, 0.92993706, 0, 0, 0)
 
 [node name="musica" type="AudioStreamPlayer" parent="." unique_id=620380722]
+stream = ExtResource("33_e2ycn")
+autoplay = true
+
+[node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=213352374]
+stream = ExtResource("35_bo2yg")
 
 [connection signal="cartas_prontas" from="." to="Camera3D/Mao" method="_on_escritorio_cartas_prontas"]
 [connection signal="passa_turno" from="Inimigo" to="." method="_on_inimigo_passa_turno"]
 [connection signal="button_down" from="UI/PlayerSide/Baralho" to="UI" method="_on_baralho_button_down"]
+[connection signal="mouse_entered" from="UI/PlayerSide/Baralho" to="." method="_on_baralho_mouse_entered"]
 [connection signal="button_down" from="UI/PlayerSide/PularBtn" to="." method="_on_pular_btn_button_down"]
+[connection signal="mouse_entered" from="UI/PlayerSide/PularBtn" to="." method="_on_pular_btn_mouse_entered"]
 [connection signal="button_down" from="UI/PlayerSide/DescarteBtn" to="Camera3D/Mao" method="_on_descarte_btn_button_down"]
+[connection signal="mouse_entered" from="UI/PlayerSide/DescarteBtn" to="." method="_on_descarte_btn_mouse_entered"]
 [connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
+[connection signal="mouse_entered" from="UI/EnemySide/ConfigBtn" to="." method="_on_config_btn_mouse_entered"]
+[connection signal="mouse_entered" from="UI/EnemySide/InfoBtn" to="." method="_on_info_btn_mouse_entered"]
+[connection signal="mouse_entered" from="UI/EnemySide/Prancheta" to="." method="_on_prancheta_mouse_entered"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="UI" method="_on_demissao_button_down"]
+[connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="." method="_on_demissao_mouse_entered"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]
+[connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Fechar" to="." method="_on_fechar_mouse_entered"]
 [connection signal="button_down" from="UI/Aviso/Frente/NaoBtn" to="UI/Aviso" method="_on_nao_btn_button_down"]
+[connection signal="mouse_entered" from="UI/Aviso/Frente/NaoBtn" to="." method="_on_nao_btn_mouse_entered"]
 [connection signal="button_down" from="UI/Aviso/Frente/SimBtn" to="UI/Aviso" method="_on_sim_btn_button_down"]
+[connection signal="mouse_entered" from="UI/Aviso/Frente/SimBtn" to="." method="_on_sim_btn_mouse_entered"]

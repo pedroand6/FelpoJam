@@ -21,6 +21,7 @@ var tamanho_mao: int = 0
 var cartas_mao: Array[Node3D]
 
 @onready var node_carta = preload("res://Scenes/carta.tscn")
+@onready var descarte_sfx = $descarte
 
 func _ready():
 	Gerenciador.comeca_turno.connect(player_comecou_turno)
@@ -62,6 +63,11 @@ func _on_escritorio_cartas_prontas() -> void:
 	comprar_mao()
 
 func _on_descarte_btn_button_down() -> void:
+	for carta in Gerenciador.cartas_selecionadas:
+		descarte_sfx.play()
+		var tw = create_tween()
+		tw.tween_property(carta, "position", Vector3(10.0, carta.position.y, carta.position.z), 2.0)
+		await descarte_sfx.finished
 	descarta(true)
 
 func descarta(compra : bool):

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://k5mnfcmth5gy"
+path="res://.godot/imported/The Oficce.mp3-6b714e6ad352091a2a189996ad0b5d75.mp3str"
+
+[deps]
+
+source_file="res://Audio/Msc/The Oficce.mp3"
+dest_files=["res://.godot/imported/The Oficce.mp3-6b714e6ad352091a2a189996ad0b5d75.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

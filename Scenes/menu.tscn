@@ -6,7 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bkb5eqblh0efm" path="res://Audio/SFX/AUMENTAR VOLUME MENU.wav" id="4_wwsa2"]
 [ext_resource type="AudioStream" uid="uid://c1oiskd0i3wam" path="res://Audio/SFX/BOTÃO DE PLAY.wav" id="5_wwsa2"]
 [ext_resource type="Script" uid="uid://bvrlifwywa4j" path="res://Scripts/fade_out.gd" id="6_jsrd8"]
-[ext_resource type="AudioStream" uid="uid://c4sx6oadwm40a" path="res://Audio/Msc/soletrando cartas.mp3" id="7_wbdvm"]
+[ext_resource type="AudioStream" uid="uid://mh1khbil8rvk" path="res://Audio/Msc/no safe journey.mp3" id="7_q3rjx"]
+[ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="8_q3rjx"]
 
 [node name="Menu" type="Control" unique_id=1527680893]
 layout_mode = 3
@@ -173,15 +174,26 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("6_jsrd8")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=719816536]
-stream = ExtResource("7_wbdvm")
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=719816536]
+stream = ExtResource("7_q3rjx")
 autoplay = true
 
+[node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=852958665]
+stream = ExtResource("8_q3rjx")
+
 [connection signal="button_down" from="Menu/Iniciar" to="." method="_on_iniciar_button_down"]
+[connection signal="mouse_entered" from="Menu/Iniciar" to="." method="_on_iniciar_mouse_entered"]
 [connection signal="button_down" from="Menu/Opt" to="." method="_on_opt_button_down"]
+[connection signal="mouse_entered" from="Menu/Opt" to="." method="_on_opt_mouse_entered"]
 [connection signal="button_down" from="Menu/Cred" to="." method="_on_cred_button_down"]
+[connection signal="mouse_entered" from="Menu/Cred" to="." method="_on_cred_mouse_entered"]
 [connection signal="button_down" from="Menu/Sair" to="." method="_on_sair_button_down"]
+[connection signal="mouse_entered" from="Menu/Sair" to="." method="_on_sair_mouse_entered"]
+[connection signal="mouse_entered" from="Opts/Volume/VBoxContainer/HSlider" to="." method="_on_h_slider_mouse_entered"]
 [connection signal="value_changed" from="Opts/Volume/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="mouse_entered" from="Opts/VBoxContainer0/CheckCheia" to="." method="_on_check_cheia_mouse_entered"]
 [connection signal="toggled" from="Opts/VBoxContainer0/CheckCheia" to="." method="_on_check_cheia_toggled"]
+[connection signal="mouse_entered" from="Opts/VBoxContainer1/CheckSync" to="." method="_on_check_sync_mouse_entered"]
 [connection signal="toggled" from="Opts/VBoxContainer1/CheckSync" to="." method="_on_check_sync_toggled"]
 [connection signal="button_down" from="Opts/Btns/HBoxContainer/Voltar" to="." method="_on_voltar_button_down"]
+[connection signal="mouse_entered" from="Opts/Btns/HBoxContainer/Voltar" to="." method="_on_voltar_mouse_entered"]

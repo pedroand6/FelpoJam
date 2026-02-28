@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bh041yn0op4xd" path="res://Sprites/UI/icone-fechar.png" id="14_72pgp"]
 [ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="14_elxfw"]
 [ext_resource type="AudioStream" uid="uid://dwbpvxesxhcen" path="res://Audio/Msc/journey nada safe.mp3" id="16_16mgg"]
+[ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="17_jble0"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_w4fai"]
 script = ExtResource("6_gsx18")
@@ -249,10 +250,14 @@ visible = false
 layout_mode = 1
 cena_nome = "Visual Novel"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1096008729]
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1096008729]
 stream = ExtResource("16_16mgg")
 autoplay = true
 
+[node name="mouseovermenu" type="AudioStreamPlayer" parent="." unique_id=747965296]
+stream = ExtResource("17_jble0")
+
 [connection signal="button_down" from="CanvasLayer/BottomArea/DialogueBtn" to="." method="_on_dialogue_btn_button_down"]
 [connection signal="button_down" from="CanvasLayer/ConfigBtn" to="." method="_on_config_btn_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/ConfigBtn" to="." method="_on_config_btn_mouse_entered"]
 [connection signal="button_down" from="CanvasLayer/Popup/Caixa/Frente/Fechar" to="." method="_on_fechar_button_down"]

@@ -17,6 +17,7 @@ var contrato : Contrato
 @onready var precoTxt_util = $Utilitario/Preco
 @onready var imagem_util = $Utilitario/Imagem
 
+@onready var mouse_on_carta = $mousehovercarta
 var mouse_on: bool = false
 var chosen: bool = false
 var originalPos: Vector3
@@ -83,8 +84,11 @@ func _process(delta: float) -> void:
 		look_at(position3D - transform.basis.z.normalized())
 
 func _on_area_3d_mouse_entered() -> void:
+	
 	mouse_on = true
 	scale *= 1.25
+	
+	mouse_on_carta.play()
 	
 	if canAnimate == false:
 		set_positions()

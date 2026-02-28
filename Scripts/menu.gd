@@ -9,6 +9,7 @@ extends Control
 @onready var vol_soundup := $VolSoundUp
 @onready var vol_sounddown := $VolSoundDown
 @onready var fade_out := $FadeOut
+@onready var mouse_on_menu = $mousehovermenu
 
 var ult_mudan: float
 
@@ -57,3 +58,28 @@ func _on_check_sync_toggled(toggled_on: bool) -> void:
 func _on_voltar_button_down() -> void:
 	menu.show()
 	opts.hide()
+
+
+func _on_h_slider_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_check_cheia_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_check_sync_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_voltar_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_sair_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_cred_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_opt_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_iniciar_mouse_entered() -> void:
+	mouse_on_menu.play()

@@ -1,8 +1,9 @@
 extends Node2D
 
-
 @onready var caixaDialogo = $CanvasLayer/BottomArea
 @onready var cenaObj = $CanvasLayer/TopArea/Scene
+@onready var msc = $Musica
+@onready var mouse_on_menu = $mouseovermenu
 
 var nomeCena : String
 
@@ -13,8 +14,12 @@ var cenasImg
 var dialogoAtual = 0
 var cenaAtual = 0
 
+var msc_list: Array[String] = ["res://Audio/Msc/The Oficce.mp3", "res://Audio/Msc/no safe journey.mp3", "res://Audio/Msc/silvio final.mp3"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	msc.stream = load(msc_list[Gerenciador.cena-1])
+	msc.play()
 	nomeCena = "Cena0" + str(Gerenciador.cena)
 	dialogos = le_json("res://Dialogues/%s.json" % [nomeCena])
 	cenasPath = "res://Dialogues/" + nomeCena + "/"
@@ -86,3 +91,7 @@ func _on_fechar_button_down() -> void:
 
 func _on_sair_button_down() -> void:
 	get_tree().quit()
+
+
+func _on_config_btn_mouse_entered() -> void:
+	mouse_on_menu.play()

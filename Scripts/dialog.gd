@@ -1,5 +1,7 @@
 extends Node
 
+const wait_time: float = 4.5
+
 @onready var lucas_icon := $"../PlayerSide/Portrait"
 @onready var dialogbox_lucas := $"../PlayerSide/Portrait/DialogBox"
 @onready var lucas_text := $"../PlayerSide/Portrait/DialogBox/Dialog"
@@ -45,7 +47,7 @@ func passa_dialogo() -> void:
 #		return
 	dialogoAtual += 1
 	if dialogoAtual >= len(dialogos[nomeCena][cenaAtual]):
-		await wait(4.5)
+		await wait(wait_time)
 		skip_btn.show()
 		dialogbox_enemy.hide()
 		dialogbox_lucas.hide()
@@ -75,7 +77,7 @@ func mostra_texto(dialogoInfo: Dictionary) -> void:
 		enemy_icon.texture = load("res://Sprites/Icons/%s/%s-retrato-%s.png" % [dialogoInfo["nome"], \
 		 	dialogoInfo["nome"].to_lower().split(",", true, 2)[0], dialogoInfo["icone"]])
 		anima_texto_enemy()
-	await wait(4.5)
+	await wait(wait_time)
 	passa_dialogo()
 
 func anima_texto_lucas():

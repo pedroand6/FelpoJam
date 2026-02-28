@@ -4,10 +4,11 @@ class_name CardGame
 const JOGADOR = 0
 const IA = 1
 
+@onready var ia = $Inimigo
+@onready var mouse_on_menu = $mousehovermenu
+
 @export var jogador_carimbo := Gerenciador.Carimbos.BASICO
 @export var ia_carimbo := Gerenciador.Carimbos.BRINQUEDO
-
-@onready var ia = $Inimigo
 
 signal cartas_prontas
 signal passou_turno
@@ -37,3 +38,34 @@ func _on_pular_btn_button_down() -> void:
 
 func _on_inimigo_passa_turno() -> void:
 	passa_turno(IA)
+
+
+func _on_sim_btn_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_nao_btn_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_fechar_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_demissao_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_prancheta_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_info_btn_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_config_btn_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_descarte_btn_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_pular_btn_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_baralho_mouse_entered() -> void:
+	mouse_on_menu.play()

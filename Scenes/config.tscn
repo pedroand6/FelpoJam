@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="1_kr0as"]
 [ext_resource type="Texture2D" uid="uid://bb8vehbdwk00h" path="res://Assets/btn_border.png" id="3_6u63q"]
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="4_lrmn4"]
+[ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="7_a7ocr"]
 [ext_resource type="AudioStream" uid="uid://dw5ip70y6s6l5" path="res://Audio/SFX/DIMINUIR VOLUME MENU.wav" id="8_bup8a"]
 [ext_resource type="AudioStream" uid="uid://bkb5eqblh0efm" path="res://Audio/SFX/AUMENTAR VOLUME MENU.wav" id="9_1jr8q"]
 
@@ -159,8 +160,16 @@ stream = ExtResource("8_bup8a")
 [node name="VolSoundUp" type="AudioStreamPlayer" parent="." unique_id=1117695934]
 stream = ExtResource("9_1jr8q")
 
+[node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=1885085622]
+stream = ExtResource("7_a7ocr")
+
+[connection signal="mouse_entered" from="Configs/Volume/VBoxContainer/HSlider" to="." method="_on_h_slider_mouse_entered"]
 [connection signal="value_changed" from="Configs/Volume/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="mouse_entered" from="Configs/Tela/HBoxContainer/VBoxContainer0/CheckCheia" to="." method="_on_check_cheia_mouse_entered"]
 [connection signal="toggled" from="Configs/Tela/HBoxContainer/VBoxContainer0/CheckCheia" to="." method="_on_check_cheia_toggled"]
+[connection signal="mouse_entered" from="Configs/Tela/HBoxContainer/VBoxContainer1/CheckSync" to="." method="_on_check_sync_mouse_entered"]
 [connection signal="toggled" from="Configs/Tela/HBoxContainer/VBoxContainer1/CheckSync" to="." method="_on_check_sync_toggled"]
 [connection signal="button_down" from="Configs/Btns/HBoxContainer/Voltar" to="." method="_on_voltar_button_down"]
+[connection signal="mouse_entered" from="Configs/Btns/HBoxContainer/Voltar" to="." method="_on_voltar_mouse_entered"]
 [connection signal="button_down" from="Configs/Btns/HBoxContainer/Sair" to="." method="_on_sair_button_down"]
+[connection signal="mouse_entered" from="Configs/Btns/HBoxContainer/Sair" to="." method="_on_sair_mouse_entered"]

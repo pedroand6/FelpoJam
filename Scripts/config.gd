@@ -6,6 +6,8 @@ extends Control
 @onready var vol_sounddown := $VolSoundDown
 @onready var check_tela: CheckBox = $Configs/Tela/HBoxContainer/VBoxContainer0/CheckCheia
 @onready var check_sync: CheckBox = $Configs/Tela/HBoxContainer/VBoxContainer1/CheckSync
+@onready var mouse_on_menu := $mousehovermenu
+
 @export var cena_nome: String
 
 var ult_mudan: float
@@ -41,3 +43,19 @@ func _on_voltar_button_down() -> void:
 
 func _on_sair_button_down() -> void:
 	Gerenciador.muda_cena(cena_nome, "res://Scenes/menu.tscn")
+
+
+func _on_check_cheia_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_check_sync_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_voltar_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_sair_mouse_entered() -> void:
+	mouse_on_menu.play()
+
+func _on_h_slider_mouse_entered() -> void:
+	mouse_on_menu.play()

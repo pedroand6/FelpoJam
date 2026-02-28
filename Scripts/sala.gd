@@ -159,6 +159,7 @@ var pontuacao := 0
 @onready var dinheiro: PackedScene = load("res://Scenes/dinheiro.tscn")
 @onready var funcionario: PackedScene = load("res://Scenes/funcionario_popup.tscn")
 @onready var inimigo := $"../../Inimigo"
+@onready var money_sfx := get_parent().get_node("money")
 var selecionada : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -349,6 +350,7 @@ func implementa_pontos():
 			Gerenciador.jogador_dinheiro += int(pontuacao / 2)
 			var din = dinheiro.instantiate()
 			add_child(din)
+			money_sfx.play()
 			din.label.text = "R$"+str(int(pontuacao/2))
 			din.position = Vector3.ZERO
 			din.sumir()
