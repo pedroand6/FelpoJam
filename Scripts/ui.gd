@@ -25,6 +25,7 @@ var config_show: bool = false
 var sala_show: bool = false
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_released("fecha_popup"): _on_fechar_button_down()
 	round_counter.text = "%02d/%02d" % [Gerenciador.round, Gerenciador.total_rounds]
 	descarte_counter.text = "%02d" % Gerenciador.descartes_restantes
 	dinheiro_player.text = "R$ " + str(Gerenciador.jogador_dinheiro)
