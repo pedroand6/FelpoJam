@@ -45,6 +45,7 @@ func passa_dialogo() -> void:
 #		return
 	dialogoAtual += 1
 	if dialogoAtual >= len(dialogos[nomeCena][cenaAtual]):
+		await wait(4.5)
 		skip_btn.show()
 		dialogbox_enemy.hide()
 		dialogbox_lucas.hide()
@@ -74,7 +75,7 @@ func mostra_texto(dialogoInfo: Dictionary) -> void:
 		enemy_icon.texture = load("res://Sprites/Icons/%s/%s-retrato-%s.png" % [dialogoInfo["nome"], \
 		 	dialogoInfo["nome"].to_lower().split(",", true, 2)[0], dialogoInfo["icone"]])
 		anima_texto_enemy()
-	await wait(3.5)
+	await wait(4.5)
 	passa_dialogo()
 
 func anima_texto_lucas():

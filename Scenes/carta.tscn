@@ -9,7 +9,7 @@
 size = Vector3(0.47235107, 0.6348877, 0.07836914)
 
 [node name="Carta" type="Node3D" unique_id=621304190]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.11576338, 0, 0, 0, 0.11576338, 0, 0, 0, 0.1, 0, 0, 0)
 script = ExtResource("1_cjeqn")
 
 [node name="Funcionario" type="Node3D" parent="." unique_id=1044343944]

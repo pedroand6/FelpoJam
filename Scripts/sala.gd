@@ -153,7 +153,7 @@ var incrementador := 0
 var pontuacao := 0
 
 @onready var root = $"../.."
-@onready var mao = $"../../Camera3D/3DUI/Mao"
+@onready var mao = $"../../Camera3D/Mao"
 @onready var escritorio = $"../.."
 @onready var ui = $"../../UI"
 @onready var dinheiro: PackedScene = load("res://Scenes/dinheiro.tscn")

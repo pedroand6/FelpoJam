@@ -7,15 +7,15 @@ class_name Mao
 #add cards weights
 
 const TAMANHO_MAO: int = 7
-
-const CARTA_POS_BASE: Vector3 = Vector3(0, -0.115, -0.2)
+#0, -0.115, -0.2
+const CARTA_POS_BASE: Vector3 = Vector3(0, -0.11, -0.2)
 const VELOCIDADE_MOVIMENTO: float = 0.01
 
 #const CAMINHO_IMG_FI_DONO: String = "res://Assets/coringa.png"
 
-const ESPACAMENTO_X: float = 0.023
+const ESPACAMENTO_X: float = 0.026 #0.023
 const ESPACAMENTO_Y: float = -0.001
-const ROTACAO_CARTAS: float = 1.25
+const ROTACAO_CARTAS: float = 1.0
 
 var tamanho_mao: int = 0
 var cartas_mao: Array[Node3D]

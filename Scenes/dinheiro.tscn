@@ -8,6 +8,7 @@ script = ExtResource("1_dksyl")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1051443238]
 sorting_offset = 1.0
+billboard = 1
 text = "R$"
 font = ExtResource("2_hjc17")
 outline_size = 0

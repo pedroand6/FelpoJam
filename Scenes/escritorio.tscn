@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bw7knfku48nen"]
 
-[ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_3j7i0"]
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
 [ext_resource type="Script" uid="uid://ctkl77vex17yi" path="res://Scripts/cardgame.gd" id="1_xl6bb"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
+[ext_resource type="Texture2D" uid="uid://cygcpnjju4mvd" path="res://Sprites/Inimigo/marco1-3x.png" id="2_cuipy"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
 [ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="3_bnfms"]
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="Texture2D" uid="uid://c552o6y1fotlg" path="res://Sprites/salaslayout.png" id="5_cuipy"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="5_cuipy"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="13_aafqm"]
 [ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="17_aa28w"]
 [ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="19_nt0tj"]
-[ext_resource type="Script" path="res://Scripts/baralho.gd" id="19_v1qyb"]
+[ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="19_v1qyb"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
@@ -52,17 +52,16 @@ bg_color = Color(0, 0, 0, 1)
 script = ExtResource("1_xl6bb")
 
 [node name="Inimigo" type="Sprite3D" parent="." unique_id=1659779327 node_paths=PackedStringArray("salas")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6255174)
-texture = ExtResource("1_3j7i0")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35507202, -4.2747226)
+texture_filter = 2
+texture = ExtResource("2_cuipy")
 script = ExtResource("3_rwmm0")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=222983965]
 transform = Transform3D(1, 0, 0, 0, 0.85714036, 0.51508296, 0, -0.51508296, 0.85714036, 0, 0.6514241, -0.21619591)
 
-[node name="3DUI" type="Node3D" parent="Camera3D" unique_id=1464908080]
-
-[node name="Mao" type="Node3D" parent="Camera3D/3DUI" unique_id=361756574]
+[node name="Mao" type="Node3D" parent="Camera3D" unique_id=361756574]
 script = ExtResource("1_xx3jy")
 
 [node name="Predio" type="MeshInstance3D" parent="." unique_id=381437484]
@@ -437,7 +436,6 @@ horizontal_alignment = 1
 
 [node name="Popup" type="Control" parent="UI" unique_id=368777482]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -493,7 +491,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Baralho" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=554494018]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -502,6 +499,7 @@ offset_right = -790.0
 offset_bottom = -590.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.91221875, 0.91221875)
 script = ExtResource("19_v1qyb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=1358203392]
@@ -1199,11 +1197,11 @@ transform = Transform3D(1, 0, 0, 0, 0.92993706, 0.36771885, 0, -0.36771885, 0.92
 
 [node name="musica" type="AudioStreamPlayer" parent="." unique_id=620380722]
 
-[connection signal="cartas_prontas" from="." to="Camera3D/3DUI/Mao" method="_on_escritorio_cartas_prontas"]
+[connection signal="cartas_prontas" from="." to="Camera3D/Mao" method="_on_escritorio_cartas_prontas"]
 [connection signal="passa_turno" from="Inimigo" to="." method="_on_inimigo_passa_turno"]
 [connection signal="button_down" from="UI/PlayerSide/Baralho" to="UI" method="_on_baralho_button_down"]
 [connection signal="button_down" from="UI/PlayerSide/PularBtn" to="." method="_on_pular_btn_button_down"]
-[connection signal="button_down" from="UI/PlayerSide/DescarteBtn" to="Camera3D/3DUI/Mao" method="_on_descarte_btn_button_down"]
+[connection signal="button_down" from="UI/PlayerSide/DescarteBtn" to="Camera3D/Mao" method="_on_descarte_btn_button_down"]
 [connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="UI" method="_on_demissao_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]
