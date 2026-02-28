@@ -45,6 +45,7 @@ func compra_uma():
 	
 	add_child(instance)
 	Gerenciador.jogador_baralho_pego.append(carta_topo)
+	Gerenciador.compra_carta.emit(carta_topo)
 
 func posiciona_cartas():
 	for i in range(tamanho_mao):

@@ -35,6 +35,9 @@ enum Carimbos {
 	TRADICIONAL
 }
 
+var player_usou_ativa := false
+var ia_usou_ativa := false
+
 var demandas_gerais : Array[Demanda]
 var demandasPath = "res://Assets/Contratos/Gerais/"
 
@@ -73,7 +76,7 @@ var sala_selecionada : Sala = null
 var cena: int = 1 #quando acaba uma cena, atualiza ++
 
 signal comeca_turno
-signal descartada
+signal compra_carta(contrato : Contrato)
 signal round_muda
 
 func _ready():
@@ -142,7 +145,6 @@ func gera_baralho(carimbo : Carimbos) -> Array[Contrato]:
 func descarte(carta : Carta, pilha_carta : Array[Contrato]):
 	pilha_carta.erase(carta.contrato)
 	carta.queue_free()
-	emit_signal("descartada")
 
 func calcula_combo(funcionarios : Array[Contrato]):
 	if len(funcionarios) == 0: return 1

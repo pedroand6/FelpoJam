@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfsx7tpk6r2nt"
-path="res://.godot/imported/1.jpg-48b1f4f2c919b7185b58bc031d9e37b7.ctex"
+uid="uid://dgyq8ut14ebci"
+path="res://.godot/imported/CARIMBADO.png-3bc898cb98235dbabf75390c0c3f22eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogues/Cutscene1/1.jpg"
-dest_files=["res://.godot/imported/1.jpg-48b1f4f2c919b7185b58bc031d9e37b7.ctex"]
+source_file="res://Dialogues/CARIMBADO.png"
+dest_files=["res://.godot/imported/CARIMBADO.png-3bc898cb98235dbabf75390c0c3f22eb.ctex"]
 
 [params]
 

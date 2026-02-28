@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c552o6y1fotlg"
-path.s3tc="res://.godot/imported/salaslayout.png-40c1cf8564eb6918db7d789b7cf2ee2a.s3tc.ctex"
+uid="uid://nmm2de7ssskj"
+path.s3tc="res://.godot/imported/marco-12.png-bad9f6d13a3f9788a79fa054303e63ad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/salaslayout.png"
-dest_files=["res://.godot/imported/salaslayout.png-40c1cf8564eb6918db7d789b7cf2ee2a.s3tc.ctex"]
+source_file="res://Sprites/Inimigo/marco-12.png"
+dest_files=["res://.godot/imported/marco-12.png-bad9f6d13a3f9788a79fa054303e63ad.s3tc.ctex"]
 
 [params]
 

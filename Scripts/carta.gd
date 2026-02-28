@@ -20,8 +20,11 @@ var contrato : Contrato
 var mouse_on: bool = false
 var chosen: bool = false
 var originalPos: Vector3
+var originalRot: Vector3
 var destination: Vector3
 var canAnimate: bool
+
+var camera
 
 func _ready() -> void:
 	if contrato == null: return
@@ -44,6 +47,7 @@ func _ready() -> void:
 func set_positions():
 	originalPos = position
 	destination = position
+	originalRot = rotation
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and Gerenciador.turno == Gerenciador.JOGADOR:
@@ -57,17 +61,26 @@ func _input(event: InputEvent) -> void:
 				Gerenciador.cartas_selecionadas.append(self)
 				canAnimate = true
 				destination = originalPos + transform.basis.y.normalized() * 0.015 + \
-				transform.basis.z.normalized() * 0.01
+					transform.basis.z.normalized() * 0.01
 
 func _process(delta: float) -> void:
 	var distance_to_destination
 	var distance_to_move
 	if position != destination and canAnimate:
 		distance_to_destination = position.distance_to(destination)
-		distance_to_move = 50 * delta
+		distance_to_move = 0.1 * delta
 		if abs(distance_to_destination) < abs(distance_to_move):
 			distance_to_move = distance_to_destination
 		position += position.direction_to(destination) * distance_to_move
+		
+	if mouse_on:
+		camera = get_viewport().get_camera_3d()
+		var position2D = get_viewport().get_mouse_position()
+		var dropPlane  = Plane(-transform.basis.z, 100)
+		var position3D = dropPlane.intersects_ray(
+			camera.project_ray_origin(position2D),
+			camera.project_ray_normal(position2D))
+		look_at(position3D - transform.basis.z.normalized())
 
 func _on_area_3d_mouse_entered() -> void:
 	mouse_on = true
@@ -76,7 +89,7 @@ func _on_area_3d_mouse_entered() -> void:
 	if canAnimate == false:
 		set_positions()
 		canAnimate = true
-		
+	
 	destination = originalPos + transform.basis.y.normalized() * 0.015
 	imagem_func.render_priority = 1
 	imagem_util.render_priority = 1
@@ -87,3 +100,4 @@ func _on_area_3d_mouse_exited() -> void:
 	if chosen == false: destination = originalPos
 	imagem_func.render_priority = 0
 	imagem_util.render_priority = 0
+	rotation = originalRot

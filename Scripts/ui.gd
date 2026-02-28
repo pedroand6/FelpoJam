@@ -3,6 +3,7 @@ extends CanvasLayer
 const TRUTH: bool = true
 
 @onready var popup_bg := %Popup
+@onready var aviso := %Aviso
 @onready var baralho_list := $Popup/Caixa/Frente/Baralho
 @onready var config_menu := $Popup/Caixa/Frente/Config
 @onready var sala_menu := $Popup/Caixa/Frente/Sala
@@ -106,7 +107,20 @@ func _on_demissao_button_down() -> void:
 		return
 		
 	#avisar jogador
+	var demitir = await show_aviso(
+		"Demissão Geral",
+		"Deseja mesmo demitir todos os funcionários desta sala?",
+	)
+	
+	if not demitir: return
 	
 	sala.demissao_geral()
 	sala.pontuacao = sala.calcula_pontos()
 	sala.open_room()
+
+func show_aviso(title, text):
+	aviso.show()
+	aviso.title = title
+	aviso.text = text
+	await aviso.responde_aviso
+	return aviso.result

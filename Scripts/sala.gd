@@ -189,16 +189,52 @@ func _input(event: InputEvent) -> void:
 func mover_atacar():
 	var selecionada = Gerenciador.sala_selecionada
 	if len(funcionarios) > 0 and selecionada.dono != dono: #ataque
-		if pontuacao < selecionada.pontuacao: #perdeu
-			match selecionada.dono:
-				Players.JOGADOR:
-					bloqueada_ia = true
-				Players.IA:
-					bloqueada_player = true
-					
-			demissao_geral()
+		
+		var atacar = await ui.show_aviso(
+			"Atacar a Sala %d" % id,
+			"Tem certeza que deseja atacar esta sala?"
+		)
+		
+		if not atacar: return
+		
+		var pont_pl = selecionada.pontuacao
+		var pont_ia = pontuacao
+		
+		var ia_usou_carimbo = false
+		
+		#50% de chance da ia te carimbar
+		if not Gerenciador.ia_usou_ativa and randf() < 0.5:
+			if Gerenciador.ia_carimbo == Gerenciador.Carimbos.BRINQUEDO:
+				ia_usou_carimbo = true
+				Gerenciador.ia_usou_ativa = true
+				if randf() <= 0.25:
+					#avisa player
+					return
+			elif Gerenciador.ia_carimbo == Gerenciador.Carimbos.TRADICIONAL:
+				ia_usou_carimbo = true
+				Gerenciador.ia_usou_ativa = true
+				for fun in funcionarios:
+					pont_ia += 10
+				
 		Gerenciador.movimentos_restantes = 0
+		if pont_ia <= pont_pl: #ia perdeu
+			bloqueada_ia = true
+			dono = Sala.Players.NENHUM
+			demissao_geral()
+			#avisa player que ganhou
+		else:
+			#avisa player que perdeu (com ou sem carimbo)
+			pass
+		
 	elif len(funcionarios) == 0 and len(selecionada.funcionarios) > 0: #movimento
+		
+		var mover = await ui.show_aviso(
+			"Movimentação para Sala %d" % id,
+			"Tem certeza que deseja mover todos os seus funcionários para esta sala?"
+		)
+		
+		if not mover: return
+		
 		funcionarios = Gerenciador.sala_selecionada.funcionarios.duplicate(true)
 		Gerenciador.sala_selecionada.demissao_geral()
 		Gerenciador.movimentos_restantes = 0

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1pyrfj74af5b"]
+
+[ext_resource type="Texture2D" uid="uid://cvtja7314kium" path="res://Sprites/Cartas/RH/2-rh-junior.png" id="1_6kxwi"]
+[ext_resource type="Script" uid="uid://bm5de0a6vnt08" path="res://Scripts/carta_baralho.gd" id="2_alyjj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kxwi"]
+size = Vector2(228, 297)
+
+[node name="Carta_baralho" type="TextureRect" unique_id=1565669376]
+texture_filter = 5
+mouse_filter = 0
+texture = ExtResource("1_6kxwi")
+script = ExtResource("2_alyjj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1622206490]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=916836905]
+position = Vector2(115, 150.5)
+shape = SubResource("RectangleShape2D_6kxwi")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

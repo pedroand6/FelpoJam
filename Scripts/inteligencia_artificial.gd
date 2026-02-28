@@ -3,14 +3,13 @@ extends Sprite3D
 const TAMANHO_MAO = 7
 
 signal passa_turno
-	
+
+@onready var ui = $"../UI"
 @export var salas: Array[Sala]
 var ia_mao : Array[Contrato] = []
 
 signal acao_concluida
 signal jogou_carta(tipo_carta: Contrato.Tipos, sala_destino: int)
-signal resposta_defesa_jogador(usou_carimbo: bool)
-signal iniciar_animacao_ataque(sala_origem: int, sala_destino: int)
 
 func _ready():
 	pass
@@ -36,7 +35,7 @@ func avalia_estado(salas_atuais: Array[Sala], dinheiro: int, mao: Array[Contrato
 				cargos[fun.cargo] = cargos.get(fun.cargo, 0) + 1
 				
 			if not areas.is_empty():
-				pot_salas += pow(tipo_mais_repetido(areas), 2) * 3
+				pot_salas += pow(tipo_mais_repetido(areas), 2) * 2
 			if not cargos.is_empty():
 				pot_salas += pow(tipo_mais_repetido(cargos), 2) * 5
 			   
@@ -79,8 +78,7 @@ func jogada():
 	
 	await get_tree().create_timer(1.0).timeout
 	
-	if avalia_ataque():
-		pass
+	await avalia_ataque()
 	
 	await get_tree().create_timer(0.5).timeout
 	passa_turno.emit()
@@ -96,25 +94,37 @@ func avalia_ataque() -> bool:
 				var pontos_ia = sala_ia.calcula_pontos()
 				var pontos_pl = sala_jogador.calcula_pontos()
 				
-				#if not player_usou_ativa and player_carimbo == "Básico":
-					#f_pl *= 2
+				if not Gerenciador.player_usou_ativa and Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BASICO:
+					pontos_pl *= 2
 					
 				# ataque da ia só se tiver 10% a mais de pontos
 				if pontos_ia > (pontos_pl * 1.10):
 					atacou = true
 					
-					#emit_signal("iniciar_animacao_ataque", s_ia.id, s_pl.id)
 					print("ia atacou sala " + str(sala_ia.id) + "com a sala " + str(sala_jogador.id))
-					
-					#var usou_ativa = await self.resposta_defesa_jogador
-					
-					#if usou_ativa:
-						#player_usou_ativa = true
-						#if player_carimbo == "Brinquedo" and randf() <= 0.25:
-							#print("Ataque Anulado pela fuga do Brinquedo!")
-							#return true
-							
 					var pontos_pl_final = sala_jogador.calcula_pontos()
+					
+					var usou_ativa : bool
+					if not Gerenciador.player_usou_ativa:
+						if Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BASICO:
+							usou_ativa = await ui.show_aviso(
+								"Sala %d sob ataque da sala %s!" % [sala_jogador.id, sala_ia.id],
+								"Sua sala tem %d de produtividade enquanto a sala atacante \
+									 tem %d. Quer usar seu carimbo de uso único para dobrar a produtividade da sala?" % [pontos_pl_final, pontos_ia]
+							)
+							if usou_ativa: 
+								pontos_pl_final *= 2
+						elif Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
+							usou_ativa = await ui.show_aviso(
+								"Sala %d sob ataque da sala %s!" % [sala_jogador.id, sala_ia.id],
+								"Sua sala tem %d de produtividade enquanto a sala atacante \
+									tem %d, quer usar seu carimbo de uso único que lhe dá 25% de chance de fugir do ataque?" % [pontos_pl_final, pontos_ia]
+							)
+							if usou_ativa and randf() <= 0.25:
+								#avisa jogador
+								return false
+						if usou_ativa:
+							Gerenciador.player_usou_ativa = true
 					
 					if pontos_ia > pontos_pl_final:
 						sala_jogador.demissao_geral()

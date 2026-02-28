@@ -1,8 +1,8 @@
 extends Control
 
-@onready var funcs: VBoxContainer = $VBoxContainer/Funcionarios
-@onready var utils: VBoxContainer = $VBoxContainer/Util
-@onready var coringas: HBoxContainer = $VBoxContainer/Coringas
+@onready var funcs: VBoxContainer = $Funcs/Funcionarios
+@onready var utils: HBoxContainer = $Util
+@onready var coringas: HBoxContainer = $Funcs/Coringas
 
 @onready var funcs_path := "res://Sprites/Cartas/"
 @onready var utils_path := "res://Assets/Contratos/Gerais/"
@@ -27,7 +27,7 @@ class entry_baralho:
 var lista_entries: Array[entry_baralho] = []
 
 func _ready() -> void:
-	Gerenciador.descartada.connect(_modula_cartas)
+	Gerenciador.compra_carta.connect(_modula_cartas)
 	append_funcionarios()
 	append_utils()
 	append_coringas()
@@ -47,8 +47,9 @@ func append_funcionarios() -> void:
 
 func append_utils() -> void:
 	var node_list: Array[Node] = utils.get_children()
-	var rect_list: Array[Node] = node_list[0].get_children()
-	rect_list.append_array(node_list[1].get_children())
+	var rect_list: Array[Node]
+	for node in node_list:
+		rect_list.append_array(node.get_children())
 	var rect_count: int = 0
 	rect_count = append_demanda(Gerenciador.demandas_gerais, rect_list, rect_count)
 	if rect_count < 0: return
@@ -96,17 +97,15 @@ func ler_imagens(path: String, pega_diretorios: bool):
 		return files
 	for file in dir.get_files():
 		if not file.ends_with(".import"):
-			files.append(path + "/" + file)
+			files.append(path + file)
 	return files
 
-func _modula_cartas() -> void:
+func _modula_cartas(contrato : Contrato) -> void:
 	for entry: entry_baralho in lista_entries:
-		for carta: Carta in Gerenciador.cartas_selecionadas:
-			var contr: Contrato = carta.contrato
-			if _entry_igual_contrato(entry, contr) and entry.in_baralho:
-				entry.in_baralho = false
-				entry.textrect.modulate = Color(0.2, 0.2, 0.2)
-				return
+		if _entry_igual_contrato(entry, contrato) and entry.in_baralho:
+			entry.in_baralho = false
+			entry.textrect.modulate = Color(0.2, 0.2, 0.2)
+			return
 
 func _entry_igual_contrato(entry: entry_baralho, contr: Contrato) -> bool:
 	return entry.area == contr.area and entry.nome == contr.nome and entry.tipo == contr.tipo

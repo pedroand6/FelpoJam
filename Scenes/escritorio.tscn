@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
 [ext_resource type="Script" uid="uid://ctkl77vex17yi" path="res://Scripts/cardgame.gd" id="1_xl6bb"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
-[ext_resource type="Texture2D" uid="uid://cygcpnjju4mvd" path="res://Sprites/Inimigo/marco1-3x.png" id="2_cuipy"]
+[ext_resource type="Texture2D" uid="uid://nmm2de7ssskj" path="res://Sprites/Inimigo/marco-12.png" id="2_qs34s"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
 [ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="3_bnfms"]
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="7_vf6ur"]
 [ext_resource type="Texture2D" uid="uid://do1r3gmeufmvt" path="res://Sprites/UI/icone-info.png" id="8_sjs8i"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
-[ext_resource type="Texture2D" uid="uid://bqk1kjyeisknk" path="res://Sprites/UI/icone-contador-rodadas.png" id="8_vf6ur"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="9_7sov5"]
 [ext_resource type="Texture2D" uid="uid://bqby8vneh563x" path="res://Sprites/UI/botao-pular-turno.png" id="11_q5mst"]
 [ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="12_miicn"]
@@ -28,8 +27,10 @@
 [ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="19_v1qyb"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
+[ext_resource type="PackedScene" uid="uid://d1pyrfj74af5b" path="res://Scenes/carta_baralho.tscn" id="21_qs34s"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="26_v1qyb"]
+[ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="28_qs34s"]
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
@@ -48,13 +49,50 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sov5"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_qs34s"]
+resource_name = "Notificação"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.8333333, 4.366667, 4.6666665, 4.8, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(931, -216), Vector2(931, 29), Vector2(931, 69), Vector2(931, 69), Vector2(931, 79), Vector2(931, 48), Vector2(931, -187)]
+}
+
+[sub_resource type="Animation" id="Animation_e2ycn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(931, -216)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ekh4"]
+_data = {
+&"Notificação": SubResource("Animation_qs34s"),
+&"RESET": SubResource("Animation_e2ycn")
+}
+
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_xl6bb")
 
 [node name="Inimigo" type="Sprite3D" parent="." unique_id=1659779327 node_paths=PackedStringArray("salas")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35507202, -4.2747226)
+transform = Transform3D(1.2594441, 0, 0, 0, 1.2594441, 0, 0, 0, 1, 0, 0.10535449, -3.0422583)
 texture_filter = 2
-texture = ExtResource("2_cuipy")
+texture = ExtResource("2_qs34s")
 script = ExtResource("3_rwmm0")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 
@@ -71,7 +109,7 @@ mesh = SubResource("BoxMesh_xx3jy")
 [node name="Salas" type="Node3D" parent="." unique_id=1069345903]
 
 [node name="Sprite3D" type="Sprite3D" parent="Salas" unique_id=400078780]
-transform = Transform3D(0.17785315, 0, 0, 0, 1, 0, 0, 0, 0.17785315, 0.014788084, -0.33468747, -1.6524308)
+transform = Transform3D(0.15275612, 0, 0, 0, 1, 0, 0, 0, 0.15275612, 0.014788084, -0.33468747, -1.6524308)
 axis = 1
 texture = ExtResource("5_cuipy")
 
@@ -155,9 +193,9 @@ offset_bottom = 79.0
 
 [node name="Nome" type="Label" parent="UI/PlayerSide/Portrait/DialogBox" unique_id=1002437659]
 layout_mode = 0
-offset_left = -124.0
+offset_left = -133.0
 offset_top = -20.0
-offset_right = 5.0
+offset_right = -4.0
 offset_bottom = 4.0
 theme = ExtResource("6_vf6ur")
 text = "Lucas"
@@ -165,13 +203,15 @@ horizontal_alignment = 2
 
 [node name="Dialog" type="RichTextLabel" parent="UI/PlayerSide/Portrait/DialogBox" unique_id=742400386]
 layout_mode = 0
-offset_left = -576.0
+offset_left = -585.0
 offset_top = 26.0
-offset_right = 5.0
+offset_right = -4.0
 offset_bottom = 205.0
 theme = ExtResource("6_vf6ur")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+fit_content = true
+scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 2
 custom_effects = [SubResource("RichTextEffect_67vox")]
@@ -311,6 +351,8 @@ offset_bottom = 205.0
 theme = ExtResource("6_vf6ur")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+fit_content = true
+scroll_active = false
 autowrap_mode = 2
 custom_effects = [SubResource("RichTextEffect_67vox")]
 visible_characters_behavior = 1
@@ -391,28 +433,18 @@ theme = ExtResource("7_81bno")
 texture_normal = ExtResource("7_bnfms")
 stretch_mode = 4
 
-[node name="RoundIcon" type="TextureRect" parent="UI" unique_id=1717510335]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -24.0
-offset_top = 28.0
-offset_right = 24.0
-offset_bottom = 76.0
-grow_horizontal = 2
-texture = ExtResource("8_vf6ur")
-expand_mode = 1
-stretch_mode = 4
-
 [node name="RodadaText" type="RichTextLabel" parent="UI" unique_id=1754639960]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -75.44678
-offset_top = 88.0
-offset_right = 76.997925
-offset_bottom = 112.296875
-grow_horizontal = 2
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = 67.0
+offset_right = -80.555176
+offset_bottom = 91.296875
+grow_horizontal = 0
+grow_vertical = 2
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 20
 text = "Rodadas"
@@ -420,14 +452,17 @@ autowrap_mode = 0
 horizontal_alignment = 1
 
 [node name="RodadaContador" type="RichTextLabel" parent="UI" unique_id=151543633]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -70.0
-offset_top = 118.0
-offset_right = 69.57764
-offset_bottom = 158.0
-grow_horizontal = 2
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = 96.0
+offset_right = -82.42236
+offset_bottom = 136.0
+grow_horizontal = 0
+grow_vertical = 2
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 36
 text = "01/08"
@@ -445,12 +480,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Fundo" type="ColorRect" parent="UI/Popup" unique_id=1576613548]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = -1079.0
+offset_top = -635.0
+offset_right = 2958.3333
+offset_bottom = 1636.0
 color = Color(0, 0, 0, 0.5019608)
 
 [node name="Caixa" type="Control" parent="UI/Popup" unique_id=591100668]
@@ -460,10 +494,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -605.0
-offset_top = -458.0
-offset_right = 195.0
-offset_bottom = 142.0
+offset_left = -727.0
+offset_top = -477.0
+offset_right = 245.02783
+offset_bottom = 151.65186
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.503217, 1.503217)
@@ -475,6 +509,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.99685174, 1.0013622)
 
 [node name="Frente" type="ColorRect" parent="UI/Popup/Caixa" unique_id=1981366201]
 layout_mode = 1
@@ -483,12 +518,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -395.0
-offset_top = -295.0
-offset_right = 395.0
-offset_bottom = 295.0
+offset_left = -480.69202
+offset_top = -310.33447
+offset_right = 431.35205
+offset_bottom = 279.66553
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.0520796, 1.0520796)
 color = Color(0, 0, 0, 1)
 
 [node name="Baralho" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=554494018]
@@ -497,263 +533,242 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -790.0
-offset_bottom = -590.0
+offset_right = 90.95209
+offset_bottom = 59.486755
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.91221875, 0.91221875)
 script = ExtResource("19_v1qyb")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=1358203392]
+[node name="Dono" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=586277519]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -274.83615
+offset_top = 18.715187
+offset_right = 275.3173
+offset_bottom = 58.715187
+grow_horizontal = 2
+theme = ExtResource("7_81bno")
+theme_override_font_sizes/normal_font_size = 30
+text = "Contratos disponíveis"
+horizontal_alignment = 1
+
+[node name="Funcs" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=1358203392]
 layout_mode = 0
-offset_left = 156.99998
-offset_top = 27.999998
-offset_right = 1385.0
-offset_bottom = 1452.0
-scale = Vector2(0.26955998, 0.26955998)
-theme_override_constants/separation = 60
+offset_left = 47.134598
+offset_top = -27.726238
+offset_right = 1899.1346
+offset_bottom = 1792.2738
+scale = Vector2(0.35809204, 0.35809204)
 alignment = 2
 
-[node name="Funcionarios" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer" unique_id=1711860394]
+[node name="Coringas" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs" unique_id=1764036416]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Coringas" unique_id=1565669376 instance=ExtResource("21_qs34s")]
 layout_mode = 2
 
-[node name="HBoxContainer0" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=2040050004]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Coringas" unique_id=1905227054 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Funcionarios" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs" unique_id=1711860394]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer0" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios" unique_id=2040050004]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=491065692]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=462239499 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=339758102]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=648435196 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=620458829]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1689784400 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=974996377]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=700948970 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=1232858502]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1206215899 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=1021983821]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1795925973 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=1971877372]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=348956446 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer0" unique_id=197292474]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=473204124 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="HBoxContainer1" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1455496247]
+[node name="HBoxContainer1" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios" unique_id=1455496247]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=843657740]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=952020684 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1333703310]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=48759600 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1024813034]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=1931163628 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1252341742]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=181702611 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=484329224]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=525079074 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1154596671]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=1735893306 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1545348347]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=656217924 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer1" unique_id=1962656062]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=426545367 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1993412575]
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios" unique_id=1993412575]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=390447450]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1622555197 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=1562929097]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=845003104 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=1114170452]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1893574834 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=1103492329]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=482387838 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=839146898]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1461535061 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=1726337265]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=227850196 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=337211681]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=133306566 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer2" unique_id=941470708]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=220658868 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios" unique_id=1113590819]
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios" unique_id=1113590819]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=1927283062]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=67106988]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=896064986]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=191757787]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=372146710]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=16974219]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=1481764495]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Funcionarios/HBoxContainer3" unique_id=1001643232]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="Util" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer" unique_id=20877939]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="HBoxContainer0" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util" unique_id=1588495838]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1049812573 instance=ExtResource("21_qs34s")]
 layout_mode = 2
 
-[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=375871867]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=747331696]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=1270568145]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=732025893]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=573507827]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=2009673074]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=1396899454]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=292882020]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="TextureRect8" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer0" unique_id=1162775316]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
-
-[node name="HBoxContainer1" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util" unique_id=463950174]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=961106773 instance=ExtResource("21_qs34s")]
 layout_mode = 2
 
-[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=907325249]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=522769173 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=951722060]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=37115300 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect2" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=287092125]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1683438633 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect3" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=252252079]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1819369836 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect4" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=1348646288]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1164653047 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect5" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=66130928]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1884800685 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect6" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=1048029014]
-layout_mode = 2
-texture = ExtResource("7_bnfms")
+[node name="Util" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=1833048974]
+layout_mode = 0
+offset_left = 462.80988
+offset_top = 80.93274
+offset_right = 2546.8098
+offset_bottom = 1596.9327
+scale = Vector2(0.35781163, 0.35781163)
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
-[node name="TextureRect7" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=761482546]
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Util" unique_id=1402704665]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
+size_flags_vertical = 0
 
-[node name="TextureRect8" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Util/HBoxContainer1" unique_id=2063251641]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=1403189499 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="Coringas" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer" unique_id=1764036416]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=640928233 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-size_flags_horizontal = 4
 
-[node name="TextureRect0" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Coringas" unique_id=2117540684]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=590707341 instance=ExtResource("21_qs34s")]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
 
-[node name="TextureRect1" type="TextureRect" parent="UI/Popup/Caixa/Frente/Baralho/VBoxContainer/Coringas" unique_id=2018602024]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Util" unique_id=971712515]
 layout_mode = 2
-texture = ExtResource("7_bnfms")
+size_flags_vertical = 8
+
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=1553648635 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=922361286 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=856873323 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=1352519797 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=2086935228 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Util" unique_id=1989617129]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=691980387 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=200023639 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=1848638628 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho9" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=388975758 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho10" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=1806891521 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Util" unique_id=2123624169]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=883111417 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=1282859445 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=700642964 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho9" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=52779791 instance=ExtResource("21_qs34s")]
+layout_mode = 2
+
+[node name="Carta_baralho10" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=1884625802 instance=ExtResource("21_qs34s")]
+layout_mode = 2
 
 [node name="Config" parent="UI/Popup/Caixa/Frente" unique_id=1785124144 instance=ExtResource("13_aafqm")]
 visible = false
@@ -1029,7 +1044,8 @@ texture_normal = ExtResource("17_aa28w")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Aviso" type="Control" parent="UI" unique_id=207554618]
+[node name="Aviso" type="Control" parent="UI" unique_id=207554618 node_paths=PackedStringArray("titleTxt", "textTxt")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 8
@@ -1044,18 +1060,16 @@ offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9915092, 0.9915092)
+script = ExtResource("28_qs34s")
+titleTxt = NodePath("Frente/Title")
+textTxt = NodePath("Frente/Text")
 
 [node name="AvisoFundo" type="ColorRect" parent="UI/Aviso" unique_id=1692640405]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -547.64996
-offset_top = -242.05524
-offset_right = 588.792
-offset_bottom = 247.19342
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = -1904.168
+offset_top = -884.51025
+offset_right = 2854.0278
+offset_bottom = 1547.1365
 color = Color(0, 0, 0, 0.5019608)
 
 [node name="Borda" type="ColorRect" parent="UI/Aviso" unique_id=822741180]
@@ -1081,21 +1095,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Fechar" type="TextureButton" parent="UI/Aviso/Frente" unique_id=1057905648]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -36.626465
-offset_top = 4.9785986
-offset_right = -4.626465
-offset_bottom = 36.9786
-grow_horizontal = 0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("17_aa28w")
-ignore_texture_size = true
-stretch_mode = 0
-
 [node name="Title" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=69342712]
 layout_mode = 1
 anchors_preset = 5
@@ -1110,6 +1109,8 @@ theme = ExtResource("26_v1qyb")
 theme_override_colors/default_color = Color(0.8695807, 0.00011221685, 0.04879783, 1)
 theme_override_font_sizes/normal_font_size = 48
 text = "Title"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1126,6 +1127,8 @@ grow_horizontal = 2
 theme = ExtResource("26_v1qyb")
 theme_override_font_sizes/normal_font_size = 32
 text = "Lorem ipsum sus sas sos lieaorr sadks as,camcioha"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1194,6 +1197,54 @@ script = ExtResource("28_v1qyb")
 
 [node name="digitacao" type="AudioStreamPlayer" parent="UI/Dialog" unique_id=821881684]
 
+[node name="Notificacao" type="Control" parent="UI" unique_id=1794462481]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = -216.0
+offset_right = 37.0
+offset_bottom = -156.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/Notificacao" unique_id=1229651390]
+layout_mode = 0
+offset_left = -287.0
+offset_right = 294.0
+offset_bottom = 125.0
+color = Color(0, 0, 0, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Notificacao/ColorRect" unique_id=288102011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/Notificacao" unique_id=1945497534]
+layout_mode = 0
+offset_left = -273.0
+offset_top = 19.0
+offset_right = 279.0
+offset_bottom = 111.0
+theme = ExtResource("26_v1qyb")
+text = "Você não pode mais se mover nesta rodada!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Notificacao" unique_id=2030325793]
+libraries/ = SubResource("AnimationLibrary_8ekh4")
+
 [node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
 transform = Transform3D(1, 0, 0, 0, 0.92993706, 0.36771885, 0, -0.36771885, 0.92993706, 0, 0, 0)
 
@@ -1207,3 +1258,5 @@ transform = Transform3D(1, 0, 0, 0, 0.92993706, 0.36771885, 0, -0.36771885, 0.92
 [connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="UI" method="_on_demissao_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]
+[connection signal="button_down" from="UI/Aviso/Frente/NaoBtn" to="UI/Aviso" method="_on_nao_btn_button_down"]
+[connection signal="button_down" from="UI/Aviso/Frente/SimBtn" to="UI/Aviso" method="_on_sim_btn_button_down"]
