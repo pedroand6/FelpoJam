@@ -106,6 +106,7 @@ func _modula_cartas() -> void:
 			if _entry_igual_contrato(entry, contr) and entry.in_baralho:
 				entry.in_baralho = false
 				entry.textrect.modulate = Color(0.2, 0.2, 0.2)
+				return
 
 func _entry_igual_contrato(entry: entry_baralho, contr: Contrato) -> bool:
 	return entry.area == contr.area and entry.nome == contr.nome and entry.tipo == contr.tipo
