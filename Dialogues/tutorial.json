@@ -1,0 +1,85 @@
+{
+	"silvio": [
+	[
+	  {
+		"icone": "gargalhando",
+		"nome": "Silvio, O Presidente",
+		"texto": "O nosso processo seletivo é extremamente simples, garoto. Vocês gerenciam a empresa, e quem gerar mais lucro no fim do dia está contratado!"
+	  },
+	  {
+		"icone": "sorrindo",
+		"nome": "Silvio, O Presidente",
+		"texto": "No nosso escritório, temos 8 salas disponíveis para vocês gerenciarem nossos funcionários, e cada sala comporta até 4 funcionários."
+	  },
+	  {
+		"icone": "sombrio",
+		"nome": "Silvio, O Presidente",
+		"texto": "O candidato que colocar funcionários em uma sala primeiro se torna o dono dela, e o outro candidato não pode colocar seus funcionários naquele espaço, a menos que mereça..."
+	  },
+	  {
+		"icone": "chorando",
+		"nome": "Silvio, O Presidente",
+		"texto": "Cada contrato possui um determinado custo mas, infelizmente, temos recursos financeiros limitados, então você deve gerenciar bem o dinheiro disponível para encontrar o melhor custo benefício possível."
+	  },
+	  {
+		"icone": "neutro",
+		"nome": "Silvio, O Presidente",
+		"texto": "Vocês podem trabalhar com até 7 contratos de uma vez. E claro, caso achem que um contrato não é interessante, vocês podem descartar até 4 contratos por rodada para receber novos contratos."
+	  },
+	  {
+		"icone": "chorando",
+		"nome": "Silvio, O Presidente",
+		"texto": "Falando em rodadas, aqui você pode acompanhar a duração  total do dia. Cada candidato possui um turno por rodada. Quando tiver terminado todas as suas ações, você pode passar o seu turno."
+	  },
+	],
+	[
+	  {
+		"icone": "sorrindo",
+		"nome": "Silvio, O Presidente",
+		"texto": "Bem, voltando ao escritório..."
+	  },
+	  {
+		"icone": "neutro",
+		"nome": "Silvio, O Presidente",
+		"texto": "Clicando com o botão direito do mouse em uma de suas salas você pode selecioná-la e, com o botão esquerdo em outra sala vazia, pode mover seus funcionários ou, em outra sala inimiga, atacá-la."
+	  },
+	  {
+		"icone": "neutro",
+		"nome": "Silvio, O Presidente",
+		"texto": "Você pode mover os seus funcionários de uma sala para outra uma vez por rodada, mas as demandas que você aprovou para uma determinada sala não são levadas juntas."
+	  },
+	  {
+		"icone": "sombrio",
+		"nome": "Silvio, O Presidente",
+		"texto": "Se você decidir mover seus funcionários para a sala de outro candidato, você poderá tomá-la, se merecer. A sala que possuir a maior pontuação vence o combate. Mas tem um detalhe..."
+	  },
+	  {
+		"icone": "sombrio",
+		"nome": "Silvio, O Presidente",
+		"texto": "O candidato que teve sua sala atacada pode reagir uma vez por partida com seu carimbo, usando uma habilidade ativa que fortalece a sua sala durante o combate."
+	  },
+	  {
+		"icone": "sorrindo",
+		"nome": "Silvio, O Presidente",
+		"texto": "Cada candidato, claro, possui seu próprio carimbo. Além de uma reação exclusiva por partida, o carimbo também adiciona 3 contratos exclusivos na pilha."
+	  }
+	],
+	[
+	  {
+		"icone": "sorrindo",
+		"nome": "Silvio, O Presidente",
+		"texto": "Para alcançar excelentes resultados e aumentar a produtividade dos seus funcionários, você precisa organizá-los de forma inteligente. As combinações de funcionários podem ser consultadas na prancheta ao lado."
+	  },
+	  {
+		"icone": "gargalhando",
+		"nome": "Silvio, O Presidente",
+		"texto": "Além de combinar os funcionários de forma inteligente, é importante que você aprove as demandas corretas para as salas que contenham os funcionários adequados para aquele determinado contrato."
+	  },
+	  {
+		"icone": "sorrindo",
+		"nome": "Silvio, O Presidente",
+		"texto": "E bem, é isso! Hahaha! Agora, façam o que vieram fazer. E, claro, se esquecerem de algo, vocês podem consultar essas informações com o RH."
+	  }
+	]
+  ]
+}

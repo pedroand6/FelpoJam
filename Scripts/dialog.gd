@@ -21,20 +21,22 @@ var textoAnimando = false
 func _ready() -> void:
 	Gerenciador.round_muda.connect(dialogo_round)
 	Gerenciador.vitoria.connect(dialogo_final)
+	if Gerenciador.cena != 2:
+		dialogos = le_json("res://Dialogues/ingame02.json")
+		nomeCena = "kenji"
+		atualiza_cena()#MUDAR
+	
+func dialogo_final() -> void:
+	passa_dialogo()
+
+func start_after_tutorial():
 	if Gerenciador.cena == 2:
 		dialogos = le_json("res://Dialogues/ingame01.json")
 		nomeCena = "gutenberg"
-	else:
-		dialogos = le_json("res://Dialogues/ingame02.json")
-		nomeCena = "kenji"
-	atualiza_cena()
-
-func dialogo_final() -> void:
-	
-	passa_dialogo()
+		atualiza_cena()
 
 func dialogo_round() -> void:
-	if Gerenciador.round == int(Gerenciador.total_rounds / 2):
+	if Gerenciador.round == int(Gerenciador.total_rounds / 2) and Gerenciador.cena != 2:
 		passa_dialogo()
 
 func le_json(fileName: String):

@@ -9,12 +9,12 @@
 			{
 				"icone": "neutro",
 				"nome": "Gutenberg, O Empreendedor",
-				"texto": "Você provavelmente tem o QI bem acima da média, já que conseguiu chegar até aqui,"
+				"texto": "Você provavelmente tem o QI bem acima da média, já que conseguiu chegar até aqui"
 			},
 			{
 				"icone": "neutro",
 				"nome": "Gutenberg, O Empreendedor",
-				"texto": "e além disso eu posso te indicar em algumas empresas que já trabalhei e..."
+				"texto": "E além disso eu posso te indicar em algumas empresas que já trabalhei e..."
 			},
 			{
 				"icone": "neutro",
@@ -40,28 +40,6 @@
 				"icone": "intrigado",
 				"nome": "Lucas",
 				"texto": "Ok, ótimo."
-			}
-		],
-		[
-			{
-				"icone": "intrigado",
-				"nome": "Lucas",
-				"texto": "Que cara esquisito..."
-			},
-			{
-				"icone": "insano",
-				"nome": "Gutenberg, O Empreendedor",
-				"texto": "Haha! Olha, garoto, você realmente pode achar outras coisas quando sair daqui."
-			},
-			{
-				"icone": "insano",
-				"nome": "Gutenberg, O Empreendedor",
-				"texto": "Eu já estive na sua idade e empreender é ótimo, tipo, toda essa coisa do Do It Yourself e tal..."
-			},
-			{
-				"icone": "intrigado",
-				"nome": "Lucas",
-				"texto": "Parece muito legal, então eu acho que eu vou deixar essa coisa toda pra você, cara."
 			}
 		],
 		[

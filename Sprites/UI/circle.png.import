@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlpns63suvq7a"
-path="res://.godot/imported/03.png-0dcc666a11dab8cdab9a3bb82973db8a.ctex"
+uid="uid://dsbipx7g2nach"
+path="res://.godot/imported/circle.png-8e320c6a8bf7156819f79c7171cf5378.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogues/Cena03/03.png"
-dest_files=["res://.godot/imported/03.png-0dcc666a11dab8cdab9a3bb82973db8a.ctex"]
+source_file="res://Sprites/UI/circle.png"
+dest_files=["res://.godot/imported/circle.png-8e320c6a8bf7156819f79c7171cf5378.ctex"]
 
 [params]
 
