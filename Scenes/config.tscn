@@ -163,6 +163,8 @@ stream = ExtResource("9_1jr8q")
 [node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=1885085622]
 stream = ExtResource("7_a7ocr")
 
+[node name="btn_click" type="AudioStreamPlayer" parent="." unique_id=196531818]
+
 [connection signal="mouse_entered" from="Configs/Volume/VBoxContainer/HSlider" to="." method="_on_h_slider_mouse_entered"]
 [connection signal="value_changed" from="Configs/Volume/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="mouse_entered" from="Configs/Tela/HBoxContainer/VBoxContainer0/CheckCheia" to="." method="_on_check_cheia_mouse_entered"]

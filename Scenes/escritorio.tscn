@@ -11,12 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
 [ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="5_cuipy"]
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
+[ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="6_ls4sr"]
 [ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
 [ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="7_bo2yg"]
 [ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="7_vf6ur"]
+[ext_resource type="Texture2D" uid="uid://dmtdfndrq0jpg" path="res://Sprites/escritorio_normal.png" id="8_r0sdn"]
 [ext_resource type="Texture2D" uid="uid://do1r3gmeufmvt" path="res://Sprites/UI/icone-info.png" id="8_sjs8i"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="9_7sov5"]
@@ -34,8 +36,8 @@
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="26_v1qyb"]
 [ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="28_qs34s"]
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
-[ext_resource type="AudioStream" uid="uid://bx62ocvs70juh" path="res://Audio/Msc/primeiro vilão.mp3" id="33_e2ycn"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="35_bo2yg"]
+[ext_resource type="AudioStream" uid="uid://dci2kbp0ktyaf" path="res://Audio/Msc/Primeiro Vilão.ogg" id="36_ls4sr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mei41"]
 albedo_color = Color(0.05490196, 0.05490196, 0.05490196, 1)
@@ -44,6 +46,11 @@ roughness = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ls4sr"]
 material = SubResource("StandardMaterial3D_mei41")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3ogh"]
+metallic_specular = 0.0
+roughness = 0.0
+normal_enabled = true
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
 script = ExtResource("9_7sov5")
@@ -68,6 +75,8 @@ texture = ExtResource("2_qs34s")
 script = ExtResource("3_rwmm0")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 
+[node name="carimbo_p" type="AudioStreamPlayer" parent="Inimigo" unique_id=775402651]
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=222983965]
 transform = Transform3D(1, 0, 0, 0, 0.53656346, 0.84386, 0, -0.84386, 0.53656346, 0.017492056, 0.99577993, -0.95053947)
 
@@ -76,6 +85,7 @@ script = ExtResource("1_xx3jy")
 
 [node name="descarte" type="AudioStreamPlayer" parent="Camera3D/Mao" unique_id=995739807]
 stream = ExtResource("5_mei41")
+
 
 [node name="Predio2" type="CSGMesh3D" parent="." unique_id=1886870928]
 transform = Transform3D(1.6509452, 0, 0, 0, 3.0129478, 0, 0, 0, 1.096792, 0.016177356, -1.8373826, -1.64209)
@@ -86,6 +96,9 @@ mesh = SubResource("BoxMesh_ls4sr")
 transform = Transform3D(0.85112774, 0, 0, 0, 0.10490758, 0, 0, 0, 0.8507305, 0.0017648665, 0.53367734, -0.035413027)
 operation = 2
 mesh = SubResource("BoxMesh_ls4sr")
+
+[node name="compra" type="AudioStreamPlayer" parent="Camera3D/Mao" unique_id=1327395550]
+stream = ExtResource("6_ls4sr")
 
 [node name="Salas" type="Node3D" parent="." unique_id=1069345903]
 
@@ -149,6 +162,11 @@ spot_angle = 6.653851
 
 [node name="money" type="AudioStreamPlayer" parent="Salas" unique_id=401275477]
 stream = ExtResource("7_bo2yg")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Salas" unique_id=627183497]
+transform = Transform3D(1, 0, 0, 0, 0.18355682, 0.98300916, 0, -0.98300916, 0.18355682, -0.28250766, 0.8076912, -1.572773)
+spot_angle = 14.47433
+spot_angle_attenuation = 0.96593744
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2016285213 node_paths=PackedStringArray("sala_cartas", "sala_util", "sala_combo")]
 follow_viewport_enabled = true
@@ -1208,12 +1226,14 @@ size_flags_horizontal = 4
 mouse_filter = 2
 alignment = 2
 
+[node name="btn_click" type="AudioStreamPlayer" parent="UI" unique_id=146307615]
+
 [node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
 transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.929937, 0, 0, 0)
 light_energy = 1.863
 
 [node name="musica" type="AudioStreamPlayer" parent="." unique_id=620380722]
-stream = ExtResource("33_e2ycn")
+stream = ExtResource("36_ls4sr")
 autoplay = true
 
 [node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=213352374]

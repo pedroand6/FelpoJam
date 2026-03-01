@@ -4,7 +4,10 @@ class_name Carta
 var contrato : Contrato
 
 @onready var imagem = $Imagem
+@onready var seleciona_sfx = $selecionasfx
+@onready var guarda_sfx = $guardasfx
 @onready var mouse_on_carta = $mousehovercarta
+
 var mouse_on: bool = false
 var chosen: bool = false
 var originalPos: Vector3
@@ -30,12 +33,14 @@ func _input(event: InputEvent) -> void:
 				chosen = false
 				var index = Gerenciador.cartas_selecionadas.find(self)
 				Gerenciador.cartas_selecionadas.remove_at(index)
+				seleciona_sfx.play()
 			else:
 				chosen = true
 				Gerenciador.cartas_selecionadas.append(self)
 				canAnimate = true
 				rotation = originalRot
 				destination = originalPos + transform.basis.y.normalized() * 0.015
+				guarda_sfx.play()
 
 func _process(delta: float) -> void:
 	var distance_to_destination

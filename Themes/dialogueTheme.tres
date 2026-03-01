@@ -9,6 +9,14 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua0ma"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nf17u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nl7wn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_toymv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ofatw"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_toymv"]
 texture = ExtResource("6_nf17u")
 texture_margin_left = 4.0
@@ -35,7 +43,11 @@ texture_margin_bottom = 4.0
 [resource]
 default_font = ExtResource("1_b4dew")
 default_font_size = 24
-Button/styles/hover = SubResource("StyleBoxEmpty_ua0ma")
+Button/styles/disabled = SubResource("StyleBoxEmpty_ua0ma")
+Button/styles/focus = SubResource("StyleBoxEmpty_nf17u")
+Button/styles/hover = SubResource("StyleBoxEmpty_nl7wn")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_toymv")
+Button/styles/normal = SubResource("StyleBoxEmpty_ofatw")
 CheckBox/icons/checked = ExtResource("1_o5ma7")
 CheckBox/icons/unchecked = ExtResource("2_k2exv")
 HSlider/icons/grabber = ExtResource("3_k2exv")

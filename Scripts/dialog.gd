@@ -20,6 +20,7 @@ var textoAnimando = false
 
 func _ready() -> void:
 	Gerenciador.round_muda.connect(dialogo_round)
+	Gerenciador.vitoria.connect(dialogo_final)
 	if Gerenciador.cena == 2:
 		dialogos = le_json("res://Dialogues/ingame01.json")
 		nomeCena = "gutenberg"
@@ -28,8 +29,11 @@ func _ready() -> void:
 		nomeCena = "kenji"
 	atualiza_cena()
 
+func dialogo_final() -> void:
+	passa_dialogo()
+
 func dialogo_round() -> void:
-	if Gerenciador.round in [4, 8]:
+	if Gerenciador.round == 4:
 		passa_dialogo()
 
 func le_json(fileName: String):
@@ -52,6 +56,7 @@ func passa_dialogo() -> void:
 		dialogbox_enemy.hide()
 		dialogbox_lucas.hide()
 		if cenaAtual + 1 >= len(dialogos[nomeCena]):
+			Gerenciador.muda_cena(get_parent().get_parent().name, "res://Scenes/VisualNovel.tscn")
 			return
 		
 		dialogoAtual = 0

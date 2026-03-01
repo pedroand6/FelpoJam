@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://csi461hqxnnsj" path="res://Scripts/creditos.gd" id="1_ompal"]
 [ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="2_ykkye"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="4_lpe7s"]
-[ext_resource type="AudioStream" uid="uid://0lvncq0of2u8" path="res://Audio/Msc/Cards battle.mp3" id="5_yyntd"]
+[ext_resource type="AudioStream" uid="uid://b3vo84y514tru" path="res://Audio/Msc/créditos.ogg" id="5_yyntd"]
 
 [node name="Creditos" type="Control" unique_id=1212871611]
 layout_mode = 3
@@ -155,6 +155,8 @@ stream = ExtResource("4_lpe7s")
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1017843821]
 stream = ExtResource("5_yyntd")
 autoplay = true
+
+[node name="btn_click" type="AudioStreamPlayer" parent="." unique_id=917205958]
 
 [connection signal="button_down" from="Fechar" to="." method="_on_fechar_button_down"]
 [connection signal="mouse_entered" from="Fechar" to="." method="_on_fechar_mouse_entered"]

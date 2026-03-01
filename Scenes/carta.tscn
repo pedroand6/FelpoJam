@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://busp803ntgnyd" path="res://Scripts/carta.gd" id="1_cjeqn"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="3_om27y"]
 [ext_resource type="AudioStream" uid="uid://d0e2lc11qtsx3" path="res://Audio/SFX/PASSAR MOUSE EM CIMA DAS CARTAS.wav" id="5_stux1"]
+[ext_resource type="AudioStream" uid="uid://b1o0dgogfcivd" path="res://Audio/SFX/GUARDAR CARTA.wav" id="6_pmvtw"]
+[ext_resource type="AudioStream" uid="uid://cqpxbkgtk6ujg" path="res://Audio/SFX/SELECIONAR CARTAS.wav" id="6_vc0oh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wf8id"]
 size = Vector3(0.47235107, 0.6348877, 0.07836914)
@@ -24,6 +26,12 @@ shape = SubResource("BoxShape3D_wf8id")
 
 [node name="mousehovercarta" type="AudioStreamPlayer" parent="." unique_id=717040126]
 stream = ExtResource("5_stux1")
+
+[node name="selecionasfx" type="AudioStreamPlayer" parent="." unique_id=659790387]
+stream = ExtResource("6_vc0oh")
+
+[node name="guardasfx" type="AudioStreamPlayer" parent="." unique_id=79149126]
+stream = ExtResource("6_pmvtw")
 
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
