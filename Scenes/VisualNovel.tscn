@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bpd65hulmcgor" path="res://Scripts/visual_novel.gd" id="1_23cdr"]
 [ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="1_ptmd0"]
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="2_23cdr"]
+[ext_resource type="Texture2D" uid="uid://da2xnxgewxu30" path="res://Dialogues/Cena01/02.png" id="3_jble0"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="3_lfvaj"]
 [ext_resource type="Script" uid="uid://hvci6lhwlr4q" path="res://Scripts/dialogue_box.gd" id="4_lfvaj"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="6_gsx18"]
@@ -66,7 +67,7 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("3_lfvaj")
-texture = ExtResource("1_ptmd0")
+texture = ExtResource("3_jble0")
 stretch_mode = 4
 
 [node name="BottomArea" type="Control" parent="CanvasLayer" unique_id=106212255]
@@ -82,11 +83,18 @@ script = ExtResource("4_lfvaj")
 
 [node name="Name" type="RichTextLabel" parent="CanvasLayer/BottomArea" unique_id=1901655247]
 texture_filter = 1
-layout_mode = 0
-offset_left = 600.0
-offset_top = 48.0
-offset_right = 968.0
-offset_bottom = 72.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -352.0
+offset_right = 8.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 0
 focus_mode = 0
 theme = ExtResource("2_23cdr")
 text = "Nome
@@ -96,11 +104,18 @@ autowrap_mode = 0
 
 [node name="DialogueBox" type="RichTextLabel" parent="CanvasLayer/BottomArea" unique_id=563849924]
 texture_filter = 1
-layout_mode = 0
-offset_left = 600.0
-offset_top = 88.0
-offset_right = 1536.0
-offset_bottom = 184.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -312.0
+offset_right = 576.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_lfvaj")
@@ -112,21 +127,35 @@ visible_characters_behavior = 1
 
 [node name="ContinueBtn" type="TextureRect" parent="CanvasLayer/BottomArea" unique_id=1454276205]
 texture_filter = 1
-layout_mode = 0
-offset_left = 1536.0
-offset_top = 184.0
-offset_right = 1552.0
-offset_bottom = 192.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = -216.0
+offset_right = 592.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("7_23fmf")
 stretch_mode = 4
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer/BottomArea" unique_id=1677549077]
 texture_filter = 1
-layout_mode = 0
-offset_left = 384.0
-offset_top = 48.0
-offset_right = 576.0
-offset_bottom = 240.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -352.0
+offset_right = -384.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("1_ptmd0")
 expand_mode = 1
 stretch_mode = 4

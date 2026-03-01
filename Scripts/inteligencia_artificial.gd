@@ -17,14 +17,7 @@ signal jogou_carta(tipo_carta: Contrato.Tipos, sala_destino: int)
 func _ready():
 	Gerenciador.round_muda.connect(muda_fase)
 	Gerenciador.vitoria.connect(perde_jogo)
-	
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
-	await tween.finished
-	
 	animation = "fase1"
-	var tween2 = get_tree().create_tween()
-	tween2.tween_property(self, "modulate:a", 1, 0.5).set_ease(Tween.EASE_IN)
 	
 func muda_fase():
 	if Gerenciador.round == int(Gerenciador.total_rounds / 2):
