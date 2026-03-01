@@ -4,7 +4,7 @@ extends Control
 @onready var utils: HBoxContainer = $Util
 @onready var coringas: HBoxContainer = $Funcs/Coringas
 
-@onready var funcs_path := "res://Sprites/Cartas/"
+@onready var funcs_path := "res://Sprites/Cartas/ContratosSimplificados/"
 @onready var utils_path := "res://Assets/Contratos/Gerais/"
 @onready var utils_path2 := "res://Assets/Contratos/Basico/"
 
