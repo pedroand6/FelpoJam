@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
 [ext_resource type="Script" uid="uid://ctkl77vex17yi" path="res://Scripts/cardgame.gd" id="1_xl6bb"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
+[ext_resource type="Texture2D" uid="uid://bwy72j14hwj5x" path="res://Sprites/Inimigo/kenji-dois1.png" id="2_35j2j"]
 [ext_resource type="Texture2D" uid="uid://c3xol5l84gjw8" path="res://Sprites/Inimigo/kenji-1.png" id="2_kyrxs"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
 [ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="3_bnfms"]
+[ext_resource type="Texture2D" uid="uid://bqd2qdud6338i" path="res://Sprites/Inimigo/kenji-dois3.png" id="3_k8hxm"]
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
+[ext_resource type="Texture2D" uid="uid://b0p1mkcvnqqwc" path="res://Sprites/Inimigo/kenji-dois2.png" id="4_45dlw"]
 [ext_resource type="Texture2D" uid="uid://ctqhjy7b73ors" path="res://Sprites/Inimigo/kenji-3.png" id="4_nxmxj"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
@@ -16,10 +19,14 @@
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="7_bo2yg"]
+[ext_resource type="Texture2D" uid="uid://cclk1yjbjf86g" path="res://Sprites/Inimigo/kenji-2.png" id="7_trwdc"]
 [ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="7_vf6ur"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
+[ext_resource type="Texture2D" uid="uid://bil1vhwwuj158" path="res://Sprites/Inimigo/kenji-tres1.png" id="8_trwdc"]
+[ext_resource type="Texture2D" uid="uid://n8llq6w146n5" path="res://Sprites/Inimigo/kenji-tres3.png" id="9_7jvo7"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="9_7sov5"]
 [ext_resource type="Texture2D" uid="uid://bqm4blh853bra" path="res://Sprites/Bonequinhos/func-esquerda.png" id="9_r0sdn"]
+[ext_resource type="Texture2D" uid="uid://kkg46jw0btky" path="res://Sprites/Inimigo/kenji-tres2.png" id="10_onojn"]
 [ext_resource type="Texture2D" uid="uid://bqby8vneh563x" path="res://Sprites/UI/botao-pular-turno.png" id="11_q5mst"]
 [ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="12_miicn"]
 [ext_resource type="Texture2D" uid="uid://8rcie53r4xkf" path="res://Sprites/UI/carimbo-brinquedo.png" id="13_aa28w"]
@@ -45,14 +52,20 @@
 [ext_resource type="AudioStream" uid="uid://duidkhd4mxrre" path="res://Audio/Msc/Segundo vilão part 1.ogg" id="41_kyrxs"]
 [ext_resource type="Script" path="res://Scripts/kenji_musica.gd" id="42_6llu4"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nxmxj"]
-load_path = "res://.godot/imported/kenji.2.png-1671b520c3225aaf97d1e73321d3e427.s3tc.ctex"
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3ogh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_kyrxs")
+"texture": ExtResource("2_35j2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k8hxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_45dlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k8hxm")
 }],
 "loop": true,
 "name": &"fase1",
@@ -60,7 +73,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_nxmxj")
+"texture": ExtResource("2_kyrxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nxmxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_trwdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nxmxj")
 }],
 "loop": true,
 "name": &"fase2",
@@ -68,7 +90,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_nxmxj")
+"texture": ExtResource("8_trwdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7jvo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_onojn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7jvo7")
 }],
 "loop": true,
 "name": &"fase3",
@@ -114,7 +145,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlfot"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="Escritorio2" type="Node3D" unique_id=1768756136]
+[node name="Escritorio" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_xl6bb")
 jogador_carimbo = 1
 ia_carimbo = 2
@@ -124,6 +155,7 @@ transform = Transform3D(0.6758195, 0, 0, 0, 0.6095728, 0.23169734, 0, -0.2918099
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_x3ogh")
 animation = &"fase1"
+autoplay = "fase1"
 script = ExtResource("3_rwmm0")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 

@@ -186,9 +186,9 @@ func _process(delta: float) -> void:
 	for i in range(len(funcionarios)):
 		bonequinhos[i].show()
 		if dono == Players.IA and Gerenciador.ia_carimbo == Gerenciador.Carimbos.BRINQUEDO:
-			bonequinhos[i].modulate = Color(0xffcccbff)
+			bonequinhos[i].modulate = Color(0xc5305fff)
 		elif dono == Players.IA and Gerenciador.ia_carimbo == Gerenciador.Carimbos.TRADICIONAL:
-			bonequinhos[i].modulate = Color(0xc78700ff)
+			bonequinhos[i].modulate = Color(0xceba73ff)
 		elif funcionarios[i].area == "TI":
 			bonequinhos[i].modulate = Color(0x4a8acfff)
 		elif funcionarios[i].area == "RH":
@@ -198,7 +198,7 @@ func _process(delta: float) -> void:
 		elif funcionarios[i].area == "Financeiro":
 			bonequinhos[i].modulate = Color(0x55ce81ff)
 		elif funcionarios[i].area == "Coringa":
-			bonequinhos[i].modulate = Color(0xc7af12ff)
+			bonequinhos[i].modulate = Color(0xd59a34ff)
 	
 	borda.light_negative = bloqueada_player
 	if bloqueada_player:

@@ -4,12 +4,12 @@
 	  {
 		"icone": "gargalhando",
 		"nome": "Silvio, O Presidente",
-		"texto": "O nosso processo seletivo é extremamente simples, garoto. Vocês gerenciam a empresa, e quem gerar mais lucro no fim do dia está contratado!"
+		"texto": "O nosso processo seletivo é extremamente simples, garoto. Você gerencia a empresa, e quem gerar mais lucro no fim do dia está contratado!"
 	  },
 	  {
 		"icone": "sorrindo",
 		"nome": "Silvio, O Presidente",
-		"texto": "No nosso escritório, temos 8 salas disponíveis para vocês gerenciarem nossos funcionários, e cada sala comporta até 4 funcionários."
+		"texto": "No nosso escritório, temos 8 salas disponíveis para você gerenciar nossos funcionários, e cada sala comporta até 4 funcionários."
 	  },
 	  {
 		"icone": "sombrio",
@@ -24,12 +24,12 @@
 	  {
 		"icone": "neutro",
 		"nome": "Silvio, O Presidente",
-		"texto": "Vocês podem trabalhar com até 7 contratos de uma vez. E claro, caso achem que um contrato não é interessante, vocês podem descartar até 4 contratos por rodada para receber novos contratos."
+		"texto": "Você pode trabalhar com até 7 contratos de uma vez em apenas duas salas por turno. E claro, caso achem que um contrato não é interessante, você pode descartar até 4 contratos por rodada para receber novos contratos."
 	  },
 	  {
 		"icone": "chorando",
 		"nome": "Silvio, O Presidente",
-		"texto": "Falando em rodadas, aqui você pode acompanhar a duração  total do dia. Cada candidato possui um turno por rodada. Quando tiver terminado todas as suas ações, você pode passar o seu turno."
+		"texto": "Falando em rodadas, aqui você pode acompanhar a duração total do dia. Cada candidato possui um turno por rodada. Quando tiver terminado todas as suas ações, você pode passar o seu turno."
 	  },
 	],
 	[
@@ -46,7 +46,7 @@
 	  {
 		"icone": "neutro",
 		"nome": "Silvio, O Presidente",
-		"texto": "Você pode mover os seus funcionários de uma sala para outra uma vez por rodada, mas as demandas que você aprovou para uma determinada sala não são levadas juntas."
+		"texto": "Você pode mover os seus funcionários de uma sala para outra sala diretamente adjacente uma vez por rodada, mas as demandas que você aprovou para uma determinada sala não são levadas juntas."
 	  },
 	  {
 		"icone": "sombrio",
@@ -78,7 +78,7 @@
 	  {
 		"icone": "sorrindo",
 		"nome": "Silvio, O Presidente",
-		"texto": "E bem, é isso! Hahaha! Agora, façam o que vieram fazer. E, claro, se esquecerem de algo, vocês podem consultar essas informações com o RH."
+		"texto": "E bem, é isso! Hahaha! Agora, façam o que vieram fazer. E, claro, se esquecerem de algo, você pode consultar essas informações com o RH."
 	  }
 	]
   ]

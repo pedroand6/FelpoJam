@@ -1,6 +1,8 @@
 extends AnimatedSprite3D
 
 const TAMANHO_MAO = 7
+var LIM_SALAS = 2
+var BEST_Q = 0.1
 
 signal passa_turno
 
@@ -18,6 +20,12 @@ func _ready():
 	Gerenciador.round_muda.connect(muda_fase)
 	Gerenciador.vitoria.connect(perde_jogo)
 	animation = "fase1"
+	if Gerenciador.cena == 2:
+		LIM_SALAS = 1
+		BEST_Q = 0.5
+	else:
+		LIM_SALAS = 2
+		BEST_Q = 0.1
 
 func muda_fase():
 	if Gerenciador.round == int(Gerenciador.total_rounds / 2):
@@ -228,7 +236,7 @@ func joga_cartas(salas_jogadas):
 				for sala in salas:
 					if (sala.dono == Sala.Players.NENHUM or sala.dono == Sala.Players.IA) and not sala.bloqueada_ia:
 						if carta.tipo == Contrato.Tipos.FUNCIONARIO and len(sala.funcionarios) < 4:
-							if len(salas_jogadas) >= 2 and not sala.id in salas_jogadas:
+							if len(salas_jogadas) >= LIM_SALAS and not sala.id in salas_jogadas:
 								continue
 							
 							sala.funcionarios.append(carta)
@@ -243,7 +251,7 @@ func joga_cartas(salas_jogadas):
 							sala.funcionarios.pop_back()
 							sala.dono = dono_old
 							
-							if q > best_q + 0.1:
+							if q > best_q + BEST_Q:
 								best_q = q
 								best_action = {"carta": carta, "sala": sala}
 								

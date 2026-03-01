@@ -20,6 +20,7 @@ func _ready() -> void:
 	nomeCena = "silvio"
 	atualiza_cena()
 	Gerenciador.comeca_turno.connect(atualiza_cena)
+	Gerenciador.turno = 3
 
 func le_json(fileName: String):
 	var file = FileAccess.open(fileName, FileAccess.READ)

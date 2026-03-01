@@ -7,6 +7,7 @@ const IA = 1
 @onready var ia = $Inimigo
 @onready var mouse_on_menu = $mousehovermenu
 @onready var ui = $UI
+@onready var mao = $Camera3D/Mao
 
 @export var jogador_carimbo := Gerenciador.Carimbos.BASICO
 @export var ia_carimbo := Gerenciador.Carimbos.BRINQUEDO
@@ -40,6 +41,8 @@ func passa_round():
 	
 func passa_turno(player : int):
 	if player == JOGADOR and Gerenciador.turno == JOGADOR:
+		Gerenciador.cartas_selecionadas.clear()
+		mao.posiciona_cartas()
 		passou_turno.emit()
 		Gerenciador.turno = IA
 		ia.jogada()

@@ -79,6 +79,9 @@ animations = [{
 "texture": ExtResource("5_bhnj3")
 }, {
 "duration": 1.0,
+"texture": ExtResource("7_rp1ed")
+}, {
+"duration": 1.0,
 "texture": ExtResource("6_makl7")
 }, {
 "duration": 1.0,
@@ -91,6 +94,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("8_bbpun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8yxqp")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_pql20")
@@ -153,9 +159,8 @@ turnos_totais = 6
 transform = Transform3D(0.6758195, 0, 0, 0, 0.6095728, 0.23169734, 0, -0.2918099, 0.48400155, 0, -0.028710425, -2.5098386)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_gxhtr")
-animation = &"fase1"
+animation = &"fase3"
 autoplay = "fase1"
-frame_progress = 0.950295
 speed_scale = 0.67
 script = ExtResource("5_7myka")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
@@ -1411,6 +1416,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=1546639999]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1729,6 +1735,7 @@ transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.9299
 light_energy = 1.863
 
 [node name="musica" type="AudioStreamPlayer" parent="." unique_id=620380722]
+process_mode = 3
 stream = ExtResource("41_ma0ss")
 volume_db = -1.781
 autoplay = true
