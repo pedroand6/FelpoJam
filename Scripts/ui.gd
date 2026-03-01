@@ -3,6 +3,7 @@ extends CanvasLayer
 const TRUTH: bool = true
 
 @onready var popup_bg := %Popup
+@onready var not_container := $NotContainer
 @onready var aviso := %Aviso
 @onready var baralho_list := $Popup/Caixa/Frente/Baralho
 @onready var config_menu := $Popup/Caixa/Frente/Config
@@ -24,6 +25,9 @@ var sala : Sala
 var baralho_show: bool = false
 var config_show: bool = false
 var sala_show: bool = false
+
+func _ready() -> void:
+	pass
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("fecha_popup"): _on_fechar_button_down()
@@ -124,3 +128,8 @@ func show_aviso(title, text):
 	aviso.text = text
 	await aviso.responde_aviso
 	return aviso.result
+	
+func show_notificacao(text, cor = Color.WHITE):
+	var notificacao = load("res://Scenes/notificacao.tscn").instantiate()
+	notificacao.set_text(text, cor)
+	not_container.add_child(notificacao)

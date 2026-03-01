@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
 [ext_resource type="Script" uid="uid://ctkl77vex17yi" path="res://Scripts/cardgame.gd" id="1_xl6bb"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
-[ext_resource type="Texture2D" uid="uid://nmm2de7ssskj" path="res://Sprites/Inimigo/marco-12.png" id="2_qs34s"]
+[ext_resource type="Texture2D" uid="uid://nmm2de7ssskj" path="res://Sprites/Inimigo/marco-1.png" id="2_qs34s"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
 [ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="3_bnfms"]
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
+[ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="5_cuipy"]
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
-[ext_resource type="Texture2D" uid="uid://d2a88xn55b2vf" path="res://Sprites/2052b181-07c7-4f1a-a0a3-1bc532f16ab7.png" id="6_mei41"]
 [ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
@@ -37,14 +37,13 @@
 [ext_resource type="AudioStream" uid="uid://bx62ocvs70juh" path="res://Audio/Msc/primeiro vilão.mp3" id="33_e2ycn"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="35_bo2yg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo2yg"]
-albedo_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mei41"]
+albedo_color = Color(0.05490196, 0.05490196, 0.05490196, 1)
 metallic_specular = 0.0
 roughness = 0.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_xx3jy"]
-material = SubResource("StandardMaterial3D_bo2yg")
-size = Vector3(1.3, 3, 1.3)
+[sub_resource type="BoxMesh" id="BoxMesh_ls4sr"]
+material = SubResource("StandardMaterial3D_mei41")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
 script = ExtResource("9_7sov5")
@@ -59,55 +58,18 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sov5"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_qs34s"]
-resource_name = "Notificação"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.8333333, 4.366667, 4.6666665, 4.8, 4.9666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(931, -216), Vector2(931, 29), Vector2(931, 69), Vector2(931, 69), Vector2(931, 79), Vector2(931, 48), Vector2(931, -187)]
-}
-
-[sub_resource type="Animation" id="Animation_e2ycn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(931, -216)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ekh4"]
-_data = {
-&"Notificação": SubResource("Animation_qs34s"),
-&"RESET": SubResource("Animation_e2ycn")
-}
-
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_xl6bb")
 
 [node name="Inimigo" type="Sprite3D" parent="." unique_id=1659779327 node_paths=PackedStringArray("salas")]
-transform = Transform3D(1.2594441, 0, 0, 0, 1.2594441, 0, 0, 0, 1, 0, 0.10535449, -3.0422583)
+transform = Transform3D(0.6758195, 0, 0, 0, 0.6095728, 0.23169734, 0, -0.2918099, 0.48400155, 0, -0.028710425, -2.5098386)
 texture_filter = 2
 texture = ExtResource("2_qs34s")
 script = ExtResource("3_rwmm0")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=222983965]
-transform = Transform3D(1, 0, 0, 0, 0.85714036, 0.51508296, 0, -0.51508296, 0.85714036, 0, 0.6514241, -0.21619591)
+transform = Transform3D(1, 0, 0, 0, 0.53656346, 0.84386, 0, -0.84386, 0.53656346, 0.017492056, 0.99577993, -0.95053947)
 
 [node name="Mao" type="Node3D" parent="Camera3D" unique_id=361756574]
 script = ExtResource("1_xx3jy")
@@ -115,57 +77,75 @@ script = ExtResource("1_xx3jy")
 [node name="descarte" type="AudioStreamPlayer" parent="Camera3D/Mao" unique_id=995739807]
 stream = ExtResource("5_mei41")
 
-[node name="Predio" type="MeshInstance3D" parent="." unique_id=381437484]
-transform = Transform3D(1.7907125, 0, 0, 0, 1, 0, 0, 0, 0.83196807, 0.016177356, -1.8373826, -1.64209)
-mesh = SubResource("BoxMesh_xx3jy")
+[node name="Predio2" type="CSGMesh3D" parent="." unique_id=1886870928]
+transform = Transform3D(1.6509452, 0, 0, 0, 3.0129478, 0, 0, 0, 1.096792, 0.016177356, -1.8373826, -1.64209)
+operation = 2
+mesh = SubResource("BoxMesh_ls4sr")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Predio2" unique_id=145825815]
+transform = Transform3D(0.85112774, 0, 0, 0, 0.10490758, 0, 0, 0, 0.8507305, 0.0017648665, 0.53367734, -0.035413027)
+operation = 2
+mesh = SubResource("BoxMesh_ls4sr")
 
 [node name="Salas" type="Node3D" parent="." unique_id=1069345903]
 
 [node name="Sprite3D" type="Sprite3D" parent="Salas" unique_id=400078780]
-transform = Transform3D(0.10145891, 0, 0, 0, 1, 0, 0, 0, 0.10145891, 0.014788084, -0.33468747, -1.6524308)
+transform = Transform3D(0.14168736, 0, 0, 0, 1, 0, 0, 0, 0.14168736, 0.014788084, -0.37745342, -1.6822839)
 axis = 1
-texture_filter = 2
-texture = ExtResource("6_mei41")
+shaded = true
+texture_filter = 4
+texture = ExtResource("5_cuipy")
 
 [node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.2828626, 0, 0, 0, 1, 0, 0, 0, 0.2828626, -0.91193396, -0.32901675, -1.897177)
+transform = Transform3D(0.15040743, 0, 0, 0, 1, 0, 0, 0, 0.26161924, -0.5304985, -0.32901675, -1.819441)
 id = 1
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala5")]
 
 [node name="Sala2" parent="Salas" unique_id=184202739 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.37481305, 0, 0, 0, 1, 0, 0, 0, 0.27199626, -0.48422876, -0.32901675, -1.9041888)
+transform = Transform3D(0.1950865, 0, 0, 0, 1, 0, 0, 0, 0.19154921, -0.26081625, -0.32901675, -1.8741605)
 id = 2
 vizinhos = [NodePath("../Sala1"), NodePath("../Sala6"), NodePath("../Sala3")]
 
 [node name="Sala3" parent="Salas" unique_id=813707592 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.37687138, 0, 0, 0, 1, 0, 0, 0, 0.29664645, 0.018268526, -0.32901675, -1.8974369)
+transform = Transform3D(0.19464965, 0, 0, 0, 1, 0, 0, 0, 0.18630783, 0.025714308, -0.32901675, -1.8790877)
 id = 3
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala7"), NodePath("../Sala4")]
 
 [node name="Sala4" parent="Salas" unique_id=1730815094 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.42120755, 0, 0, 0, 1, 0, 0, 0, 0.27816495, 0.55670935, -0.32901675, -1.8999962)
+transform = Transform3D(0.19465792, 0, 0, 0, 1, 0, 0, 0, 0.1956469, 0.31054428, -0.32901675, -1.8799806)
 id = 4
 vizinhos = [NodePath("../Sala3"), NodePath("../Sala8")]
 
 [node name="Sala5" parent="Salas" unique_id=2107717327 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.28980595, 0, 0, 0, 1, 0, 0, 0, 0.3743199, -0.91165006, -0.32901675, -1.483077)
+transform = Transform3D(0.17486162, 0, 0, 0, 1, 0, 0, 0, 0.28131998, -0.53704476, -0.32901675, -1.4389155)
 id = 5
 vizinhos = [NodePath("../Sala1"), NodePath("../Sala6")]
 
 [node name="Sala6" parent="Salas" unique_id=231385432 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.3512202, 0, 0, 0, 1, 0, 0, 0, 0.34505248, -0.4822818, -0.32901675, -1.476294)
+transform = Transform3D(0.24463874, 0, 0, 0, 1, 0, 0, 0, 0.26896945, -0.18767208, -0.32901675, -1.4188222)
 id = 6
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala5"), NodePath("../Sala7")]
 
+[node name="Borda" parent="Salas/Sala6" index="2" unique_id=224682755]
+transform = Transform3D(4.0876603, 0, 0, 0, -1.6251433e-07, 1, 0, -3.7178946, -6.0421115e-07, 0.0048742294, 1.0021322, -0.17404795)
+spot_angle = 9.66548
+
 [node name="Sala7" parent="Salas" unique_id=993016474 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.39042538, 0, 0, 0, 1, 0, 0, 0, 0.34310853, 0.04905069, -0.32901675, -1.4776541)
+transform = Transform3D(0.23554273, 0, 0, 0, 1, 0, 0, 0, 0.2518912, 0.16625023, -0.32901675, -1.4190544)
 id = 7
 vizinhos = [NodePath("../Sala3"), NodePath("../Sala8"), NodePath("../Sala6")]
 
+[node name="Borda" parent="Salas/Sala7" index="2" unique_id=224682755]
+transform = Transform3D(4.245514, 0, 0, 0, -1.7353281e-07, 1, 0, -3.9699678, -6.8891967e-07, -0.019779205, 1.0021322, -0.27928543)
+
 [node name="Sala8" parent="Salas" unique_id=2111903035 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
-transform = Transform3D(0.380163, 0, 0, 0, 1, 0, 0, 0, 0.3567086, 0.53705376, -0.32901675, -1.4754021)
+transform = Transform3D(0.2238477, 0, 0, 0, 1, 0, 0, 0, 0.26985666, 0.49603397, -0.32901675, -1.4197322)
 id = 8
 vizinhos = [NodePath("../Sala4"), NodePath("../Sala7")]
+
+[node name="Borda" parent="Salas/Sala8" index="2" unique_id=224682755]
+transform = Transform3D(4.4673233, 0, 0, 0, -1.6198003e-07, 1, 0, -3.705671, -6.002447e-07, -0.23358202, 1.0021322, -0.27456093)
+spot_angle = 6.653851
 
 [node name="money" type="AudioStreamPlayer" parent="Salas" unique_id=401275477]
 stream = ExtResource("7_bo2yg")
@@ -253,10 +233,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -227.0
-offset_top = -173.99997
-offset_right = -35.0
-offset_bottom = 18.0
+offset_left = -222.0
+offset_top = -199.0
+offset_right = -30.0
+offset_bottom = -7.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.75613844, 0.75613844)
@@ -1214,56 +1194,23 @@ script = ExtResource("28_v1qyb")
 
 [node name="digitacao" type="AudioStreamPlayer" parent="UI/Dialog" unique_id=821881684]
 
-[node name="Notificacao" type="Control" parent="UI" unique_id=1794462481]
-visible = false
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -29.0
-offset_top = -216.0
-offset_right = 37.0
-offset_bottom = -156.0
-grow_horizontal = 2
-
-[node name="ColorRect" type="ColorRect" parent="UI/Notificacao" unique_id=1229651390]
-layout_mode = 0
-offset_left = -287.0
-offset_right = 294.0
-offset_bottom = 125.0
-color = Color(0, 0, 0, 1)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Notificacao/ColorRect" unique_id=288102011]
-layout_mode = 1
-anchors_preset = 15
+[node name="NotContainer" type="VBoxContainer" parent="UI" unique_id=376783054]
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("19_nt0tj")
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/Notificacao" unique_id=1945497534]
-layout_mode = 0
-offset_left = -273.0
-offset_top = 19.0
-offset_right = 279.0
-offset_bottom = 111.0
-theme = ExtResource("26_v1qyb")
-text = "Você não pode mais se mover nesta rodada!"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Notificacao" unique_id=2030325793]
-libraries/ = SubResource("AnimationLibrary_8ekh4")
+offset_left = -704.0
+offset_top = 29.0
+offset_right = -121.8949
+offset_bottom = 1477.2323
+grow_horizontal = 0
+scale = Vector2(0.71121186, 0.71121186)
+size_flags_horizontal = 4
+mouse_filter = 2
+alignment = 2
 
 [node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
-transform = Transform3D(1, 0, 0, 0, 0.92993706, 0.36771885, 0, -0.36771885, 0.92993706, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.929937, 0, 0, 0)
+light_energy = 1.863
 
 [node name="musica" type="AudioStreamPlayer" parent="." unique_id=620380722]
 stream = ExtResource("33_e2ycn")
@@ -1292,3 +1239,7 @@ stream = ExtResource("35_bo2yg")
 [connection signal="mouse_entered" from="UI/Aviso/Frente/NaoBtn" to="." method="_on_nao_btn_mouse_entered"]
 [connection signal="button_down" from="UI/Aviso/Frente/SimBtn" to="UI/Aviso" method="_on_sim_btn_button_down"]
 [connection signal="mouse_entered" from="UI/Aviso/Frente/SimBtn" to="." method="_on_sim_btn_mouse_entered"]
+
+[editable path="Salas/Sala6"]
+[editable path="Salas/Sala7"]
+[editable path="Salas/Sala8"]

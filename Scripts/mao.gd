@@ -63,16 +63,19 @@ func _on_escritorio_cartas_prontas() -> void:
 	comprar_mao()
 
 func _on_descarte_btn_button_down() -> void:
-	for carta in Gerenciador.cartas_selecionadas:
-		descarte_sfx.play()
-		var tw = create_tween()
-		tw.tween_property(carta, "position", Vector3(10.0, carta.position.y, carta.position.z), 2.0)
-		await descarte_sfx.finished
 	descarta(true)
 
 func descarta(compra : bool):
 	var selecionadas = Gerenciador.cartas_selecionadas.duplicate()
-	if (Gerenciador.descartes_restantes - len(selecionadas)) < 0 and compra: return
+	if (Gerenciador.descartes_restantes - len(selecionadas)) < 0 and compra: 
+		return
+	
+	if compra:
+		for carta in Gerenciador.cartas_selecionadas:
+			descarte_sfx.play()
+			var tw = create_tween()
+			tw.tween_property(carta, "position", Vector3(10.0, carta.position.y, carta.position.z), 2.0)
+			await descarte_sfx.finished
 	
 	var quantidade = len(selecionadas)
 	for carta in selecionadas:

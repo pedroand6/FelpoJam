@@ -209,8 +209,10 @@ func mover_atacar():
 				ia_usou_carimbo = true
 				Gerenciador.ia_usou_ativa = true
 				if randf() <= 0.25:
-					#avisa player
+					ui.show_notificacao("O inimigo se defendeu com sucesso de seu ataque com o carimbo", Color.RED)
 					return
+				else:
+					ui.show_notificacao("O inimigo se defendeu com o CARIMBO mas seu uso falhou!", Color.GREEN)
 			elif Gerenciador.ia_carimbo == Gerenciador.Carimbos.TRADICIONAL:
 				ia_usou_carimbo = true
 				Gerenciador.ia_usou_ativa = true
@@ -222,10 +224,15 @@ func mover_atacar():
 			bloqueada_ia = true
 			dono = Sala.Players.NENHUM
 			demissao_geral()
-			#avisa player que ganhou
+			if ia_usou_carimbo:
+				ui.show_notificacao("Seu ataque foi um sucesso mesmo com o uso do CARIMBO do inimigo!", Color.GREEN)
+			else:
+				ui.show_notificacao("Seu ataque foi um sucesso!", Color.GREEN)
 		else:
-			#avisa player que perdeu (com ou sem carimbo)
-			pass
+			if ia_usou_carimbo:
+				ui.show_notificacao("Seu ataque foi falhou com o uso do CARIMBO inimigo", Color.RED)
+			else:
+				ui.show_notificacao("Seu ataque foi falhou...", Color.RED)
 		
 	elif len(funcionarios) == 0 and len(selecionada.funcionarios) > 0: #movimento
 		
@@ -284,7 +291,9 @@ func open_room():
 	ui.show_sala(donoSala, pontuacao, self)
 
 func insert_cartas_player():
-	if dono == Players.IA: return #avisar jogador
+	if dono == Players.IA: 
+		ui.show_notificacao("Burro! Essa sala não é sua!", Color.YELLOW)
+		return
 		
 	var quantFunc = 0
 	var quantDemanda = 0
@@ -300,12 +309,21 @@ func insert_cartas_player():
 			
 	if len(Gerenciador.salas_jogadas) >= 2 and id not in Gerenciador.salas_jogadas.keys() \
 		and quantFunc > 0:
-		return #avisar jogador
+			ui.show_notificacao("Limite de duas salas por turno atingido", Color.YELLOW)
+			return
 	
-	if quantFunc + len(funcionarios) > 4: return #avisar jogador
-	if quantDemanda + len(demandas) > 3: return #avisar jogador
-	if quantDemanda > 0 and len(funcionarios) <= 0: return #avisar jogador
-	if custo > Gerenciador.jogador_dinheiro: return #avisar jogador
+	if quantFunc + len(funcionarios) > 4: 
+		ui.show_notificacao("Esta sala já atingiu o limite de 4 funcionários", Color.YELLOW)
+		return
+	if quantDemanda + len(demandas) > 3: 
+		ui.show_notificacao("Esta sala já atingiu o limite de 3 demandas", Color.YELLOW)
+		return
+	if quantDemanda > 0 and len(funcionarios) <= 0: 
+		ui.show_notificacao("Sala sem dono", Color.YELLOW)
+		return
+	if custo > Gerenciador.jogador_dinheiro: 
+		ui.show_notificacao("Dinheiro insuficiente", Color.YELLOW)
+		return
 	
 	if quantFunc > 0:
 		Gerenciador.salas_jogadas[id] = self

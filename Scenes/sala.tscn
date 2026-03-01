@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b4ixk62rythl1"]
 
 [ext_resource type="Script" uid="uid://db6tm7r1dqcgv" path="res://Scripts/sala.gd" id="1_2x4t4"]
-[ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="2_uhgjh"]
 [ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="2_vbwy0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uhgjh"]
@@ -9,19 +8,6 @@ size = Vector3(1.2689819, 0.04156494, 1.2514648)
 
 [node name="Sala" type="Node3D" unique_id=6546393]
 script = ExtResource("1_2x4t4")
-
-[node name="Borda" type="Sprite3D" parent="." unique_id=319494079]
-transform = Transform3D(0.8823402, 0, 0, 0, 1, 0, 0, 0, 0.6582373, 0, 0, 0)
-visible = false
-axis = 1
-texture = ExtResource("2_uhgjh")
-
-[node name="Borda2" type="Sprite3D" parent="." unique_id=584597167]
-transform = Transform3D(0.8823402, 0, 0, 0, 1, 0, 0, 0, 0.6582373, 0, 0, 0)
-visible = false
-modulate = Color(0.7753817, 0.009869451, 0.13708174, 1)
-axis = 1
-texture = ExtResource("2_uhgjh")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=224202844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1920929e-07, 0)
@@ -34,6 +20,29 @@ texture = ExtResource("2_vbwy0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=38862451]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015258789, 0.003753662, -0.0017089844)
 shape = SubResource("BoxShape3D_uhgjh")
+
+[node name="Borda" type="SpotLight3D" parent="." unique_id=224682755]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.0021322, 0)
+visible = false
+light_energy = 1.935
+light_indirect_energy = 0.937
+light_bake_mode = 1
+spot_range = 1.2748355
+spot_attenuation = -5.01
+spot_angle = 8.035981
+spot_angle_attenuation = 0.2588154
+
+[node name="Borda2" type="SpotLight3D" parent="." unique_id=494572138]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.0021322, 0)
+visible = false
+light_color = Color(0.96822006, 0.99, 0.5544, 1)
+light_energy = 1.935
+light_indirect_energy = 0.937
+light_bake_mode = 1
+spot_range = 1.2748355
+spot_attenuation = -5.01
+spot_angle = 8.035981
+spot_angle_attenuation = 0.2588154
 
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

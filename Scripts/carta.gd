@@ -3,20 +3,7 @@ class_name Carta
 
 var contrato : Contrato
 
-#Secao do funcionario
-@onready var funcionarioCard = $Funcionario
-@onready var cargoTxt = $Funcionario/Cargo
-@onready var areaTxt = $Funcionario/Area
-@onready var precoTxt_func = $Funcionario/Preco
-@onready var imagem_func = $Funcionario/Imagem
-
-#Secao do utilitario
-@onready var utilitarioCard = $Utilitario
-@onready var nomeTxt = $Utilitario/Nome
-@onready var descTxt = $Utilitario/Desc
-@onready var precoTxt_util = $Utilitario/Preco
-@onready var imagem_util = $Utilitario/Imagem
-
+@onready var imagem = $Imagem
 @onready var mouse_on_carta = $mousehovercarta
 var mouse_on: bool = false
 var chosen: bool = false
@@ -29,21 +16,7 @@ var camera
 
 func _ready() -> void:
 	if contrato == null: return
-	
-	if contrato.tipo == Contrato.Tipos.FUNCIONARIO:
-		funcionarioCard.show()
-		utilitarioCard.hide()
-		cargoTxt.text = contrato.nome
-		areaTxt.text = contrato.area
-		precoTxt_func.text = "R$ %02.2f" % [contrato.custo]
-		imagem_func.texture = contrato.sprite
-	else:
-		funcionarioCard.hide()
-		utilitarioCard.show()
-		nomeTxt.text = contrato.nome
-		descTxt.text = contrato.desc
-		precoTxt_util.text = "R$ %02.2f" % [contrato.custo]
-		imagem_util.texture = contrato.sprite
+	imagem.texture = contrato.sprite
 		
 func set_positions():
 	originalPos = position
@@ -61,8 +34,8 @@ func _input(event: InputEvent) -> void:
 				chosen = true
 				Gerenciador.cartas_selecionadas.append(self)
 				canAnimate = true
-				destination = originalPos + transform.basis.y.normalized() * 0.015 + \
-					transform.basis.z.normalized() * 0.01
+				rotation = originalRot
+				destination = originalPos + transform.basis.y.normalized() * 0.015
 
 func _process(delta: float) -> void:
 	var distance_to_destination
@@ -77,14 +50,27 @@ func _process(delta: float) -> void:
 	if mouse_on:
 		camera = get_viewport().get_camera_3d()
 		var position2D = get_viewport().get_mouse_position()
-		var dropPlane  = Plane(-transform.basis.z, 100)
+		var dropPlane  = Plane(global_position - camera.global_position, global_position)
 		var position3D = dropPlane.intersects_ray(
 			camera.project_ray_origin(position2D),
 			camera.project_ray_normal(position2D))
-		look_at(position3D - transform.basis.z.normalized())
+		
+		if position3D == null: return
+		var size = Vector2(imagem.texture.get_width(), imagem.texture.get_height()) * \
+			imagem.pixel_size * Vector2(scale.x, scale.y) * Vector2(imagem.scale.x, imagem.scale.y)
+		print(size)
+		var localPos = position3D - global_position
+		
+		var lerp_val_x : float = remap(localPos.x, 0.0, size.x, 0, 1)
+		var lerp_val_y : float = remap(localPos.y, 0.0, size.y, 0, 1)
+		var max_angle = PI/12
+		
+		var rot_x : float = clamp(lerp_angle(-max_angle, max_angle, lerp_val_x), -max_angle, max_angle)
+		var rot_y : float = clamp(lerp_angle(-max_angle, max_angle, lerp_val_y), -max_angle, max_angle)
+		
+		rotation = Vector3(originalRot.x + rot_y, originalRot.y + rot_x, originalRot.z)
 
 func _on_area_3d_mouse_entered() -> void:
-	
 	mouse_on = true
 	scale *= 1.25
 	
@@ -95,13 +81,11 @@ func _on_area_3d_mouse_entered() -> void:
 		canAnimate = true
 	
 	destination = originalPos + transform.basis.y.normalized() * 0.015
-	imagem_func.render_priority = 1
-	imagem_util.render_priority = 1
+	imagem.render_priority = 1
 
 func _on_area_3d_mouse_exited() -> void:
 	mouse_on = false
 	scale /= 1.25
 	if chosen == false: destination = originalPos
-	imagem_func.render_priority = 0
-	imagem_util.render_priority = 0
+	imagem.render_priority = 0
 	rotation = originalRot

@@ -121,7 +121,7 @@ func avalia_ataque() -> bool:
 									tem %d, quer usar seu carimbo de uso único que lhe dá 25% de chance de fugir do ataque?" % [pontos_pl_final, pontos_ia]
 							)
 							if usou_ativa and randf() <= 0.25:
-								#avisa jogador
+								ui.show_notificacao("Defesa com CARIMBO bem sucedida!", Color.GREEN)
 								return false
 						if usou_ativa:
 							Gerenciador.player_usou_ativa = true
