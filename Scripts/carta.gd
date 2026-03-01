@@ -61,17 +61,16 @@ func _process(delta: float) -> void:
 			camera.project_ray_normal(position2D))
 		
 		if position3D == null: return
-		var size = Vector2(imagem.texture.get_width(), imagem.texture.get_height()) * \
-			imagem.pixel_size * Vector2(scale.x, scale.y) * Vector2(imagem.scale.x, imagem.scale.y)
-		print(size)
+		var shape: BoxShape3D = $Area3D/CollisionShape3D.shape
+		var size = shape.size * scale
 		var localPos = position3D - global_position
 		
-		var lerp_val_x : float = remap(localPos.x, 0.0, size.x, 0, 1)
-		var lerp_val_y : float = remap(localPos.y, 0.0, size.y, 0, 1)
+		var lerp_val_x : float = remap(localPos.x, -0.5 * size.x, 0.5 * size.x, 0, 1)
+		var lerp_val_y : float = remap(localPos.y, -0.5 * size.y, 0.5 * size.y, 0, 1)
 		var max_angle = PI/12
 		
-		var rot_x : float = clamp(lerp_angle(-max_angle, max_angle, lerp_val_x), -max_angle, max_angle)
-		var rot_y : float = clamp(lerp_angle(-max_angle, max_angle, lerp_val_y), -max_angle, max_angle)
+		var rot_x : float = lerp_angle(-max_angle, max_angle, lerp_val_x)
+		var rot_y : float = lerp_angle(-max_angle, max_angle, lerp_val_y)
 		
 		rotation = Vector3(originalRot.x + rot_y, originalRot.y + rot_x, originalRot.z)
 
@@ -85,7 +84,8 @@ func _on_area_3d_mouse_entered() -> void:
 		set_positions()
 		canAnimate = true
 	
-	destination = originalPos + transform.basis.y.normalized() * 0.015
+	destination = originalPos + transform.basis.y.normalized() * 0.015 + \
+		transform.basis.z.normalized() * 0.015
 	imagem.render_priority = 1
 
 func _on_area_3d_mouse_exited() -> void:

@@ -37,8 +37,8 @@ spot_angle_attenuation = 0.2588154
 [node name="Borda2" type="SpotLight3D" parent="." unique_id=494572138]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.0021322, 0)
 visible = false
-light_color = Color(0.96822006, 0.99, 0.5544, 1)
-light_energy = 1.935
+light_color = Color(0.7429428, 0.59892106, 0.06385454, 1)
+light_energy = 10.223
 light_indirect_energy = 0.937
 light_bake_mode = 1
 spot_range = 1.2748355

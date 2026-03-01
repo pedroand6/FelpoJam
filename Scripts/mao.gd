@@ -23,6 +23,7 @@ var cartas_mao: Array[Node3D]
 @onready var node_carta = preload("res://Scenes/carta.tscn")
 @onready var descarte_sfx = $descarte
 @onready var compra_sfx = $compra
+@onready var ui = $"../../UI"
 
 func _ready():
 	Gerenciador.comeca_turno.connect(player_comecou_turno)
@@ -70,7 +71,8 @@ func _on_descarte_btn_button_down() -> void:
 
 func descarta(compra : bool):
 	var selecionadas = Gerenciador.cartas_selecionadas.duplicate()
-	if (Gerenciador.descartes_restantes - len(selecionadas)) < 0 and compra: 
+	if (Gerenciador.descartes_restantes - len(selecionadas)) < 0 and compra:
+		ui.show_notificacao("Quantidade de descartes insuficiente", Color.YELLOW) 
 		return
 	
 	if compra:
@@ -78,11 +80,15 @@ func descarta(compra : bool):
 			descarte_sfx.play()
 			var tw = create_tween()
 			tw.tween_property(carta, "position", Vector3(10.0, carta.position.y, carta.position.z), 2.0)
-			await descarte_sfx.finished
+			tw.tween_callback(carta.queue_free)
 	
 	var quantidade = len(selecionadas)
-	for carta in selecionadas:
-		Gerenciador.descarte(carta, Gerenciador.jogador_baralho)
+	if not compra:
+		for carta in selecionadas:
+			Gerenciador.descarte(carta, Gerenciador.jogador_baralho)
+	else:
+		for carta in selecionadas:
+			Gerenciador.jogador_baralho.erase(carta.contrato)
 		
 	for carta in selecionadas:
 		if compra: 

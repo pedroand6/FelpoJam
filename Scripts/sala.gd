@@ -164,12 +164,33 @@ var pontuacao := 0
 @onready var money_sfx := get_parent().get_node("money")
 @onready var sala_slct_sfx := $sala_select_sfx
 var selecionada : bool = false
+@onready var pai_boneco = $Bonequinhos
+var bonequinhos : Array[Node]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Gerenciador.comeca_turno.connect(implementa_pontos)
 	inimigo.jogou_carta.connect(popup_carta)
 	root.passou_turno.connect(turno_ia)
+	bonequinhos = pai_boneco.get_children()
+	
+func _process(delta: float) -> void:
+	for bonequinho in bonequinhos:
+		bonequinho.hide()
+	for i in range(len(funcionarios)):
+		bonequinhos[i].show()
+		if dono == Players.IA:
+			bonequinhos[i].modulate = Color(0xdf31a5ff)
+		elif funcionarios[i].area == "TI":
+			bonequinhos[i].modulate = Color(0x4a8acfff)
+		elif funcionarios[i].area == "RH":
+			bonequinhos[i].modulate = Color(0x702bbfff)
+		elif funcionarios[i].area == "Marketing":
+			bonequinhos[i].modulate = Color(0xb72435ff)
+		elif funcionarios[i].area == "Financeiro":
+			bonequinhos[i].modulate = Color(0x55ce81ff)
+		elif funcionarios[i].area == "Coringa":
+			bonequinhos[i].modulate = Color(0xc7af12ff)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -297,7 +318,7 @@ func open_room():
 
 func insert_cartas_player():
 	if dono == Players.IA: 
-		ui.show_notificacao("Burro! Essa sala não é sua!", Color.YELLOW)
+		ui.show_notificacao("BURRO! Essa sala não é sua!", Color.YELLOW)
 		return
 		
 	var quantFunc = 0
