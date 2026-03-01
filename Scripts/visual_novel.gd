@@ -37,8 +37,7 @@ func le_json(fileName: String):
 	
 func le_arquivos(path) -> Array[String]:
 	var files: Array[String] = []
-	var dir = DirAccess.open(path)
-	var returnedFiles = dir.get_files()
+	var returnedFiles = ResourceLoader.list_directory(path)
 	for file in returnedFiles:
 		if not file.ends_with(".import"):
 			files.append(file)
