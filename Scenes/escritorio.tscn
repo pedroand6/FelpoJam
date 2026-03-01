@@ -42,6 +42,7 @@
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="35_bo2yg"]
 [ext_resource type="AudioStream" uid="uid://duidkhd4mxrre" path="res://Audio/Msc/Segundo vilão part 1.ogg" id="41_kyrxs"]
+[ext_resource type="Script" uid="uid://7kw4mytj8474" path="res://Scripts/kenji_musica.gd" id="42_6llu4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3ogh"]
 animations = [{
@@ -1551,6 +1552,7 @@ light_energy = 1.863
 stream = ExtResource("41_kyrxs")
 volume_db = -1.781
 autoplay = true
+script = ExtResource("42_6llu4")
 
 [node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=213352374]
 process_mode = 3

@@ -41,6 +41,7 @@ func le_arquivos(path) -> Array[String]:
 	for file in returnedFiles:
 		if not file.ends_with(".import"):
 			files.append(file)
+	files.sort() #a leitura de arquivos não é feita necessariamente em ordem alfabética
 	return files
 
 func passa_dialogo() -> void:

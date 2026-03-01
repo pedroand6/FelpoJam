@@ -92,20 +92,20 @@ func set_carimbos():
 	jogador_baralho = gera_baralho(jogador_carimbo)
 
 func carrega_demandas(path, demandas : Array[Demanda]):
-	var dir = DirAccess.open(path)
-	var returnedFiles = dir.get_files()
-	for file in returnedFiles:
+	var dir: PackedStringArray = ResourceLoader.list_directory(path)
+	for file in dir:
+		if file.ends_with("/"): continue
 		if not file.ends_with(".import"):
 			demandas.append(load(path + file))
 
 func carrega_contratos(path) -> Array[Texture2D]:
 	var contratos : Array[Texture2D]
-	var dir = DirAccess.open(path)
-	var returnedFiles = dir.get_files()
-	for file in returnedFiles:
+	var dir: PackedStringArray = ResourceLoader.list_directory(path)
+	for file in dir:
+		if file.ends_with("/"): continue
 		if not file.ends_with(".import"):
 			contratos.append(load(path + file))
-			
+	contratos.sort() #a leitura não é necessariamente em ordem alfabetica
 	return contratos
 
 func gera_demandas(demandas, contratos):

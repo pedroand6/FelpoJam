@@ -86,18 +86,22 @@ func append_demanda(demandas: Array[Demanda], rects: Array[Node], rect_count: in
 
 func ler_imagens(path: String, pega_diretorios: bool):
 	var files: Array[String] = []
-	var dir: DirAccess = DirAccess.open(path)
+	var dirs: PackedStringArray = ResourceLoader.list_directory(path)
 	if pega_diretorios:
-		for dirs in dir.get_directories():
-			if dirs not in Gerenciador.AREAS: continue
-			var opened: DirAccess = DirAccess.open(path + dirs)
-			for file in opened.get_files():
+		for dir in dirs:
+			if not dir.ends_with("/"): continue
+			if dir.trim_suffix("/") not in Gerenciador.AREAS: continue
+			var opened: PackedStringArray = ResourceLoader.list_directory(path + dir)
+			for file in opened:
 				if not file.ends_with(".import"):
-					files.append(path + dirs + "/" + file)
+					files.append(path + dir + file)
+		files.sort()
 		return files
-	for file in dir.get_files():
+	for file in dirs:
+		if file.ends_with("/"): continue
 		if not file.ends_with(".import"):
 			files.append(path + file)
+	files.sort()
 	return files
 
 func _modula_cartas(contrato : Contrato) -> void:
