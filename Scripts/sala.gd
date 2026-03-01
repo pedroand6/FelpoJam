@@ -140,7 +140,7 @@ var efeitosDemandas = {
 				prod += 1
 		return [increm, prod]
 		,
-	"Soldado da Produtividade": 
+	"Checadinha Militar": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		for fun in funcs:
 			if fun.cargo == 1:

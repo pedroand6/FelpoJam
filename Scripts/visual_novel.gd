@@ -59,7 +59,7 @@ func passa_dialogo() -> void:
 		if cenaAtual + 1 >= len(dialogos[nomeCena]):
 			Gerenciador.cena += 1
 			if Gerenciador.cena == 2:
-				Gerenciador.muda_cena("Visual Novel", "res://Scenes/escritorio.tscn") #FIXME: mudar para tutorial quando tiver
+				Gerenciador.muda_cena("Visual Novel", "res://Scenes/tutorial.tscn") #FIXME: mudar para tutorial quando tiver
 			elif Gerenciador.cena == 4:
 				Gerenciador.muda_cena("Visual Novel", "res://Scenes/creditos.tscn")
 			else:

@@ -18,17 +18,16 @@ func _ready():
 	Gerenciador.round_muda.connect(muda_fase)
 	Gerenciador.vitoria.connect(perde_jogo)
 	
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
+	await tween.finished
+	
+	animation = "fase1"
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(self, "modulate:a", 1, 0.5).set_ease(Tween.EASE_IN)
+	
 func muda_fase():
-	match Gerenciador.round:
-		1:
-			var tween = get_tree().create_tween()
-			tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
-			await tween.finished
-			
-			animation = "fase1"
-			var tween2 = get_tree().create_tween()
-			tween2.tween_property(self, "modulate:a", 1, 0.5).set_ease(Tween.EASE_IN)
-		4:
+	if Gerenciador.round == int(Gerenciador.total_rounds / 2):
 			var tween = get_tree().create_tween()
 			tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
 			await tween.finished
@@ -38,6 +37,7 @@ func muda_fase():
 			tween2.tween_property(self, "modulate:a", 1, 0.5).set_ease(Tween.EASE_IN)
 			
 func perde_jogo():
+	ui.show_notificacao("Você venceu!", Color.GREEN)
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
 	

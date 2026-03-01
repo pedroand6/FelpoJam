@@ -6,19 +6,31 @@ const IA = 1
 
 @onready var ia = $Inimigo
 @onready var mouse_on_menu = $mousehovermenu
+@onready var ui = $UI
 
 @export var jogador_carimbo := Gerenciador.Carimbos.BASICO
 @export var ia_carimbo := Gerenciador.Carimbos.BRINQUEDO
+
+@export var turnos_totais := 8
 
 signal cartas_prontas
 signal passou_turno
 
 func _ready() -> void:
+	Gerenciador.total_rounds = turnos_totais
+	Gerenciador.turno = Gerenciador.JOGADOR
+	Gerenciador.round = 1
+	Gerenciador.IA_dinheiro = 150
+	Gerenciador.jogador_dinheiro = 150
+	Gerenciador.derrota.connect(perdeu_jogo)
+	
 	Gerenciador.ia_carimbo = ia_carimbo
 	Gerenciador.jogador_carimbo = jogador_carimbo
 	Gerenciador.set_carimbos()
 	cartas_prontas.emit()
-	Gerenciador.turno = Gerenciador.JOGADOR
+	
+func perdeu_jogo():
+	ui.show_notificacao("Você perdeu o jogo.", Color.RED)
 
 func passa_round():
 	Gerenciador.round += 1

@@ -1,53 +1,53 @@
-[gd_scene format=3 uid="uid://bw7knfku48nen"]
+[gd_scene format=3 uid="uid://bcj4cnahnbm15"]
 
-[ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="1_6vsh8"]
-[ext_resource type="Script" uid="uid://ctkl77vex17yi" path="res://Scripts/cardgame.gd" id="1_xl6bb"]
-[ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
-[ext_resource type="Texture2D" uid="uid://c3xol5l84gjw8" path="res://Sprites/Inimigo/kenji-1.png" id="2_kyrxs"]
-[ext_resource type="Texture2D" uid="uid://c5xquiwa3lot3" path="res://Sprites/Inimigo/kenji.2.png" id="3_6llu4"]
-[ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
-[ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="3_bnfms"]
-[ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
-[ext_resource type="Texture2D" uid="uid://ctqhjy7b73ors" path="res://Sprites/Inimigo/kenji-3.png" id="4_nxmxj"]
-[ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
-[ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
-[ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="6_ls4sr"]
-[ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="6_mei41"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="6_rs6w2"]
-[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
-[ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
-[ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="7_bo2yg"]
-[ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="7_vf6ur"]
-[ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
-[ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="9_7sov5"]
-[ext_resource type="Texture2D" uid="uid://bqm4blh853bra" path="res://Sprites/Bonequinhos/func-esquerda.png" id="9_r0sdn"]
-[ext_resource type="Texture2D" uid="uid://bqby8vneh563x" path="res://Sprites/UI/botao-pular-turno.png" id="11_q5mst"]
-[ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="12_miicn"]
-[ext_resource type="Texture2D" uid="uid://8rcie53r4xkf" path="res://Sprites/UI/carimbo-brinquedo.png" id="13_aa28w"]
-[ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="13_aafqm"]
-[ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="17_aa28w"]
-[ext_resource type="Texture2D" uid="uid://dpt0ws6s20cke" path="res://Sprites/UI/pilha-de-contratos.png" id="17_teocm"]
-[ext_resource type="Texture2D" uid="uid://nxxnja4stqvm" path="res://Sprites/UI/pilha-de-contratos-hover.png" id="18_tw6x1"]
-[ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="19_nt0tj"]
-[ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="19_v1qyb"]
-[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
-[ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
-[ext_resource type="PackedScene" uid="uid://d1pyrfj74af5b" path="res://Scenes/carta_baralho.tscn" id="21_qs34s"]
-[ext_resource type="Texture2D" uid="uid://cxs26ud2dfpqf" path="res://Sprites/UI/carimbo-tradicional.png" id="24_6llu4"]
-[ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
-[ext_resource type="Texture2D" uid="uid://b6r5n51cjd0pp" path="res://Sprites/UI/icone-tutorial.png" id="24_kyrxs"]
-[ext_resource type="Texture2D" uid="uid://bctbnybcjlp2l" path="res://Sprites/UI/prancheta.png" id="25_6llu4"]
-[ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="26_v1qyb"]
-[ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="28_qs34s"]
-[ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
-[ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="35_bo2yg"]
-[ext_resource type="AudioStream" uid="uid://duidkhd4mxrre" path="res://Audio/Msc/Segundo vilão part 1.ogg" id="41_kyrxs"]
+[ext_resource type="Script" uid="uid://ctkl77vex17yi" path="res://Scripts/cardgame.gd" id="1_dtmgi"]
+[ext_resource type="Texture2D" uid="uid://nmm2de7ssskj" path="res://Sprites/Inimigo/marco-1.png" id="2_ilalk"]
+[ext_resource type="Texture2D" uid="uid://cyoateqd6l67x" path="res://Sprites/Inimigo/marco-2.png" id="3_b3wap"]
+[ext_resource type="Texture2D" uid="uid://b32fxataqqojb" path="res://Sprites/Inimigo/marco-3.png" id="4_e1qrx"]
+[ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="5_7myka"]
+[ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="6_nv5le"]
+[ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="7_bhnj3"]
+[ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="8_makl7"]
+[ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="9_rp1ed"]
+[ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="10_bbpun"]
+[ext_resource type="Texture2D" uid="uid://bqm4blh853bra" path="res://Sprites/Bonequinhos/func-esquerda.png" id="11_pql20"]
+[ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="12_8yxqp"]
+[ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="13_sv2l3"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="14_44pwq"]
+[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="15_57ryo"]
+[ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="16_tqsy5"]
+[ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="17_5cm3m"]
+[ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="18_2apiv"]
+[ext_resource type="Texture2D" uid="uid://dpt0ws6s20cke" path="res://Sprites/UI/pilha-de-contratos.png" id="19_igwt3"]
+[ext_resource type="Texture2D" uid="uid://nxxnja4stqvm" path="res://Sprites/UI/pilha-de-contratos-hover.png" id="20_ollfv"]
+[ext_resource type="Texture2D" uid="uid://bqby8vneh563x" path="res://Sprites/UI/botao-pular-turno.png" id="21_3lod3"]
+[ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="22_nftjj"]
+[ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="23_0gcu3"]
+[ext_resource type="Texture2D" uid="uid://8rcie53r4xkf" path="res://Sprites/UI/carimbo-brinquedo.png" id="24_5hb4g"]
+[ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="25_m4j6x"]
+[ext_resource type="Texture2D" uid="uid://b6r5n51cjd0pp" path="res://Sprites/UI/icone-tutorial.png" id="26_l4tcc"]
+[ext_resource type="Texture2D" uid="uid://bctbnybcjlp2l" path="res://Sprites/UI/prancheta.png" id="27_hiip6"]
+[ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="28_xlct6"]
+[ext_resource type="PackedScene" uid="uid://d1pyrfj74af5b" path="res://Scenes/carta_baralho.tscn" id="29_w3ocs"]
+[ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="30_udn4x"]
+[ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="31_favtw"]
+[ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="32_ntxlb"]
+[ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="33_ldnol"]
+[ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="34_w1js8"]
+[ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="35_pmli3"]
+[ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="36_wfdcw"]
+[ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="37_5eib8"]
+[ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="38_ofo01"]
+[ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="39_acrh7"]
+[ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="40_213eo"]
+[ext_resource type="AudioStream" uid="uid://dci2kbp0ktyaf" path="res://Audio/Msc/Primeiro Vilão.ogg" id="41_ma0ss"]
+[ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="42_j8v3e"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_x3ogh"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxhtr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_kyrxs")
+"texture": ExtResource("2_ilalk")
 }],
 "loop": true,
 "name": &"fase1",
@@ -55,7 +55,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6llu4")
+"texture": ExtResource("3_b3wap")
 }],
 "loop": true,
 "name": &"fase2",
@@ -63,7 +63,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_nxmxj")
+"texture": ExtResource("4_e1qrx")
 }],
 "loop": true,
 "name": &"fase3",
@@ -97,7 +97,7 @@ load_path = "res://.godot/imported/func-frente.png-30dcd919a6ba9c7f332e1564e29f7
 load_path = "res://.godot/imported/func-costas.png-71d52ff4329ef35413ea6a984278a0e3.ctex"
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
-script = ExtResource("9_7sov5")
+script = ExtResource("16_tqsy5")
 metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67vox"]
@@ -110,16 +110,15 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
-script = ExtResource("1_xl6bb")
-jogador_carimbo = 1
-ia_carimbo = 2
+script = ExtResource("1_dtmgi")
+turnos_totais = 6
 
 [node name="Inimigo" type="AnimatedSprite3D" parent="." unique_id=2138308492 node_paths=PackedStringArray("salas")]
 transform = Transform3D(0.6758195, 0, 0, 0, 0.6095728, 0.23169734, 0, -0.2918099, 0.48400155, 0, -0.028710425, -2.5098386)
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_x3ogh")
-animation = &"fase1"
-script = ExtResource("3_rwmm0")
+sprite_frames = SubResource("SpriteFrames_gxhtr")
+animation = &"fase3"
+script = ExtResource("5_7myka")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 
 [node name="carimbo_p" type="AudioStreamPlayer" parent="Inimigo" unique_id=775402651]
@@ -128,13 +127,13 @@ salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Sa
 transform = Transform3D(1, 0, 0, 0, 0.53656346, 0.84386, 0, -0.84386, 0.53656346, 0.017492056, 0.99577993, -0.95053947)
 
 [node name="Mao" type="Node3D" parent="Camera3D" unique_id=361756574]
-script = ExtResource("1_xx3jy")
+script = ExtResource("6_nv5le")
 
 [node name="descarte" type="AudioStreamPlayer" parent="Camera3D/Mao" unique_id=995739807]
-stream = ExtResource("5_mei41")
+stream = ExtResource("7_bhnj3")
 
 [node name="compra" type="AudioStreamPlayer" parent="Camera3D/Mao" unique_id=1327395550]
-stream = ExtResource("6_ls4sr")
+stream = ExtResource("8_makl7")
 
 [node name="Predio2" type="CSGMesh3D" parent="." unique_id=1886870928]
 transform = Transform3D(1.6509452, 0, 0, 0, 3.0129478, 0, 0, 0, 1.096792, 0.016177356, -1.8373826, -1.64209)
@@ -153,9 +152,9 @@ transform = Transform3D(0.14168736, 0, 0, 0, 1, 0, 0, 0, 0.14168736, 0.014788084
 axis = 1
 shaded = true
 texture_filter = 2
-texture = ExtResource("6_mei41")
+texture = ExtResource("9_rp1ed")
 
-[node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
+[node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("10_bbpun")]
 transform = Transform3D(0.15040743, 0, 0, 0, 1, 0, 0, 0, 0.26161924, -0.5304985, -0.32901675, -1.819441)
 id = 1
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala5")]
@@ -190,7 +189,7 @@ axis = 1
 texture_filter = 0
 texture = SubResource("CompressedTexture2D_tw6x1")
 
-[node name="Sala2" parent="Salas" unique_id=184202739 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
+[node name="Sala2" parent="Salas" unique_id=184202739 node_paths=PackedStringArray("vizinhos") instance=ExtResource("10_bbpun")]
 transform = Transform3D(0.1950865, 0, 0, 0, 1, 0, 0, 0, 0.19154921, -0.26081625, -0.32901675, -1.8741605)
 id = 2
 vizinhos = [NodePath("../Sala1"), NodePath("../Sala6"), NodePath("../Sala3")]
@@ -227,7 +226,7 @@ axis = 1
 texture_filter = 0
 texture = SubResource("CompressedTexture2D_6llu4")
 
-[node name="Sala3" parent="Salas" unique_id=813707592 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
+[node name="Sala3" parent="Salas" unique_id=813707592 node_paths=PackedStringArray("vizinhos") instance=ExtResource("10_bbpun")]
 transform = Transform3D(0.19464965, 0, 0, 0, 1, 0, 0, 0, 0.18630783, 0.025714308, -0.32901675, -1.8790877)
 id = 3
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala7"), NodePath("../Sala4")]
@@ -264,7 +263,7 @@ axis = 1
 texture_filter = 0
 texture = SubResource("CompressedTexture2D_6llu4")
 
-[node name="Sala4" parent="Salas" unique_id=1730815094 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
+[node name="Sala4" parent="Salas" unique_id=1730815094 node_paths=PackedStringArray("vizinhos") instance=ExtResource("10_bbpun")]
 transform = Transform3D(0.19465792, 0, 0, 0, 1, 0, 0, 0, 0.1956469, 0.31054428, -0.32901675, -1.8799806)
 id = 4
 vizinhos = [NodePath("../Sala3"), NodePath("../Sala8")]
@@ -301,7 +300,7 @@ axis = 1
 texture_filter = 0
 texture = SubResource("CompressedTexture2D_6llu4")
 
-[node name="Sala5" parent="Salas" unique_id=2107717327 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
+[node name="Sala5" parent="Salas" unique_id=2107717327 node_paths=PackedStringArray("vizinhos") instance=ExtResource("10_bbpun")]
 transform = Transform3D(0.17486162, 0, 0, 0, 1, 0, 0, 0, 0.28131998, -0.53704476, -0.32901675, -1.4389155)
 id = 5
 vizinhos = [NodePath("../Sala1"), NodePath("../Sala6")]
@@ -313,30 +312,30 @@ transform = Transform3D(0.79805267, 0, 0, 0, 1, 0, 0, 0, 0.49950874, -0.07961297
 sorting_offset = 1.0
 axis = 1
 texture_filter = 0
-texture = ExtResource("9_r0sdn")
+texture = ExtResource("11_pql20")
 
 [node name="Func2" type="Sprite3D" parent="Salas/Sala5/Bonequinhos" unique_id=1474969600]
 transform = Transform3D(0.7980526, 0, 0, 0, 1, 0, 0, 0, 0.49950874, -0.07961297, -0.048369676, -0.14963484)
 sorting_offset = 1.0
 axis = 1
 texture_filter = 0
-texture = ExtResource("9_r0sdn")
+texture = ExtResource("11_pql20")
 
 [node name="Func3" type="Sprite3D" parent="Salas/Sala5/Bonequinhos" unique_id=1118906406]
 transform = Transform3D(0.79805255, 0, 0, 0, 1, 0, 0, 0, 0.49950874, -0.07961297, -0.048369676, 0.1644063)
 sorting_offset = 1.0
 axis = 1
 texture_filter = 0
-texture = ExtResource("9_r0sdn")
+texture = ExtResource("11_pql20")
 
 [node name="Func4" type="Sprite3D" parent="Salas/Sala5/Bonequinhos" unique_id=124508296]
 transform = Transform3D(0.79805255, 0, 0, 0, 1, 0, 0, 0, 0.49950874, -0.07961297, -0.048369676, 0.46810865)
 sorting_offset = 1.0
 axis = 1
 texture_filter = 0
-texture = ExtResource("9_r0sdn")
+texture = ExtResource("11_pql20")
 
-[node name="Sala6" parent="Salas" unique_id=231385432 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
+[node name="Sala6" parent="Salas" unique_id=231385432 node_paths=PackedStringArray("vizinhos") instance=ExtResource("10_bbpun")]
 transform = Transform3D(0.24463874, 0, 0, 0, 1, 0, 0, 0, 0.26896945, -0.18767208, -0.32901675, -1.4188222)
 id = 6
 vizinhos = [NodePath("../Sala2"), NodePath("../Sala5"), NodePath("../Sala7")]
@@ -356,7 +355,7 @@ transform = Transform3D(0.5704281, 0, 0, 0, 1, 0, 0, 0, 0.52244514, -0.30343825,
 sorting_offset = 1.0
 axis = 1
 texture_filter = 0
-texture = ExtResource("9_r0sdn")
+texture = ExtResource("11_pql20")
 
 [node name="Func2" type="Sprite3D" parent="Salas/Sala6/Bonequinhos" unique_id=1779232556]
 transform = Transform3D(0.57673836, 0, 0, 0, 1, 0, 0, 0, 0.5053589, 0.16605139, -0.048369676, -0.43108368)
@@ -379,7 +378,7 @@ axis = 1
 texture_filter = 0
 texture = SubResource("CompressedTexture2D_6llu4")
 
-[node name="Sala7" parent="Salas" unique_id=993016474 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
+[node name="Sala7" parent="Salas" unique_id=993016474 node_paths=PackedStringArray("vizinhos") instance=ExtResource("10_bbpun")]
 transform = Transform3D(0.23554273, 0, 0, 0, 1, 0, 0, 0, 0.2518912, 0.16625023, -0.32901675, -1.4190544)
 id = 7
 vizinhos = [NodePath("../Sala3"), NodePath("../Sala8"), NodePath("../Sala6")]
@@ -422,7 +421,7 @@ axis = 1
 texture_filter = 0
 texture = SubResource("CompressedTexture2D_x3ogh")
 
-[node name="Sala8" parent="Salas" unique_id=2111903035 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
+[node name="Sala8" parent="Salas" unique_id=2111903035 node_paths=PackedStringArray("vizinhos") instance=ExtResource("10_bbpun")]
 transform = Transform3D(0.2238477, 0, 0, 0, 1, 0, 0, 0, 0.26985666, 0.49603397, -0.32901675, -1.4197322)
 id = 8
 vizinhos = [NodePath("../Sala4"), NodePath("../Sala7")]
@@ -468,7 +467,7 @@ texture_filter = 0
 texture = SubResource("CompressedTexture2D_6llu4")
 
 [node name="money" type="AudioStreamPlayer" parent="Salas" unique_id=401275477]
-stream = ExtResource("7_bo2yg")
+stream = ExtResource("12_8yxqp")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Salas" unique_id=627183497]
 transform = Transform3D(1, 0, 0, 0, 0.18355682, 0.98300916, 0, -0.98300916, 0.18355682, -0.28250766, 0.8076912, -1.572773)
@@ -478,7 +477,7 @@ spot_angle_attenuation = 0.96593744
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2016285213 node_paths=PackedStringArray("sala_cartas", "sala_util", "sala_combo")]
 follow_viewport_enabled = true
-script = ExtResource("3_aafqm")
+script = ExtResource("13_sv2l3")
 sala_cartas = [NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect/TextureRect"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect2/TextureRect"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect3/TextureRect"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect4/TextureRect")]
 sala_util = [NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades/item1"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades/item2"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades/item3")]
 sala_combo = [NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes/Nome"), NodePath("Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes/Desc")]
@@ -502,7 +501,7 @@ offset_top = 48.0
 offset_right = -64.0
 offset_bottom = 240.0
 grow_horizontal = 0
-texture = ExtResource("6_rs6w2")
+texture = ExtResource("14_44pwq")
 expand_mode = 1
 stretch_mode = 4
 
@@ -520,7 +519,7 @@ offset_left = -133.0
 offset_top = -20.0
 offset_right = -4.0
 offset_bottom = 4.0
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 text = "Lucas"
 horizontal_alignment = 2
 
@@ -530,7 +529,7 @@ offset_left = -585.0
 offset_top = 26.0
 offset_right = -4.0
 offset_bottom = 205.0
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
 fit_content = true
@@ -546,7 +545,7 @@ offset_left = -255.99994
 offset_top = 268.0
 offset_right = -63.99994
 offset_bottom = 309.0
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 36
 text = "R$ 100"
 autowrap_mode = 0
@@ -566,7 +565,7 @@ offset_bottom = -7.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.75613844, 0.75613844)
-texture = ExtResource("13_aa28w")
+texture = ExtResource("17_5cm3m")
 expand_mode = 1
 stretch_mode = 4
 
@@ -585,10 +584,10 @@ grow_horizontal = 0
 grow_vertical = 0
 tooltip_text = "Baralho"
 mouse_default_cursor_shape = 2
-theme = ExtResource("7_81bno")
-texture_normal = ExtResource("17_teocm")
-texture_pressed = ExtResource("18_tw6x1")
-texture_hover = ExtResource("18_tw6x1")
+theme = ExtResource("18_2apiv")
+texture_normal = ExtResource("19_igwt3")
+texture_pressed = ExtResource("20_ollfv")
+texture_hover = ExtResource("20_ollfv")
 stretch_mode = 4
 
 [node name="PularBtn" type="TextureButton" parent="UI/PlayerSide" unique_id=1768639942]
@@ -603,8 +602,8 @@ offset_bottom = 182.0
 grow_horizontal = 0
 tooltip_text = "Passar vez"
 mouse_default_cursor_shape = 2
-theme = ExtResource("7_81bno")
-texture_normal = ExtResource("11_q5mst")
+theme = ExtResource("18_2apiv")
+texture_normal = ExtResource("21_3lod3")
 stretch_mode = 4
 
 [node name="DescarteBtn" type="TextureButton" parent="UI/PlayerSide" unique_id=46986098]
@@ -622,8 +621,8 @@ grow_horizontal = 0
 grow_vertical = 0
 tooltip_text = "Descarte"
 mouse_default_cursor_shape = 2
-theme = ExtResource("7_81bno")
-texture_normal = ExtResource("7_vf6ur")
+theme = ExtResource("18_2apiv")
+texture_normal = ExtResource("22_nftjj")
 stretch_mode = 4
 
 [node name="Descartes" type="RichTextLabel" parent="UI/PlayerSide/DescarteBtn" unique_id=826404148]
@@ -631,7 +630,7 @@ layout_mode = 0
 offset_left = -80.0
 offset_right = -8.0
 offset_bottom = 64.0
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 48
 text = "04"
 vertical_alignment = 1
@@ -648,7 +647,7 @@ offset_left = 64.0
 offset_top = 48.0
 offset_right = 256.0
 offset_bottom = 240.0
-texture = ExtResource("5_2dyg3")
+texture = ExtResource("23_0gcu3")
 expand_mode = 1
 stretch_mode = 4
 
@@ -665,15 +664,15 @@ layout_mode = 0
 offset_top = -20.0
 offset_right = 129.0
 offset_bottom = 4.0
-theme = ExtResource("6_vf6ur")
-text = "Kenji"
+theme = ExtResource("15_57ryo")
+text = "Gutenberg"
 
 [node name="Dialog" type="RichTextLabel" parent="UI/EnemySide/Portrait/DialogBox" unique_id=1949537653]
 layout_mode = 0
 offset_top = 26.0
 offset_right = 581.0
 offset_bottom = 205.0
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
 fit_content = true
@@ -688,7 +687,7 @@ offset_left = 64.0
 offset_top = 268.0
 offset_right = 256.0
 offset_bottom = 309.0
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 36
 text = "R$ 100"
 autowrap_mode = 0
@@ -705,7 +704,7 @@ offset_right = 275.0
 offset_bottom = 13.0
 grow_vertical = 2
 scale = Vector2(0.75613844, 0.75613844)
-texture = ExtResource("24_6llu4")
+texture = ExtResource("24_5hb4g")
 expand_mode = 1
 stretch_mode = 4
 
@@ -721,8 +720,8 @@ offset_bottom = -48.0
 grow_vertical = 0
 tooltip_text = "Configurações"
 mouse_default_cursor_shape = 2
-theme = ExtResource("7_81bno")
-texture_normal = ExtResource("8_t3l48")
+theme = ExtResource("18_2apiv")
+texture_normal = ExtResource("25_m4j6x")
 stretch_mode = 4
 
 [node name="InfoBtn" type="TextureButton" parent="UI/EnemySide" unique_id=1640615428]
@@ -737,8 +736,8 @@ offset_bottom = -48.0
 grow_vertical = 0
 tooltip_text = "Informações"
 mouse_default_cursor_shape = 2
-theme = ExtResource("7_81bno")
-texture_normal = ExtResource("24_kyrxs")
+theme = ExtResource("18_2apiv")
+texture_normal = ExtResource("26_l4tcc")
 stretch_mode = 4
 
 [node name="Prancheta" type="TextureButton" parent="UI/EnemySide" unique_id=826628172]
@@ -754,8 +753,8 @@ grow_vertical = 0
 scale = Vector2(0.75613844, 0.75613844)
 tooltip_text = "Combos e Cargos"
 mouse_default_cursor_shape = 2
-theme = ExtResource("7_81bno")
-texture_normal = ExtResource("25_6llu4")
+theme = ExtResource("18_2apiv")
+texture_normal = ExtResource("27_hiip6")
 stretch_mode = 4
 
 [node name="RodadaText" type="RichTextLabel" parent="UI" unique_id=1754639960]
@@ -770,7 +769,7 @@ offset_right = -80.555176
 offset_bottom = 91.296875
 grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 20
 text = "Rodadas"
 autowrap_mode = 0
@@ -788,7 +787,7 @@ offset_right = -82.42236
 offset_bottom = 136.0
 grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 36
 text = "01/08"
 autowrap_mode = 0
@@ -863,7 +862,7 @@ offset_bottom = 59.486755
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.91221875, 0.91221875)
-script = ExtResource("19_v1qyb")
+script = ExtResource("28_xlct6")
 
 [node name="Dono" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=586277519]
 layout_mode = 1
@@ -875,7 +874,7 @@ offset_top = 18.715187
 offset_right = 275.3173
 offset_bottom = 58.715187
 grow_horizontal = 2
-theme = ExtResource("7_81bno")
+theme = ExtResource("18_2apiv")
 theme_override_font_sizes/normal_font_size = 30
 text = "Contratos disponíveis"
 horizontal_alignment = 1
@@ -893,10 +892,10 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Coringas" unique_id=1565669376 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Coringas" unique_id=1565669376 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Coringas" unique_id=1905227054 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Coringas" unique_id=1905227054 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
 [node name="Funcionarios" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs" unique_id=1711860394]
@@ -907,112 +906,112 @@ size_flags_horizontal = 0
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=462239499 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=462239499 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=648435196 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=648435196 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1689784400 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1689784400 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=700948970 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=700948970 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1206215899 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1206215899 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1795925973 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=1795925973 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=348956446 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=348956446 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=473204124 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer0" unique_id=473204124 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
 [node name="HBoxContainer1" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios" unique_id=1455496247]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=952020684 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=952020684 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=48759600 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=48759600 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=1931163628 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=1931163628 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=181702611 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=181702611 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=525079074 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=525079074 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=1735893306 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=1735893306 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=656217924 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=656217924 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=426545367 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer1" unique_id=426545367 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios" unique_id=1993412575]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1622555197 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1622555197 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=845003104 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=845003104 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1893574834 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1893574834 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=482387838 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=482387838 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1461535061 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=1461535061 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=227850196 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=227850196 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=133306566 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=133306566 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=220658868 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer2" unique_id=220658868 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios" unique_id=1113590819]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1049812573 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1049812573 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=961106773 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=961106773 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=522769173 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=522769173 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=37115300 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=37115300 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1683438633 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1683438633 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1819369836 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1819369836 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1164653047 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1164653047 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1884800685 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Funcs/Funcionarios/HBoxContainer3" unique_id=1884800685 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
 [node name="Util" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho" unique_id=1833048974]
@@ -1029,73 +1028,73 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=1403189499 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=1403189499 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=640928233 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho2" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=640928233 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=590707341 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Util/HBoxContainer3" unique_id=590707341 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Util" unique_id=971712515]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=1553648635 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho3" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=1553648635 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=922361286 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho4" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=922361286 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=856873323 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho5" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=856873323 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=1352519797 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=1352519797 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=2086935228 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer" unique_id=2086935228 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Util" unique_id=1989617129]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=691980387 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=691980387 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=200023639 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=200023639 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=1848638628 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=1848638628 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho9" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=388975758 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho9" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=388975758 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho10" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=1806891521 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho10" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer2" unique_id=1806891521 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Baralho/Util" unique_id=2123624169]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=883111417 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho6" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=883111417 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=1282859445 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho7" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=1282859445 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=700642964 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho8" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=700642964 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho9" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=52779791 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho9" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=52779791 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Carta_baralho10" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=1884625802 instance=ExtResource("21_qs34s")]
+[node name="Carta_baralho10" parent="UI/Popup/Caixa/Frente/Baralho/Util/VBoxContainer3" unique_id=1884625802 instance=ExtResource("29_w3ocs")]
 layout_mode = 2
 
-[node name="Config" parent="UI/Popup/Caixa/Frente" unique_id=1785124144 instance=ExtResource("13_aafqm")]
+[node name="Config" parent="UI/Popup/Caixa/Frente" unique_id=1785124144 instance=ExtResource("30_udn4x")]
 visible = false
 layout_mode = 1
 cena_nome = "Escritorio"
@@ -1125,7 +1124,7 @@ offset_top = -246.73802
 offset_right = 275.07675
 offset_bottom = -206.73802
 grow_horizontal = 2
-theme = ExtResource("7_81bno")
+theme = ExtResource("18_2apiv")
 theme_override_font_sizes/normal_font_size = 30
 text = "Sala sem dono"
 horizontal_alignment = 1
@@ -1155,7 +1154,7 @@ columns = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=815889038]
 layout_mode = 2
-texture = ExtResource("19_nt0tj")
+texture = ExtResource("31_favtw")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -1167,7 +1166,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 133.048
 offset_bottom = 206.88963
-texture = ExtResource("20_uithd")
+texture = ExtResource("32_ntxlb")
 expand_mode = 4
 stretch_mode = 4
 
@@ -1175,7 +1174,7 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("19_nt0tj")
+texture = ExtResource("31_favtw")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -1187,7 +1186,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 133.048
 offset_bottom = 206.88963
-texture = ExtResource("20_hl26x")
+texture = ExtResource("33_ldnol")
 expand_mode = 4
 stretch_mode = 4
 
@@ -1195,7 +1194,7 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("19_nt0tj")
+texture = ExtResource("31_favtw")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -1207,7 +1206,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 133.048
 offset_bottom = 206.88963
-texture = ExtResource("20_hl26x")
+texture = ExtResource("33_ldnol")
 expand_mode = 4
 stretch_mode = 4
 
@@ -1215,7 +1214,7 @@ stretch_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("19_nt0tj")
+texture = ExtResource("31_favtw")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -1227,7 +1226,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 133.048
 offset_bottom = 206.88963
-texture = ExtResource("20_hl26x")
+texture = ExtResource("33_ldnol")
 expand_mode = 4
 stretch_mode = 4
 
@@ -1245,14 +1244,14 @@ size_flags_vertical = 3
 [node name="Title" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=765868843]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 24
 text = "Utilidades"
 
 [node name="item1" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=1612120615]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
 fit_content = true
@@ -1261,7 +1260,7 @@ scroll_active = false
 [node name="item2" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=1232568889]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
 fit_content = true
@@ -1270,7 +1269,7 @@ scroll_active = false
 [node name="item3" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=975917289]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 16
 text = "-"
 fit_content = true
@@ -1288,14 +1287,14 @@ size_flags_stretch_ratio = 0.45
 [node name="Title" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=517051505]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 24
 text = "Combinação"
 
 [node name="Nome" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=1314697858]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 18
 text = "Sozinho no Setor"
 fit_content = true
@@ -1303,7 +1302,7 @@ fit_content = true
 [node name="Desc" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=1609556202]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/normal_font_size = 16
 text = "Descrição: Sem combinação"
 fit_content = true
@@ -1318,7 +1317,7 @@ offset_top = 225.49677
 offset_right = 95.64664
 offset_bottom = 265.49677
 grow_vertical = 0
-theme = ExtResource("7_81bno")
+theme = ExtResource("18_2apiv")
 theme_override_font_sizes/normal_font_size = 30
 text = "Produtividade"
 
@@ -1337,11 +1336,11 @@ offset_right = 321.59457
 offset_bottom = 266.14246
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("6_vf6ur")
+theme = ExtResource("15_57ryo")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_67vox")
 text = "Demissão Geral"
-icon = ExtResource("24_ac8jf")
+icon = ExtResource("34_w1js8")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/Demissao" unique_id=778980322]
 layout_mode = 0
@@ -1349,7 +1348,7 @@ offset_left = -13.30481
 offset_top = -6.1035156e-05
 offset_right = 240.15161
 offset_bottom = 40.57959
-texture = ExtResource("19_nt0tj")
+texture = ExtResource("31_favtw")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -1367,7 +1366,7 @@ offset_right = -8.61792
 offset_bottom = 38.30908
 grow_horizontal = 0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("17_aa28w")
+texture_normal = ExtResource("35_pmli3")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -1387,7 +1386,7 @@ offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9915092, 0.9915092)
-script = ExtResource("28_qs34s")
+script = ExtResource("36_wfdcw")
 titleTxt = NodePath("Frente/Title")
 textTxt = NodePath("Frente/Text")
 
@@ -1432,7 +1431,7 @@ offset_top = 37.359665
 offset_right = 308.05432
 offset_bottom = 122.078995
 grow_horizontal = 2
-theme = ExtResource("26_v1qyb")
+theme = ExtResource("37_5eib8")
 theme_override_colors/default_color = Color(0.8695807, 0.00011221685, 0.04879783, 1)
 theme_override_font_sizes/normal_font_size = 48
 text = "Title"
@@ -1451,7 +1450,7 @@ offset_top = 242.09805
 offset_right = 308.05432
 offset_bottom = 326.81738
 grow_horizontal = 2
-theme = ExtResource("26_v1qyb")
+theme = ExtResource("37_5eib8")
 theme_override_font_sizes/normal_font_size = 32
 text = "Lorem ipsum sus sas sos lieaorr sadks as,camcioha"
 fit_content = true
@@ -1473,7 +1472,7 @@ offset_right = -211.04156
 offset_bottom = -102.821014
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("26_v1qyb")
+theme = ExtResource("37_5eib8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_v1qyb")
 text = "Não"
 
@@ -1481,7 +1480,7 @@ text = "Não"
 layout_mode = 0
 offset_right = 103.88208
 offset_bottom = 53.453857
-texture = ExtResource("19_nt0tj")
+texture = ExtResource("31_favtw")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
@@ -1498,7 +1497,7 @@ offset_top = -156.27487
 offset_right = 314.71472
 offset_bottom = -102.821014
 grow_vertical = 0
-theme = ExtResource("26_v1qyb")
+theme = ExtResource("37_5eib8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7sov5")
 text = "Sim"
 
@@ -1506,23 +1505,23 @@ text = "Sim"
 layout_mode = 0
 offset_right = 103.88208
 offset_bottom = 53.453857
-texture = ExtResource("19_nt0tj")
+texture = ExtResource("31_favtw")
 patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="Cursor" type="Node" parent="UI" unique_id=1916013957]
-script = ExtResource("1_6vsh8")
+script = ExtResource("38_ofo01")
 
 [node name="Cursor" type="TextureRect" parent="UI/Cursor" unique_id=17904996]
 visible = false
 offset_right = 14.0
 offset_bottom = 17.94873
-texture = ExtResource("12_miicn")
+texture = ExtResource("39_acrh7")
 
 [node name="Dialog" type="Node" parent="UI" unique_id=557987638]
-script = ExtResource("28_v1qyb")
+script = ExtResource("40_213eo")
 
 [node name="digitacao" type="AudioStreamPlayer" parent="UI/Dialog" unique_id=821881684]
 
@@ -1548,13 +1547,13 @@ transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.9299
 light_energy = 1.863
 
 [node name="musica" type="AudioStreamPlayer" parent="." unique_id=620380722]
-stream = ExtResource("41_kyrxs")
+stream = ExtResource("41_ma0ss")
 volume_db = -1.781
 autoplay = true
 
 [node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=213352374]
 process_mode = 3
-stream = ExtResource("35_bo2yg")
+stream = ExtResource("42_j8v3e")
 
 [connection signal="cartas_prontas" from="." to="Camera3D/Mao" method="_on_escritorio_cartas_prontas"]
 [connection signal="passa_turno" from="Inimigo" to="." method="_on_inimigo_passa_turno"]

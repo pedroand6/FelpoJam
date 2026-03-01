@@ -222,10 +222,11 @@ func finaliza_jogo():
 	Gerenciador.turno = 3
 	
 	if jogador_dinheiro >= IA_dinheiro:
-		Gerenciador.cena += 1
 		vitoria.emit()
 	else:
 		derrota.emit()
+		await get_tree().create_timer(2).finished
+		Gerenciador.muda_cena("Escritorio", "res://Scenes/derrota.tscn")
 
 func muda_cena(cena_sai: String, cena_entra: String) -> void:
 	var root = get_tree().get_root()
