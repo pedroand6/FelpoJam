@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://ctkl77vex17yi" path="res://Scripts/cardgame.gd" id="1_xl6bb"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="1_xx3jy"]
 [ext_resource type="Texture2D" uid="uid://c3xol5l84gjw8" path="res://Sprites/Inimigo/kenji-1.png" id="2_kyrxs"]
-[ext_resource type="Texture2D" uid="uid://c5xquiwa3lot3" path="res://Sprites/Inimigo/kenji.2.png" id="3_6llu4"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="3_aafqm"]
 [ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="3_bnfms"]
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
@@ -42,7 +41,10 @@
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="35_bo2yg"]
 [ext_resource type="AudioStream" uid="uid://duidkhd4mxrre" path="res://Audio/Msc/Segundo vilão part 1.ogg" id="41_kyrxs"]
-[ext_resource type="Script" uid="uid://7kw4mytj8474" path="res://Scripts/kenji_musica.gd" id="42_6llu4"]
+[ext_resource type="Script" path="res://Scripts/kenji_musica.gd" id="42_6llu4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nxmxj"]
+load_path = "res://.godot/imported/kenji.2.png-1671b520c3225aaf97d1e73321d3e427.s3tc.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3ogh"]
 animations = [{
@@ -56,7 +58,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6llu4")
+"texture": SubResource("CompressedTexture2D_nxmxj")
 }],
 "loop": true,
 "name": &"fase2",
@@ -104,13 +106,13 @@ metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67vox"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1qyb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqynx"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sov5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlfot"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="Escritorio" type="Node3D" unique_id=1768756136]
+[node name="Escritorio2" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_xl6bb")
 jogador_carimbo = 1
 ia_carimbo = 2
@@ -1372,7 +1374,7 @@ texture_normal = ExtResource("17_aa28w")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Aviso" type="Control" parent="UI" unique_id=207554618 node_paths=PackedStringArray("titleTxt", "textTxt")]
+[node name="Aviso" type="Control" parent="UI" unique_id=341047368 node_paths=PackedStringArray("titleTxt", "textTxt")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -1392,7 +1394,7 @@ script = ExtResource("28_qs34s")
 titleTxt = NodePath("Frente/Title")
 textTxt = NodePath("Frente/Text")
 
-[node name="AvisoFundo" type="ColorRect" parent="UI/Aviso" unique_id=1692640405]
+[node name="AvisoFundo" type="ColorRect" parent="UI/Aviso" unique_id=1585613422]
 layout_mode = 0
 offset_left = -1904.168
 offset_top = -884.51025
@@ -1400,7 +1402,7 @@ offset_right = 2854.0278
 offset_bottom = 1547.1365
 color = Color(0, 0, 0, 0.5019608)
 
-[node name="Borda" type="ColorRect" parent="UI/Aviso" unique_id=822741180]
+[node name="Borda" type="ColorRect" parent="UI/Aviso" unique_id=303979874]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1408,7 +1410,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Frente" type="ColorRect" parent="UI/Aviso" unique_id=310190326]
+[node name="Frente" type="ColorRect" parent="UI/Aviso" unique_id=788613735]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1423,7 +1425,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Title" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=69342712]
+[node name="Title" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=1014136899]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1442,16 +1444,19 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=1923252938]
+[node name="Text" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=548299573]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -307.21213
-offset_top = 242.09805
-offset_right = 308.05432
-offset_bottom = 326.81738
+anchor_bottom = 0.5
+offset_left = -307.63324
+offset_top = -42.35968
+offset_right = 307.63324
+offset_bottom = 42.35968
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("26_v1qyb")
 theme_override_font_sizes/normal_font_size = 32
 text = "Lorem ipsum sus sas sos lieaorr sadks as,camcioha"
@@ -1460,25 +1465,25 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NaoBtn" type="Button" parent="UI/Aviso/Frente" unique_id=567082648]
+[node name="NaoBtn" type="Button" parent="UI/Aviso/Frente" unique_id=1040118523]
 process_mode = 3
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -314.92374
-offset_top = -156.27487
-offset_right = -211.04156
-offset_bottom = -102.821014
-grow_horizontal = 0
+offset_left = 87.13623
+offset_top = -114.9238
+offset_right = 191.01843
+offset_bottom = -61.46997
+grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("26_v1qyb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_v1qyb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mqynx")
 text = "Não"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/NaoBtn" unique_id=20559893]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/NaoBtn" unique_id=647763713]
 layout_mode = 0
 offset_right = 103.88208
 offset_bottom = 53.453857
@@ -1488,22 +1493,25 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="SimBtn" type="Button" parent="UI/Aviso/Frente" unique_id=1783213965]
+[node name="SimBtn" type="Button" parent="UI/Aviso/Frente" unique_id=501234518]
 process_mode = 3
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 210.83263
-offset_top = -156.27487
-offset_right = 314.71472
-offset_bottom = -102.821014
+offset_left = -206.35579
+offset_top = -114.92377
+offset_right = -102.473694
+offset_bottom = -61.46991
+grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("26_v1qyb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7sov5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rlfot")
 text = "Sim"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/SimBtn" unique_id=1061971994]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/SimBtn" unique_id=1654501411]
 layout_mode = 0
 offset_right = 103.88208
 offset_bottom = 53.453857
@@ -1575,9 +1583,7 @@ stream = ExtResource("35_bo2yg")
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]
 [connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Fechar" to="." method="_on_fechar_mouse_entered"]
 [connection signal="button_down" from="UI/Aviso/Frente/NaoBtn" to="UI/Aviso" method="_on_nao_btn_button_down"]
-[connection signal="mouse_entered" from="UI/Aviso/Frente/NaoBtn" to="." method="_on_nao_btn_mouse_entered"]
 [connection signal="button_down" from="UI/Aviso/Frente/SimBtn" to="UI/Aviso" method="_on_sim_btn_button_down"]
-[connection signal="mouse_entered" from="UI/Aviso/Frente/SimBtn" to="." method="_on_sim_btn_mouse_entered"]
 
 [editable path="Salas/Sala6"]
 [editable path="Salas/Sala7"]

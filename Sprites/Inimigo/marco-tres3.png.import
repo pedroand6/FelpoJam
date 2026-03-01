@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlpns63suvq7a"
-path="res://.godot/imported/03.png-0dcc666a11dab8cdab9a3bb82973db8a.ctex"
+uid="uid://c6eh84ahe4ur0"
+path="res://.godot/imported/marco-tres3.png-1c881a4c5eb04c90e14a5469e8c05c85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogues/Cena03/03.png"
-dest_files=["res://.godot/imported/03.png-0dcc666a11dab8cdab9a3bb82973db8a.ctex"]
+source_file="res://Sprites/Inimigo/marco-tres3.png"
+dest_files=["res://.godot/imported/marco-tres3.png-1c881a4c5eb04c90e14a5469e8c05c85.ctex"]
 
 [params]
 

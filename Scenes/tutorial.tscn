@@ -5,10 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://cyoateqd6l67x" path="res://Sprites/Inimigo/marco-2.png" id="3_b3wap"]
 [ext_resource type="Texture2D" uid="uid://b32fxataqqojb" path="res://Sprites/Inimigo/marco-3.png" id="4_e1qrx"]
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="5_7myka"]
+[ext_resource type="Texture2D" uid="uid://bm56880464idb" path="res://Sprites/Inimigo/marco-dois1.png" id="5_bhnj3"]
+[ext_resource type="Texture2D" uid="uid://53us7rjoxvn3" path="res://Sprites/Inimigo/marco-dois2.png" id="6_makl7"]
 [ext_resource type="Script" uid="uid://4utqeskwb54y" path="res://Scripts/mao.gd" id="6_nv5le"]
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="7_bhnj3"]
+[ext_resource type="Texture2D" uid="uid://xnuj28fa0vx8" path="res://Sprites/Inimigo/marco-dois3.png" id="7_rp1ed"]
+[ext_resource type="Texture2D" uid="uid://7hyxw86jt6aq" path="res://Sprites/Inimigo/marco-tres1.png" id="8_bbpun"]
 [ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="8_makl7"]
+[ext_resource type="Texture2D" uid="uid://b6t21non37623" path="res://Sprites/Inimigo/marco-tres2.png" id="9_pql20"]
 [ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="9_rp1ed"]
+[ext_resource type="Texture2D" uid="uid://c6eh84ahe4ur0" path="res://Sprites/Inimigo/marco-tres3.png" id="10_8yxqp"]
 [ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="10_bbpun"]
 [ext_resource type="Texture2D" uid="uid://bqm4blh853bra" path="res://Sprites/Bonequinhos/func-esquerda.png" id="11_pql20"]
 [ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="12_8yxqp"]
@@ -42,12 +48,25 @@
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="40_213eo"]
 [ext_resource type="AudioStream" uid="uid://dci2kbp0ktyaf" path="res://Audio/Msc/Primeiro Vilão.ogg" id="41_ma0ss"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="42_j8v3e"]
+[ext_resource type="Script" uid="uid://baco04a5ko4f7" path="res://Scripts/tutorial.gd" id="47_pql20"]
+[ext_resource type="Shader" uid="uid://bkqn2jpsybo6o" path="res://Assets/tutorial.gdshader" id="47_rp1ed"]
+[ext_resource type="Texture2D" uid="uid://dsbipx7g2nach" path="res://Sprites/UI/circle.png" id="48_bbpun"]
+[ext_resource type="Texture2D" uid="uid://de0ph1p6bqybl" path="res://Sprites/Icons/Silvio, O Presidente/silvio-retrato-gargalhando.png" id="49_pql20"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxhtr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_ilalk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e1qrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b3wap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e1qrx")
 }],
 "loop": true,
 "name": &"fase1",
@@ -55,7 +74,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_b3wap")
+"texture": ExtResource("5_bhnj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_makl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rp1ed")
 }],
 "loop": true,
 "name": &"fase2",
@@ -63,7 +88,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_e1qrx")
+"texture": ExtResource("8_bbpun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pql20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8yxqp")
 }],
 "loop": true,
 "name": &"fase3",
@@ -109,6 +140,9 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sov5"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bbpun"]
+shader = ExtResource("47_rp1ed")
+
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_dtmgi")
 turnos_totais = 6
@@ -117,7 +151,10 @@ turnos_totais = 6
 transform = Transform3D(0.6758195, 0, 0, 0, 0.6095728, 0.23169734, 0, -0.2918099, 0.48400155, 0, -0.028710425, -2.5098386)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_gxhtr")
-animation = &"fase3"
+animation = &"fase1"
+autoplay = "fase1"
+frame_progress = 0.950295
+speed_scale = 0.67
 script = ExtResource("5_7myka")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 
@@ -1442,14 +1479,17 @@ vertical_alignment = 1
 
 [node name="Text" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=1923252938]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -307.21213
-offset_top = 242.09805
-offset_right = 308.05432
-offset_bottom = 326.81738
+anchor_bottom = 0.5
+offset_left = -307.63324
+offset_top = -42.35968
+offset_right = 307.63324
+offset_bottom = 42.35968
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("37_5eib8")
 theme_override_font_sizes/normal_font_size = 32
 text = "Lorem ipsum sus sas sos lieaorr sadks as,camcioha"
@@ -1461,16 +1501,16 @@ vertical_alignment = 1
 [node name="NaoBtn" type="Button" parent="UI/Aviso/Frente" unique_id=567082648]
 process_mode = 3
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -314.92374
-offset_top = -156.27487
-offset_right = -211.04156
-offset_bottom = -102.821014
-grow_horizontal = 0
+offset_left = 87.13623
+offset_top = -114.9238
+offset_right = 191.01843
+offset_bottom = -61.46997
+grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("37_5eib8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_v1qyb")
@@ -1489,13 +1529,16 @@ patch_margin_bottom = 4
 [node name="SimBtn" type="Button" parent="UI/Aviso/Frente" unique_id=1783213965]
 process_mode = 3
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 210.83263
-offset_top = -156.27487
-offset_right = 314.71472
-offset_bottom = -102.821014
+offset_left = -206.35579
+offset_top = -114.92377
+offset_right = -102.473694
+offset_bottom = -61.46991
+grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("37_5eib8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7sov5")
@@ -1524,6 +1567,7 @@ texture = ExtResource("39_acrh7")
 script = ExtResource("40_213eo")
 
 [node name="digitacao" type="AudioStreamPlayer" parent="UI/Dialog" unique_id=821881684]
+process_mode = 3
 
 [node name="NotContainer" type="VBoxContainer" parent="UI" unique_id=376783054]
 process_mode = 3
@@ -1541,6 +1585,78 @@ mouse_filter = 2
 alignment = 2
 
 [node name="btn_click" type="AudioStreamPlayer" parent="UI" unique_id=146307615]
+
+[node name="Tutorial" type="Control" parent="UI" unique_id=811936837]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1923.0
+offset_bottom = 1085.0
+script = ExtResource("47_pql20")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="UI/Tutorial" unique_id=342848637]
+copy_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/Tutorial/BackBufferCopy" unique_id=455119858]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 1841.0
+offset_bottom = 992.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.91764706)
+
+[node name="Mask" type="TextureRect" parent="UI/Tutorial/BackBufferCopy" unique_id=436789160]
+visible = false
+material = SubResource("ShaderMaterial_bbpun")
+offset_left = 1698.0001
+offset_top = 890.0
+offset_right = 2449.0
+offset_bottom = 1251.0
+scale = Vector2(0.25942335, 0.57673305)
+texture = ExtResource("48_bbpun")
+
+[node name="Portrait" type="TextureRect" parent="UI/Tutorial" unique_id=1689849301]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 49.0
+offset_right = 602.0
+offset_bottom = 241.0
+texture = ExtResource("49_pql20")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DialogBox" type="Button" parent="UI/Tutorial/Portrait" unique_id=1241282470]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 212.0
+offset_top = 39.0
+offset_right = 1000.0
+offset_bottom = 274.0
+mouse_default_cursor_shape = 2
+
+[node name="Nome" type="Label" parent="UI/Tutorial/Portrait/DialogBox" unique_id=1788146413]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 129.0
+offset_bottom = 4.0
+theme = ExtResource("15_57ryo")
+text = "Silvio"
+
+[node name="Dialog" type="RichTextLabel" parent="UI/Tutorial/Portrait/DialogBox" unique_id=1894427210]
+layout_mode = 0
+offset_top = 26.0
+offset_right = 788.0
+offset_bottom = 232.0
+mouse_filter = 2
+theme = ExtResource("15_57ryo")
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_67vox")]
+visible_characters_behavior = 1
 
 [node name="Sol" type="DirectionalLight3D" parent="." unique_id=1494714084]
 transform = Transform3D(1, 0, 0, 0, 0.929937, 0.36771882, 0, -0.36771882, 0.929937, 0, 0, 0)
@@ -1575,6 +1691,7 @@ stream = ExtResource("42_j8v3e")
 [connection signal="mouse_entered" from="UI/Aviso/Frente/NaoBtn" to="." method="_on_nao_btn_mouse_entered"]
 [connection signal="button_down" from="UI/Aviso/Frente/SimBtn" to="UI/Aviso" method="_on_sim_btn_button_down"]
 [connection signal="mouse_entered" from="UI/Aviso/Frente/SimBtn" to="." method="_on_sim_btn_mouse_entered"]
+[connection signal="button_down" from="UI/Tutorial/Portrait/DialogBox" to="UI/Tutorial" method="_on_dialog_box_button_down"]
 
 [editable path="Salas/Sala6"]
 [editable path="Salas/Sala7"]

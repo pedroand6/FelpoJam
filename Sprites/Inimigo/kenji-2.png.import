@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlpns63suvq7a"
-path="res://.godot/imported/03.png-0dcc666a11dab8cdab9a3bb82973db8a.ctex"
+uid="uid://cclk1yjbjf86g"
+path="res://.godot/imported/kenji-2.png-ef81bd1bfc92c171c85385b8d347f9ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogues/Cena03/03.png"
-dest_files=["res://.godot/imported/03.png-0dcc666a11dab8cdab9a3bb82973db8a.ctex"]
+source_file="res://Sprites/Inimigo/kenji-2.png"
+dest_files=["res://.godot/imported/kenji-2.png-ef81bd1bfc92c171c85385b8d347f9ff.ctex"]
 
 [params]
 

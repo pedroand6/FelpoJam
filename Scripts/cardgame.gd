@@ -22,6 +22,7 @@ func _ready() -> void:
 	Gerenciador.round = 1
 	Gerenciador.IA_dinheiro = 150
 	Gerenciador.jogador_dinheiro = 150
+	Gerenciador.descartes_restantes = 4
 	Gerenciador.derrota.connect(perdeu_jogo)
 	
 	Gerenciador.ia_carimbo = ia_carimbo
