@@ -18,7 +18,7 @@ func _ready():
 	Gerenciador.round_muda.connect(muda_fase)
 	Gerenciador.vitoria.connect(perde_jogo)
 	animation = "fase1"
-	
+
 func muda_fase():
 	if Gerenciador.round == int(Gerenciador.total_rounds / 2):
 			var tween = get_tree().create_tween()
@@ -134,7 +134,7 @@ func avalia_ataque() -> bool:
 					if not Gerenciador.player_usou_ativa:
 						if Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BASICO:
 							usou_ativa = await ui.show_aviso(
-								"Sala %d sob ataque da sala %s!" % [sala_jogador.id, sala_ia.id],
+								"Sala %d sob ataque da sala %d!" % [sala_jogador.id, sala_ia.id],
 								"Sua sala tem %d de produtividade atual. Quer usar seu carimbo de uso único para dobrar a produtividade da sala?" % [pontos_pl_final]
 							)
 							if usou_ativa: 
@@ -142,9 +142,8 @@ func avalia_ataque() -> bool:
 								pontos_pl_final *= 2
 						elif Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
 							usou_ativa = await ui.show_aviso(
-								"Sala %d sob ataque da sala %s!" % [sala_jogador.id, sala_ia.id],
-								"Sua sala tem %d de produtividade enquanto a sala atacante \
-									tem %d, quer usar seu carimbo de uso único que lhe dá 25% de chance de fugir do ataque?" % [pontos_pl_final, pontos_ia]
+								"Sala %d sob ataque da sala %d!" % [sala_jogador.id, sala_ia.id],
+								"Sua sala tem %d de produtividade enquanto a sala atacante tem %d, quer usar seu carimbo de uso único que lhe dá 25% de chance de fugir do ataque?" % [pontos_pl_final, pontos_ia]
 							)
 							if usou_ativa: play_carimbo()
 							if usou_ativa and randf() <= 0.25:

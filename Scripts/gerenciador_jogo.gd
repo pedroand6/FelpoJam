@@ -225,7 +225,7 @@ func finaliza_jogo():
 		vitoria.emit()
 	else:
 		derrota.emit()
-		await get_tree().create_timer(2).finished
+		await get_tree().create_timer(2.0).timeout
 		Gerenciador.muda_cena("Escritorio", "res://Scenes/derrota.tscn")
 
 func muda_cena(cena_sai: String, cena_entra: String) -> void:

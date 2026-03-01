@@ -41,6 +41,8 @@
 [ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="28_qs34s"]
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="35_bo2yg"]
+[ext_resource type="Texture2D" uid="uid://col51vt6g3ujj" path="res://Sprites/infos.png" id="35_nxmxj"]
+[ext_resource type="Texture2D" uid="uid://c8njr0jddm0w5" path="res://Sprites/Tutorial.png" id="36_mqynx"]
 [ext_resource type="AudioStream" uid="uid://duidkhd4mxrre" path="res://Audio/Msc/Segundo vilão part 1.ogg" id="41_kyrxs"]
 [ext_resource type="Script" uid="uid://7kw4mytj8474" path="res://Scripts/kenji_musica.gd" id="42_6llu4"]
 
@@ -1356,6 +1358,69 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
+[node name="Prancheta" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=1004225141]
+visible = false
+anchors_preset = 0
+offset_right = 911.7904
+offset_bottom = 589.94476
+theme = ExtResource("6_vf6ur")
+
+[node name="Label" type="Label" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=1506874237]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 92.94948
+grow_horizontal = 2
+text = "Combinações, Áreas e Cargos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=2024061473]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -504.1048
+offset_top = -188.42827
+offset_right = 502.71277
+offset_bottom = 99.5614
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(960, 540)
+texture = ExtResource("35_nxmxj")
+
+[node name="Infos" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=752783506]
+visible = false
+anchors_preset = 0
+offset_right = 911.7904
+offset_bottom = 589.94476
+
+[node name="Label" type="Label" parent="UI/Popup/Caixa/Frente/Infos" unique_id=1512559785]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 74.61252
+grow_horizontal = 2
+theme = ExtResource("6_vf6ur")
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Infos" unique_id=307190602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.16156
+offset_top = 113.815704
+offset_right = 1353.107
+offset_bottom = 428.07367
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("36_mqynx")
+
 [node name="Fechar" type="TextureButton" parent="UI/Popup/Caixa/Frente" unique_id=576078387]
 process_mode = 3
 layout_mode = 1
@@ -1568,7 +1633,9 @@ stream = ExtResource("35_bo2yg")
 [connection signal="mouse_entered" from="UI/PlayerSide/DescarteBtn" to="." method="_on_descarte_btn_mouse_entered"]
 [connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
 [connection signal="mouse_entered" from="UI/EnemySide/ConfigBtn" to="." method="_on_config_btn_mouse_entered"]
+[connection signal="button_down" from="UI/EnemySide/InfoBtn" to="UI" method="_on_info_btn_button_down"]
 [connection signal="mouse_entered" from="UI/EnemySide/InfoBtn" to="." method="_on_info_btn_mouse_entered"]
+[connection signal="button_down" from="UI/EnemySide/Prancheta" to="UI" method="_on_prancheta_button_down"]
 [connection signal="mouse_entered" from="UI/EnemySide/Prancheta" to="." method="_on_prancheta_mouse_entered"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="UI" method="_on_demissao_button_down"]
 [connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="." method="_on_demissao_mouse_entered"]

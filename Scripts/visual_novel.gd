@@ -21,6 +21,7 @@ var msc_list: Array[String] = ["res://Audio/Msc/primeira cutscene.ogg", "res://A
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if get_tree().paused: get_tree().paused = false
 	msc.stream = load(msc_list[Gerenciador.cena-1])
 	msc.play()
 	nomeCena = "Cena0" + str(Gerenciador.cena)

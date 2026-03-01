@@ -17,6 +17,7 @@ signal cartas_prontas
 signal passou_turno
 
 func _ready() -> void:
+	if get_tree().paused: get_tree().paused = false
 	Gerenciador.total_rounds = turnos_totais
 	Gerenciador.turno = Gerenciador.JOGADOR
 	Gerenciador.round = 1

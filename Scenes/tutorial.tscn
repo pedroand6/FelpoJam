@@ -34,7 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="32_ntxlb"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="33_ldnol"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="34_w1js8"]
+[ext_resource type="Texture2D" uid="uid://col51vt6g3ujj" path="res://Sprites/infos.png" id="35_ilalk"]
 [ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="35_pmli3"]
+[ext_resource type="Texture2D" uid="uid://c8njr0jddm0w5" path="res://Sprites/Tutorial.png" id="36_b3wap"]
 [ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="36_wfdcw"]
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="37_5eib8"]
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="38_ofo01"]
@@ -1354,6 +1356,69 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
+[node name="Prancheta" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=1282809754]
+visible = false
+anchors_preset = 0
+offset_right = 911.7904
+offset_bottom = 589.94476
+theme = ExtResource("15_57ryo")
+
+[node name="Label" type="Label" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=530778451]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 92.94948
+grow_horizontal = 2
+text = "Combinações, Áreas e Cargos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=1546639999]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -504.1048
+offset_top = -188.42827
+offset_right = 502.71277
+offset_bottom = 99.5614
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(960, 540)
+texture = ExtResource("35_ilalk")
+
+[node name="Infos" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=1881289666]
+visible = false
+anchors_preset = 0
+offset_right = 911.7904
+offset_bottom = 589.94476
+
+[node name="Label" type="Label" parent="UI/Popup/Caixa/Frente/Infos" unique_id=903794989]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 74.61252
+grow_horizontal = 2
+theme = ExtResource("15_57ryo")
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Infos" unique_id=1897012955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.16156
+offset_top = 113.815704
+offset_right = 1353.107
+offset_bottom = 428.07367
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("36_b3wap")
+
 [node name="Fechar" type="TextureButton" parent="UI/Popup/Caixa/Frente" unique_id=576078387]
 process_mode = 3
 layout_mode = 1
@@ -1565,7 +1630,9 @@ stream = ExtResource("42_j8v3e")
 [connection signal="mouse_entered" from="UI/PlayerSide/DescarteBtn" to="." method="_on_descarte_btn_mouse_entered"]
 [connection signal="button_down" from="UI/EnemySide/ConfigBtn" to="UI" method="_on_config_btn_button_down"]
 [connection signal="mouse_entered" from="UI/EnemySide/ConfigBtn" to="." method="_on_config_btn_mouse_entered"]
+[connection signal="button_down" from="UI/EnemySide/InfoBtn" to="UI" method="_on_info_btn_button_down"]
 [connection signal="mouse_entered" from="UI/EnemySide/InfoBtn" to="." method="_on_info_btn_mouse_entered"]
+[connection signal="button_down" from="UI/EnemySide/Prancheta" to="UI" method="_on_prancheta_button_down"]
 [connection signal="mouse_entered" from="UI/EnemySide/Prancheta" to="." method="_on_prancheta_mouse_entered"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="UI" method="_on_demissao_button_down"]
 [connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="." method="_on_demissao_mouse_entered"]

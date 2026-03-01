@@ -8,6 +8,8 @@ const TRUTH: bool = true
 @onready var baralho_list := $Popup/Caixa/Frente/Baralho
 @onready var config_menu := $Popup/Caixa/Frente/Config
 @onready var sala_menu := $Popup/Caixa/Frente/Sala
+@onready var prancheta_menu := $Popup/Caixa/Frente/Prancheta
+@onready var info_menu := $Popup/Caixa/Frente/Infos
 
 @onready var donoTxt := $Popup/Caixa/Frente/Sala/Dono
 @onready var produtividadeTxt := $Popup/Caixa/Frente/Sala/Produtividade
@@ -31,12 +33,13 @@ var list_btn_click = ["res://Audio/SFX/CLIQUE BOTÕES 1.wav", "res://Audio/SFX/C
 var baralho_show: bool = false
 var config_show: bool = false
 var sala_show: bool = false
+var prancheta_show: bool = false
+var info_show: bool = false
 
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_released("fecha_popup"): _on_fechar_button_down()
 	round_counter.text = "%02d/%02d" % [Gerenciador.round, Gerenciador.total_rounds]
 	descarte_counter.text = "%02d" % Gerenciador.descartes_restantes
 	dinheiro_player.text = "R$ " + str(Gerenciador.jogador_dinheiro)
@@ -54,6 +57,11 @@ func _process(delta: float) -> void:
 		enemy_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
 		player_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
 		skip_round.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
+	
+	if Input.is_action_just_released("abrir_menu") and not popup_bg.visible:
+		_on_config_btn_button_down()
+		return
+	if (Input.is_action_just_released("fecha_popup") or Input.is_action_just_released("abrir_menu")) and popup_bg.visible: _on_fechar_button_down()
 
 func _on_baralho_button_down() -> void:
 	popup_bg.show()
@@ -115,6 +123,18 @@ func _on_sair_button_down() -> void:
 	click_sfx()
 	Gerenciador.muda_cena(get_parent().name, "res://Scenes/menu.tscn")
 
+func _on_info_btn_button_down() -> void:
+	popup_bg.show()
+	info_menu.show()
+	info_show = true
+	click_sfx()
+
+func _on_prancheta_button_down() -> void:
+	popup_bg.show()
+	prancheta_menu.show()
+	prancheta_show = true
+	click_sfx()
+
 func _on_fechar_button_down() -> void:
 	click_sfx()
 	popup_bg.hide()
@@ -132,6 +152,12 @@ func _on_fechar_button_down() -> void:
 			sala_menu.hide()
 			hide_cartas()
 			hide_util()
+		info_show:
+			info_show = false
+			info_menu.hide()
+		prancheta_show:
+			prancheta_show = false
+			prancheta_menu.hide()
 		_:
 			pass
 
@@ -153,9 +179,9 @@ func _on_demissao_button_down() -> void:
 	sala.open_room()
 
 func show_aviso(title, text):
-	aviso.show()
 	aviso.title = title
 	aviso.text = text
+	aviso.show()
 	await aviso.responde_aviso
 	return aviso.result
 

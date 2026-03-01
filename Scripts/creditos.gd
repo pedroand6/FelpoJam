@@ -5,6 +5,9 @@ extends Control
 @onready var btn_click_sfx = $btn_click
 var list_btn_click = ["res://Audio/SFX/CLIQUE BOTÕES 1.wav", "res://Audio/SFX/CLIQUE BOTÕES 2.wav"]
 
+func _ready() -> void:
+	if get_tree().paused: get_tree().paused = false
+
 func _on_fechar_button_down() -> void:
 	click_sfx()
 	Gerenciador.muda_cena("Creditos", "res://Scenes/menu.tscn")

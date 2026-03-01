@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlmellwmrb7d6"
-path="res://.godot/imported/01.png-c2cc96885827edddf1db44c63bf5abec.ctex"
+uid="uid://c8njr0jddm0w5"
+path="res://.godot/imported/Tutorial.png-0faba98af4738294497eb2ab64be0521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dialogues/Cena01/01.png"
-dest_files=["res://.godot/imported/01.png-c2cc96885827edddf1db44c63bf5abec.ctex"]
+source_file="res://Sprites/Tutorial.png"
+dest_files=["res://.godot/imported/Tutorial.png-0faba98af4738294497eb2ab64be0521.ctex"]
 
 [params]
 

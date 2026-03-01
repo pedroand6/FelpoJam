@@ -133,10 +133,10 @@ var efeitosDemandas = {
 				increm += 6
 		return [increm, prod]
 		,
-	"Juramento à Bandeira": 
+	"Jurar à Bandeira": 
 		func(funcs : Array[Contrato], increm : int, prod : int, combo : int):
 		for fun in funcs:
-			if fun.area == "RH":
+			if fun.area == "Financeiro":
 				prod += 1
 		return [increm, prod]
 		,

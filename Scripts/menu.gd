@@ -25,6 +25,7 @@ var list_btn_click = ["res://Audio/SFX/CLIQUE BOTÕES 1.wav", "res://Audio/SFX/C
 var ult_mudan: float
 
 func _ready() -> void:
+	if get_tree().paused: get_tree().paused = false
 	ult_mudan = AudioServer.get_bus_volume_linear(0)
 	vol_slider.value = ult_mudan
 	check_tela.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
