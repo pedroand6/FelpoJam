@@ -12,12 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="5_cuipy"]
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
 [ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="6_ls4sr"]
-[ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="6_mei41"]
 [ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
+[ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
 [ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="7_bo2yg"]
 [ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="7_vf6ur"]
+[ext_resource type="Texture2D" uid="uid://do1r3gmeufmvt" path="res://Sprites/UI/icone-info.png" id="8_sjs8i"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="8_t3l48"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="9_7sov5"]
 [ext_resource type="Texture2D" uid="uid://bqm4blh853bra" path="res://Sprites/Bonequinhos/func-esquerda.png" id="9_r0sdn"]
@@ -26,16 +27,12 @@
 [ext_resource type="Texture2D" uid="uid://8rcie53r4xkf" path="res://Sprites/UI/carimbo-brinquedo.png" id="13_aa28w"]
 [ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="13_aafqm"]
 [ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="17_aa28w"]
-[ext_resource type="Texture2D" uid="uid://dpt0ws6s20cke" path="res://Sprites/UI/pilha-de-contratos.png" id="17_teocm"]
-[ext_resource type="Texture2D" uid="uid://nxxnja4stqvm" path="res://Sprites/UI/pilha-de-contratos-hover.png" id="18_tw6x1"]
 [ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="19_nt0tj"]
 [ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="19_v1qyb"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 [ext_resource type="PackedScene" uid="uid://d1pyrfj74af5b" path="res://Scenes/carta_baralho.tscn" id="21_qs34s"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
-[ext_resource type="Texture2D" uid="uid://b6r5n51cjd0pp" path="res://Sprites/UI/icone-tutorial.png" id="24_kyrxs"]
-[ext_resource type="Texture2D" uid="uid://bctbnybcjlp2l" path="res://Sprites/UI/prancheta.png" id="25_6llu4"]
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="26_v1qyb"]
 [ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="28_qs34s"]
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
@@ -67,8 +64,6 @@ load_path = "res://.godot/imported/func-frente.png-30dcd919a6ba9c7f332e1564e29f7
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6llu4"]
 load_path = "res://.godot/imported/func-costas.png-71d52ff4329ef35413ea6a984278a0e3.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r0sdn"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
 script = ExtResource("9_7sov5")
@@ -122,8 +117,8 @@ mesh = SubResource("BoxMesh_ls4sr")
 [node name="Sprite3D" type="Sprite3D" parent="Salas" unique_id=400078780]
 transform = Transform3D(0.14168736, 0, 0, 0, 1, 0, 0, 0, 0.14168736, 0.014788084, -0.37745342, -1.6822839)
 axis = 1
-texture_filter = 2
 shaded = true
+texture_filter = 0
 texture = ExtResource("5_cuipy")
 
 [node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
@@ -557,9 +552,7 @@ grow_vertical = 0
 tooltip_text = "Baralho"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_81bno")
-texture_normal = ExtResource("17_teocm")
-texture_pressed = ExtResource("18_tw6x1")
-texture_hover = ExtResource("18_tw6x1")
+texture_normal = ExtResource("7_bnfms")
 stretch_mode = 4
 
 [node name="PularBtn" type="TextureButton" parent="UI/PlayerSide" unique_id=1768639942]
@@ -572,7 +565,7 @@ offset_top = 118.0
 offset_right = -298.0
 offset_bottom = 182.0
 grow_horizontal = 0
-tooltip_text = "Passar vez"
+tooltip_text = "Descarte"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_81bno")
 texture_normal = ExtResource("11_q5mst")
@@ -709,7 +702,7 @@ grow_vertical = 0
 tooltip_text = "Informações"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_81bno")
-texture_normal = ExtResource("24_kyrxs")
+texture_normal = ExtResource("8_sjs8i")
 stretch_mode = 4
 
 [node name="Prancheta" type="TextureButton" parent="UI/EnemySide" unique_id=826628172]
@@ -726,7 +719,7 @@ scale = Vector2(0.75613844, 0.75613844)
 tooltip_text = "Combos e Cargos"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_81bno")
-texture_normal = ExtResource("25_6llu4")
+texture_normal = ExtResource("7_bnfms")
 stretch_mode = 4
 
 [node name="RodadaText" type="RichTextLabel" parent="UI" unique_id=1754639960]
@@ -1294,7 +1287,6 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Produtividade"
 
 [node name="Demissao" type="Button" parent="UI/Popup/Caixa/Frente/Sala" unique_id=1141098046]
-process_mode = 3
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 3
@@ -1327,7 +1319,6 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="Fechar" type="TextureButton" parent="UI/Popup/Caixa/Frente" unique_id=576078387]
-process_mode = 3
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1431,7 +1422,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NaoBtn" type="Button" parent="UI/Aviso/Frente" unique_id=567082648]
-process_mode = 3
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1459,7 +1449,6 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="SimBtn" type="Button" parent="UI/Aviso/Frente" unique_id=1783213965]
-process_mode = 3
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -1498,7 +1487,6 @@ script = ExtResource("28_v1qyb")
 [node name="digitacao" type="AudioStreamPlayer" parent="UI/Dialog" unique_id=821881684]
 
 [node name="NotContainer" type="VBoxContainer" parent="UI" unique_id=376783054]
-process_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

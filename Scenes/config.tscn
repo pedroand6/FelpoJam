@@ -69,6 +69,7 @@ layout_mode = 2
 text = "Volume"
 
 [node name="HSlider" type="HSlider" parent="Configs/Volume/VBoxContainer" unique_id=2004603040]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -93,6 +94,7 @@ layout_mode = 2
 text = "Tela Cheia "
 
 [node name="CheckCheia" type="CheckBox" parent="Configs/Tela/HBoxContainer/VBoxContainer0" unique_id=722947108]
+process_mode = 3
 layout_mode = 2
 
 [node name="VBoxContainer1" type="VBoxContainer" parent="Configs/Tela/HBoxContainer" unique_id=22791430]
@@ -104,6 +106,7 @@ layout_mode = 2
 text = "V-Sync"
 
 [node name="CheckSync" type="CheckBox" parent="Configs/Tela/HBoxContainer/VBoxContainer1" unique_id=2083768114]
+process_mode = 3
 layout_mode = 2
 
 [node name="Btns" type="PanelContainer" parent="Configs" unique_id=149876980]
@@ -115,6 +118,7 @@ layout_mode = 2
 theme_override_constants/separation = 24
 
 [node name="Voltar" type="Button" parent="Configs/Btns/HBoxContainer" unique_id=1061024865]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_kr0as")
@@ -135,6 +139,7 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="Sair" type="Button" parent="Configs/Btns/HBoxContainer" unique_id=758678888]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_kr0as")

@@ -112,8 +112,7 @@ func avalia_ataque() -> bool:
 						if Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BASICO:
 							usou_ativa = await ui.show_aviso(
 								"Sala %d sob ataque da sala %s!" % [sala_jogador.id, sala_ia.id],
-								"Sua sala tem %d de produtividade enquanto a sala atacante \
-									 tem %d. Quer usar seu carimbo de uso único para dobrar a produtividade da sala?" % [pontos_pl_final, pontos_ia]
+								"Sua sala tem %d de produtividade atual. Quer usar seu carimbo de uso único para dobrar a produtividade da sala?" % [pontos_pl_final]
 							)
 							if usou_ativa: 
 								play_carimbo()
@@ -126,7 +125,8 @@ func avalia_ataque() -> bool:
 							)
 							if usou_ativa: play_carimbo()
 							if usou_ativa and randf() <= 0.25:
-								#avisa jogador
+								ui.show_notificacao("Defesa com CARIMBO bem sucedida! Sala %d com %d pontos vs Sala %d com %d pontos." % [sala_ia.id, pontos_ia, sala_jogador.id, pontos_pl_final], Color.GREEN)
+								Gerenciador.player_usou_ativa = true
 								return false
 						if usou_ativa:
 							Gerenciador.player_usou_ativa = true
@@ -135,6 +135,7 @@ func avalia_ataque() -> bool:
 						sala_jogador.demissao_geral()
 						sala_jogador.dono = Sala.Players.NENHUM
 						sala_jogador.bloqueada_player = true
+						ui.show_notificacao("Sala derrotada! Sala %d com %d pontos vs Sala %d com %d pontos." % [sala_ia.id, pontos_ia, sala_jogador.id, pontos_pl_final], Color.RED)
 						
 					return true
 					
@@ -236,7 +237,7 @@ func joga_cartas(salas_jogadas):
 							if q > best_q + 0.1:
 								best_q = q
 								best_action = {"carta": carta, "sala": sala}
-		if best_action != null and not best_action.sala.bloqueada_ia:
+		if best_action != null and not best_action.sala.bloqueada_ia and best_action.sala.dono != Sala.Players.JOGADOR:
 			var carta = best_action.carta
 			var sala = best_action.sala
 			
@@ -279,8 +280,8 @@ func get_salas_por_dono(dono):
 
 func play_carimbo() -> void:
 	if Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
-		carimbo_sfx.stream = carimbo_sfx_list[2]
+		carimbo_sfx.stream = load(carimbo_sfx_list[2])
 		carimbo_sfx.play()
 	else:
-		carimbo_sfx.stream = carimbo_sfx_list[randi()%2]
+		carimbo_sfx.stream = load(carimbo_sfx_list[randi()%2])
 		carimbo_sfx.play()

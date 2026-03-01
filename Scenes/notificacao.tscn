@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dcdfrc1c5bdk3"]
+
+[ext_resource type="Script" uid="uid://cpeojvihywq1r" path="res://Scripts/notificacao.gd" id="1_kinw0"]
+[ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="2_xx71q"]
+[ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="3_mbecf"]
+[ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="4_xx71q"]
+[ext_resource type="AudioStream" uid="uid://cdwwqovx0puyc" path="res://Audio/SFX/SHAKE DE PERMISSÃO.wav" id="5_mbecf"]
+
+[node name="Notificacao" type="Control" unique_id=38828562]
+process_mode = 3
+texture_filter = 5
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 581.0
+offset_bottom = 150.0
+pivot_offset = Vector2(291, 60)
+script = ExtResource("1_kinw0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1890787112]
+layout_mode = 0
+offset_right = 581.0
+offset_bottom = 125.0
+color = Color(0, 0, 0, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect" unique_id=1210771500]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xx71q")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=590386925]
+texture_filter = 1
+layout_mode = 0
+offset_top = 11.123865
+offset_right = 522.89966
+offset_bottom = 103.12386
+scale = Vector2(1.0788662, 1.0788662)
+theme = ExtResource("3_mbecf")
+text = "Você não pode mais se mover nesta rodada!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fechar" type="TextureButton" parent="." unique_id=1005987542]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -27.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 27.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_xx71q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="notFx" type="AudioStreamPlayer" parent="." unique_id=804062523]
+stream = ExtResource("5_mbecf")
+
+[connection signal="button_down" from="Fechar" to="." method="_on_fechar_button_down"]

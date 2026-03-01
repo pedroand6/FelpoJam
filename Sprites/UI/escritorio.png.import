@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Sprites/UI/escritorio.png.import
-uid="uid://daoupicogysuo"
+uid="uid://dr0pfk8lc8g6p"
 path="res://.godot/imported/escritorio.png-a1efc141d8cdfbcfa8fce44478bda236.ctex"
-========
-uid="uid://hteapccgwnus"
-path="res://.godot/imported/lucas-retrato-sorrindo.png-01ec80ddfe2fb54d037af52600cc565a.ctex"
->>>>>>>> 0f5f5f0275722dd4357f6b844901dc5d7b4b416f:Sprites/Icons/Lucas, O Gerente/lucas-retrato-sorrindo.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Sprites/UI/escritorio.png.import
 source_file="res://Sprites/UI/escritorio.png"
 dest_files=["res://.godot/imported/escritorio.png-a1efc141d8cdfbcfa8fce44478bda236.ctex"]
-========
-source_file="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-sorrindo.png"
-dest_files=["res://.godot/imported/lucas-retrato-sorrindo.png-01ec80ddfe2fb54d037af52600cc565a.ctex"]
->>>>>>>> 0f5f5f0275722dd4357f6b844901dc5d7b4b416f:Sprites/Icons/Lucas, O Gerente/lucas-retrato-sorrindo.png.import
 
 [params]
 

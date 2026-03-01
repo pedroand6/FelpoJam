@@ -3,6 +3,7 @@ extends CanvasLayer
 const TRUTH: bool = true
 
 @onready var popup_bg := %Popup
+@onready var not_container := $NotContainer
 @onready var aviso := %Aviso
 @onready var baralho_list := $Popup/Caixa/Frente/Baralho
 @onready var config_menu := $Popup/Caixa/Frente/Config
@@ -20,6 +21,9 @@ var sala : Sala
 @onready var descarte_counter := $PlayerSide/DescarteBtn/Descartes
 @onready var dinheiro_player := $PlayerSide/Dinheiro
 @onready var dinheiro_ia := $EnemySide/Dinheiro
+@onready var player_port := $PlayerSide/Portrait
+@onready var enemy_port := $EnemySide/Portrait
+@onready var skip_round := $PlayerSide/PularBtn
 
 @onready var btn_click_sfx = $btn_click
 var list_btn_click = ["res://Audio/SFX/CLIQUE BOTÕES 1.wav", "res://Audio/SFX/CLIQUE BOTÕES 2.wav"]
@@ -28,34 +32,44 @@ var baralho_show: bool = false
 var config_show: bool = false
 var sala_show: bool = false
 
+func _ready() -> void:
+	pass
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("fecha_popup"): _on_fechar_button_down()
 	round_counter.text = "%02d/%02d" % [Gerenciador.round, Gerenciador.total_rounds]
 	descarte_counter.text = "%02d" % Gerenciador.descartes_restantes
 	dinheiro_player.text = "R$ " + str(Gerenciador.jogador_dinheiro)
 	dinheiro_ia.text = "R$ " + str(Gerenciador.IA_dinheiro)
+	
+	if Gerenciador.turno == Gerenciador.JOGADOR:
+		enemy_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
+		player_port.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+		skip_round.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+	else:
+		enemy_port.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+		player_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
+		skip_round.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
 
 func _on_baralho_button_down() -> void:
 	popup_bg.show()
+	get_tree().paused = true
 	baralho_list.show()
 	baralho_show = true
 	click_sfx()
 
 func _on_config_btn_button_down() -> void:
 	popup_bg.show()
+	get_tree().paused = true
 	config_menu.show()
 	config_show = true
 	click_sfx()
-	
-func show_sala(dono, prod, thisSala) -> void:
+
+func show_sala(thisSala) -> void:
 	sala = thisSala
 	popup_bg.show()
+	get_tree().paused = true
 	sala_menu.show()
-	donoTxt.text = dono
-	if dono == "Sala inimiga":
-		produtividadeTxt.text = "Produtividade: ???"
-	else:
-		produtividadeTxt.text = "Produtividade: " + str(prod)
 	sala_show = true
 	
 func set_cartas(imagens):
@@ -69,9 +83,15 @@ func set_utilitarios(utils):
 	for i in range(0, len(utils)):
 		sala_util[i].text = utils[i]
 
-func set_combo(nome, desc):
+func set_combo_prod_dono(nome, desc, prod, dono):
 	sala_combo[0].text = nome
 	sala_combo[1].text = desc
+	
+	donoTxt.text = dono
+	if dono == "Sala inimiga":
+		produtividadeTxt.text = "Produtividade: ???"
+	else:
+		produtividadeTxt.text = "Produtividade: " + str(prod)
 	
 func hide_cartas():
 	for i in range(0, 4):
@@ -95,6 +115,7 @@ func _on_sair_button_down() -> void:
 func _on_fechar_button_down() -> void:
 	click_sfx()
 	popup_bg.hide()
+	get_tree().paused = false
 	match TRUTH:
 		baralho_show:
 			baralho_show = false
@@ -103,6 +124,7 @@ func _on_fechar_button_down() -> void:
 			config_show = false
 			config_menu.hide()
 		sala_show:
+			sala = null
 			sala_show = false
 			sala_menu.hide()
 			hide_cartas()
@@ -111,6 +133,7 @@ func _on_fechar_button_down() -> void:
 			pass
 
 func _on_demissao_button_down() -> void:
+	if Gerenciador.turno != Gerenciador.JOGADOR: return
 	if sala.dono != Sala.Players.JOGADOR:
 		return
 		
@@ -132,6 +155,11 @@ func show_aviso(title, text):
 	aviso.text = text
 	await aviso.responde_aviso
 	return aviso.result
+
+func show_notificacao(text, cor = Color.WHITE):
+	var notificacao = load("res://Scenes/notificacao.tscn").instantiate()
+	notificacao.set_text(text, cor)
+	not_container.add_child(notificacao)
 
 func click_sfx():
 	btn_click_sfx.stream = load(list_btn_click[randi() % 2])

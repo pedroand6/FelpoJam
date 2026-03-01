@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="FelpoJam"
+config/name="Processo Seletivo"
+config/version="1.0"
 run/main_scene="uid://dcjb6iuh210jd"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+boot_splash/use_filter=false
+config/icon="uid://d1a1ik4frqstg"
 
 [autoload]
 
