@@ -5,16 +5,19 @@ extends Node2D
 @onready var msc = $Musica
 @onready var mouse_on_menu = $mouseovermenu
 
+@onready var btn_click_sfx = $btn_click
+var list_btn_click = ["res://Audio/SFX/CLIQUE BOTÕES 1.wav", "res://Audio/SFX/CLIQUE BOTÕES 2.wav"]
+
 var nomeCena : String
 
 var dialogos
 var cenasPath : String
-var cenasImg
+var cenasImg: Array[String]
 
 var dialogoAtual = 0
 var cenaAtual = 0
 
-var msc_list: Array[String] = ["res://Audio/Msc/The Oficce.mp3", "res://Audio/Msc/no safe journey.mp3", "res://Audio/Msc/silvio final.mp3"]
+var msc_list: Array[String] = ["res://Audio/Msc/primeira cutscene.ogg", "res://Audio/Msc/primeira cutscene.ogg", "res://Audio/Msc/silvio final cutscene.ogg"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,8 +35,8 @@ func le_json(fileName: String):
 	var _parse_err = json_object.parse(file.get_as_text())
 	return json_object.get_data()
 	
-func le_arquivos(path):
-	var files = []
+func le_arquivos(path) -> Array[String]:
+	var files: Array[String] = []
 	var dir = DirAccess.open(path)
 	var returnedFiles = dir.get_files()
 	for file in returnedFiles:
@@ -81,6 +84,7 @@ func _on_dialogue_btn_button_down() -> void:
 func _on_config_btn_button_down() -> void:
 	%Popup.show()
 	%Popup/Caixa/Frente/Config.show()
+	click_sfx()
 
 func _on_resumir_button_down() -> void:
 	_on_fechar_button_down()
@@ -88,10 +92,15 @@ func _on_resumir_button_down() -> void:
 func _on_fechar_button_down() -> void:
 	%Popup.hide()
 	%Popup/Caixa/Frente/Config.hide()
+	click_sfx()
 
 func _on_sair_button_down() -> void:
-	get_tree().quit()
-
+	click_sfx()
+	Gerenciador.muda_cena("Visual Novel", "res://Scenes/menu.tscn")
 
 func _on_config_btn_mouse_entered() -> void:
 	mouse_on_menu.play()
+
+func click_sfx():
+	btn_click_sfx.stream = load(list_btn_click[randi() % 2])
+	btn_click_sfx.play()

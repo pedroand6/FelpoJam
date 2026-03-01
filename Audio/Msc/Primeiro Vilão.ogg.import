@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dci2kbp0ktyaf"
+path="res://.godot/imported/Primeiro Vilão.ogg-c80984e64b566ccecec41b10e20918ac.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Msc/Primeiro Vilão.ogg"
+dest_files=["res://.godot/imported/Primeiro Vilão.ogg-c80984e64b566ccecec41b10e20918ac.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=3.0
+bpm=0.0
+beat_count=0
+bar_beats=4

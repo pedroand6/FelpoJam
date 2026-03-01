@@ -21,6 +21,9 @@ var sala : Sala
 @onready var dinheiro_player := $PlayerSide/Dinheiro
 @onready var dinheiro_ia := $EnemySide/Dinheiro
 
+@onready var btn_click_sfx = $btn_click
+var list_btn_click = ["res://Audio/SFX/CLIQUE BOTÕES 1.wav", "res://Audio/SFX/CLIQUE BOTÕES 2.wav"]
+
 var baralho_show: bool = false
 var config_show: bool = false
 var sala_show: bool = false
@@ -36,11 +39,13 @@ func _on_baralho_button_down() -> void:
 	popup_bg.show()
 	baralho_list.show()
 	baralho_show = true
+	click_sfx()
 
 func _on_config_btn_button_down() -> void:
 	popup_bg.show()
 	config_menu.show()
 	config_show = true
+	click_sfx()
 	
 func show_sala(dono, prod, thisSala) -> void:
 	sala = thisSala
@@ -78,14 +83,17 @@ func hide_util():
 	
 func _on_resumir_button_down() -> void:
 	_on_fechar_button_down()
+	click_sfx()
 
 func _on_configuracoes_button_down() -> void:
 	pass # Replace with function body.
 
 func _on_sair_button_down() -> void:
-	get_tree().quit()
+	click_sfx()
+	Gerenciador.muda_cena(get_parent().name, "res://Scenes/menu.tscn")
 
 func _on_fechar_button_down() -> void:
+	click_sfx()
 	popup_bg.hide()
 	match TRUTH:
 		baralho_show:
@@ -124,3 +132,7 @@ func show_aviso(title, text):
 	aviso.text = text
 	await aviso.responde_aviso
 	return aviso.result
+
+func click_sfx():
+	btn_click_sfx.stream = load(list_btn_click[randi() % 2])
+	btn_click_sfx.play()

@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://bwrwdgv74vri5"]
+
+[ext_resource type="Texture2D" uid="uid://dgyq8ut14ebci" path="res://Sprites/CARIMBADO.png" id="1_5k4t0"]
+[ext_resource type="Script" uid="uid://clecmasdh7e38" path="res://Scripts/derrota.gd" id="1_s2oks"]
+[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="2_l0g73"]
+[ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="3_s2oks"]
+[ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="4_l0g73"]
+[ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="6_a0cr0"]
+[ext_resource type="AudioStream" uid="uid://cxf470w0ey1ad" path="res://Audio/Msc/MUSICA DERROTA.wav" id="6_cnv4f"]
+[ext_resource type="AudioStream" uid="uid://cbvqiv47sdekb" path="res://Audio/SFX/CARIMBADA 3.wav" id="7_a0cr0"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_g04k0"]
+script = ExtResource("3_s2oks")
+metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
+
+[node name="Derrota" type="Control" unique_id=1669742363]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2oks")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=748702307]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme = ExtResource("2_l0g73")
+theme_override_font_sizes/normal_font_size = 64
+text = "DERROTA"
+horizontal_alignment = 1
+vertical_alignment = 2
+custom_effects = [SubResource("RichTextEffect_g04k0")]
+
+[node name="Button1" type="Button" parent="." unique_id=750508685]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -340.0
+offset_top = -180.0
+offset_right = -20.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_l0g73")
+text = "Tentar novamente"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Button1" unique_id=844487397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_l0g73")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Button2" type="Button" parent="." unique_id=1776281628]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -180.0
+offset_right = 340.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_l0g73")
+text = "Sair"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Button2" unique_id=1039505806]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_l0g73")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=31398837]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 128.0
+offset_right = 576.0
+offset_bottom = 760.0
+grow_horizontal = 2
+pivot_offset = Vector2(576, 316)
+texture = ExtResource("1_5k4t0")
+
+[node name="mouse_hover" type="AudioStreamPlayer" parent="." unique_id=1427639710]
+stream = ExtResource("6_a0cr0")
+
+[node name="derrota" type="AudioStreamPlayer" parent="." unique_id=1553045013]
+stream = ExtResource("6_cnv4f")
+autoplay = true
+
+[node name="carimbo" type="AudioStreamPlayer" parent="." unique_id=1405959438]
+stream = ExtResource("7_a0cr0")
+
+[connection signal="button_down" from="Button1" to="." method="_on_button_1_button_down"]
+[connection signal="mouse_entered" from="Button1" to="." method="_on_button_1_mouse_entered"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
+[connection signal="mouse_entered" from="Button2" to="." method="_on_button_2_mouse_entered"]

@@ -5,6 +5,9 @@ const TAMANHO_MAO = 7
 signal passa_turno
 
 @onready var ui = $"../UI"
+@onready var carimbo_sfx = $carimbo_p
+var carimbo_sfx_list: Array[String] = ["res://Audio/SFX/CARIMBADA 1.wav", "res://Audio/SFX/CARIMBADA 2.wav", "res://Audio/SFX/CARIMBADA 3.wav"]
+
 @export var salas: Array[Sala]
 var ia_mao : Array[Contrato] = []
 
@@ -113,6 +116,7 @@ func avalia_ataque() -> bool:
 									 tem %d. Quer usar seu carimbo de uso único para dobrar a produtividade da sala?" % [pontos_pl_final, pontos_ia]
 							)
 							if usou_ativa: 
+								play_carimbo()
 								pontos_pl_final *= 2
 						elif Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
 							usou_ativa = await ui.show_aviso(
@@ -120,6 +124,7 @@ func avalia_ataque() -> bool:
 								"Sua sala tem %d de produtividade enquanto a sala atacante \
 									tem %d, quer usar seu carimbo de uso único que lhe dá 25% de chance de fugir do ataque?" % [pontos_pl_final, pontos_ia]
 							)
+							if usou_ativa: play_carimbo()
 							if usou_ativa and randf() <= 0.25:
 								#avisa jogador
 								return false
@@ -271,3 +276,11 @@ func get_salas_por_dono(dono):
 		if sala.dono == dono:
 			result.append(sala)
 	return result
+
+func play_carimbo() -> void:
+	if Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
+		carimbo_sfx.stream = carimbo_sfx_list[2]
+		carimbo_sfx.play()
+	else:
+		carimbo_sfx.stream = carimbo_sfx_list[randi()%2]
+		carimbo_sfx.play()

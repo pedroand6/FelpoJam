@@ -17,6 +17,9 @@ var contrato : Contrato
 @onready var precoTxt_util = $Utilitario/Preco
 @onready var imagem_util = $Utilitario/Imagem
 
+@onready var seleciona_sfx = $selecionasfx
+@onready var guarda_sfx = $guardasfx
+
 @onready var mouse_on_carta = $mousehovercarta
 var mouse_on: bool = false
 var chosen: bool = false
@@ -57,12 +60,14 @@ func _input(event: InputEvent) -> void:
 				chosen = false
 				var index = Gerenciador.cartas_selecionadas.find(self)
 				Gerenciador.cartas_selecionadas.remove_at(index)
+				seleciona_sfx.play()
 			else:
 				chosen = true
 				Gerenciador.cartas_selecionadas.append(self)
 				canAnimate = true
 				destination = originalPos + transform.basis.y.normalized() * 0.015 + \
 					transform.basis.z.normalized() * 0.01
+				guarda_sfx.play()
 
 func _process(delta: float) -> void:
 	var distance_to_destination

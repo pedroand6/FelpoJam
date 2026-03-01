@@ -78,6 +78,8 @@ var cena: int = 1 #quando acaba uma cena, atualiza ++
 signal comeca_turno
 signal compra_carta(contrato : Contrato)
 signal round_muda
+signal vitoria
+signal derrota
 
 func _ready():
 	carrega_demandas(demandasPath, demandas_gerais)
@@ -217,9 +219,9 @@ func desbloqueia_jogar():
 
 func finaliza_jogo():
 	if jogador_dinheiro >= IA_dinheiro:
-		return #TODO: venceu o jogo - continua pra proxima cena
+		vitoria.emit()
 	else:
-		return #TODO: perdeu o jogo - opcao de sair ou jogar de novo
+		derrota.emit()
 
 func muda_cena(cena_sai: String, cena_entra: String) -> void:
 	var root = get_tree().get_root()

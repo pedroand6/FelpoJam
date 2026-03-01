@@ -22,6 +22,7 @@ var cartas_mao: Array[Node3D]
 
 @onready var node_carta = preload("res://Scenes/carta.tscn")
 @onready var descarte_sfx = $descarte
+@onready var compra_sfx = $compra
 
 func _ready():
 	Gerenciador.comeca_turno.connect(player_comecou_turno)
@@ -34,6 +35,8 @@ func comprar_mao():
 func compra_uma():
 	var carta_topo: Contrato = Gerenciador.jogador_baralho.pop_back()
 	var instance = node_carta.instantiate()
+	
+	compra_sfx.play()
 	
 	instance.canAnimate = false
 	instance.contrato = carta_topo

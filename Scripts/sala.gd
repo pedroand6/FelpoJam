@@ -11,6 +11,8 @@ enum Players {
 @export var vizinhos : Array[Sala]
 @onready var borda = $Borda
 @onready var borda2 = $Borda2
+@onready var carimbo_sfx := $carimbo_sfx
+
 var mouse_on := false
 
 var dono : Players = Players.NENHUM
@@ -160,6 +162,7 @@ var pontuacao := 0
 @onready var funcionario: PackedScene = load("res://Scenes/funcionario_popup.tscn")
 @onready var inimigo := $"../../Inimigo"
 @onready var money_sfx := get_parent().get_node("money")
+@onready var sala_slct_sfx := $sala_select_sfx
 var selecionada : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -170,6 +173,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
+		if event.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT] and event.pressed == true and mouse_on: sala_slct_sfx.play()
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and Gerenciador.sala_selecionada == null:
 			open_room()
 		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and Gerenciador.sala_selecionada in vizinhos:
@@ -216,7 +220,8 @@ func mover_atacar():
 				Gerenciador.ia_usou_ativa = true
 				for fun in funcionarios:
 					pont_ia += 10
-				
+			if ia_usou_carimbo: carimbo_sfx.play()
+		
 		Gerenciador.movimentos_restantes = 0
 		if pont_ia <= pont_pl: #ia perdeu
 			bloqueada_ia = true

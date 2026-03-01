@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://db6tm7r1dqcgv" path="res://Scripts/sala.gd" id="1_2x4t4"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="2_uhgjh"]
 [ext_resource type="Texture2D" uid="uid://dox0ffjpqdnw4" path="res://icon.svg" id="2_vbwy0"]
+[ext_resource type="AudioStream" uid="uid://cbvqiv47sdekb" path="res://Audio/SFX/CARIMBADA 3.wav" id="4_uhgjh"]
+[ext_resource type="AudioStream" uid="uid://b0sc58qvxt2th" path="res://Audio/SFX/SELECIONAR SALA.wav" id="5_pxsw5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uhgjh"]
 size = Vector3(1.2689819, 0.04156494, 1.2514648)
@@ -34,6 +36,12 @@ texture = ExtResource("2_vbwy0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=38862451]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015258789, 0.003753662, -0.0017089844)
 shape = SubResource("BoxShape3D_uhgjh")
+
+[node name="carimbo_sfx" type="AudioStreamPlayer" parent="." unique_id=64705161]
+stream = ExtResource("4_uhgjh")
+
+[node name="sala_select_sfx" type="AudioStreamPlayer" parent="." unique_id=1278172441]
+stream = ExtResource("5_pxsw5")
 
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

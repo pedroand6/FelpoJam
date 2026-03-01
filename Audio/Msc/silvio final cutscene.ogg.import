@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bxee3gyym0bpy"
+path="res://.godot/imported/silvio final cutscene.ogg-e84248c1505fc066353555191e5a273f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Msc/silvio final cutscene.ogg"
+dest_files=["res://.godot/imported/silvio final cutscene.ogg-e84248c1505fc066353555191e5a273f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

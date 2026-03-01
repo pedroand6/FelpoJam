@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bkb5eqblh0efm" path="res://Audio/SFX/AUMENTAR VOLUME MENU.wav" id="4_wwsa2"]
 [ext_resource type="AudioStream" uid="uid://c1oiskd0i3wam" path="res://Audio/SFX/BOTÃO DE PLAY.wav" id="5_wwsa2"]
 [ext_resource type="Script" uid="uid://bvrlifwywa4j" path="res://Scripts/fade_out.gd" id="6_jsrd8"]
-[ext_resource type="AudioStream" uid="uid://mh1khbil8rvk" path="res://Audio/Msc/no safe journey.mp3" id="7_q3rjx"]
+[ext_resource type="AudioStream" uid="uid://dubmkoulfaoe4" path="res://Audio/Msc/menu game.ogg" id="7_q3rjx"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="8_q3rjx"]
 
 [node name="Menu" type="Control" unique_id=1527680893]
@@ -180,6 +180,8 @@ autoplay = true
 
 [node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=852958665]
 stream = ExtResource("8_q3rjx")
+
+[node name="btn_click" type="AudioStreamPlayer" parent="." unique_id=1493079455]
 
 [connection signal="button_down" from="Menu/Iniciar" to="." method="_on_iniciar_button_down"]
 [connection signal="mouse_entered" from="Menu/Iniciar" to="." method="_on_iniciar_mouse_entered"]

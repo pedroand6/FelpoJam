@@ -11,6 +11,9 @@ extends Control
 @onready var fade_out := $FadeOut
 @onready var mouse_on_menu = $mousehovermenu
 
+@onready var btn_click_sfx = $btn_click
+var list_btn_click = ["res://Audio/SFX/CLIQUE BOTÕES 1.wav", "res://Audio/SFX/CLIQUE BOTÕES 2.wav"]
+
 var ult_mudan: float
 
 func _ready() -> void:
@@ -28,11 +31,14 @@ func _on_iniciar_button_down() -> void:
 func _on_opt_button_down() -> void:
 	opts.show()
 	menu.hide()
+	click_sfx()
 
 func _on_cred_button_down() -> void:
 	Gerenciador.muda_cena("Menu", "res://Scenes/creditos.tscn")
+	click_sfx()
 
 func _on_sair_button_down() -> void:
+	click_sfx()
 	get_tree().quit()
 
 func _on_h_slider_value_changed(value: float) -> void:
@@ -44,21 +50,23 @@ func _on_h_slider_value_changed(value: float) -> void:
 	ult_mudan = value
 
 func _on_check_cheia_toggled(toggled_on: bool) -> void:
-		DisplayServer.window_set_mode(
-			DisplayServer.WINDOW_MODE_FULLSCREEN if toggled_on 
-			else DisplayServer.WINDOW_MODE_WINDOWED
-		)
-	
+	DisplayServer.window_set_mode(
+		DisplayServer.WINDOW_MODE_FULLSCREEN if toggled_on 
+		else DisplayServer.WINDOW_MODE_WINDOWED
+	)
+	click_sfx()
+
 func _on_check_sync_toggled(toggled_on: bool) -> void:
 	DisplayServer.window_set_vsync_mode(
 		DisplayServer.VSYNC_ENABLED if toggled_on
 		else DisplayServer.VSYNC_DISABLED
 	)
+	click_sfx()
 
 func _on_voltar_button_down() -> void:
 	menu.show()
 	opts.hide()
-
+	click_sfx()
 
 func _on_h_slider_mouse_entered() -> void:
 	mouse_on_menu.play()
@@ -83,3 +91,7 @@ func _on_opt_mouse_entered() -> void:
 
 func _on_iniciar_mouse_entered() -> void:
 	mouse_on_menu.play()
+
+func click_sfx():
+	btn_click_sfx.stream = load(list_btn_click[randi() % 2])
+	btn_click_sfx.play()
