@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
 [ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="6_ls4sr"]
 [ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="6_mei41"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="Texture2D" uid="uid://cxjdyte7ary7l" path="res://Assets/carta_costa.png" id="7_bnfms"]
@@ -55,6 +55,8 @@ roughness = 0.0
 normal_enabled = true
 normal_texture = ExtResource("8_r0sdn")
 heightmap_texture = ExtResource("8_r0sdn")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r0sdn"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
 script = ExtResource("9_7sov5")
@@ -141,7 +143,7 @@ transform = Transform3D(0.132, 0, 0, 0, 1, 0, 0, 0, 0.13, 0.014788084, -0.334687
 material_override = SubResource("StandardMaterial3D_x3ogh")
 axis = 1
 texture_filter = 2
-texture = ExtResource("6_mei41")
+texture = SubResource("CompressedTexture2D_r0sdn")
 
 [node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
 transform = Transform3D(0.2828626, 0, 0, 0, 1, 0, 0, 0, 0.2828626, -0.91193396, -0.32901675, -1.897177)
