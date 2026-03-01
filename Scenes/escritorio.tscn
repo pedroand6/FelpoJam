@@ -50,7 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://col51vt6g3ujj" path="res://Sprites/infos.png" id="35_nxmxj"]
 [ext_resource type="Texture2D" uid="uid://c8njr0jddm0w5" path="res://Sprites/Tutorial.png" id="36_mqynx"]
 [ext_resource type="AudioStream" uid="uid://duidkhd4mxrre" path="res://Audio/Msc/Segundo vilão part 1.ogg" id="41_kyrxs"]
-[ext_resource type="Script" path="res://Scripts/kenji_musica.gd" id="42_6llu4"]
+[ext_resource type="Script" uid="uid://7kw4mytj8474" path="res://Scripts/kenji_musica.gd" id="42_6llu4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3ogh"]
 animations = [{
