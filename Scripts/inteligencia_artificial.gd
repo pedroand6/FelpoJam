@@ -143,7 +143,7 @@ func avalia_ataque() -> bool:
 						elif Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
 							usou_ativa = await ui.show_aviso(
 								"Sala %d sob ataque da sala %d!" % [sala_jogador.id, sala_ia.id],
-								"Sua sala tem %d de produtividade enquanto a sala atacante tem %d, quer usar seu carimbo de uso único que lhe dá 25% de chance de fugir do ataque?" % [pontos_pl_final, pontos_ia]
+								"Sua sala tem %d de produtividade enquanto a sala atacante tem %d, quer usar seu carimbo de uso único que lhe dá 25%% de chance de fugir do ataque?" % [pontos_pl_final, pontos_ia]
 							)
 							if usou_ativa: play_carimbo()
 							if usou_ativa and randf() <= 0.25:

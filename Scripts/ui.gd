@@ -179,6 +179,7 @@ func _on_demissao_button_down() -> void:
 	sala.open_room()
 
 func show_aviso(title, text):
+	print(text)
 	aviso.title = title
 	aviso.text = text
 	aviso.show()
