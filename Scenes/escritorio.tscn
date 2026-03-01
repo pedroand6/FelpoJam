@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="5_cuipy"]
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
 [ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="6_ls4sr"]
+[ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="6_mei41"]
 [ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
@@ -96,6 +97,8 @@ load_path = "res://.godot/imported/func-frente.png-30dcd919a6ba9c7f332e1564e29f7
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6llu4"]
 load_path = "res://.godot/imported/func-costas.png-71d52ff4329ef35413ea6a984278a0e3.ctex"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r0sdn"]
+
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
 script = ExtResource("9_7sov5")
 metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
@@ -149,8 +152,8 @@ mesh = SubResource("BoxMesh_ls4sr")
 [node name="Sprite3D" type="Sprite3D" parent="Salas" unique_id=400078780]
 transform = Transform3D(0.14168736, 0, 0, 0, 1, 0, 0, 0, 0.14168736, 0.014788084, -0.37745342, -1.6822839)
 axis = 1
+texture_filter = 2
 shaded = true
-texture_filter = 0
 texture = ExtResource("5_cuipy")
 
 [node name="Sala1" parent="Salas" unique_id=6546393 node_paths=PackedStringArray("vizinhos") instance=ExtResource("3_bnfms")]
