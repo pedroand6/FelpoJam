@@ -20,6 +20,8 @@ const ROTACAO_CARTAS: float = 1.0
 var tamanho_mao: int = 0
 var cartas_mao: Array[Node3D]
 
+var animando_descarte := false
+
 @onready var node_carta = preload("res://Scenes/carta.tscn")
 @onready var descarte_sfx = $descarte
 @onready var compra_sfx = $compra
@@ -55,24 +57,29 @@ func compra_uma():
 func posiciona_cartas():
 	for i in range(tamanho_mao):
 		cartas_mao[i].canAnimate = false
+		cartas_mao[i].chosen = false
+		cartas_mao[i].rotation = Vector3.ZERO
+		cartas_mao[i].position = CARTA_POS_BASE
+		
 		cartas_mao[i].position.x = CARTA_POS_BASE.x + -2 * ESPACAMENTO_X * i \
 		+ ESPACAMENTO_X * (tamanho_mao - 1)
 		
 		cartas_mao[i].position.y = CARTA_POS_BASE.y + ESPACAMENTO_Y * ((i - 0.5 * \
 		tamanho_mao + 1.5)**2 - 2*(i - 0.5 * tamanho_mao + 1.5) + 1)
-		
 		cartas_mao[i].rotation_degrees.z = 2 * ROTACAO_CARTAS * i - ROTACAO_CARTAS * (tamanho_mao - 1)
+		cartas_mao[i].set_positions()
 		
 func _on_escritorio_cartas_prontas() -> void:
 	comprar_mao()
 
 func _on_descarte_btn_button_down() -> void:
-	descarta(true)
+	if Gerenciador.turno == Gerenciador.JOGADOR and not animando_descarte:
+		descarta(true)
 
 func descarta(compra : bool):
 	var selecionadas = Gerenciador.cartas_selecionadas.duplicate()
 	if (Gerenciador.descartes_restantes - len(selecionadas)) < 0 and compra:
-		ui.show_notificacao("Quantidade de descartes insuficiente", Color.YELLOW) 
+		ui.show_notificacao("Limite de descartes ultrapassado!", Color.YELLOW) 
 		return
 	
 	if compra:
@@ -81,6 +88,10 @@ func descarta(compra : bool):
 			var tw = create_tween()
 			tw.tween_property(carta, "position", Vector3(10.0, carta.position.y, carta.position.z), 2.0)
 			tw.tween_callback(carta.queue_free)
+			animando_descarte = true
+			await descarte_sfx.finished
+			
+	animando_descarte = false
 	
 	var quantidade = len(selecionadas)
 	if not compra:

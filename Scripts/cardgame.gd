@@ -24,11 +24,11 @@ func passa_round():
 	Gerenciador.round_muda.emit()
 	
 func passa_turno(player : int):
-	if player == JOGADOR:
+	if player == JOGADOR and Gerenciador.turno == JOGADOR:
 		passou_turno.emit()
 		Gerenciador.turno = IA
 		ia.jogada()
-	else: 
+	elif player == IA and Gerenciador.turno == IA: 
 		Gerenciador.turno = JOGADOR
 		Gerenciador.desbloqueia_jogar()
 		passa_round()

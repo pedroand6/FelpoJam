@@ -9,8 +9,8 @@ enum Players {
 
 @export var id : int = 0
 @export var vizinhos : Array[Sala]
-@onready var borda = $Borda
-@onready var borda2 = $Borda2
+@onready var borda := $Borda
+@onready var borda2 := $Borda2
 @onready var carimbo_sfx := $carimbo_sfx
 
 var mouse_on := false
@@ -175,12 +175,18 @@ func _ready() -> void:
 	bonequinhos = pai_boneco.get_children()
 	
 func _process(delta: float) -> void:
+	if ui.sala == self:
+		att_room()
+		
+	if ui.popup_bg.visible:
+		mouse_on = false
+	
 	for bonequinho in bonequinhos:
 		bonequinho.hide()
 	for i in range(len(funcionarios)):
 		bonequinhos[i].show()
 		if dono == Players.IA:
-			bonequinhos[i].modulate = Color(0xdf31a5ff)
+			bonequinhos[i].modulate = Color(0xffffffff)
 		elif funcionarios[i].area == "TI":
 			bonequinhos[i].modulate = Color(0x4a8acfff)
 		elif funcionarios[i].area == "RH":
@@ -191,6 +197,10 @@ func _process(delta: float) -> void:
 			bonequinhos[i].modulate = Color(0x55ce81ff)
 		elif funcionarios[i].area == "Coringa":
 			bonequinhos[i].modulate = Color(0xc7af12ff)
+	
+	borda.light_negative = bloqueada_player
+	if bloqueada_player:
+		borda.show()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -199,7 +209,7 @@ func _input(event: InputEvent) -> void:
 			open_room()
 		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and Gerenciador.sala_selecionada in vizinhos:
 			mover_atacar()
-		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and not bloqueada_player:
+		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and not bloqueada_player and len(Gerenciador.cartas_selecionadas) > 0:
 			insert_cartas_player()
 		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and mouse_on and not bloqueada_player and Gerenciador.movimentos_restantes > 0 and dono == Players.JOGADOR:
 			if Gerenciador.sala_selecionada == self:
@@ -211,8 +221,11 @@ func _input(event: InputEvent) -> void:
 			Gerenciador.sala_selecionada = self
 			selecionada = true
 			borda2.show()
+		elif (event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT) and bloqueada_player and event.pressed and mouse_on:
+			ui.show_notificacao("Sala bloqueada", Color.YELLOW)
 
 func mover_atacar():
+	if Gerenciador.turno != Gerenciador.JOGADOR: return
 	var selecionada = Gerenciador.sala_selecionada
 	if len(funcionarios) > 0 and selecionada.dono != dono: #ataque
 		
@@ -234,10 +247,10 @@ func mover_atacar():
 				ia_usou_carimbo = true
 				Gerenciador.ia_usou_ativa = true
 				if randf() <= 0.25:
-					ui.show_notificacao("O inimigo se defendeu com sucesso de seu ataque com o carimbo", Color.RED)
+					ui.show_notificacao("Fuga com CARIMBO. Sala %d com %d pontos vs Sala %d com %d pontos." % [id, pont_ia, selecionada.id, pont_pl], Color.RED)
 					return
 				else:
-					ui.show_notificacao("O inimigo se defendeu com o CARIMBO mas seu uso falhou!", Color.GREEN)
+					ui.show_notificacao("Ataque bem-sucedido com CARIMBO! Sala %d com %d pontos vs Sala %d com %d pontos." % [id, pont_ia, selecionada.id, pont_pl], Color.GREEN)
 			elif Gerenciador.ia_carimbo == Gerenciador.Carimbos.TRADICIONAL:
 				ia_usou_carimbo = true
 				Gerenciador.ia_usou_ativa = true
@@ -251,14 +264,14 @@ func mover_atacar():
 			dono = Sala.Players.NENHUM
 			demissao_geral()
 			if ia_usou_carimbo:
-				ui.show_notificacao("Seu ataque foi um sucesso mesmo com o uso do CARIMBO do inimigo!", Color.GREEN)
+				ui.show_notificacao("Ataque bem-sucedido com CARIMBO! Sala %d com %d pontos vs Sala %d com %d pontos." % [id, pont_ia, selecionada.id, pont_pl], Color.GREEN)
 			else:
-				ui.show_notificacao("Seu ataque foi um sucesso!", Color.GREEN)
+				ui.show_notificacao("Ataque bem-sucedido! Sala %d com %d pontos vs Sala %d com %d pontos." % [id, pont_ia, selecionada.id, pont_pl], Color.GREEN)
 		else:
 			if ia_usou_carimbo:
-				ui.show_notificacao("Seu ataque foi falhou com o uso do CARIMBO inimigo", Color.RED)
+				ui.show_notificacao("Ataque falhou com CARIMBO... Sala %d com %d pontos vs Sala %d com %d pontos." % [id, pont_ia, selecionada.id, pont_pl], Color.RED)
 			else:
-				ui.show_notificacao("Seu ataque foi falhou...", Color.RED)
+				ui.show_notificacao("Seu ataque foi falhou... Sala %d com %d pontos vs Sala %d com %d pontos." % [id, pont_ia, selecionada.id, pont_pl], Color.RED)
 		
 	elif len(funcionarios) == 0 and len(selecionada.funcionarios) > 0: #movimento
 		
@@ -273,6 +286,7 @@ func mover_atacar():
 		Gerenciador.sala_selecionada.demissao_geral()
 		Gerenciador.movimentos_restantes = 0
 		Gerenciador.sala_selecionada.pontuacao = Gerenciador.sala_selecionada.calcula_pontos()
+		dono = Sala.Players.JOGADOR
 		pontuacao = calcula_pontos()
 		
 	Gerenciador.sala_selecionada.deselecionar()
@@ -284,15 +298,16 @@ func deselecionar():
 
 func turno_ia():
 	bloqueada_player = false
+	borda.hide()
 
 func demissao_geral():
 	funcionarios.clear()
 	dono = Players.NENHUM
-	
-	if ui.sala_menu.visible:
-		open_room()
 
 func open_room():
+	ui.show_sala(self)
+	
+func att_room():
 	var func_imagens = []
 	var utils = []
 	for fun in funcionarios:
@@ -301,10 +316,6 @@ func open_room():
 	for util in demandas:
 		utils.append("- " + util.nome + ": " + util.desc)
 		
-	ui.set_cartas(func_imagens)
-	ui.set_utilitarios(utils)
-	ui.set_combo(Gerenciador.combos[combo][0], Gerenciador.combos[combo][1])
-	
 	var donoSala
 	match dono:
 		Players.JOGADOR:
@@ -313,10 +324,15 @@ func open_room():
 			donoSala = "Sala inimiga"
 		Players.NENHUM:
 			donoSala = "Sala sem dono"
-	
-	ui.show_sala(donoSala, pontuacao, self)
+		
+	ui.set_cartas(func_imagens)
+	ui.set_utilitarios(utils)
+	ui.set_combo_prod_dono(Gerenciador.combos[combo][0], Gerenciador.combos[combo][1],\
+		pontuacao, donoSala)
 
 func insert_cartas_player():
+	if Gerenciador.turno != Gerenciador.JOGADOR: return
+	
 	if dono == Players.IA: 
 		ui.show_notificacao("BURRO! Essa sala não é sua!", Color.YELLOW)
 		return
@@ -339,10 +355,10 @@ func insert_cartas_player():
 			return
 	
 	if quantFunc + len(funcionarios) > 4: 
-		ui.show_notificacao("Esta sala já atingiu o limite de 4 funcionários", Color.YELLOW)
+		ui.show_notificacao("Limite de funcionários por sala atingido", Color.YELLOW)
 		return
 	if quantDemanda + len(demandas) > 3: 
-		ui.show_notificacao("Esta sala já atingiu o limite de 3 demandas", Color.YELLOW)
+		ui.show_notificacao("Limite de demandas por sala atingido", Color.YELLOW)
 		return
 	if quantDemanda > 0 and len(funcionarios) <= 0: 
 		ui.show_notificacao("Sala sem dono", Color.YELLOW)

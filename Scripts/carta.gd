@@ -13,6 +13,7 @@ var chosen: bool = false
 var originalPos: Vector3
 var originalRot: Vector3
 var destination: Vector3
+var chosenPos: Vector3
 var canAnimate: bool
 
 var camera
@@ -25,6 +26,7 @@ func set_positions():
 	originalPos = position
 	destination = position
 	originalRot = rotation
+	canAnimate = true
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and Gerenciador.turno == Gerenciador.JOGADOR:
@@ -37,9 +39,10 @@ func _input(event: InputEvent) -> void:
 			else:
 				chosen = true
 				Gerenciador.cartas_selecionadas.append(self)
-				canAnimate = true
 				rotation = originalRot
-				destination = originalPos + transform.basis.y.normalized() * 0.015
+				destination = originalPos + transform.basis.y.normalized() * 0.015 + \
+					transform.basis.z.normalized() * 0.015
+				chosenPos = destination
 				guarda_sfx.play()
 
 func _process(delta: float) -> void:
@@ -80,17 +83,17 @@ func _on_area_3d_mouse_entered() -> void:
 	
 	mouse_on_carta.play()
 	
-	if canAnimate == false:
-		set_positions()
-		canAnimate = true
-	
-	destination = originalPos + transform.basis.y.normalized() * 0.015 + \
+	destination = originalPos + transform.basis.y.normalized() * 0.01 + \
 		transform.basis.z.normalized() * 0.015
 	imagem.render_priority = 1
 
 func _on_area_3d_mouse_exited() -> void:
 	mouse_on = false
 	scale /= 1.25
-	if chosen == false: destination = originalPos
-	imagem.render_priority = 0
 	rotation = originalRot
+	if chosen == false: 
+		destination = originalPos
+	else:
+		destination = chosenPos - transform.basis.z.normalized() * 0.015
+	
+	imagem.render_priority = 0

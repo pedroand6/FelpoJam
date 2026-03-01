@@ -1,7 +1,10 @@
 extends Control
 
+@onready var soundfx = $notFx
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	soundfx.play()
 	await get_tree().create_timer(5).timeout
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2(0.5, 0.5), 0.25).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
