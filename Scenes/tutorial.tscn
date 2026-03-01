@@ -1437,6 +1437,7 @@ stretch_mode = 0
 
 [node name="Aviso" type="Control" parent="UI" unique_id=207554618 node_paths=PackedStringArray("titleTxt", "textTxt")]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 8
