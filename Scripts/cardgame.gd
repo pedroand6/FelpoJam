@@ -18,6 +18,7 @@ func _ready() -> void:
 	Gerenciador.jogador_carimbo = jogador_carimbo
 	Gerenciador.set_carimbos()
 	cartas_prontas.emit()
+	Gerenciador.turno = Gerenciador.JOGADOR
 
 func passa_round():
 	Gerenciador.round += 1

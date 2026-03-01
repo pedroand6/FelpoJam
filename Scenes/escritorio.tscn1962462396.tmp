@@ -8,12 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://b4ixk62rythl1" path="res://Scenes/sala.tscn" id="3_bnfms"]
 [ext_resource type="Texture2D" uid="uid://cyoateqd6l67x" path="res://Sprites/Inimigo/marco-2.png" id="3_mqynx"]
 [ext_resource type="Script" uid="uid://cvcjtngt0giu2" path="res://Scripts/inteligencia_artificial.gd" id="3_rwmm0"]
+[ext_resource type="Texture2D" uid="uid://c3xol5l84gjw8" path="res://Sprites/Inimigo/kenji-1.png" id="4_6llu4"]
 [ext_resource type="Texture2D" uid="uid://b32fxataqqojb" path="res://Sprites/Inimigo/marco-3.png" id="4_rlfot"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="5_0vwt7"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="5_2dyg3"]
 [ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="5_cuipy"]
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
+[ext_resource type="Texture2D" uid="uid://c5xquiwa3lot3" path="res://Sprites/Inimigo/kenji.2.png" id="5_nxmxj"]
 [ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="6_ls4sr"]
+[ext_resource type="Texture2D" uid="uid://ctqhjy7b73ors" path="res://Sprites/Inimigo/kenji-3.png" id="6_mqynx"]
 [ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
@@ -112,13 +115,13 @@ bg_color = Color(0, 0, 0, 1)
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_xl6bb")
 
-[node name="Inimigo" type="AnimatedSprite3D" parent="." unique_id=2138308492 node_paths=PackedStringArray("salas")]
+[node name="Inimigo" type="AnimatedSprite3D" parent="." unique_id=2138308492]
 transform = Transform3D(0.6758195, 0, 0, 0, 0.6095728, 0.23169734, 0, -0.2918099, 0.48400155, 0, -0.028710425, -2.5098386)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_gxhtr")
 animation = &"fase1"
 script = ExtResource("3_rwmm0")
-salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
+fases_sprites = Array[Texture2D]([ExtResource("4_6llu4"), ExtResource("5_nxmxj"), ExtResource("6_mqynx")])
 
 [node name="carimbo_p" type="AudioStreamPlayer" parent="Inimigo" unique_id=775402651]
 
@@ -1551,7 +1554,6 @@ volume_db = -1.781
 autoplay = true
 
 [node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=213352374]
-process_mode = 3
 stream = ExtResource("35_bo2yg")
 
 [connection signal="cartas_prontas" from="." to="Camera3D/Mao" method="_on_escritorio_cartas_prontas"]

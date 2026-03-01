@@ -46,8 +46,12 @@ func _process(delta: float) -> void:
 		enemy_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
 		player_port.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 		skip_round.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
-	else:
+	elif Gerenciador.turno == Gerenciador.IA:
 		enemy_port.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+		player_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
+		skip_round.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
+	else :
+		enemy_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
 		player_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
 		skip_round.self_modulate = Color(0.411, 0.411, 0.411, 1.0)
 
@@ -68,7 +72,6 @@ func _on_config_btn_button_down() -> void:
 func show_sala(thisSala) -> void:
 	sala = thisSala
 	popup_bg.show()
-	get_tree().paused = true
 	sala_menu.show()
 	sala_show = true
 	

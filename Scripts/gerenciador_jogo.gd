@@ -218,7 +218,11 @@ func desbloqueia_jogar():
 	descartes_restantes = 4
 
 func finaliza_jogo():
+	print("finalizou")
+	Gerenciador.turno = 3
+	
 	if jogador_dinheiro >= IA_dinheiro:
+		Gerenciador.cena += 1
 		vitoria.emit()
 	else:
 		derrota.emit()

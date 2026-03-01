@@ -1,4 +1,4 @@
-extends Sprite3D
+extends AnimatedSprite3D
 
 const TAMANHO_MAO = 7
 
@@ -15,7 +15,37 @@ signal acao_concluida
 signal jogou_carta(tipo_carta: Contrato.Tipos, sala_destino: int)
 
 func _ready():
-	pass
+	Gerenciador.round_muda.connect(muda_fase)
+	Gerenciador.vitoria.connect(perde_jogo)
+	
+func muda_fase():
+	match Gerenciador.round:
+		1:
+			var tween = get_tree().create_tween()
+			tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
+			await tween.finished
+			
+			animation = "fase1"
+			var tween2 = get_tree().create_tween()
+			tween2.tween_property(self, "modulate:a", 1, 0.5).set_ease(Tween.EASE_IN)
+		4:
+			var tween = get_tree().create_tween()
+			tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
+			await tween.finished
+			
+			animation = "fase2"
+			var tween2 = get_tree().create_tween()
+			tween2.tween_property(self, "modulate:a", 1, 0.5).set_ease(Tween.EASE_IN)
+			
+func perde_jogo():
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
+	
+	await tween.finished
+	
+	animation = "fase3"
+	var tween2 = get_tree().create_tween()
+	tween2.tween_property(self, "modulate:a", 1, 0.5).set_ease(Tween.EASE_IN)
 
 func avalia_estado(salas_atuais: Array[Sala], dinheiro: int, mao: Array[Contrato]):
 	var turnos_restantes = max(1, Gerenciador.total_rounds - Gerenciador.round + 1)

@@ -185,8 +185,10 @@ func _process(delta: float) -> void:
 		bonequinho.hide()
 	for i in range(len(funcionarios)):
 		bonequinhos[i].show()
-		if dono == Players.IA:
-			bonequinhos[i].modulate = Color(0xffffffff)
+		if dono == Players.IA and Gerenciador.ia_carimbo == Gerenciador.Carimbos.BRINQUEDO:
+			bonequinhos[i].modulate = Color(0xffcccbff)
+		elif dono == Players.IA and Gerenciador.ia_carimbo == Gerenciador.Carimbos.TRADICIONAL:
+			bonequinhos[i].modulate = Color(0xc78700ff)
 		elif funcionarios[i].area == "TI":
 			bonequinhos[i].modulate = Color(0x4a8acfff)
 		elif funcionarios[i].area == "RH":
@@ -248,6 +250,7 @@ func mover_atacar():
 				Gerenciador.ia_usou_ativa = true
 				if randf() <= 0.25:
 					ui.show_notificacao("Fuga com CARIMBO. Sala %d com %d pontos vs Sala %d com %d pontos." % [id, pont_ia, selecionada.id, pont_pl], Color.RED)
+					carimbo_sfx.play()
 					return
 				else:
 					ui.show_notificacao("Ataque bem-sucedido com CARIMBO! Sala %d com %d pontos vs Sala %d com %d pontos." % [id, pont_ia, selecionada.id, pont_pl], Color.GREEN)

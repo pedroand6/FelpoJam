@@ -112,13 +112,12 @@ bg_color = Color(0, 0, 0, 1)
 [node name="Escritorio" type="Node3D" unique_id=1768756136]
 script = ExtResource("1_xl6bb")
 
-[node name="Inimigo" type="AnimatedSprite3D" parent="." unique_id=2138308492 node_paths=PackedStringArray("salas")]
+[node name="Inimigo" type="AnimatedSprite3D" parent="." unique_id=2138308492]
 transform = Transform3D(0.6758195, 0, 0, 0, 0.6095728, 0.23169734, 0, -0.2918099, 0.48400155, 0, -0.028710425, -2.5098386)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_gxhtr")
 animation = &"fase1"
 script = ExtResource("3_rwmm0")
-salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 
 [node name="carimbo_p" type="AudioStreamPlayer" parent="Inimigo" unique_id=775402651]
 
@@ -1551,7 +1550,6 @@ volume_db = -1.781
 autoplay = true
 
 [node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=213352374]
-process_mode = 3
 stream = ExtResource("35_bo2yg")
 
 [connection signal="cartas_prontas" from="." to="Camera3D/Mao" method="_on_escritorio_cartas_prontas"]

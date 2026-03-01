@@ -21,7 +21,7 @@ var textoAnimando = false
 func _ready() -> void:
 	Gerenciador.round_muda.connect(dialogo_round)
 	Gerenciador.vitoria.connect(dialogo_final)
-	if Gerenciador.cena == 2:
+	if Gerenciador.cena == 1:
 		dialogos = le_json("res://Dialogues/ingame01.json")
 		nomeCena = "gutenberg"
 	else:
@@ -30,6 +30,7 @@ func _ready() -> void:
 	atualiza_cena()
 
 func dialogo_final() -> void:
+	
 	passa_dialogo()
 
 func dialogo_round() -> void:
