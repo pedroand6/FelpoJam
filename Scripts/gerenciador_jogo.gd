@@ -226,17 +226,14 @@ func calcula_combo(funcionarios : Array[Contrato]):
 		combinacoes.append(4) #complo
 	
 	niveis.sort()
-	
-	if len(niveis) >= 4 and 0 in niveis:
-		for i in range(4):
-			if niveis[i] == 0 and i > 0:
-				niveis[i] = niveis[i-1] + 1
-			elif niveis[i] == 0:
-				niveis[i] = niveis[i+1] - 1
-	
-	var primeiro = niveis.front()
-				
+	print(niveis)
+	if 0 in niveis and len(niveis) == 4:
+		calcula_coringa(niveis)
+		
 	niveis.sort()
+	print(niveis)
+		
+	var primeiro = niveis.front()
 	
 	if niveis == range(primeiro, primeiro+4, 1):
 		desigualdade =  true
@@ -246,9 +243,16 @@ func calcula_combo(funcionarios : Array[Contrato]):
 		if primeiro == 6 and not tem_coringa:
 			combinacoes.append(12) #happy hour
 	
-	#print(combinacoes)
-	#print(niveisIguais)
 	return combinacoes.max()
+	
+func calcula_coringa(niveis):
+	niveis.erase(0)
+	for i in range(len(niveis) - 1):
+		if niveis[i] != niveis[i+1] - 1:
+			niveis.insert(i, niveis[i+1] - 1)
+			return
+			
+	niveis.insert(len(niveis), niveis[len(niveis)-1]+1)
 
 func desbloqueia_jogar():
 	comeca_turno.emit()
