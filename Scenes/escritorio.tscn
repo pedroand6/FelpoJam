@@ -56,23 +56,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_35j2j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_k8hxm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_45dlw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_k8hxm")
-}],
-"loop": true,
-"name": &"fase1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("2_kyrxs")
 }, {
 "duration": 1.0,
@@ -83,6 +66,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_nxmxj")
+}],
+"loop": true,
+"name": &"fase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_35j2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k8hxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_45dlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k8hxm")
 }],
 "loop": true,
 "name": &"fase2",
@@ -156,6 +156,8 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_x3ogh")
 animation = &"fase1"
 autoplay = "fase1"
+frame = 3
+frame_progress = 0.98138225
 script = ExtResource("3_rwmm0")
 salas = [NodePath("../Salas/Sala1"), NodePath("../Salas/Sala2"), NodePath("../Salas/Sala3"), NodePath("../Salas/Sala4"), NodePath("../Salas/Sala5"), NodePath("../Salas/Sala6"), NodePath("../Salas/Sala7"), NodePath("../Salas/Sala8")]
 

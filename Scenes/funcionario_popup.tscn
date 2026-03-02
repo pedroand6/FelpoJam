@@ -7,6 +7,7 @@
 script = ExtResource("1_3o1q4")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=309148208]
-billboard = 1
+sorting_offset = 3.0
+texture_filter = 4
 text = "Func"
 font = ExtResource("2_gh13p")

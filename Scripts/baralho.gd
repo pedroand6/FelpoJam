@@ -3,6 +3,8 @@ extends Control
 @onready var funcs: VBoxContainer = $Funcs/Funcionarios
 @onready var utils: HBoxContainer = $Util
 @onready var coringas: HBoxContainer = $Funcs/Coringas
+@onready var escritorio = $"../../../../.."
+@onready var mao = $"../../../../../Camera3D/Mao"
 
 @onready var funcs_path := "res://Sprites/Cartas/ContratosSimplificados/"
 @onready var utils_path := "res://Assets/Contratos/Gerais/"
@@ -29,9 +31,14 @@ var lista_entries: Array[entry_baralho] = []
 
 func _ready() -> void:
 	Gerenciador.compra_carta.connect(_modula_cartas)
+	escritorio.cartas_prontas.connect(append_imgs)
+
+func append_imgs():
 	append_funcionarios()
 	append_utils()
 	append_coringas()
+	for carta in mao.cartas_mao:
+		_modula_cartas(carta.contrato)
 
 func append_funcionarios() -> void:
 	var funcionarios_imgs: Array[String] = ler_imagens(funcs_path, true)
@@ -57,7 +64,6 @@ func append_utils() -> void:
 	if Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BASICO:
 		append_demanda(Gerenciador.demandas_basico, rect_list, rect_count)
 	elif Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
-		print("aaa")
 		append_demanda(Gerenciador.demandas_brinquedo, rect_list, rect_count)
 	else:
 		append_demanda(Gerenciador.demandas_brinquedo, rect_list, rect_count)

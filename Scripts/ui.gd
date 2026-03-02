@@ -26,6 +26,7 @@ var sala : Sala
 @onready var player_port := $PlayerSide/Portrait
 @onready var enemy_port := $EnemySide/Portrait
 @onready var skip_round := $PlayerSide/PularBtn
+@export var tutorial : Control = null
 
 @onready var btn_click_sfx = $btn_click
 var list_btn_click = ["res://Audio/SFX/CLIQUE BOTÕES 1.wav", "res://Audio/SFX/CLIQUE BOTÕES 2.wav"]
@@ -65,7 +66,6 @@ func _process(delta: float) -> void:
 
 func _on_baralho_button_down() -> void:
 	popup_bg.show()
-	get_tree().paused = true
 	baralho_list.show()
 	baralho_show = true
 	click_sfx()
@@ -78,6 +78,7 @@ func _on_config_btn_button_down() -> void:
 	click_sfx()
 
 func show_sala(thisSala) -> void:
+	if tutorial != null and tutorial.visible: return
 	sala = thisSala
 	popup_bg.show()
 	sala_menu.show()

@@ -86,6 +86,41 @@ func _ready():
 	carrega_demandas(demandasBasPath, demandas_basico)
 	carrega_demandas(demandasBrinqPath, demandas_brinquedo)
 	carrega_demandas(demandasTradPath, demandas_tradicional)
+	
+	var pilha_carta: Dictionary[String, Array]
+	
+	var presidente = Contrato.new(Contrato.Tipos.FUNCIONARIO, CARGOS[9]["nome"], CARGOS[9]["custo"], 
+		load("res://Sprites/Cartas/9-presidente.png"), "", "Coringa", 9, CARGOS[9]["prod"])
+	var filho_dono = Contrato.new(Contrato.Tipos.FUNCIONARIO, CARGOS[0]["nome"], CARGOS[0]["custo"],
+	 	load("res://Sprites/Cartas/0-filhododono.png"), "", "Coringa", 0, CARGOS[0]["prod"])
+	for area in AREAS:
+		pilha_carta[area] = []
+		for cargo in range(1, 9):
+			var contratos_paths = carrega_contratos("res://Sprites/Cartas/%s/" % area)
+			var temp_contrato = Contrato.new(Contrato.Tipos.FUNCIONARIO, CARGOS[cargo]["nome"], CARGOS[cargo]["custo"],
+				contratos_paths[cargo-1], "", area, cargo, CARGOS[cargo]["prod"])
+			pilha_carta[area].append(temp_contrato)
+		pilha_carta[area].append(presidente)
+		pilha_carta[area].append(filho_dono)
+	
+	#testes insanos
+	##par
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["RH"][0], pilha_carta["Marketing"][1],pilha_carta["Financeiro"][3]])])
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["RH"][0], pilha_carta["Marketing"][1]])])
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["RH"][0]])])
+	##trio
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["RH"][0], pilha_carta["Marketing"][0], pilha_carta["Financeiro"][3]])])
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["RH"][0], pilha_carta["Marketing"][0]])])
+	##complo
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["RH"][0], pilha_carta["Marketing"][1],pilha_carta["Financeiro"][1]])])
+	##reuniao
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["TI"][4], pilha_carta["TI"][2],pilha_carta["TI"][3]])])
+	##juntos
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["RH"][1], pilha_carta["Marketing"][1],pilha_carta["Financeiro"][1]])])
+	##desigualdade
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["TI"][1], pilha_carta["TI"][2],pilha_carta["TI"][3]])])
+	##happy hour
+	#print(combos[calcula_combo([pilha_carta["TI"][9], pilha_carta["TI"][6], pilha_carta["TI"][7],pilha_carta["TI"][8]])])
 
 func set_carimbos():
 	ia_baralho = gera_baralho(ia_carimbo)
@@ -168,34 +203,42 @@ func calcula_combo(funcionarios : Array[Contrato]):
 		for newFunc in funcionarios:
 			if newFunc.area == fun.area or newFunc.area == "Coringa":
 				area_igual += 1
-			if newFunc.cargo == fun.cargo or newFunc.cargo == 0:
+			if newFunc.cargo == fun.cargo or newFunc.cargo == 0 or fun.cargo == 0:
 				nivel_igual += 1
 				
 		if area_igual == 4 and len(funcionarios) == 4:
 			reuniao = true
 			combinacoes.append(6) #reuniao do setor
-			break
 		
 		niveisIguais.append(nivel_igual)
-		match nivel_igual:
-			2: combinacoes.append(2) #parceria
-			3: combinacoes.append(3) #trio parada dura
-			4: combinacoes.append(8) #juntos e misturados
+		
+	if 2 in niveisIguais:
+		combinacoes.append(2) #parceria
 	
-	if niveisIguais.all(func(e): return e == 2) and len(funcionarios) == 4:
+	if niveisIguais.all(func(e): return e == 4):
+		combinacoes.append(8) #juntos e misturados
+		
+	niveisIguais.sort()
+	if niveisIguais.all(func(e): return e == 3) or niveisIguais == [1, 3, 3, 3]:
+		combinacoes.append(3) #trio
+	
+	if niveisIguais == [2, 3, 3, 4] or (niveisIguais.all(func(e): return e == 2) and len(niveis) == 4):
 		combinacoes.append(4) #complo
 	
 	niveis.sort()
-	var primeiro = niveis.front()
 	
-	if len(niveis) > 1:
-		for i in range(len(niveis)):
+	if len(niveis) >= 4 and 0 in niveis:
+		for i in range(4):
 			if niveis[i] == 0 and i > 0:
 				niveis[i] = niveis[i-1] + 1
 			elif niveis[i] == 0:
 				niveis[i] = niveis[i+1] - 1
 	
-	if niveis == range(primeiro, primeiro + 3, 1):
+	var primeiro = niveis.front()
+				
+	niveis.sort()
+	
+	if niveis == range(primeiro, primeiro+4, 1):
 		desigualdade =  true
 		
 	if desigualdade and reuniao:
@@ -234,6 +277,8 @@ func muda_cena(cena_sai: String, cena_entra: String) -> void:
 	cena_saindo.call_deferred("free")
 	var cena_entrando = load(cena_entra)
 	var nova_cena = cena_entrando.instantiate()
+	if cena == 2:
+		turno = 3
 	root.add_child(nova_cena)
 
 func muda_volume(volume: float) -> void:
