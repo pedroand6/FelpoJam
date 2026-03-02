@@ -28,6 +28,7 @@ func _ready() -> void:
 	if get_tree().paused: get_tree().paused = false
 	Gerenciador.set_script(null)
 	Gerenciador.set_script(preload("res://Scripts/gerenciador_jogo.gd"))
+	Gerenciador._ready()
 	ult_mudan = AudioServer.get_bus_volume_linear(0)
 	vol_slider.value = ult_mudan
 	check_tela.button_pressed = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN

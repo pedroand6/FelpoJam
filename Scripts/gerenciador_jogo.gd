@@ -86,6 +86,7 @@ func _ready():
 	carrega_demandas(demandasBasPath, demandas_basico)
 	carrega_demandas(demandasBrinqPath, demandas_brinquedo)
 	carrega_demandas(demandasTradPath, demandas_tradicional)
+	print(demandas_gerais)
 
 func set_carimbos():
 	ia_baralho = gera_baralho(ia_carimbo)

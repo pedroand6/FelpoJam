@@ -51,7 +51,7 @@
 [ext_resource type="AudioStream" uid="uid://dci2kbp0ktyaf" path="res://Audio/Msc/Primeiro Vilão.ogg" id="41_ma0ss"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="42_j8v3e"]
 [ext_resource type="Script" uid="uid://baco04a5ko4f7" path="res://Scripts/tutorial.gd" id="47_pql20"]
-[ext_resource type="Shader" uid="uid://bkqn2jpsybo6o" path="res://Assets/tutorial.gdshader" id="47_rp1ed"]
+[ext_resource type="Shader" path="res://Assets/tutorial.gdshader" id="47_rp1ed"]
 [ext_resource type="Texture2D" uid="uid://dsbipx7g2nach" path="res://Sprites/UI/circle.png" id="48_bbpun"]
 [ext_resource type="Texture2D" uid="uid://de0ph1p6bqybl" path="res://Sprites/Icons/Silvio, O Presidente/silvio-retrato-gargalhando.png" id="49_pql20"]
 
