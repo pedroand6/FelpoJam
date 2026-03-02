@@ -7,6 +7,7 @@ extends Control
 @onready var funcs_path := "res://Sprites/Cartas/ContratosSimplificados/"
 @onready var utils_path := "res://Assets/Contratos/Gerais/"
 @onready var utils_path2 := "res://Assets/Contratos/Basico/"
+@onready var utils_path3 := "res://Assets/Contratos/Brinquedo/"
 
 class entry_baralho:
 	extends Object
@@ -56,6 +57,7 @@ func append_utils() -> void:
 	if Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BASICO:
 		append_demanda(Gerenciador.demandas_basico, rect_list, rect_count)
 	elif Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
+		print("aaa")
 		append_demanda(Gerenciador.demandas_brinquedo, rect_list, rect_count)
 	else:
 		append_demanda(Gerenciador.demandas_brinquedo, rect_list, rect_count)

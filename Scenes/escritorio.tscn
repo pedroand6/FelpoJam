@@ -1410,6 +1410,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=2024061473]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1423,6 +1424,33 @@ grow_vertical = 2
 scale = Vector2(0.4, 0.4)
 pivot_offset = Vector2(960, 540)
 texture = ExtResource("35_nxmxj")
+
+[node name="Coringa" type="Label" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=769935648]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 761.93304
+offset_top = 333.22714
+offset_right = -36.67395
+offset_bottom = 388.8704
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "- Coringa de área
+- Coringa de cargo"
+
+[node name="Coringa2" type="Label" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=869906970]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 524.81696
+offset_top = 333.85944
+offset_right = -273.79004
+offset_bottom = 389.5027
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "- Coringa de área
+"
+horizontal_alignment = 2
 
 [node name="Infos" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=752783506]
 visible = false
@@ -1442,6 +1470,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Infos" unique_id=307190602]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

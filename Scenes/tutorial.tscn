@@ -51,9 +51,10 @@
 [ext_resource type="AudioStream" uid="uid://dci2kbp0ktyaf" path="res://Audio/Msc/Primeiro Vilão.ogg" id="41_ma0ss"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="42_j8v3e"]
 [ext_resource type="Script" uid="uid://baco04a5ko4f7" path="res://Scripts/tutorial.gd" id="47_pql20"]
-[ext_resource type="Shader" path="res://Assets/tutorial.gdshader" id="47_rp1ed"]
+[ext_resource type="Shader" uid="uid://bkqn2jpsybo6o" path="res://Assets/tutorial.gdshader" id="47_rp1ed"]
 [ext_resource type="Texture2D" uid="uid://dsbipx7g2nach" path="res://Sprites/UI/circle.png" id="48_bbpun"]
 [ext_resource type="Texture2D" uid="uid://de0ph1p6bqybl" path="res://Sprites/Icons/Silvio, O Presidente/silvio-retrato-gargalhando.png" id="49_pql20"]
+[ext_resource type="Script" uid="uid://y06j12aew0lo" path="res://Scripts/musica.gd" id="54_44pwq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxhtr"]
 animations = [{
@@ -1398,14 +1399,14 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="Prancheta" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=1282809754]
+[node name="Prancheta" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=978131912]
 visible = false
 anchors_preset = 0
 offset_right = 911.7904
 offset_bottom = 589.94476
 theme = ExtResource("15_57ryo")
 
-[node name="Label" type="Label" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=530778451]
+[node name="Label" type="Label" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=1170058114]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -1415,7 +1416,7 @@ text = "Combinações, Áreas e Cargos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=1546639999]
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=956943445]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -1430,6 +1431,33 @@ grow_vertical = 2
 scale = Vector2(0.4, 0.4)
 pivot_offset = Vector2(960, 540)
 texture = ExtResource("35_ilalk")
+
+[node name="Coringa" type="Label" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=355486243]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 761.93304
+offset_top = 333.22714
+offset_right = -36.67395
+offset_bottom = 388.8704
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "- Coringa de área
+- Coringa de cargo"
+
+[node name="Coringa2" type="Label" parent="UI/Popup/Caixa/Frente/Prancheta" unique_id=72961939]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 524.81696
+offset_top = 333.85944
+offset_right = -273.79004
+offset_bottom = 389.5027
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+text = "- Coringa de área
+"
+horizontal_alignment = 2
 
 [node name="Infos" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=1881289666]
 visible = false
@@ -1449,6 +1477,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Infos" unique_id=1897012955]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1659,6 +1688,7 @@ alignment = 2
 [node name="btn_click" type="AudioStreamPlayer" parent="UI" unique_id=146307615]
 
 [node name="Tutorial" type="Control" parent="UI" unique_id=811936837]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1923.0
@@ -1672,10 +1702,10 @@ copy_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 1841.0
-offset_bottom = 992.0
+offset_left = -12553.0
+offset_top = -7480.0
+offset_right = 14814.861
+offset_bottom = 8956.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.91764706)
@@ -1739,6 +1769,7 @@ process_mode = 3
 stream = ExtResource("41_ma0ss")
 volume_db = -1.781
 autoplay = true
+script = ExtResource("54_44pwq")
 
 [node name="mousehovermenu" type="AudioStreamPlayer" parent="." unique_id=213352374]
 process_mode = 3

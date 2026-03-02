@@ -86,7 +86,6 @@ func _ready():
 	carrega_demandas(demandasBasPath, demandas_basico)
 	carrega_demandas(demandasBrinqPath, demandas_brinquedo)
 	carrega_demandas(demandasTradPath, demandas_tradicional)
-	print(demandas_gerais)
 
 func set_carimbos():
 	ia_baralho = gera_baralho(ia_carimbo)
@@ -133,7 +132,6 @@ func gera_baralho(carimbo : Carimbos) -> Array[Contrato]:
 	pilha_carta.append(filho_dono)
 	
 	gera_demandas(demandas_gerais, pilha_carta)
-	
 	match carimbo:
 		Carimbos.BASICO:
 			gera_demandas(demandas_basico, pilha_carta)
@@ -162,7 +160,7 @@ func calcula_combo(funcionarios : Array[Contrato]):
 	combinacoes.append(1) # sozinho
 	
 	for fun in funcionarios:
-		if fun.area == "Coringa": tem_coringa = true
+		if fun.area == "Coringa" and fun.cargo == 0: tem_coringa = true
 		
 		niveis.append(fun.cargo)
 		var area_igual = 0

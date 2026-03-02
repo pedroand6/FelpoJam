@@ -36,6 +36,7 @@ func comprar_mao():
 		compra_uma()
 
 func compra_uma():
+	if(len(Gerenciador.jogador_baralho) <= 0): return
 	var carta_topo: Contrato = Gerenciador.jogador_baralho.pop_back()
 	var instance = node_carta.instantiate()
 	
@@ -77,18 +78,18 @@ func _on_descarte_btn_button_down() -> void:
 		descarta(true)
 
 func descarta(compra : bool):
-	var selecionadas = Gerenciador.cartas_selecionadas.duplicate()
+	var selecionadas = Gerenciador.cartas_selecionadas.duplicate(true)
 	if (Gerenciador.descartes_restantes - len(selecionadas)) < 0 and compra:
 		ui.show_notificacao("Limite de descartes ultrapassado!", Color.YELLOW) 
 		return
 	
 	if compra:
-		for carta in Gerenciador.cartas_selecionadas:
+		for carta in selecionadas:
+			animando_descarte = true
 			descarte_sfx.play()
 			var tw = create_tween()
 			tw.tween_property(carta, "position", Vector3(10.0, carta.position.y, carta.position.z), 2.0)
 			tw.tween_callback(carta.queue_free)
-			animando_descarte = true
 			await descarte_sfx.finished
 			
 	animando_descarte = false
