@@ -10,7 +10,15 @@ const wait_time: float = 4.5
 
 #highlights
 @onready var mask := $BackBufferCopy/Mask
-
+@onready var cartas := $"../Cartas_pos"
+@onready var salas := $"../Salas_pos"
+@onready var rodadas := $"../RodadaContador"
+@onready var carimbos := $"../Carimbo_pos"
+@onready var descarte := $"../PlayerSide/DescarteBtn"
+@onready var prancheta := $"../EnemySide/Prancheta"
+@onready var combos := $"../PlayerSide/Baralho"
+@onready var turno := $"../PlayerSide/PularBtn"
+@onready var info := $"../EnemySide/InfoBtn"
 
 var dialogos
 var nomeAtual: String
@@ -63,11 +71,39 @@ func atualiza_cena():
 	show()
 	Gerenciador.turno = 3
 	mostra_texto(dialogos[nomeCena][cenaAtual][dialogoAtual])
+	var tween = create_tween()
+	tween.set_parallel(true)
 	
 	if cenaAtual == 0 and dialogoAtual == 0:
-		mask.set_position(Vector2(1397, 796))
-	elif cenaAtual == 0 and dialogoAtual == 1:
-		mask.set_position(Vector2(200, 150))
+		mask.set_position(salas.position)
+		mask.size = salas.size
+	elif cenaAtual == 0 and dialogoAtual == 3:
+		tween.tween_property(mask, "global_position", cartas.global_position, 0.75)
+		tween.tween_property(mask, "size", cartas.size, 0.75)
+	elif cenaAtual == 0 and dialogoAtual == 4:
+		tween.tween_property(mask, "global_position", descarte.global_position, 0.75)
+		tween.tween_property(mask, "size", descarte.size, 0.75)
+	elif cenaAtual == 0 and dialogoAtual == 5:
+		tween.tween_property(mask, "global_position", rodadas.global_position, 0.75)
+		tween.tween_property(mask, "size", rodadas.size, 0.75)
+	elif cenaAtual == 0 and dialogoAtual == 6:
+		tween.tween_property(mask, "global_position", turno.global_position, 0.75)
+		tween.tween_property(mask, "size", turno.size, 0.75)
+	elif cenaAtual == 1 and dialogoAtual == 0:
+		tween.tween_property(mask, "global_position", salas.global_position, 0.75)
+		tween.tween_property(mask, "size", salas.size, 0.75)
+	elif cenaAtual == 1 and dialogoAtual == 5:
+		tween.tween_property(mask, "global_position", carimbos.global_position, 0.75)
+		tween.tween_property(mask, "size", carimbos.size, 0.75)
+	elif cenaAtual == 2 and dialogoAtual == 0:
+		tween.tween_property(mask, "global_position", prancheta.global_position, 0.75)
+		tween.tween_property(mask, "size", prancheta.size, 0.75)
+	elif cenaAtual == 2 and dialogoAtual == 1:
+		tween.tween_property(mask, "global_position", combos.global_position, 0.75)
+		tween.tween_property(mask, "size", combos.size, 0.75)
+	elif cenaAtual == 2 and dialogoAtual == 2:
+		tween.tween_property(mask, "global_position", info.global_position, 0.75)
+		tween.tween_property(mask, "size", info.size, 0.75)
 
 func mostra_texto(dialogoInfo: Dictionary) -> void:
 	if dialogoInfo["nome"] == "Silvio, O Presidente":

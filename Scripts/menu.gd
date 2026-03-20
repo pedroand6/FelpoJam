@@ -112,3 +112,10 @@ func _on_iniciar_mouse_entered() -> void:
 func click_sfx():
 	btn_click_sfx.stream = load(list_btn_click[randi() % 2])
 	btn_click_sfx.play()
+
+
+func _on_arcade_button_down() -> void:
+	init_sound.play()
+	fade_out.show()
+	await fade_out.fade(1.0)
+	Gerenciador.muda_cena("Menu", "res://Scenes/arcade.tscn")

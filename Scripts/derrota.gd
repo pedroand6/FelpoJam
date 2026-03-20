@@ -19,6 +19,9 @@ func _on_button_1_button_down() -> void:
 	if Gerenciador.cena == 3:
 		Gerenciador.muda_cena("Derrota", "res://Scenes/escritorio.tscn")
 		return
+	elif Gerenciador.cena == 1:
+		Gerenciador.muda_cena("Derrota", "res://Scenes/arcade.tscn")
+		return
 	Gerenciador.muda_cena("Derrota", "res://Scenes/tutorial.tscn")
 
 func _on_button_2_button_down() -> void:

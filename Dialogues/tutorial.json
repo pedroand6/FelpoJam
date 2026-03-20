@@ -29,7 +29,12 @@
 	  {
 		"icone": "chorando",
 		"nome": "Silvio, O Presidente",
-		"texto": "Falando em rodadas, aqui você pode acompanhar a duração total do dia. Cada candidato possui um turno por rodada e recebe R$ 25 de bônus ao final da rodada. Quando tiver terminado todas as suas ações, você pode passar o seu turno."
+		"texto": "Falando em rodadas, aqui você pode acompanhar a duração total do dia. Cada candidato possui um turno por rodada e recebe R$ 25 de bônus ao final da rodada."
+	  },
+	  {
+		"icone": "chorando",
+		"nome": "Silvio, O Presidente",
+		"texto": "Quando tiver terminado todas as suas ações, você pode passar o seu turno por aqui."
 	  },
 	],
 	[

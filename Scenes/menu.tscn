@@ -103,7 +103,17 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_1rerr")
 theme_override_font_sizes/font_size = 32
-text = "Jogar"
+text = "Modo História"
+flat = true
+alignment = 0
+
+[node name="Arcade" type="Button" parent="Menu" unique_id=77061298]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_1rerr")
+theme_override_font_sizes/font_size = 32
+text = "Arcade"
 flat = true
 alignment = 0
 
@@ -245,6 +255,7 @@ stream = ExtResource("8_q3rjx")
 
 [connection signal="button_down" from="Menu/Iniciar" to="." method="_on_iniciar_button_down"]
 [connection signal="mouse_entered" from="Menu/Iniciar" to="." method="_on_iniciar_mouse_entered"]
+[connection signal="button_down" from="Menu/Arcade" to="." method="_on_arcade_button_down"]
 [connection signal="button_down" from="Menu/Opt" to="." method="_on_opt_button_down"]
 [connection signal="mouse_entered" from="Menu/Opt" to="." method="_on_opt_mouse_entered"]
 [connection signal="button_down" from="Menu/Cred" to="." method="_on_cred_button_down"]

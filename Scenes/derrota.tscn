@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bwrwdgv74vri5"]
+[gd_scene format=3 uid="uid://c810dphivlfid"]
 
 [ext_resource type="Texture2D" uid="uid://dgyq8ut14ebci" path="res://Sprites/CARIMBADO.png" id="1_5k4t0"]
-[ext_resource type="Script" uid="uid://clecmasdh7e38" path="res://Scripts/derrota.gd" id="1_s2oks"]
+[ext_resource type="Script" path="res://Scripts/derrota.gd" id="1_s2oks"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="2_l0g73"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="3_s2oks"]
 [ext_resource type="Texture2D" uid="uid://bkh8g2hmcouq" path="res://Sprites/UI/icone-checar.png" id="4_l0g73"]

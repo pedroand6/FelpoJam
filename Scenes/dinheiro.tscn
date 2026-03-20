@@ -7,6 +7,7 @@
 script = ExtResource("1_dksyl")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1051443238]
+transform = Transform3D(2.3481927, 0, 0, 0, 0.4696385, 0, 0, 0, 0.7185468, 0, 0, 0)
 sorting_offset = 3.0
 texture_filter = 4
 text = "R$"

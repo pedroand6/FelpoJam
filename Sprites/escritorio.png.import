@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nv4y5dkh31xu"
-path.s3tc="res://.godot/imported/escritorio.png-a933942e6a4d1b4ae832e3a27978f4f7.s3tc.ctex"
+path="res://.godot/imported/escritorio.png-a933942e6a4d1b4ae832e3a27978f4f7.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/escritorio.png"
-dest_files=["res://.godot/imported/escritorio.png-a933942e6a4d1b4ae832e3a27978f4f7.s3tc.ctex"]
+dest_files=["res://.godot/imported/escritorio.png-a933942e6a4d1b4ae832e3a27978f4f7.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,9 +23,9 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=0
+roughness/mode=1
 roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1

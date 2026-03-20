@@ -195,3 +195,12 @@ func show_notificacao(text, cor = Color.WHITE):
 func click_sfx():
 	btn_click_sfx.stream = load(list_btn_click[randi() % 2])
 	btn_click_sfx.play()
+
+
+func _on_desistir_btn_button_down() -> void:
+	var desistiu = await show_aviso(
+		"Desistir desta partida?", 
+		"Você quer mesmo desistir da partida atual e tentar jogar novamente?"
+	)
+	if desistiu: 
+		Gerenciador.muda_cena("Escritorio", "res://Scenes/derrota.tscn")

@@ -43,10 +43,13 @@ func perde_jogo():
 	tween.tween_property(self, "modulate:a", 0, 0.5).set_ease(Tween.EASE_OUT)
 	
 	await tween.finished
-	
 	animation = "fase3"
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property(self, "modulate:a", 1, 0.5).set_ease(Tween.EASE_IN)
+	
+	await tween2.finished
+	if Gerenciador.cena == 1:
+		Gerenciador.muda_cena(get_parent().get_parent().name, "res://Scenes/menu.tscn")
 
 func avalia_estado(salas_atuais: Array[Sala], dinheiro: int, mao: Array[Contrato]):
 	var turnos_restantes = max(1, Gerenciador.total_rounds - Gerenciador.round + 1)

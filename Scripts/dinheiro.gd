@@ -11,7 +11,6 @@ func _ready() -> void:
 func sumir() -> void:
 	var tween = create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(label, "scale", Vector3(1.2, 1.2, 1.2), time)
 	tween.tween_property(label, "position", position + Vector3(0, 0.2, 0), time).set_ease(tween.EASE_OUT)
 	tween.set_parallel(false)
 	tween.tween_property(label, "modulate:a", 0.0, time / 2)

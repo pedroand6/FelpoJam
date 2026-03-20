@@ -19,6 +19,8 @@ var cenaAtual = 0
 var textoAnimando = false
 
 func _ready() -> void:
+	if Gerenciador.cena == 1: return
+	
 	Gerenciador.round_muda.connect(dialogo_round)
 	Gerenciador.vitoria.connect(dialogo_final)
 	if Gerenciador.cena != 2:
