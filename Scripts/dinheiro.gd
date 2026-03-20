@@ -6,7 +6,7 @@ var quant: int = 0
 @onready var label: Label3D = $Label3D
 
 func _ready() -> void:
-	label.modulate = Color(0.173, 0.58, 0.18, 1.0)
+	label.modulate = Color(0.219, 0.765, 0.232, 1.0)
 
 func sumir() -> void:
 	var tween = create_tween()

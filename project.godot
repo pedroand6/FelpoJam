@@ -22,6 +22,13 @@ config/icon="uid://d1a1ik4frqstg"
 
 Gerenciador="*uid://5ym4v7qdd4an"
 
+[beautifier]
+
+enable_random_theme=Signal()
+default_settings={
+"rendering/environment/defaults/default_clear_color": Color(0, 0, 0, 1)
+}
+
 [debug]
 
 gdscript/warnings/integer_division=0
@@ -37,6 +44,10 @@ window/stretch/aspect="expand"
 [editor]
 
 export/convert_text_resources_to_binary=false
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_beautifier/plugin.cfg")
 
 [input]
 

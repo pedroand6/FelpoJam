@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ciifmwwrc18b6"
-path="res://.godot/imported/PixelPleasing.ttf-d293e3b8867e05bfd81024c8f79261cf.fontdata"
+path="res://.godot/imported/PixelPleasing.ttf-13f78ab3a5e76192719d544f7a246b6f.fontdata"
 
 [deps]
 
-source_file="res://Fonts/PixelPleasing.ttf"
-dest_files=["res://.godot/imported/PixelPleasing.ttf-d293e3b8867e05bfd81024c8f79261cf.fontdata"]
+source_file="res://addons/Fonts/PixelPleasing.ttf"
+dest_files=["res://.godot/imported/PixelPleasing.ttf-13f78ab3a5e76192719d544f7a246b6f.fontdata"]
 
 [params]
 

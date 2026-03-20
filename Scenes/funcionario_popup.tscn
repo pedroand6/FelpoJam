@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyfspsmfotqrr"]
 
 [ext_resource type="Script" uid="uid://cc1gob0mts1cj" path="res://Scripts/funcionario_popup.gd" id="1_3o1q4"]
-[ext_resource type="FontFile" uid="uid://ciifmwwrc18b6" path="res://Fonts/PixelPleasing.ttf" id="2_gh13p"]
+[ext_resource type="FontFile" uid="uid://ciifmwwrc18b6" path="res://addons/Fonts/PixelPleasing.ttf" id="2_gh13p"]
 
 [node name="FuncionarioPopup" type="Node3D" unique_id=976814027]
 script = ExtResource("1_3o1q4")

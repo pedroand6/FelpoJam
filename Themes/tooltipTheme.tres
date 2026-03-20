@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bo8ua54i5icg7"]
 
-[ext_resource type="FontFile" uid="uid://ciifmwwrc18b6" path="res://Fonts/PixelPleasing.ttf" id="1_7wnwk"]
+[ext_resource type="FontFile" uid="uid://ciifmwwrc18b6" path="res://addons/Fonts/PixelPleasing.ttf" id="1_7wnwk"]
 
 [resource]
 default_font = ExtResource("1_7wnwk")

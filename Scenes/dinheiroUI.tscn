@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://csnfliefgbsxj"]
+
+[ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="1_c22ck"]
+[ext_resource type="Script" uid="uid://c5leptk8moyit" path="res://Scripts/moneyEffect.gd" id="2_v3q4e"]
+[ext_resource type="Script" uid="uid://ps6dxuw7461l" path="res://Scripts/dinheiro_ui.gd" id="2_wutog"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_kd4ut"]
+script = ExtResource("2_v3q4e")
+metadata/_custom_type_script = "uid://c5leptk8moyit"
+
+[node name="Dinheiro" type="RichTextLabel" unique_id=311327716]
+offset_right = 192.0
+offset_bottom = 41.0
+theme = ExtResource("1_c22ck")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "R$ 100"
+autowrap_mode = 0
+horizontal_alignment = 1
+custom_effects = [SubResource("RichTextEffect_kd4ut")]
+script = ExtResource("2_wutog")

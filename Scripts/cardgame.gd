@@ -8,6 +8,7 @@ const IA = 1
 @onready var mouse_on_menu = $mousehovermenu
 @onready var ui = $UI
 @onready var mao = $Camera3D/Mao
+@onready var money_sfx = $Salas/money
 
 @export var jogador_carimbo := Gerenciador.Carimbos.BASICO
 @export var ia_carimbo := Gerenciador.Carimbos.BRINQUEDO
@@ -36,8 +37,13 @@ func perdeu_jogo():
 	ui.show_notificacao("Você perdeu o jogo.", Color.RED)
 
 func passa_round():
+	ui.dinheiro_player.run_effect()
+	ui.dinheiro_ia.run_effect()
 	Gerenciador.round += 1
 	Gerenciador.round_muda.emit()
+	Gerenciador.IA_dinheiro += 25
+	Gerenciador.jogador_dinheiro += 25
+	money_sfx.play()
 	
 func passa_turno(player : int):
 	if player == JOGADOR and Gerenciador.turno == JOGADOR:

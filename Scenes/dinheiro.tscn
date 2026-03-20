@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwqkwqwo557y0"]
 
 [ext_resource type="Script" uid="uid://dacgphl51q267" path="res://Scripts/dinheiro.gd" id="1_dksyl"]
-[ext_resource type="FontFile" uid="uid://ciifmwwrc18b6" path="res://Fonts/PixelPleasing.ttf" id="2_hjc17"]
+[ext_resource type="FontFile" uid="uid://ciifmwwrc18b6" path="res://addons/Fonts/PixelPleasing.ttf" id="2_hjc17"]
 
 [node name="Dinheiro" type="Node3D" unique_id=1735199130]
 script = ExtResource("1_dksyl")

@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bqby8vneh563x" path="res://Sprites/UI/botao-pular-turno.png" id="21_3lod3"]
 [ext_resource type="Texture2D" uid="uid://dpcjcclbydoro" path="res://Sprites/UI/botao-descarte.png" id="22_nftjj"]
 [ext_resource type="Texture2D" uid="uid://dt762h7hqioxl" path="res://Sprites/Icons/Gutenberg, O Empreendedor/gutenberg-retrato-neutro.png" id="23_0gcu3"]
+[ext_resource type="PackedScene" uid="uid://csnfliefgbsxj" path="res://Scenes/dinheiroUI.tscn" id="23_57ryo"]
 [ext_resource type="Texture2D" uid="uid://8rcie53r4xkf" path="res://Sprites/UI/carimbo-brinquedo.png" id="24_5hb4g"]
 [ext_resource type="Texture2D" uid="uid://dtg2x7lymed3y" path="res://Sprites/UI/icone-configuracoes.png" id="25_m4j6x"]
 [ext_resource type="Texture2D" uid="uid://b6r5n51cjd0pp" path="res://Sprites/UI/icone-tutorial.png" id="26_l4tcc"]
@@ -585,17 +586,12 @@ horizontal_alignment = 2
 custom_effects = [SubResource("RichTextEffect_67vox")]
 visible_characters_behavior = 1
 
-[node name="Dinheiro" type="RichTextLabel" parent="UI/PlayerSide" unique_id=22941054]
+[node name="Dinheiro" parent="UI/PlayerSide" unique_id=311327716 instance=ExtResource("23_57ryo")]
 layout_mode = 0
-offset_left = -255.99994
-offset_top = 268.0
-offset_right = -63.99994
-offset_bottom = 309.0
-theme = ExtResource("15_57ryo")
-theme_override_font_sizes/normal_font_size = 36
-text = "R$ 100"
-autowrap_mode = 0
-horizontal_alignment = 1
+offset_left = -256.0
+offset_top = 263.0
+offset_right = -64.0
+offset_bottom = 304.0
 
 [node name="Carimbo" type="TextureRect" parent="UI/PlayerSide" unique_id=1554476515]
 layout_mode = 1
@@ -727,17 +723,12 @@ autowrap_mode = 2
 custom_effects = [SubResource("RichTextEffect_67vox")]
 visible_characters_behavior = 1
 
-[node name="Dinheiro" type="RichTextLabel" parent="UI/EnemySide" unique_id=1205006396]
-layout_mode = 1
+[node name="Dinheiro" parent="UI/EnemySide" unique_id=1482207033 instance=ExtResource("23_57ryo")]
+layout_mode = 0
 offset_left = 64.0
-offset_top = 268.0
+offset_top = 263.0
 offset_right = 256.0
-offset_bottom = 309.0
-theme = ExtResource("15_57ryo")
-theme_override_font_sizes/normal_font_size = 36
-text = "R$ 100"
-autowrap_mode = 0
-horizontal_alignment = 1
+offset_bottom = 304.0
 
 [node name="Carimbo" type="TextureRect" parent="UI/EnemySide" unique_id=1057585468]
 layout_mode = 1
@@ -1712,13 +1703,20 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.91764706)
 
 [node name="Mask" type="TextureRect" parent="UI/Tutorial/BackBufferCopy" unique_id=436789160]
-visible = false
 material = SubResource("ShaderMaterial_bbpun")
-offset_left = 1698.0001
-offset_top = 890.0
-offset_right = 2449.0
-offset_bottom = 1251.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1297.0001
+offset_top = 696.00006
+offset_right = 2048.0
+offset_bottom = 1057.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.25942335, 0.57673305)
+pivot_offset = Vector2(375.48828, 180.36353)
 texture = ExtResource("48_bbpun")
 
 [node name="Portrait" type="TextureRect" parent="UI/Tutorial" unique_id=1689849301]

@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
 [ext_resource type="PackedScene" uid="uid://d1pyrfj74af5b" path="res://Scenes/carta_baralho.tscn" id="21_qs34s"]
+[ext_resource type="PackedScene" uid="uid://csnfliefgbsxj" path="res://Scenes/dinheiroUI.tscn" id="23_7jvo7"]
 [ext_resource type="Texture2D" uid="uid://cxs26ud2dfpqf" path="res://Sprites/UI/carimbo-tradicional.png" id="24_6llu4"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
 [ext_resource type="Texture2D" uid="uid://b6r5n51cjd0pp" path="res://Sprites/UI/icone-tutorial.png" id="24_kyrxs"]
@@ -579,17 +580,12 @@ horizontal_alignment = 2
 custom_effects = [SubResource("RichTextEffect_67vox")]
 visible_characters_behavior = 1
 
-[node name="Dinheiro" type="RichTextLabel" parent="UI/PlayerSide" unique_id=22941054]
+[node name="Dinheiro" parent="UI/PlayerSide" unique_id=311327716 instance=ExtResource("23_7jvo7")]
 layout_mode = 0
-offset_left = -255.99994
-offset_top = 268.0
-offset_right = -63.99994
-offset_bottom = 309.0
-theme = ExtResource("6_vf6ur")
-theme_override_font_sizes/normal_font_size = 36
-text = "R$ 100"
-autowrap_mode = 0
-horizontal_alignment = 1
+offset_left = -256.0
+offset_top = 263.0
+offset_right = -64.0
+offset_bottom = 304.0
 
 [node name="Carimbo" type="TextureRect" parent="UI/PlayerSide" unique_id=1554476515]
 layout_mode = 1
@@ -721,17 +717,12 @@ autowrap_mode = 2
 custom_effects = [SubResource("RichTextEffect_67vox")]
 visible_characters_behavior = 1
 
-[node name="Dinheiro" type="RichTextLabel" parent="UI/EnemySide" unique_id=1205006396]
-layout_mode = 1
+[node name="Dinheiro" parent="UI/EnemySide" unique_id=1792564001 instance=ExtResource("23_7jvo7")]
+layout_mode = 0
 offset_left = 64.0
-offset_top = 268.0
+offset_top = 263.0
 offset_right = 256.0
-offset_bottom = 309.0
-theme = ExtResource("6_vf6ur")
-theme_override_font_sizes/normal_font_size = 36
-text = "R$ 100"
-autowrap_mode = 0
-horizontal_alignment = 1
+offset_bottom = 304.0
 
 [node name="Carimbo" type="TextureRect" parent="UI/EnemySide" unique_id=1057585468]
 layout_mode = 1

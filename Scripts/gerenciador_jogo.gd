@@ -226,12 +226,10 @@ func calcula_combo(funcionarios : Array[Contrato]):
 		combinacoes.append(4) #complo
 	
 	niveis.sort()
-	print(niveis)
 	if 0 in niveis and len(niveis) == 4:
 		calcula_coringa(niveis)
 		
 	niveis.sort()
-	print(niveis)
 		
 	var primeiro = niveis.front()
 	
@@ -264,7 +262,6 @@ func desbloqueia_jogar():
 	descartes_restantes = 4
 
 func finaliza_jogo():
-	print("finalizou")
 	Gerenciador.turno = 3
 	
 	if jogador_dinheiro >= IA_dinheiro:

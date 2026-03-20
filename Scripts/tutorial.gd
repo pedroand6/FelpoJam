@@ -7,8 +7,12 @@ const wait_time: float = 4.5
 @onready var silvio_text := $Portrait/DialogBox/Dialog
 @onready var digit_sfx := $"../Dialog/digitacao"
 @onready var dialog_ingame := $"../Dialog"
-var dialogos
 
+#highlights
+@onready var mask := $BackBufferCopy/Mask
+
+
+var dialogos
 var nomeAtual: String
 var nomeCena: String
 var dialogoAtual = 0
@@ -59,6 +63,11 @@ func atualiza_cena():
 	show()
 	Gerenciador.turno = 3
 	mostra_texto(dialogos[nomeCena][cenaAtual][dialogoAtual])
+	
+	if cenaAtual == 0 and dialogoAtual == 0:
+		mask.set_position(Vector2(1397, 796))
+	elif cenaAtual == 0 and dialogoAtual == 1:
+		mask.set_position(Vector2(200, 150))
 
 func mostra_texto(dialogoInfo: Dictionary) -> void:
 	if dialogoInfo["nome"] == "Silvio, O Presidente":

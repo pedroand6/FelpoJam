@@ -43,8 +43,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	round_counter.text = "%02d/%02d" % [Gerenciador.round, Gerenciador.total_rounds]
 	descarte_counter.text = "%02d" % Gerenciador.descartes_restantes
-	dinheiro_player.text = "R$ " + str(Gerenciador.jogador_dinheiro)
-	dinheiro_ia.text = "R$ " + str(Gerenciador.IA_dinheiro)
+	dinheiro_player.text =  "[scroll_effect]" + "R$ " + str(Gerenciador.jogador_dinheiro)
+	dinheiro_ia.text = "[scroll_effect]" + "R$ " + str(Gerenciador.IA_dinheiro)
 	
 	if Gerenciador.turno == Gerenciador.JOGADOR:
 		enemy_port.self_modulate = Color(0.411, 0.411, 0.411, 1.0)

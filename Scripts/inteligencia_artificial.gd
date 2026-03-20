@@ -2,7 +2,7 @@ extends AnimatedSprite3D
 
 const TAMANHO_MAO = 7
 var LIM_SALAS = 2
-var BEST_Q = 0.1
+var BEST_Q = 0.01
 
 signal passa_turno
 
@@ -22,10 +22,10 @@ func _ready():
 	animation = "fase1"
 	if Gerenciador.cena == 2:
 		LIM_SALAS = 1
-		BEST_Q = 0.5
+		BEST_Q = 0.6 #tutorial mais burro
 	else:
 		LIM_SALAS = 2
-		BEST_Q = 0.1
+		BEST_Q = 0.01
 
 func muda_fase():
 	if Gerenciador.round == int(Gerenciador.total_rounds / 2):
@@ -95,12 +95,6 @@ func jogada():
 	while len(ia_mao) < TAMANHO_MAO - 1:
 		if(len(Gerenciador.ia_baralho) <= 0): break
 		compra_carta()
-		
-	for card in ia_mao:
-		print(card.nome)
-	
-	#colocar as fotos alternando de mais escura pra mais clara pra mostrar o round
-	print("jogada da IA")
 	
 	var salas_jogadas = {}
 	var descartes_feitos = 0
@@ -135,7 +129,6 @@ func avalia_ataque() -> bool:
 				if pontos_ia > (pontos_pl * 1.10):
 					atacou = true
 					
-					print("ia atacou sala " + str(sala_ia.id) + "com a sala " + str(sala_jogador.id))
 					var pontos_pl_final = sala_jogador.calcula_pontos()
 					
 					var usou_ativa : bool
@@ -215,8 +208,6 @@ func avalia_descartes(descartes_feitos):
 		ia_mao.erase(carta)
 		compra_carta()
 			
-	if descartes_feitos > 0:
-		print("A IA descartou ", descartes_feitos, " cartas fracas.")
 	
 	return descartes_feitos
 
@@ -228,6 +219,7 @@ func compra_carta():
 
 func joga_cartas(salas_jogadas):
 	for acao_index in range(4):
+		salas.shuffle()
 		var best_q = avalia_estado(salas, Gerenciador.IA_dinheiro, ia_mao)
 		var best_action = null
 		
@@ -289,7 +281,6 @@ func joga_cartas(salas_jogadas):
 				jogou_carta.emit(Contrato.Tipos.DEMANDA, sala.id)
 			
 			salas_jogadas[sala.id] = true
-			print("IA jogou ", carta.nome, " na sala ", sala.id)
 			emit_signal("acao_concluida")
 			
 			await get_tree().create_timer(0.8).timeout
