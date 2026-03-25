@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://csnu6y1xyj3cq"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_ibplk"]
+[ext_resource type="Texture2D" uid="uid://cvub4kefdr3go" path="res://Sprites/Cartas/DemandasSimplificadas/d-just-in-time.png" id="1_yv2to"]
 [ext_resource type="Texture2D" uid="uid://ei5nfrjxcene" path="res://Sprites/Cartas/Demandas/d-just-in-time.png" id="2_llpjy"]
 
 [resource]
@@ -9,4 +10,5 @@ nome = "Just-in-Time"
 desc = "+6pts de prod. por funcionário caso a sala esteja lotada."
 custo = 30
 sprite = ExtResource("2_llpjy")
+minim_sprite = ExtResource("1_yv2to")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

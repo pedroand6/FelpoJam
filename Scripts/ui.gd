@@ -26,6 +26,7 @@ var sala : Sala
 @onready var player_port := $PlayerSide/Portrait
 @onready var enemy_port := $EnemySide/Portrait
 @onready var skip_round := $PlayerSide/PularBtn
+@onready var select_room := $Popup/Caixa/Frente/Sala/Selecionar
 @export var tutorial : Control = null
 
 @onready var btn_click_sfx = $btn_click
@@ -80,6 +81,10 @@ func _on_config_btn_button_down() -> void:
 func show_sala(thisSala) -> void:
 	if tutorial != null and tutorial.visible: return
 	sala = thisSala
+	if sala.selecionada:
+		select_room.modulate = Color(0.482, 0.482, 0.482, 1.0)
+	else:
+		select_room.modulate = Color(1.0, 1.0, 1.0, 1.0)
 	popup_bg.show()
 	sala_menu.show()
 	sala_show = true
@@ -196,11 +201,11 @@ func click_sfx():
 	btn_click_sfx.stream = load(list_btn_click[randi() % 2])
 	btn_click_sfx.play()
 
-
-func _on_desistir_btn_button_down() -> void:
-	var desistiu = await show_aviso(
-		"Desistir desta partida?", 
-		"Você quer mesmo desistir da partida atual e tentar jogar novamente?"
-	)
-	if desistiu: 
-		Gerenciador.muda_cena("Escritorio", "res://Scenes/derrota.tscn")
+func _on_selecionar_button_down() -> void:
+	if Gerenciador.turno != Gerenciador.JOGADOR: return
+	sala.selecionar(false, true, true)
+	
+	if sala.selecionada:
+		select_room.modulate = Color(0.482, 0.482, 0.482, 1.0)
+	else:
+		select_room.modulate = Color(1.0, 1.0, 1.0, 1.0)

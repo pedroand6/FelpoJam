@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://8or01rsbigfr"]
 
+[ext_resource type="Texture2D" uid="uid://dmgohxa0u4815" path="res://Sprites/Cartas/DemandasSimplificadas/d-jurar-a-bandeira.png" id="1_5nafh"]
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_wvg6x"]
 [ext_resource type="Texture2D" uid="uid://dld6037vcljq" path="res://Sprites/Cartas/Demandas/d-jurar-a-bandeira.png" id="2_6bb17"]
 
@@ -9,4 +10,5 @@ nome = "Jurar à Bandeira"
 desc = "+1pt de multiplicador de prod. por cada funcionário de RH"
 custo = 40
 sprite = ExtResource("2_6bb17")
+minim_sprite = ExtResource("1_5nafh")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

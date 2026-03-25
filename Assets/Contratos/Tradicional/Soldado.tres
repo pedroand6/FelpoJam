@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://cd01lb5a2mnw0"]
 
+[ext_resource type="Texture2D" uid="uid://dwal88ifiw8wm" path="res://Sprites/Cartas/DemandasSimplificadas/d-checadinha-militar.png" id="1_a1qua"]
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_k5pxq"]
 [ext_resource type="Texture2D" uid="uid://dwcnxqyhnggw7" path="res://Sprites/Cartas/Demandas/d-checadinha-militar.png" id="2_5asu1"]
 
@@ -9,4 +10,5 @@ nome = "Checadinha Militar"
 desc = "+10pts de produtividade para cada estagiário."
 custo = 50
 sprite = ExtResource("2_5asu1")
+minim_sprite = ExtResource("1_a1qua")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

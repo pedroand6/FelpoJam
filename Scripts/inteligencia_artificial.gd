@@ -49,7 +49,7 @@ func perde_jogo():
 	
 	await tween2.finished
 	if Gerenciador.cena == 1:
-		Gerenciador.muda_cena(get_parent().get_parent().name, "res://Scenes/menu.tscn")
+		Gerenciador.muda_cena("Escritorio", "res://Scenes/menu.tscn")
 
 func avalia_estado(salas_atuais: Array[Sala], dinheiro: int, mao: Array[Contrato]):
 	var turnos_restantes = max(1, Gerenciador.total_rounds - Gerenciador.round + 1)
@@ -137,20 +137,38 @@ func avalia_ataque() -> bool:
 					var usou_ativa : bool
 					if not Gerenciador.player_usou_ativa:
 						if Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BASICO:
+							sala_jogador.borda2.show()
+							sala_jogador.borda2.light_color = Color(0.824, 0.0, 0.0, 1.0)
+							sala_ia.borda2.show()
+							
 							usou_ativa = await ui.show_aviso(
 								"Sala %d sob ataque da sala %d!" % [sala_jogador.id, sala_ia.id],
-								"Sua sala tem %d de produtividade atual. Quer usar seu carimbo de uso único para dobrar a produtividade da sala?" % [pontos_pl_final]
+								"Sua sala tem %d de produtividade atual. Quer usar seu carimbo de uso único para triplicar a produtividade da sala?" % [pontos_pl_final]
 							)
+							
+							sala_jogador.borda2.light_color = Color(0xbd9910)
+							sala_jogador.borda2.hide()
+							sala_ia.borda2.hide()
+							
 							if usou_ativa: 
 								play_carimbo()
-								pontos_pl_final *= 2
+								pontos_pl_final *= 3
 						elif Gerenciador.jogador_carimbo == Gerenciador.Carimbos.BRINQUEDO:
+							sala_jogador.borda2.show()
+							sala_jogador.borda2.light_color = Color(0.824, 0.0, 0.0, 1.0)
+							sala_ia.borda2.show()
+							
 							usou_ativa = await ui.show_aviso(
 								"Sala %d sob ataque da sala %d!" % [sala_jogador.id, sala_ia.id],
-								"Sua sala tem %d de produtividade, quer usar seu carimbo de uso único que lhe dá 25%% de chance de fugir do ataque?" % [pontos_pl_final]
+								"Sua sala tem %d de produtividade, quer usar seu carimbo de uso único que lhe dá 75%% de chance de fugir do ataque?" % [pontos_pl_final]
 							)
+							
+							sala_jogador.borda2.light_color = Color(0xbd9910)
+							sala_jogador.borda2.hide()
+							sala_ia.borda2.hide()
+							
 							if usou_ativa: play_carimbo()
-							if usou_ativa and randf() <= 0.25:
+							if usou_ativa and randf() <= 0.75:
 								ui.show_notificacao("Defesa com CARIMBO bem sucedida! Sala %d com %d pontos vs Sala %d com %d pontos." % [sala_ia.id, pontos_ia, sala_jogador.id, pontos_pl_final], Color.GREEN)
 								Gerenciador.player_usou_ativa = true
 								return false

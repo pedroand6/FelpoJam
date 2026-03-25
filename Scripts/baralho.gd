@@ -88,7 +88,7 @@ func append_demanda(demandas: Array[Demanda], rects: Array[Node], rect_count: in
 				rects[rect_count], Contrato.Tipos.DEMANDA, "", demanda.nome
 			)
 			lista_entries.append(new_entry)
-			rects[rect_count].texture = demanda.sprite
+			rects[rect_count].texture = demanda.minim_sprite
 			rect_count += 1
 	return rect_count
 

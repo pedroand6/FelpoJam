@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://vblm1drfbupn" path="res://Audio/SFX/DESCARTE DE CARTA.wav" id="5_mei41"]
 [ext_resource type="AudioStream" uid="uid://xjuchkhox45b" path="res://Audio/SFX/COMPRA CARTA.wav" id="6_ls4sr"]
 [ext_resource type="Texture2D" uid="uid://nv4y5dkh31xu" path="res://Sprites/escritorio.png" id="6_mei41"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="6_rs6w2"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="6_rs6w2"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="6_vf6ur"]
 [ext_resource type="Theme" uid="uid://bo8ua54i5icg7" path="res://Themes/tooltipTheme.tres" id="7_81bno"]
 [ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="7_bo2yg"]
@@ -38,14 +38,14 @@
 [ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="19_v1qyb"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="20_hl26x"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="20_uithd"]
-[ext_resource type="PackedScene" path="res://Scenes/carta_baralho.tscn" id="21_qs34s"]
+[ext_resource type="PackedScene" uid="uid://d1pyrfj74af5b" path="res://Scenes/carta_baralho.tscn" id="21_qs34s"]
 [ext_resource type="PackedScene" uid="uid://csnfliefgbsxj" path="res://Scenes/dinheiroUI.tscn" id="23_7jvo7"]
 [ext_resource type="Texture2D" uid="uid://cxs26ud2dfpqf" path="res://Sprites/UI/carimbo-tradicional.png" id="24_6llu4"]
 [ext_resource type="Texture2D" uid="uid://c2ef573br528w" path="res://Sprites/UI/icone-avancar-dialogo.png" id="24_ac8jf"]
 [ext_resource type="Texture2D" uid="uid://b6r5n51cjd0pp" path="res://Sprites/UI/icone-tutorial.png" id="24_kyrxs"]
 [ext_resource type="Texture2D" uid="uid://bctbnybcjlp2l" path="res://Sprites/UI/prancheta.png" id="25_6llu4"]
 [ext_resource type="Theme" uid="uid://cbeg7kv1qoe6x" path="res://Themes/labelTheme.tres" id="26_v1qyb"]
-[ext_resource type="Script" path="res://Scripts/avisoPopUp.gd" id="28_qs34s"]
+[ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="28_qs34s"]
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="28_v1qyb"]
 [ext_resource type="AudioStream" uid="uid://cpnem44plhvcc" path="res://Audio/SFX/PASSAR MOUSE MENU.wav" id="35_bo2yg"]
 [ext_resource type="Texture2D" uid="uid://col51vt6g3ujj" path="res://Sprites/infos.png" id="35_nxmxj"]
@@ -140,17 +140,17 @@ metadata/_custom_type_script = "uid://cbsk3sjfmvlta"
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jvo7"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67vox"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqlh3"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqynx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onojn"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlfot"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ehu8"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Environment" id="Environment_7jvo7"]
-background_mode = 2
+background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(0.74138474, 0.7413847, 0.74138457, 1)
 tonemap_mode = 3
@@ -163,8 +163,9 @@ fog_height_density = 0.231
 adjustment_enabled = true
 adjustment_contrast = 1.1
 
-[node name="Escritorio" type="Node3D" unique_id=1768756136]
+[node name="Escritorio" type="Node3D" unique_id=1768756136 node_paths=PackedStringArray("salas")]
 script = ExtResource("1_xl6bb")
+salas = [NodePath("Salas/Sala1"), NodePath("Salas/Sala2"), NodePath("Salas/Sala3"), NodePath("Salas/Sala4"), NodePath("Salas/Sala5"), NodePath("Salas/Sala6"), NodePath("Salas/Sala7"), NodePath("Salas/Sala8")]
 jogador_carimbo = 1
 ia_carimbo = 2
 
@@ -687,17 +688,14 @@ vertical_alignment = 1
 [node name="Desistir_btn" type="Button" parent="UI/PlayerSide" unique_id=1252939926]
 process_mode = 3
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -226.0
-offset_top = -757.0
-offset_right = -96.0
-offset_bottom = -703.54614
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -224.0
+offset_top = 323.0
+offset_right = -94.0
+offset_bottom = 376.45386
+grow_horizontal = 0
 theme = ExtResource("26_v1qyb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7jvo7")
 text = "Desistir"
@@ -861,11 +859,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Fundo" type="ColorRect" parent="UI/Popup" unique_id=1576613548]
-layout_mode = 0
-offset_left = -1079.0
-offset_top = -635.0
-offset_right = 2958.3333
-offset_bottom = 1636.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
 
 [node name="Caixa" type="Control" parent="UI/Popup" unique_id=591100668]
@@ -1156,7 +1155,7 @@ visible = false
 layout_mode = 1
 cena_nome = "Escritorio"
 
-[node name="Sala" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=676530466]
+[node name="Sala" type="Control" parent="UI/Popup/Caixa/Frente" unique_id=1891306198]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -1165,13 +1164,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
+offset_top = -19.99997
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 20.00003
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Dono" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala" unique_id=10673492]
+[node name="Dono" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala" unique_id=2010780582]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1186,7 +1185,7 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Sala sem dono"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Sala" unique_id=1347890739]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Popup/Caixa/Frente/Sala" unique_id=428054852]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1201,7 +1200,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 46
 
-[node name="GridContainer" type="GridContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=1772732991]
+[node name="GridContainer" type="GridContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=1797380870]
 custom_minimum_size = Vector2(276.763, 362.82)
 layout_mode = 2
 size_flags_vertical = 4
@@ -1209,7 +1208,7 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=815889038]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=1751387746]
 layout_mode = 2
 texture = ExtResource("19_nt0tj")
 patch_margin_left = 4
@@ -1217,7 +1216,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect" unique_id=1826358764]
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect" unique_id=2085194604]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -1227,7 +1226,7 @@ texture = ExtResource("20_uithd")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=983200569]
+[node name="NinePatchRect2" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=1023908993]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1237,7 +1236,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect2" unique_id=473440900]
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect2" unique_id=134508641]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -1247,7 +1246,7 @@ texture = ExtResource("20_hl26x")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=2028037887]
+[node name="NinePatchRect3" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=47130649]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1257,7 +1256,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect3" unique_id=1675709359]
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect3" unique_id=1506558254]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -1267,7 +1266,7 @@ texture = ExtResource("20_hl26x")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="NinePatchRect4" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=2127293063]
+[node name="NinePatchRect4" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer" unique_id=1177182866]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1277,7 +1276,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect4" unique_id=307357256]
+[node name="TextureRect" type="TextureRect" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/GridContainer/NinePatchRect4" unique_id=1765656538]
 visible = false
 texture_filter = 1
 layout_mode = 0
@@ -1287,25 +1286,25 @@ texture = ExtResource("20_hl26x")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="VSeparator" type="VSeparator" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=1708048065]
+[node name="VSeparator" type="VSeparator" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=207010603]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=294079397]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer" unique_id=2118007594]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Utilidades" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=954133681]
+[node name="Utilidades" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=2065155383]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Title" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=765868843]
+[node name="Title" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=597231741]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 24
 text = "Utilidades"
 
-[node name="item1" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=1612120615]
+[node name="item1" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=290826882]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
@@ -1314,7 +1313,7 @@ text = "-"
 fit_content = true
 scroll_active = false
 
-[node name="item2" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=1232568889]
+[node name="item2" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=815889612]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
@@ -1323,7 +1322,7 @@ text = "-"
 fit_content = true
 scroll_active = false
 
-[node name="item3" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=975917289]
+[node name="item3" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Utilidades" unique_id=55536496]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
@@ -1332,23 +1331,23 @@ text = "-"
 fit_content = true
 scroll_active = false
 
-[node name="HSeparator" type="HSeparator" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=253013934]
+[node name="HSeparator" type="HSeparator" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=1152822443]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Combinacoes" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=1821796344]
+[node name="Combinacoes" type="VBoxContainer" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer" unique_id=401918220]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.45
 
-[node name="Title" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=517051505]
+[node name="Title" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=907076482]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/normal_font_size = 24
 text = "Combinação"
 
-[node name="Nome" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=1314697858]
+[node name="Nome" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=425280604]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
@@ -1356,7 +1355,7 @@ theme_override_font_sizes/normal_font_size = 18
 text = "Sozinho no Setor"
 fit_content = true
 
-[node name="Desc" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=1609556202]
+[node name="Desc" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala/HBoxContainer/VBoxContainer/Combinacoes" unique_id=1863931237]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_vf6ur")
@@ -1364,7 +1363,7 @@ theme_override_font_sizes/normal_font_size = 16
 text = "Descrição: Sem combinação"
 fit_content = true
 
-[node name="Produtividade" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala" unique_id=392307862]
+[node name="Produtividade" type="RichTextLabel" parent="UI/Popup/Caixa/Frente/Sala" unique_id=605168065]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -1378,7 +1377,37 @@ theme = ExtResource("7_81bno")
 theme_override_font_sizes/normal_font_size = 30
 text = "Produtividade"
 
-[node name="Demissao" type="Button" parent="UI/Popup/Caixa/Frente/Sala" unique_id=1141098046]
+[node name="Demissao" type="Button" parent="UI/Popup/Caixa/Frente/Sala" unique_id=556618938]
+process_mode = 3
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -301.73853
+offset_top = -200.3875
+offset_right = -61.734924
+offset_bottom = -159.74184
+grow_horizontal = 2
+theme = ExtResource("6_vf6ur")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_xqlh3")
+text = "Demissão Geral"
+icon = ExtResource("24_ac8jf")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/Demissao" unique_id=117450586]
+layout_mode = 0
+offset_left = -13.30481
+offset_top = -6.1035156e-05
+offset_right = 240.15161
+offset_bottom = 40.57959
+texture = ExtResource("19_nt0tj")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Selecionar" type="Button" parent="UI/Popup/Caixa/Frente/Sala" unique_id=81615850]
 process_mode = 3
 texture_filter = 1
 layout_mode = 1
@@ -1387,19 +1416,19 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 81.59097
-offset_top = 225.4968
-offset_right = 321.59457
-offset_bottom = 266.14246
+offset_left = 26.664032
+offset_top = 224.99231
+offset_right = 266.66763
+offset_bottom = 265.63794
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("6_vf6ur")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_67vox")
-text = "Demissão Geral"
+theme_override_styles/normal = SubResource("StyleBoxFlat_xqlh3")
+text = "Selecionar Sala"
 icon = ExtResource("24_ac8jf")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/Demissao" unique_id=778980322]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/Selecionar" unique_id=612149477]
 layout_mode = 0
 offset_left = -13.30481
 offset_top = -6.1035156e-05
@@ -1519,7 +1548,7 @@ texture_normal = ExtResource("17_aa28w")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Aviso" type="Control" parent="UI" unique_id=341047368 node_paths=PackedStringArray("titleTxt", "textTxt")]
+[node name="Aviso" type="Control" parent="UI" unique_id=1620080932 node_paths=PackedStringArray("titleTxt", "textTxt")]
 unique_name_in_owner = true
 process_mode = 3
 visible = false
@@ -1529,34 +1558,35 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -417.0
-offset_top = -300.0
-offset_right = 383.0
-offset_bottom = 300.0
+offset_left = -320.0
+offset_top = -444.0
+offset_right = 480.0
+offset_bottom = 58.26465
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.9915092, 0.9915092)
+scale = Vector2(0.7794757, 0.7794757)
 script = ExtResource("28_qs34s")
 titleTxt = NodePath("Frente/Title")
 textTxt = NodePath("Frente/Text")
 
-[node name="AvisoFundo" type="ColorRect" parent="UI/Aviso" unique_id=1585613422]
+[node name="AvisoFundo" type="ColorRect" parent="UI/Aviso" unique_id=1909755441]
 layout_mode = 0
-offset_left = -1904.168
-offset_top = -884.51025
-offset_right = 2854.0278
-offset_bottom = 1547.1365
-color = Color(0, 0, 0, 0.5019608)
+offset_left = -1961.575
+offset_top = -903.1712
+offset_right = 2796.6208
+offset_bottom = 1528.4756
+color = Color(0, 0, 0, 0.25882354)
 
-[node name="Borda" type="ColorRect" parent="UI/Aviso" unique_id=303979874]
+[node name="Borda" type="ColorRect" parent="UI/Aviso" unique_id=389552569]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -59.50525
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Frente" type="ColorRect" parent="UI/Aviso" unique_id=788613735]
+[node name="Frente" type="ColorRect" parent="UI/Aviso" unique_id=2061059139]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1564,14 +1594,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -395.0
-offset_top = -295.0
+offset_top = -245.08093
 offset_right = 395.0
-offset_bottom = 295.0
+offset_bottom = 185.57568
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Title" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=1014136899]
+[node name="Title" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=1551705719]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1590,7 +1620,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=548299573]
+[node name="Text" type="RichTextLabel" parent="UI/Aviso/Frente" unique_id=2127692974]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1611,7 +1641,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NaoBtn" type="Button" parent="UI/Aviso/Frente" unique_id=1040118523]
+[node name="NaoBtn" type="Button" parent="UI/Aviso/Frente" unique_id=1231473147]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 7
@@ -1626,10 +1656,10 @@ offset_bottom = -61.46997
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("26_v1qyb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mqynx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_onojn")
 text = "Não"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/NaoBtn" unique_id=647763713]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/NaoBtn" unique_id=1212327229]
 layout_mode = 0
 offset_right = 103.88208
 offset_bottom = 53.453857
@@ -1639,7 +1669,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="SimBtn" type="Button" parent="UI/Aviso/Frente" unique_id=501234518]
+[node name="SimBtn" type="Button" parent="UI/Aviso/Frente" unique_id=108474712]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 7
@@ -1654,10 +1684,10 @@ offset_bottom = -61.46991
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("26_v1qyb")
-theme_override_styles/normal = SubResource("StyleBoxFlat_rlfot")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ehu8")
 text = "Sim"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/SimBtn" unique_id=1654501411]
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Aviso/Frente/SimBtn" unique_id=830524384]
 layout_mode = 0
 offset_right = 103.88208
 offset_bottom = 53.453857
@@ -1731,7 +1761,7 @@ environment = SubResource("Environment_7jvo7")
 [connection signal="button_down" from="UI/EnemySide/Prancheta" to="UI" method="_on_prancheta_button_down"]
 [connection signal="mouse_entered" from="UI/EnemySide/Prancheta" to="." method="_on_prancheta_mouse_entered"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="UI" method="_on_demissao_button_down"]
-[connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="." method="_on_demissao_mouse_entered"]
+[connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Selecionar" to="UI" method="_on_selecionar_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]
 [connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Fechar" to="." method="_on_fechar_mouse_entered"]
 [connection signal="button_down" from="UI/Aviso/Frente/NaoBtn" to="UI/Aviso" method="_on_nao_btn_button_down"]

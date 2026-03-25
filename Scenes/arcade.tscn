@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bqm4blh853bra" path="res://Sprites/Bonequinhos/func-esquerda.png" id="19_wl3vi"]
 [ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="20_61t0i"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="21_thnd3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="22_jsaxe"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="22_jsaxe"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="23_5lrrf"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="24_d5yvd"]
 [ext_resource type="PackedScene" uid="uid://csnfliefgbsxj" path="res://Scenes/dinheiroUI.tscn" id="25_a1843"]
@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://b6r5n51cjd0pp" path="res://Sprites/UI/icone-tutorial.png" id="35_rke88"]
 [ext_resource type="Texture2D" uid="uid://bctbnybcjlp2l" path="res://Sprites/UI/prancheta.png" id="36_6yful"]
 [ext_resource type="Script" uid="uid://h1am3hhila03" path="res://Scripts/baralho.gd" id="37_302r0"]
-[ext_resource type="PackedScene" path="res://Scenes/carta_baralho.tscn" id="38_lbuds"]
+[ext_resource type="PackedScene" uid="uid://d1pyrfj74af5b" path="res://Scenes/carta_baralho.tscn" id="38_lbuds"]
 [ext_resource type="PackedScene" uid="uid://65ve5r65agq0" path="res://Scenes/config.tscn" id="39_gj6w7"]
 [ext_resource type="Texture2D" uid="uid://be3lbf8ylxg2r" path="res://Sprites/Cartas/Financeiro/3-fin-pleno.png" id="40_745a2"]
 [ext_resource type="Texture2D" uid="uid://d3mtqd3p4m0nb" path="res://Assets/estag.png" id="41_ox02b"]
@@ -45,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://col51vt6g3ujj" path="res://Sprites/infos.png" id="43_33sak"]
 [ext_resource type="Texture2D" uid="uid://c8njr0jddm0w5" path="res://Sprites/Tutorial.png" id="44_7s20i"]
 [ext_resource type="Texture2D" uid="uid://qriqu1t4nyg3" path="res://Sprites/UI/botao-fechar.png" id="45_63p1e"]
-[ext_resource type="Script" path="res://Scripts/avisoPopUp.gd" id="46_rgcr6"]
+[ext_resource type="Script" uid="uid://d2lrv5qfgcgry" path="res://Scripts/avisoPopUp.gd" id="46_rgcr6"]
 [ext_resource type="Script" uid="uid://b5kta58wua5yj" path="res://Scripts/cursor.gd" id="47_4prca"]
 [ext_resource type="Texture2D" uid="uid://cv1ad1m2rvolg" path="res://Assets/cursor.png" id="48_q73c2"]
 [ext_resource type="Script" uid="uid://1jtepxgpqwm6" path="res://Scripts/dialog.gd" id="49_tugl7"]
@@ -150,7 +150,7 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Environment" id="Environment_fmjtd"]
-background_mode = 2
+background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(0.74138474, 0.7413847, 0.74138457, 1)
 tonemap_mode = 3
@@ -163,8 +163,9 @@ fog_height_density = 0.231
 adjustment_enabled = true
 adjustment_contrast = 1.1
 
-[node name="Escritorio" type="Node3D" unique_id=1768756136]
+[node name="Escritorio" type="Node3D" unique_id=1768756136 node_paths=PackedStringArray("salas")]
 script = ExtResource("1_fmjtd")
+salas = [NodePath("Salas/Sala1"), NodePath("Salas/Sala2"), NodePath("Salas/Sala3"), NodePath("Salas/Sala4"), NodePath("Salas/Sala5"), NodePath("Salas/Sala6"), NodePath("Salas/Sala7"), NodePath("Salas/Sala8")]
 jogador_carimbo = 1
 ia_carimbo = 2
 
@@ -688,17 +689,14 @@ vertical_alignment = 1
 [node name="Desistir_btn" type="Button" parent="UI/PlayerSide" unique_id=1252939926]
 process_mode = 3
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -226.0
-offset_top = -757.0
-offset_right = -96.0
-offset_bottom = -703.54614
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -222.0
+offset_top = 323.0
+offset_right = -92.0
+offset_bottom = 376.45386
+grow_horizontal = 0
 theme = ExtResource("31_nma6o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7jvo7")
 text = "Desistir"
@@ -863,11 +861,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Fundo" type="ColorRect" parent="UI/Popup" unique_id=1576613548]
-layout_mode = 0
-offset_left = -1079.0
-offset_top = -635.0
-offset_right = 2958.3333
-offset_bottom = 1636.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
 
 [node name="Caixa" type="Control" parent="UI/Popup" unique_id=591100668]
@@ -1384,17 +1383,14 @@ text = "Produtividade"
 process_mode = 3
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 81.59097
-offset_top = 225.4968
-offset_right = 321.59457
-offset_bottom = 266.14246
-grow_horizontal = 0
-grow_vertical = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -301.73853
+offset_top = -200.3875
+offset_right = -61.734924
+offset_bottom = -159.74184
+grow_horizontal = 2
 theme = ExtResource("23_5lrrf")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_67vox")
@@ -1402,6 +1398,39 @@ text = "Demissão Geral"
 icon = ExtResource("42_kmqcs")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/Demissao" unique_id=778980322]
+layout_mode = 0
+offset_left = -13.30481
+offset_top = -6.1035156e-05
+offset_right = 240.15161
+offset_bottom = 40.57959
+texture = ExtResource("32_k178o")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Selecionar" type="Button" parent="UI/Popup/Caixa/Frente/Sala" unique_id=596931971]
+process_mode = 3
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.664032
+offset_top = 224.99234
+offset_right = 266.66763
+offset_bottom = 265.638
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("23_5lrrf")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_67vox")
+text = "Selecionar Sala"
+icon = ExtResource("42_kmqcs")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Popup/Caixa/Frente/Sala/Selecionar" unique_id=1799721774]
 layout_mode = 0
 offset_left = -13.30481
 offset_top = -6.1035156e-05
@@ -1531,30 +1560,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -417.0
-offset_top = -300.0
-offset_right = 383.0
-offset_bottom = 300.0
+offset_left = -320.0
+offset_top = -444.0
+offset_right = 480.0
+offset_bottom = 58.26465
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.9915092, 0.9915092)
+scale = Vector2(0.7794757, 0.7794757)
 script = ExtResource("46_rgcr6")
 titleTxt = NodePath("Frente/Title")
 textTxt = NodePath("Frente/Text")
 
 [node name="AvisoFundo" type="ColorRect" parent="UI/Aviso" unique_id=1585613422]
 layout_mode = 0
-offset_left = -1904.168
-offset_top = -884.51025
-offset_right = 2854.0278
-offset_bottom = 1547.1365
-color = Color(0, 0, 0, 0.5019608)
+offset_left = -1961.575
+offset_top = -903.1712
+offset_right = 2796.6208
+offset_bottom = 1528.4756
+color = Color(0, 0, 0, 0.25882354)
 
 [node name="Borda" type="ColorRect" parent="UI/Aviso" unique_id=303979874]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -59.50525
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -1566,9 +1596,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -395.0
-offset_top = -295.0
+offset_top = -245.08093
 offset_right = 395.0
-offset_bottom = 295.0
+offset_bottom = 185.57568
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -1734,6 +1764,7 @@ environment = SubResource("Environment_fmjtd")
 [connection signal="mouse_entered" from="UI/EnemySide/Prancheta" to="." method="_on_prancheta_mouse_entered"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="UI" method="_on_demissao_button_down"]
 [connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Sala/Demissao" to="." method="_on_demissao_mouse_entered"]
+[connection signal="button_down" from="UI/Popup/Caixa/Frente/Sala/Selecionar" to="UI" method="_on_selecionar_button_down"]
 [connection signal="button_down" from="UI/Popup/Caixa/Frente/Fechar" to="UI" method="_on_fechar_button_down"]
 [connection signal="mouse_entered" from="UI/Popup/Caixa/Frente/Fechar" to="." method="_on_fechar_mouse_entered"]
 [connection signal="button_down" from="UI/Aviso/Frente/NaoBtn" to="UI/Aviso" method="_on_nao_btn_button_down"]

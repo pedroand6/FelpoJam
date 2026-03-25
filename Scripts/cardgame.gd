@@ -10,6 +10,9 @@ const IA = 1
 @onready var mao = $Camera3D/Mao
 @onready var money_sfx = $Salas/money
 
+@export var salas: Array[Sala]
+@export var bonus := 50
+
 @export var jogador_carimbo := Gerenciador.Carimbos.BASICO
 @export var ia_carimbo := Gerenciador.Carimbos.BRINQUEDO
 
@@ -41,8 +44,8 @@ func passa_round():
 	ui.dinheiro_ia.run_effect()
 	Gerenciador.round += 1
 	Gerenciador.round_muda.emit()
-	Gerenciador.IA_dinheiro += 25
-	Gerenciador.jogador_dinheiro += 25
+	Gerenciador.IA_dinheiro += bonus # bonus
+	Gerenciador.jogador_dinheiro += bonus # bonus
 	money_sfx.play()
 	
 func passa_turno(player : int):

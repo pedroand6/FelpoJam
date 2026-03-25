@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://bd7jdq1ulw8ta"]
 
+[ext_resource type="Texture2D" uid="uid://beo5vfbpv3f6g" path="res://Sprites/Cartas/DemandasSimplificadas/d-reducao-de-prazos.png" id="1_dsrng"]
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_m5ljl"]
 [ext_resource type="Texture2D" uid="uid://c71eflmss85yx" path="res://Sprites/Cartas/Demandas/d-reducao-de-prazos.png" id="2_g2qvb"]
 
@@ -10,4 +11,5 @@ desc = "+3pts de multiplicador se a Sala tiver a combinação Trio Parada Dura (
 custo = 45
 quantidade = 2
 sprite = ExtResource("2_g2qvb")
+minim_sprite = ExtResource("1_dsrng")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

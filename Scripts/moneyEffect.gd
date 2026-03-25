@@ -15,7 +15,7 @@ func _process_custom_fx(char_fx: CharFXTransform) -> bool:
 	delta_time = char_fx.elapsed_time - time
 	var _text_server := TextServerManager.get_primary_interface()
 	
-	var scroll = -linear_coeff * 50.0
+	var scroll = -linear_coeff * 130.0
 	
 	char_fx.color = Color(0.0, 0.639, 0.0, 1.0)
 	
@@ -34,7 +34,7 @@ func _process_custom_fx(char_fx: CharFXTransform) -> bool:
 	
 	if char_fx.offset.y < -40.0:
 		char_fx.offset.y += 120.0
-		linear_coeff = -2.0
+		linear_coeff = -1.0
 		reset_times += 1
 		
 	linear_coeff += delta_time
