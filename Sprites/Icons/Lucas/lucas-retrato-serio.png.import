@@ -10,8 +10,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Icons/lucas/lucas-retrato-serio.png"
-dest_files=["res://.godot/imported/lucas-retrato-serio.png-b5fcb5010441fa79e51aaf7196097fab.ctex"]
+source_file="res://Sprites/Icons/Lucas/lucas-retrato-serio.png"
+dest_files=["res://.godot/imported/lucas-retrato-serio.png-6ac0e28ad994265d05f21f6d7adb2dfb.ctex"]
 
 [params]
 

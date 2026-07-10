@@ -205,26 +205,15 @@ func _process(delta: float) -> void:
 		borda.show()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and event.pressed:
 		if event.button_index in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT] and event.pressed == true and mouse_on: sala_slct_sfx.play()
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and Gerenciador.sala_selecionada == null:
+		
+		if event.button_index == MOUSE_BUTTON_LEFT and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and \
+			(Gerenciador.sala_selecionada == null or Gerenciador.sala_selecionada != null and self not in Gerenciador.sala_selecionada.vizinhos):
 			open_room()
-		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and Gerenciador.sala_selecionada in vizinhos:
-			mover_atacar()
-		elif event.button_index == MOUSE_BUTTON_LEFT and event.pressed and mouse_on and not bloqueada_player and len(Gerenciador.cartas_selecionadas) > 0:
-			insert_cartas_player()
-		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and mouse_on and not bloqueada_player and Gerenciador.movimentos_restantes > 0 and dono == Players.JOGADOR:
-			if Gerenciador.sala_selecionada == self:
-				deselecionar()
-				return
-			elif Gerenciador.sala_selecionada != null:
-				Gerenciador.sala_selecionada.deselecionar()
-				
-			Gerenciador.sala_selecionada = self
-			selecionada = true
-			borda2.show()
-		elif (event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT) and bloqueada_player and event.pressed and mouse_on:
-			ui.show_notificacao("Sala bloqueada", Color.YELLOW)
+			return
+		
+		selecionar(event.button_index == MOUSE_BUTTON_LEFT, event.button_index == MOUSE_BUTTON_RIGHT, false)
 
 func mover_atacar():
 	if Gerenciador.turno != Gerenciador.JOGADOR: return
@@ -237,6 +226,10 @@ func mover_atacar():
 		)
 		
 		if not atacar: return
+		
+		for sala in root.salas:
+			sala.borda2.hide()
+			sala.borda2.light_color = Color(0xbd9910)
 		
 		var pont_pl = selecionada.pontuacao
 		var pont_ia = pontuacao
@@ -294,10 +287,37 @@ func mover_atacar():
 		
 	Gerenciador.sala_selecionada.deselecionar()
 
+func selecionar(ataque : bool, selecao : bool, button : bool):
+	if ataque and mouse_on and len(Gerenciador.cartas_selecionadas) <= 0 and Gerenciador.sala_selecionada in vizinhos and not bloqueada_player:
+		mover_atacar()
+	elif ataque and mouse_on and not bloqueada_player and len(Gerenciador.cartas_selecionadas) > 0:
+		insert_cartas_player()
+	elif selecao and (button or mouse_on) and not bloqueada_player and Gerenciador.movimentos_restantes > 0 and dono == Players.JOGADOR:
+		if Gerenciador.sala_selecionada == self:
+			deselecionar()
+			return
+		elif Gerenciador.sala_selecionada != null:
+			Gerenciador.sala_selecionada.deselecionar()
+			
+		Gerenciador.sala_selecionada = self
+		selecionada = true
+		for sala in root.salas:
+			sala.borda2.hide()
+			sala.borda2.light_color = Color(0xbd9910)
+			if sala.id == id + 1 or sala.id == id - 1 or sala.id == (id + 4) % 8:
+				sala.borda2.show()
+				sala.borda2.light_color = Color(0.845, 0.273, 0.14, 1.0)
+			
+		borda2.show()
+	elif (selecao or ataque) and bloqueada_player and mouse_on:
+		ui.show_notificacao("Sala bloqueada", Color.YELLOW)
+
 func deselecionar():
 	Gerenciador.sala_selecionada = null
 	selecionada = false
-	borda2.hide()
+	for sala in root.salas:
+		sala.borda2.hide()
+		sala.borda2.light_color = Color(0xbd9910)
 
 func turno_ia():
 	bloqueada_player = false

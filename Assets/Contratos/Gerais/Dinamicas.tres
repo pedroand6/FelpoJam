@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://u2akbi0bp07g"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_a7skl"]
+[ext_resource type="Texture2D" uid="uid://3x1xdx34ilur" path="res://Sprites/Cartas/DemandasSimplificadas/d-dinamica-de-grupo.png" id="1_haee3"]
 [ext_resource type="Texture2D" uid="uid://dan2efjqi2dxg" path="res://Sprites/Cartas/Demandas/d-dinamica-de-grupo.png" id="2_d6g83"]
 [ext_resource type="Texture2D" uid="uid://3x1xdx34ilur" path="res://Sprites/Cartas/DemandasSimplificadas/d-dinamica-de-grupo.png" id="2_haee3"]
 

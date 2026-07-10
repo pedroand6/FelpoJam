@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://5wi1c77uruc0"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_t6wme"]
+[ext_resource type="Texture2D" uid="uid://bq8b3a5iajxpw" path="res://Sprites/Cartas/DemandasSimplificadas/d-time-novo.png" id="1_w5qdb"]
 [ext_resource type="Texture2D" uid="uid://blx7mk1b8tpj7" path="res://Sprites/Cartas/Demandas/d-time-novo.png" id="2_2au2s"]
 [ext_resource type="Texture2D" uid="uid://bq8b3a5iajxpw" path="res://Sprites/Cartas/DemandasSimplificadas/d-time-novo.png" id="2_w5qdb"]
 

@@ -10,8 +10,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Icons/lucas/lucas-retrato-indignado.png"
-dest_files=["res://.godot/imported/lucas-retrato-indignado.png-396e200bbd3943a6edbf9ffc0626266b.ctex"]
+source_file="res://Sprites/Icons/Lucas/lucas-retrato-indignado.png"
+dest_files=["res://.godot/imported/lucas-retrato-indignado.png-9ee322b693da78cda36059ccdbc521ee.ctex"]
 
 [params]
 

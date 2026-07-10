@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://df8ko7rbrv5ha"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_0rmw8"]
+[ext_resource type="Texture2D" uid="uid://c04r0nc6d1cpb" path="res://Sprites/Cartas/DemandasSimplificadas/d-palestra-irada.png" id="1_wftja"]
 [ext_resource type="Texture2D" uid="uid://crugv4674i861" path="res://Sprites/Cartas/Demandas/d-palestra-irada.png" id="2_hk5jg"]
 
 [resource]
@@ -10,4 +11,5 @@ desc = "+2pt de multiplicador de prod. por cada cargo igual ou abaixo de Sênior
 custo = 30
 quantidade = 2
 sprite = ExtResource("2_hk5jg")
+minim_sprite = ExtResource("1_wftja")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

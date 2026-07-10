@@ -23,6 +23,7 @@ var combos := {
 	2 : ["Parceria", "Dois funcionários do mesmo nível, multiplicador igual a 2."],
 	3 : ["Trio Parada Dura", "Três funcionários do mesmo nível, multiplicador igual a 3."],
 	4 : ["Complô", "Duas duplas de funcionários de mesmo nível, multiplicador igual a 4."],
+	5 : ["Cadeia Produtiva", "Quatro funcionários em sequência, multiplicador igual a 5."],
 	6 : ["Reunião do Setor", "Quatro funcionários da mesma área, multiplicador igual a 6."],
 	8 : ["Juntos e Misturados", "Quatro funcionários de mesmo nível, multiplicador igual a 8."],
 	10 : ["Desigualdade Salarial", "Quatro funcionários em sequência da mesma área, multiplicador igual a 10."],
@@ -233,13 +234,14 @@ func calcula_combo(funcionarios : Array[Contrato]):
 		
 	var primeiro = niveis.front()
 	
-	if niveis == range(primeiro, primeiro+4, 1):
+	if niveis == range(primeiro, primeiro+4, 1): #straight
 		desigualdade =  true
+		combinacoes.append(5)
 		
 	if desigualdade and reuniao:
-		combinacoes.append(10) #desigualdade salarial
-		if primeiro == 6 and not tem_coringa:
-			combinacoes.append(12) #happy hour
+		combinacoes.append(12) #desigualdade salarial
+		if primeiro == 6:
+			combinacoes.append(16) #happy hour
 	
 	return combinacoes.max()
 	
