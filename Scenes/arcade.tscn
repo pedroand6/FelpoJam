@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://bqm4blh853bra" path="res://Sprites/Bonequinhos/func-esquerda.png" id="19_wl3vi"]
 [ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="20_61t0i"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="21_thnd3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="22_jsaxe"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="23_5lrrf"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="24_d5yvd"]
 [ext_resource type="PackedScene" uid="uid://csnfliefgbsxj" path="res://Scenes/dinheiroUI.tscn" id="25_a1843"]
@@ -68,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_vyy58")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fase1",
 "speed": 5.0
 }, {
@@ -85,7 +84,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_s6bdb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fase2",
 "speed": 5.0
 }, {
@@ -102,12 +101,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_8ryvr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fase3",
 "speed": 5.0
 }]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mei41"]
+transparency = 1
 albedo_color = Color(0.05490196, 0.05490196, 0.05490196, 1)
 metallic_specular = 0.0
 roughness = 0.0
@@ -132,6 +132,9 @@ load_path = "res://.godot/imported/func-frente.png-30dcd919a6ba9c7f332e1564e29f7
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6llu4"]
 load_path = "res://.godot/imported/func-costas.png-71d52ff4329ef35413ea6a984278a0e3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mut6n"]
+load_path = "res://.godot/imported/lucas-retrato-serio.png-b5fcb5010441fa79e51aaf7196097fab.ctex"
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_67vox"]
 script = ExtResource("24_d5yvd")
@@ -202,19 +205,6 @@ mesh = SubResource("BoxMesh_ls4sr")
 transform = Transform3D(0.85112774, 0, 0, 0, 0.10490758, 0, 0, 0, 0.8507305, 0.0017648665, 0.53367734, -0.035413027)
 operation = 2
 mesh = SubResource("BoxMesh_ls4sr")
-
-[node name="CarimboSeu" type="Sprite3D" parent="Predio2" unique_id=265347879]
-transform = Transform3D(0.028154744, 0, 0, 0, 0.019235184, 0, 0, 0, 0.046286788, 0.45118713, 0.51749784, 0.29267752)
-axis = 0
-billboard = 2
-texture_filter = 0
-texture = ExtResource("15_apnf5")
-
-[node name="CarimboIA" type="Sprite3D" parent="Predio2" unique_id=1020713383]
-transform = Transform3D(0.028154744, 0, 0, 0, 0.01907283, 0, 0, 0, 0.043560296, -0.44904673, 0.5190791, -0.40949178)
-billboard = 2
-texture_filter = 0
-texture = ExtResource("16_mn27q")
 
 [node name="Salas" type="Node3D" parent="." unique_id=1069345903]
 
@@ -573,7 +563,7 @@ offset_top = 48.0
 offset_right = -64.0
 offset_bottom = 240.0
 grow_horizontal = 0
-texture = ExtResource("22_jsaxe")
+texture = SubResource("CompressedTexture2D_mut6n")
 expand_mode = 1
 stretch_mode = 4
 
@@ -713,6 +703,26 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
+[node name="CarimboPlayer" type="TextureButton" parent="UI/PlayerSide" unique_id=1875582909]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = -666.0
+offset_right = -105.0
+offset_bottom = -542.8246
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "Baralho"
+mouse_default_cursor_shape = 2
+theme = ExtResource("26_kvawd")
+texture_normal = ExtResource("15_apnf5")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="EnemySide" type="Control" parent="UI" unique_id=467488028]
 layout_mode = 3
 anchors_preset = 9
@@ -814,6 +824,26 @@ tooltip_text = "Combos e Cargos"
 mouse_default_cursor_shape = 2
 theme = ExtResource("26_kvawd")
 texture_normal = ExtResource("36_6yful")
+stretch_mode = 4
+
+[node name="CarimboPlayer" type="TextureButton" parent="UI/EnemySide" unique_id=572029067]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -666.0
+offset_right = 219.0
+offset_bottom = -542.8246
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "Baralho"
+mouse_default_cursor_shape = 2
+theme = ExtResource("26_kvawd")
+texture_normal = ExtResource("16_mn27q")
+ignore_texture_size = true
 stretch_mode = 4
 
 [node name="RodadaText" type="RichTextLabel" parent="UI" unique_id=1754639960]
@@ -1715,6 +1745,9 @@ process_mode = 3
 stream = ExtResource("52_nloer")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=236276067]
+environment = SubResource("Environment_fmjtd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="WorldEnvironment" unique_id=2027122704]
 environment = SubResource("Environment_fmjtd")
 
 [connection signal="cartas_prontas" from="." to="Camera3D/Mao" method="_on_escritorio_cartas_prontas"]

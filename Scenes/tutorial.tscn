@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bqm4blh853bra" path="res://Sprites/Bonequinhos/func-esquerda.png" id="11_pql20"]
 [ext_resource type="AudioStream" uid="uid://0tf330mn2jn5" path="res://Audio/SFX/MONEY DINDIN.wav" id="12_8yxqp"]
 [ext_resource type="Script" uid="uid://bklnjhvlllgjh" path="res://Scripts/ui.gd" id="13_sv2l3"]
-[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/lucas/lucas-retrato-serio.png" id="14_44pwq"]
+[ext_resource type="Texture2D" uid="uid://blvehsjx3d04q" path="res://Sprites/Icons/Lucas, O Gerente/lucas-retrato-serio.png" id="14_44pwq"]
 [ext_resource type="Theme" uid="uid://bx5uaiy3dc1m4" path="res://Themes/dialogueTheme.tres" id="15_57ryo"]
 [ext_resource type="Script" uid="uid://cbsk3sjfmvlta" path="res://Scripts/dialogueEffect.gd" id="16_tqsy5"]
 [ext_resource type="Texture2D" uid="uid://dwgw0yrwubc2y" path="res://Sprites/UI/carimbo-basico.png" id="17_5cm3m"]
@@ -86,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_e1qrx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fase1",
 "speed": 5.0
 }, {
@@ -103,7 +103,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_rp1ed")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fase2",
 "speed": 5.0
 }, {
@@ -120,12 +120,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_8yxqp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fase3",
 "speed": 5.0
 }]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mei41"]
+transparency = 1
 albedo_color = Color(0.05490196, 0.05490196, 0.05490196, 1)
 metallic_specular = 0.0
 roughness = 0.0
@@ -207,19 +208,6 @@ mesh = SubResource("BoxMesh_ls4sr")
 transform = Transform3D(0.85112774, 0, 0, 0, 0.10490758, 0, 0, 0, 0.8507305, 0.0017648665, 0.53367734, -0.035413027)
 operation = 2
 mesh = SubResource("BoxMesh_ls4sr")
-
-[node name="CarimboSeu" type="Sprite3D" parent="Predio2" unique_id=1523980899]
-transform = Transform3D(0.028154744, 0, 0, 0, 0.019235184, 0, 0, 0, 0.046286788, 0.45118713, 0.51749784, 0.29267752)
-axis = 0
-billboard = 2
-texture_filter = 0
-texture = ExtResource("17_5cm3m")
-
-[node name="CarimboIA" type="Sprite3D" parent="Predio2" unique_id=804569865]
-transform = Transform3D(0.028154744, 0, 0, 0, 0.01907283, 0, 0, 0, 0.043560296, -0.44904673, 0.5190791, -0.40949178)
-billboard = 2
-texture_filter = 0
-texture = ExtResource("24_5hb4g")
 
 [node name="Salas" type="Node3D" parent="." unique_id=1069345903]
 
@@ -718,6 +706,26 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
+[node name="CarimboPlayer" type="TextureButton" parent="UI/PlayerSide" unique_id=1072396025]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = -666.0
+offset_right = -105.0
+offset_bottom = -542.8246
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "Baralho"
+mouse_default_cursor_shape = 2
+theme = ExtResource("18_2apiv")
+texture_normal = ExtResource("17_5cm3m")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="EnemySide" type="Control" parent="UI" unique_id=467488028]
 layout_mode = 3
 anchors_preset = 9
@@ -818,6 +826,26 @@ tooltip_text = "Combos e Cargos"
 mouse_default_cursor_shape = 2
 theme = ExtResource("18_2apiv")
 texture_normal = ExtResource("27_hiip6")
+stretch_mode = 4
+
+[node name="CarimboPlayer" type="TextureButton" parent="UI/EnemySide" unique_id=1864465596]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -666.0
+offset_right = 219.0
+offset_bottom = -542.8246
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "Baralho"
+mouse_default_cursor_shape = 2
+theme = ExtResource("18_2apiv")
+texture_normal = ExtResource("24_5hb4g")
+ignore_texture_size = true
 stretch_mode = 4
 
 [node name="RodadaText" type="RichTextLabel" parent="UI" unique_id=1754639960]

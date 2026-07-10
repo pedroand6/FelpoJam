@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_g3syl"]
 [ext_resource type="Texture2D" uid="uid://mpm0f20h47qx" path="res://Sprites/Cartas/Demandas/d-trabalho-remoto.png" id="2_c7slc"]
+[ext_resource type="Texture2D" uid="uid://dphkjp1q0i5yk" path="res://Sprites/Cartas/DemandasSimplificadas/d-trabalho-remoto.png" id="2_w0jde"]
 
 [resource]
 script = ExtResource("1_g3syl")
@@ -9,4 +10,5 @@ nome = "Trabalho Remoto"
 desc = "+1pt de multiplicador de prod. por cada funcionário de TI ou Marketing"
 custo = 40
 sprite = ExtResource("2_c7slc")
+simplificado = ExtResource("2_w0jde")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

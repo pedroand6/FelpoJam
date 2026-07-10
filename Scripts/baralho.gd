@@ -7,6 +7,7 @@ extends Control
 @onready var mao = $"../../../../../Camera3D/Mao"
 
 @onready var funcs_path := "res://Sprites/Cartas/ContratosSimplificados/"
+@onready var demandas_path := "res://Sprites/Cartas/DemandasSimplificadas/"
 @onready var utils_path := "res://Assets/Contratos/Gerais/"
 @onready var utils_path2 := "res://Assets/Contratos/Basico/"
 @onready var utils_path3 := "res://Assets/Contratos/Brinquedo/"
@@ -88,7 +89,7 @@ func append_demanda(demandas: Array[Demanda], rects: Array[Node], rect_count: in
 				rects[rect_count], Contrato.Tipos.DEMANDA, "", demanda.nome
 			)
 			lista_entries.append(new_entry)
-			rects[rect_count].texture = demanda.sprite
+			rects[rect_count].texture = demanda.simplificado
 			rect_count += 1
 	return rect_count
 

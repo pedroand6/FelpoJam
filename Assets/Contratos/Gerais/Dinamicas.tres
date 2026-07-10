@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_a7skl"]
 [ext_resource type="Texture2D" uid="uid://dan2efjqi2dxg" path="res://Sprites/Cartas/Demandas/d-dinamica-de-grupo.png" id="2_d6g83"]
+[ext_resource type="Texture2D" uid="uid://3x1xdx34ilur" path="res://Sprites/Cartas/DemandasSimplificadas/d-dinamica-de-grupo.png" id="2_haee3"]
 
 [resource]
 script = ExtResource("1_a7skl")
@@ -10,4 +11,5 @@ desc = "+2pts de multiplicador de prod. por cada cargo acima de Sênior."
 custo = 45
 quantidade = 2
 sprite = ExtResource("2_d6g83")
+simplificado = ExtResource("2_haee3")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

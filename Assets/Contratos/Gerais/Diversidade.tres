@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://bra6ia6fqu3u5"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_0mp5e"]
+[ext_resource type="Texture2D" uid="uid://bvxqbbtar5b0x" path="res://Sprites/Cartas/DemandasSimplificadas/d-politica-diversa.png" id="2_3btw0"]
 [ext_resource type="Texture2D" uid="uid://dbmtxrosf3xe4" path="res://Sprites/Cartas/Demandas/d-politica-diversa.png" id="2_gi74g"]
 
 [resource]
@@ -9,4 +10,5 @@ nome = "Política Diversa"
 desc = "+4pts de multiplicador se a Sala tiver a combinação Juntos e Misturados."
 custo = 60
 sprite = ExtResource("2_gi74g")
+simplificado = ExtResource("2_3btw0")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"
