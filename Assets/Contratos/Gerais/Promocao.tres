@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://k042p02wjgv0" path="res://Sprites/Cartas/DemandasSimplificadas/d-promocao-merecida.png" id="1_ujwuf"]
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_vuk5v"]
 [ext_resource type="Texture2D" uid="uid://0l0vi1o2f4bv" path="res://Sprites/Cartas/Demandas/d-promocao-merecida.png" id="2_joovt"]
+[ext_resource type="Texture2D" uid="uid://k042p02wjgv0" path="res://Sprites/Cartas/DemandasSimplificadas/d-promocao-merecida.png" id="2_ujwuf"]
 
 [resource]
 script = ExtResource("1_vuk5v")
@@ -10,5 +11,5 @@ nome = "Promoção por Mérito"
 desc = "Duplica os pontos do multiplicador caso o Filho do Dono e o Presidente estejam na sala."
 custo = 75
 sprite = ExtResource("2_joovt")
-minim_sprite = ExtResource("1_ujwuf")
+simplificado = ExtResource("2_ujwuf")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

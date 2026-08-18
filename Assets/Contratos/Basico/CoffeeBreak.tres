@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Demanda" format=3 uid="uid://b3eajn4eqrxew"]
 
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_7cc51"]
-[ext_resource type="Texture2D" uid="uid://bo567lttp68k" path="res://Sprites/Cartas/DemandasSimplificadas/d-coffee-break.png" id="1_kv45a"]
+[ext_resource type="Texture2D" uid="uid://bo567lttp68k" path="res://Sprites/Cartas/DemandasSimplificadas/d-coffee-break.png" id="2_kv45a"]
 [ext_resource type="Texture2D" uid="uid://82k3uc07ip64" path="res://Sprites/Cartas/Demandas/d-coffee-break.png" id="2_mguio"]
 
 [resource]
@@ -10,5 +10,5 @@ nome = "Coffee Break"
 desc = "+10pts de produtividade para cada estagiário."
 custo = 50
 sprite = ExtResource("2_mguio")
-minim_sprite = ExtResource("1_kv45a")
+simplificado = ExtResource("2_kv45a")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

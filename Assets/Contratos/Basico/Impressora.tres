@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://20e2nrt4d6qt" path="res://Sprites/Cartas/DemandasSimplificadas/d-impressora.png" id="1_516v7"]
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_prknk"]
+[ext_resource type="Texture2D" uid="uid://20e2nrt4d6qt" path="res://Sprites/Cartas/DemandasSimplificadas/d-impressora.png" id="2_516v7"]
 [ext_resource type="Texture2D" uid="uid://clluh0n7uub8n" path="res://Sprites/Cartas/Demandas/d-impressora.png" id="2_epb64"]
 
 [resource]
@@ -10,5 +11,5 @@ nome = "Impressora"
 desc = "+1pt de multiplicador de prod. por cada funcionário de RH."
 custo = 40
 sprite = ExtResource("2_epb64")
-minim_sprite = ExtResource("1_516v7")
+simplificado = ExtResource("2_516v7")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

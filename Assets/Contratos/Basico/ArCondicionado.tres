@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_feel6"]
 [ext_resource type="Texture2D" uid="uid://c325p42cclicy" path="res://Sprites/Cartas/DemandasSimplificadas/d-ar-condicionado.png" id="1_ukemm"]
 [ext_resource type="Texture2D" uid="uid://q624eov6rlh2" path="res://Sprites/Cartas/Demandas/d-ar-condicionado.png" id="2_kupkl"]
+[ext_resource type="Texture2D" uid="uid://c325p42cclicy" path="res://Sprites/Cartas/DemandasSimplificadas/d-ar-condicionado.png" id="2_ukemm"]
 
 [resource]
 script = ExtResource("1_feel6")
@@ -10,5 +11,5 @@ nome = "Ar-condicionado"
 desc = "+6pts de prod. por funcionário caso a sala esteja lotada."
 custo = 30
 sprite = ExtResource("2_kupkl")
-minim_sprite = ExtResource("1_ukemm")
+simplificado = ExtResource("2_ukemm")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"

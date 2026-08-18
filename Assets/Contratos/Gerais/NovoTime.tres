@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cw1wtjsb43tfq" path="res://Assets/Contratos/demanda.gd" id="1_t6wme"]
 [ext_resource type="Texture2D" uid="uid://bq8b3a5iajxpw" path="res://Sprites/Cartas/DemandasSimplificadas/d-time-novo.png" id="1_w5qdb"]
 [ext_resource type="Texture2D" uid="uid://blx7mk1b8tpj7" path="res://Sprites/Cartas/Demandas/d-time-novo.png" id="2_2au2s"]
+[ext_resource type="Texture2D" uid="uid://bq8b3a5iajxpw" path="res://Sprites/Cartas/DemandasSimplificadas/d-time-novo.png" id="2_w5qdb"]
 
 [resource]
 script = ExtResource("1_t6wme")
@@ -11,5 +12,5 @@ desc = "+2pts de multiplicador se a Sala tiver a combinação Parceria (inclui  
 custo = 30
 quantidade = 2
 sprite = ExtResource("2_2au2s")
-minim_sprite = ExtResource("1_w5qdb")
+simplificado = ExtResource("2_w5qdb")
 metadata/_custom_type_script = "uid://cw1wtjsb43tfq"
